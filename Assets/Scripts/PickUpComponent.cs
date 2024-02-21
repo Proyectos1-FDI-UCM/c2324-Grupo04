@@ -9,13 +9,13 @@ public class Roper : MonoBehaviour
 
 
 
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
+    
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("player"))
         {
             gameManager.SumarObjetos(valor);
             Destroy(this.gameObject);
-            }
         }
+    }
 }
