@@ -10,9 +10,12 @@ public class PickUpComponent : MonoBehaviour
 
 
     
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision) // Se activa cuando álgo colisiona con él
     {
-        if (collision.CompareTag("player"))
+
+        GranjeroMovement granjeroMovement = collision.GetComponent<GranjeroMovement>(); // Busca un componente del tipo GranjeroMovement
+
+        if (granjeroMovement != null) // Comprueba que granjeroMovement existe (y por tanto que lo que ha chocado es el granjero)
         {
             gameManager.SumarObjetos(valor);
             Destroy(this.gameObject);
