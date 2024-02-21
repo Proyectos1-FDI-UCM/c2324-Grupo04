@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PickUpComponent : MonoBehaviour
 {
+    [SerializeField]
     public int valor = 1;
     public GameManager gameManager;
 
