@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int ObjetosTotales { get { return objetosTotales; } }
+    private int objetosTotales;
 
-    // Update is called once per frame
-    void Update()
+    public void SumarObjetos(int objetosAsumar)
     {
-        
+        objetosTotales += objetosAsumar;
+        Debug.Log(objetosTotales);
     }
 }
