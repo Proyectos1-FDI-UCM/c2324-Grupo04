@@ -16,7 +16,7 @@ public class GranjeroMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
    
-    private void OnMovement (InputValue value) 
+    private void OnHorizontalMovement (InputValue value) 
     {
         movement = value.Get<Vector2>();
     }
@@ -24,7 +24,7 @@ public class GranjeroMovement : MonoBehaviour
     private void FixedUpdate ()
     {
         //Variante 1
-       rb.MovePosition(rb.position + movement * speed * Time.deltaTime); //Sin aceleracion
+        rb.MovePosition(rb.position + movement * Time.fixedDeltaTime); //Sin aceleracion
        
         //variante 2 con aceleracion1   (se puede cambiar el linear drag)
         /*
