@@ -17,12 +17,22 @@ public class GranjeroMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Salto()
+
+    private void  OnUp()
     {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            rb.AddForce(Vector2.up * impulso);
-        }
+        Debug.Log("Salto");
+
+        
+            rb.AddForce(Vector2.up * impulso, ForceMode2D.Impulse);
+        
+      
+           
+
+
+    }
+    private void Update()
+    {
+        
     }
 
     private void OnHorizontalMovement (InputValue value) 
@@ -33,14 +43,14 @@ public class GranjeroMovement : MonoBehaviour
     private void FixedUpdate ()
     {
         //Variante 1
-        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime); //Sin aceleracion
+        //rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime); //Sin aceleracion
        
         //variante 2 con aceleracion1   (se puede cambiar el linear drag)
-        /*
+        
         if (movement.x != 0){
-            rb.velocity = movement * speed;
+            rb.velocity = movement * speed + Vector2.up * rb.velocity.y;
         }
-        */
+        
 
         //variante 3 con aceleracion2
         /*
