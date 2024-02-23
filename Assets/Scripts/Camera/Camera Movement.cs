@@ -5,10 +5,10 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     [SerializeField] private float followSpeed = 2f;
-    [SerializeField] private float zPos = -10f;
     [SerializeField] private float xOffset = 1f;
     [SerializeField] private float yOffset = 1f;
     [SerializeField] private Transform target;
+    private float zPos = -10f;
 
 
     // Start is called before the first frame update
