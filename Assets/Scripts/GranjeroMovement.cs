@@ -21,13 +21,8 @@ public class GranjeroMovement : MonoBehaviour
     private void  OnUp()
     {
         Debug.Log("Salto");
-
         
             rb.AddForce(Vector2.up * impulso, ForceMode2D.Impulse);
-        
-      
-           
-
 
     }
     private void Update()
