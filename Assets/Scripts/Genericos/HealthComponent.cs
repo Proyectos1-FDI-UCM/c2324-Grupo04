@@ -17,7 +17,7 @@ public class HealthComponent : MonoBehaviour
         else if (_hitPoints < 0)
         {
             // Llamada a posible animación de muerte
-            Destroy(this.GameObject); // Habría que ver cómo actuar en el caso de que sea el jugador el que muere
+            Destroy(this.gameObject); // Habría que ver cómo actuar en el caso de que sea el jugador el que muere
         }
     }
 

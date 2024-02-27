@@ -23,7 +23,7 @@ public class AttackHitboxComponent : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        EnemyMovement enemyMovement = other.GetComponent<enemyMovement>();
+        EnemyMovement enemyMovement = other.GetComponent<EnemyMovement>();
         if (enemyMovement != null)
         {
             other.GetComponent<HealthComponent>().AddLife(_damage);
