@@ -40,7 +40,8 @@ public class GameManager : MonoBehaviour
 
     private void ActivaHorca()
     {
-        _playersHorcaAttack.SetActive(true);
+        //_playersHorcaAttack.SetActive(true);
+        _playersHorcaAttack.enabled = true;
     }
 
     public void SumarObjetos(int objetosAsumar)
