@@ -65,11 +65,11 @@ public class GameManager : MonoBehaviour
         {
             if (codigo == 0)
             {
-                _cuerda++;
+                _cuerda++; Debug.Log("Tienes " + _cuerda + " unidades de cuerda");
             }
             else if (codigo == 1)
             {
-                _monedas++;
+                _monedas++; Debug.Log("Tienes " + _monedas + " monedas");
             }
             else if (codigo == 2)
             {
