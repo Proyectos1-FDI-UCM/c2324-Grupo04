@@ -24,6 +24,7 @@ public class HealthComponent : MonoBehaviour
     public void changeHealth(int added)
     {
         Debug.Log("Cambio de vida: " +  added);
+        Debug.Log(_currentHp);
         _currentHp += added;
         if (_currentHp > _maxHp)
         {
