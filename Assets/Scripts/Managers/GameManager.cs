@@ -20,6 +20,11 @@ public class GameManager : MonoBehaviour
     public int ObjetosTotales { get { return objetosTotales; } }
 
     #endregion
+
+    #region references 
+    [SerializeField] HorcaAttack _playersHorcaAttack;
+    #endregion 
+
     #region methods
 
     private void Awake()
@@ -31,6 +36,12 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         
+    }
+
+    private void ActivaHorca()
+    {
+        //_playersHorcaAttack.SetActive(true);
+        _playersHorcaAttack.enabled = true;
     }
 
     public void SumarObjetos(int objetosAsumar)
