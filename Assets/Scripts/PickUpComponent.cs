@@ -4,8 +4,22 @@ using UnityEngine;
 
 public class PickUpComponent : MonoBehaviour
 {
+    ///<leyenda>
+    /// 0 -> Cuerda
+    /// 1 -> Moneda
+    /// 2 -> Vida
+    /// 3 -> Aumento de la vida máxima
+    /// A partir del 10 son armas
+    /// 10 -> Horca
+    /// 11 -> Pala
+    /// A partir del 20 son recetas
+    /// 20 -> Receta señuelo
+    /// 21 -> Receta trampolín
+    /// El 30 es la oveja
+    /// 30 -> Oveja
+    ///</leyenda>
     [SerializeField]
-    public int valor = 1;
+    public int _codigo = 0;
 
 
 
@@ -17,7 +31,7 @@ public class PickUpComponent : MonoBehaviour
 
         if (granjeroMovement != null) // Comprueba que granjeroMovement existe (y por tanto que lo que ha chocado es el granjero)
         {
-            GameManager.Instance.SumarObjetos(valor);
+            GameManager.Instance.RefistrarObjetos(_codigo);
             Destroy(this.gameObject);
         }
     }
