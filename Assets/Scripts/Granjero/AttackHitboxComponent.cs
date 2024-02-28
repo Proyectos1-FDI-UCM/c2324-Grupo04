@@ -15,13 +15,8 @@ public class AttackHitboxComponent : MonoBehaviour
 
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    public void OnTriggerEnter(Collider other) // No sé por qué no entra en este método
+    public void OnTriggerEnter(Collider other)
     {
         Debug.Log("Entra en el trigger");
         EnemyMovement enemyMovement = other.GetComponent<EnemyMovement>();
