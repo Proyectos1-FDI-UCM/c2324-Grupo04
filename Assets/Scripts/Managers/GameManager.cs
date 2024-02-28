@@ -21,8 +21,8 @@ public class GameManager : MonoBehaviour
         get { return _instance; }
     }
 
-    private int _cuerda;
-    private int _monedas;
+    private int _cuerda = 0;
+    private int _monedas = 0;
 
     public int ObjetosTotales { get { return _cuerda; } } // ¿Qué hace este método?
 
@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
 
     #region references 
     [SerializeField] HorcaAttack _playersHorcaAttack;
+    //[SerializeField] HorcaAttack _playersHorcaAttack;
     [SerializeField] HealthComponent _playerHealth;
     #endregion 
 
@@ -50,6 +51,11 @@ public class GameManager : MonoBehaviour
     {
         //_playersHorcaAttack.SetActive(true);
         _playersHorcaAttack.enabled = true;
+    }
+
+    private void ActivaPala()
+    {
+
     }
 
     public void RefistrarObjetos(int codigo)
@@ -75,7 +81,14 @@ public class GameManager : MonoBehaviour
         }
         else if (codigo < 20)
         {
-
+            if (codigo == 10)
+            {
+                ActivaHorca();
+            }
+            else if (codigo == 11)
+            {
+                ActivaPala();
+            }
         }
         else if (codigo == 30)
         {
