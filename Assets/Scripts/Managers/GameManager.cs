@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
 
     private void ActivaHorca()
     {
+        Debug.Log("Horca activada");
         //_playersHorcaAttack.SetActive(true);
         _playersHorcaAttack.enabled = true;
     }
