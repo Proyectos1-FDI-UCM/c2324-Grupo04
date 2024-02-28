@@ -21,13 +21,10 @@ public class GranjeroMovement : MonoBehaviour
     private void  OnUp()
     {
         Debug.Log("Salto");
-        
+        if(rb.velocity.y < 0.1)
+        {
             rb.AddForce(Vector2.up * impulso, ForceMode2D.Impulse);
-
-    }
-    private void Update()
-    {
-        
+        }
     }
 
     private void OnHorizontalMovement (InputValue value) 
