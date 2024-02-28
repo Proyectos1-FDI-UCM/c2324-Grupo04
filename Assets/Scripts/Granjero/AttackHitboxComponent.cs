@@ -21,11 +21,13 @@ public class AttackHitboxComponent : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other) // No sé por qué no entra en este método
     {
+        Debug.Log("Entra en el trigger");
         EnemyMovement enemyMovement = other.GetComponent<EnemyMovement>();
         if (enemyMovement != null)
         {
+            Debug.Log("Colisionado con un enemigo");
             other.GetComponent<HealthComponent>().changeHealth(_damage);
         }
     }
