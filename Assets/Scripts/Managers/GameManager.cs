@@ -15,14 +15,16 @@ public class GameManager : MonoBehaviour
         get { return _instance; }
     }
 
-    private int objetosTotales;
+    private int _cuerda;
+    private int _monedas;
 
-    public int ObjetosTotales { get { return objetosTotales; } }
+    public int ObjetosTotales { get { return _cuerda; } } // ¿Qué hace este método?
 
     #endregion
 
     #region references 
     [SerializeField] HorcaAttack _playersHorcaAttack;
+    [SerializeField] HealthComponent _playerHealth;
     #endregion 
 
     #region methods
@@ -44,10 +46,35 @@ public class GameManager : MonoBehaviour
         _playersHorcaAttack.enabled = true;
     }
 
-    public void SumarObjetos(int objetosAsumar)
+    public void RefistrarObjetos(int codigo)
     {
-        objetosTotales += objetosAsumar;
-        Debug.Log(objetosTotales);
+        if (codigo < 10)
+        {
+            if (codigo == 0)
+            {
+                _cuerda++;
+            }
+            else if (codigo == 1)
+            {
+                _monedas++;
+            }
+            else if (codigo == 2)
+            {
+                _playerHealth.ChangeHealth(2);
+            }
+            else if (codigo == 3)
+            {
+                _playerHealth.ChangeMaxHealth(2);
+            }
+        }
+        else if (codigo < 20)
+        {
+
+        }
+        else if (codigo == 30)
+        {
+            Debug.Log("Has recogido una oveja");
+        }
     }
 
     #endregion

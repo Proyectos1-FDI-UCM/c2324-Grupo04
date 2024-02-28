@@ -28,7 +28,7 @@ public class AttackHitboxComponent : MonoBehaviour
         if (enemyMovement != null)
         {
             Debug.Log("Colisionado con un enemigo");
-            other.GetComponent<HealthComponent>().changeHealth(_damage);
+            other.GetComponent<HealthComponent>().ChangeHealth(_damage);
         }
     }
 

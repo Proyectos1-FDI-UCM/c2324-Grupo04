@@ -19,7 +19,7 @@ public class TakeDamagecomponent : MonoBehaviour
     {
         if (_healthComponent != null)
         {
-            _healthComponent.changeHealth(damage);
+            _healthComponent.ChangeHealth(damage);
         }
     }
 }

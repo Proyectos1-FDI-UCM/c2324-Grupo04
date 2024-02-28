@@ -18,7 +18,7 @@ public class EnemigoMov : MonoBehaviour
         Debug.Log("Collision");
         if (collision.gameObject.GetComponent<GranjeroMovement>() != null)
         {
-            player.GetComponent<HealthComponent>().changeHealth(damage);
+            player.GetComponent<HealthComponent>().ChangeHealth(damage);
             Debug.Log("Collision Granjero");
         }
     }
