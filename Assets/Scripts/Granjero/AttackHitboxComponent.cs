@@ -26,7 +26,7 @@ public class AttackHitboxComponent : MonoBehaviour
         EnemyMovement enemyMovement = other.GetComponent<EnemyMovement>();
         if (enemyMovement != null)
         {
-            other.GetComponent<HealthComponent>().AddLife(_damage);
+            other.GetComponent<HealthComponent>().changeHealth(_damage);
         }
     }
 

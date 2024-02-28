@@ -4,33 +4,46 @@ using UnityEngine;
 
 public class HealthComponent : MonoBehaviour
 {
-    [SerializeField] int _hitPoints;
-    [SerializeField] int _maxHitPoints;
 
-    public void AddLife(int addition)
-    {
-        _hitPoints += addition;
-        if (_hitPoints > _maxHitPoints)
-        {
-            _hitPoints = _maxHitPoints;
-        }
-        else if (_hitPoints < 0)
-        {
-            // Llamada a posible animación de muerte
-            Destroy(this.gameObject); // Habría que ver cómo actuar en el caso de que sea el jugador el que muere
-        }
-    }
+    public int CurrentHealth { get { return _currentHp; } }
+
+    [SerializeField] private int _maxHp = 3;
+    [SerializeField] private int _currentHp = 3;
+    bool _thisIsPlayer = false;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //_currentHp = _maxHp;
+        _thisIsPlayer = GetComponent<GranjeroMovement>() != null;
     }
 
     // Update is called once per frame
-    void Update()
+    public void changeHealth(int damage)
     {
-        
+        _currentHp -= damage;
+        if (_currentHp > _maxHp)
+        {
+            _currentHp = _maxHp;
+        }
+
+        if (_currentHp <= 0)
+        {
+            Die();
+        }
+
+    }
+    private void Die()
+    {
+        if (_thisIsPlayer)
+        {
+           // GameManager.Instance.PlayerIsDead();
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

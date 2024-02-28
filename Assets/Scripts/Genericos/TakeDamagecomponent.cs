@@ -5,21 +5,21 @@ using UnityEngine;
 public class TakeDamagecomponent : MonoBehaviour
 {
 
-    HPManager HPManager;
+    HealthComponent _healthComponent;
     Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        HPManager = GetComponent<HPManager>();
+        _healthComponent = GetComponent<HealthComponent>();
     }
 
     // Update is called once per frame
     public void TakeDamage(int damage)
     {
-        if (HPManager != null)
+        if (_healthComponent != null)
         {
-            HPManager.changeCurrentHealth(damage);
+            _healthComponent.changeHealth(damage);
         }
     }
 }
