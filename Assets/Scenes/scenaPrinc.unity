@@ -288,6 +288,7 @@ GameObject:
   - component: {fileID: 567251865}
   - component: {fileID: 567251864}
   - component: {fileID: 567251863}
+  - component: {fileID: 567251867}
   - component: {fileID: 567251866}
   - component: {fileID: 567251862}
   m_Layer: 6
@@ -355,9 +356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementEnemy: {x: 0, y: 0}
-  player: {fileID: 1027458621}
   speed: 2
-  damage: 1
 --- !u!212 &567251864
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -441,6 +440,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   limit1: {fileID: 934746202}
   limit2: {fileID: 1057933151}
+--- !u!114 &567251867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567251861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff214463d32ebf44d8618a5f70bd02b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1027458621}
+  damage: -1
 --- !u!1 &934746202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1760,7 +1773,8 @@ GameObject:
   - component: {fileID: 1027458623}
   - component: {fileID: 1027458622}
   - component: {fileID: 1027458626}
-  - component: {fileID: 1027458627}
+  - component: {fileID: 1027458628}
+  - component: {fileID: 1027458629}
   m_Layer: 0
   m_Name: Granjero
   m_TagString: Untagged
@@ -1937,21 +1951,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1027458627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1027458621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e8bf4242cfed41429bc9485277b84e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 6
-  impulso: 27
-  velCaida: 20
 --- !u!114 &1027458628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1964,9 +1963,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1d352d9ca4d5447b3576276f03fe29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startingHp: 3
-  _currentHp: 0
-  _thisIsPlayer: 1
+  _maxHp: 3
+  _currentHp: 3
+--- !u!114 &1027458629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027458621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d3f687e41c467f4b838e24598e6290b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
+  impulso: 27
+  velCaida: 20
 --- !u!1 &1057933151
 GameObject:
   m_ObjectHideFlags: 0
