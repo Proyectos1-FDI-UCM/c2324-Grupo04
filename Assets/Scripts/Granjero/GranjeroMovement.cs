@@ -9,12 +9,27 @@ public class GranjeroMovement : MonoBehaviour
     private Rigidbody2D rb;
     private float Horizontal;
 
-    [SerializeField] private int speed = 3;
-    [SerializeField] private float impulso = 3;
+    
+    [SerializeField] private int _velocidadOveja = 3;
+    [SerializeField] private float _impulsoOveja = 3;
+    [SerializeField] private int _velocidadInicial = 3;
+    [SerializeField] private float _impulsoInicial = 3;
     [SerializeField] private float velCaida = 20;
+
+
+
+
+    private int speed;
+    private float impulso;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        speed = _velocidadInicial;
+        impulso = _impulsoInicial;
     }
 
 
@@ -31,7 +46,19 @@ public class GranjeroMovement : MonoBehaviour
     {
         movement = value.Get<Vector2>();
     }
-   
+
+    public void OvejaSoltada()
+    {
+        speed = _velocidadInicial;
+        impulso = _impulsoInicial;
+    }
+
+    public void OvejaRecogida()
+    {
+        speed = _velocidadOveja;
+        impulso = _impulsoOveja;
+    }
+
     private void FixedUpdate ()
     {
         //Variante 1

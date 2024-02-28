@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] HorcaAttack _playersHorcaAttack;
     //[SerializeField] HorcaAttack _playersHorcaAttack;
     [SerializeField] HealthComponent _playerHealth;
+    [SerializeField] GranjeroMovement _granjeroMovement;
     #endregion 
 
     #region methods
@@ -93,7 +94,8 @@ public class GameManager : MonoBehaviour
         }
         else if (codigo == 30)
         {
-            Debug.Log("Has recogido una oveja");
+            Debug.Log("Has recogido la oveja");
+            _granjeroMovement.OvejaRecogida();
         }
     }
 
