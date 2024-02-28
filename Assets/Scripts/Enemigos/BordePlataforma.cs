@@ -10,11 +10,11 @@ public class BordePlataforma : MonoBehaviour
         Debug.Log("Cambia Dirreccion");
         if (limit == 1)
         {
-            enemy.GetComponent<EnemigoMov>().movementEnemy = Vector2.right;
+            enemy.GetComponent<EnemyMovement>().movementEnemy = Vector2.right;
         }
         else if (limit == 2)
         {
-            enemy.GetComponent<EnemigoMov>().movementEnemy = Vector2.left;
+            enemy.GetComponent<EnemyMovement>().movementEnemy = Vector2.left;
         }
     }
 

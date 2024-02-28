@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LoboMov : MonoBehaviour
 {
-    private EnemigoMov enemigoMov;
+    private EnemyMovement _enemyMovement;
     public GameObject limit1;
     public GameObject limit2;
     private int limit;
@@ -17,22 +17,22 @@ public class LoboMov : MonoBehaviour
             if (collision.gameObject == limit1)
             {
                 limit = 1;
-                limit1.GetComponent<BordePlataforma>().ChangeDirection(enemigoMov.movementEnemy, limit);
+                limit1.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
                 Debug.Log("Interacting with Child 1");
             }
             if (collision.gameObject == limit2)
             {
                 limit = 2;
-                limit2.GetComponent<BordePlataforma>().ChangeDirection(enemigoMov.movementEnemy, limit);
+                limit2.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
                 Debug.Log("Interacting with Child 2");
             }
-            Debug.Log(enemigoMov.movementEnemy);
+            Debug.Log(_enemyMovement.movementEnemy);
         }
     }
     // Start is called before the first frame update
     void Start()
     {
-        enemigoMov = GetComponent<EnemigoMov>();
+        _enemyMovement = GetComponent<EnemyMovement>();
     }
 
     // Update is called once per frame

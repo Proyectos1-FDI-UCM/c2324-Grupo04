@@ -243,8 +243,8 @@ GameObject:
   - component: {fileID: 665441295}
   - component: {fileID: 665441294}
   - component: {fileID: 665441293}
-  - component: {fileID: 665441292}
   - component: {fileID: 665441296}
+  - component: {fileID: 665441297}
   m_Layer: 0
   m_Name: Lobo
   m_TagString: Untagged
@@ -252,18 +252,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &665441292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665441291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cc7fd9790e598a4586045563a24f6bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &665441293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,6 +378,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &665441297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665441291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ed993e20ec28f409d638c9a3bafe57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementEnemy: {x: 0, y: 0}
+  speed: 3
 --- !u!1 &1082328310
 GameObject:
   m_ObjectHideFlags: 0
@@ -10039,7 +10041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthIncrement: 0
   _maxHealthIncrement: 0
-  _playersHorcaAttack: {fileID: 0}
+  _playersHorcaAttack: {fileID: 1082328317}
   _playerHealth: {fileID: 0}
 --- !u!114 &1796217534
 MonoBehaviour:
@@ -10103,11 +10105,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4198195396514210018, guid: d6313425f14d8c246bf12c81da0a32f2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.77
+      value: -5.81
       objectReference: {fileID: 0}
     - target: {fileID: 4198195396514210018, guid: d6313425f14d8c246bf12c81da0a32f2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.16
+      value: -3.19
       objectReference: {fileID: 0}
     - target: {fileID: 4198195396514210018, guid: d6313425f14d8c246bf12c81da0a32f2, type: 3}
       propertyPath: m_LocalPosition.z

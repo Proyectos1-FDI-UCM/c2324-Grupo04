@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class EnemigoMov : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
     public Vector2 movementEnemy;
     private Transform _myTransform;
