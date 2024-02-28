@@ -14,6 +14,7 @@ public class HorcaAttack : MonoBehaviour
     {                                                                          // Idealmente este vector director lo controla el GranjeroMovement
         GameObject hitbox = Instantiate(_hitboxPrefab, _myTransform.position + Vector3.right * _horizontalOffset, _myTransform.rotation);
         Destroy(hitbox, _hitboxDuration);
+        Debug.Log("Ataca");
     }
 
     // Start is called before the first frame update
