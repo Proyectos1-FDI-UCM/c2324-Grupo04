@@ -6,7 +6,6 @@ public class PickUpComponent : MonoBehaviour
 {
     [SerializeField]
     public int valor = 1;
-    public GameManager gameManager;
 
 
 
@@ -18,7 +17,7 @@ public class PickUpComponent : MonoBehaviour
 
         if (granjeroMovement != null) // Comprueba que granjeroMovement existe (y por tanto que lo que ha chocado es el granjero)
         {
-            gameManager.SumarObjetos(valor);
+            GameManager.Instance.SumarObjetos(valor);
             Destroy(this.gameObject);
         }
     }
