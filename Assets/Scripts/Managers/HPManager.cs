@@ -24,11 +24,12 @@ public class HPManager : MonoBehaviour
     // Update is called once per frame
     public void changeCurrentHealth(int damage)
     {
+        Debug.Log("Cambia Vida");
         _currentHp -= damage;
         if(_currentHp > _startingHp) _currentHp = _startingHp;
 
         if (_currentHp <= 0) Die();
-
+        Debug.Log(_currentHp);
     }
     private void Die()
     {

@@ -11,7 +11,7 @@ public class GranjeroMovement : MonoBehaviour
 
     [SerializeField] private int speed = 3;
     [SerializeField] private float impulso = 3;
-
+    [SerializeField] private float velCaida = 20;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -39,13 +39,16 @@ public class GranjeroMovement : MonoBehaviour
     {
         //Variante 1
         //rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime); //Sin aceleracion
-       
+
         //variante 2 con aceleracion1   (se puede cambiar el linear drag)
-        
+
         if (movement.x != 0){
             rb.velocity = movement * speed + Vector2.up * rb.velocity.y;
         }
-        
+        if (rb.velocity.y < -velCaida)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -velCaida);
+        }
 
         //variante 3 con aceleracion2
         /*
