@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    #region variables
+
+    [SerializeField] private int _healthIncrement = 2;
+    [SerializeField] private int _maxHealthIncrement = 2;
+
+    #endregion
     #region properties
-    
+
 
     static private GameManager _instance;
     
@@ -60,11 +66,11 @@ public class GameManager : MonoBehaviour
             }
             else if (codigo == 2)
             {
-                _playerHealth.ChangeHealth(2);
+                _playerHealth.ChangeHealth(_healthIncrement);
             }
             else if (codigo == 3)
             {
-                _playerHealth.ChangeMaxHealth(2);
+                _playerHealth.ChangeMaxHealth(_maxHealthIncrement);
             }
         }
         else if (codigo < 20)
