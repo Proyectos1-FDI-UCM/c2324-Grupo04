@@ -21,9 +21,10 @@ public class HealthComponent : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void changeHealth(int damage)
+    public void changeHealth(int addition)
     {
-        _currentHp -= damage;
+        Debug.Log("Cambio de vida: " +  addition);
+        _currentHp += addition;
         if (_currentHp > _maxHp)
         {
             _currentHp = _maxHp;
