@@ -120,6 +120,17 @@
                 },
                 {
                     "name": "",
+                    "id": "da9be4cc-0ff4-48fa-b781-cffc664dba4f",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "3f429d76-44d8-4507-a419-3a6c9f81919b",
                     "path": "<Keyboard>/j",
                     "interactions": "",

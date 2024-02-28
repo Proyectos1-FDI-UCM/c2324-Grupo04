@@ -274,7 +274,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followSpeed: 2
-  zPos: -10
   xOffset: 1
   yOffset: 1
   target: {fileID: 1027458625}
@@ -1480,7 +1479,7 @@ GameObject:
   - component: {fileID: 1027458626}
   - component: {fileID: 1027458627}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Granjero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1700,6 +1699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5d6bb05ee9fdd47ac1b2d0f1810880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playersHorcaAttack: {fileID: 0}
 --- !u!114 &1796217534
 MonoBehaviour:
   m_ObjectHideFlags: 0
