@@ -9,9 +9,18 @@ public class Create : MonoBehaviour
     private Transform _myTransform;
     private void OnAction2()
     {
-        GameObject trampolin = Instantiate(Trampoline, _myTransform.position, Quaternion.identity);
-        print(trampolin);
+        if (GameManager.Instance.ObtenerCuerdas() >= 5)
+        {
+            ConstruirTrampolin();
+        }
     }
+
+    private void ConstruirTrampolin()
+    {
+        GameObject trampolin = Instantiate(Trampoline, _myTransform.position, Quaternion.identity);
+        Debug.Log("Trampolín construido!");
+    }
+}
     private void Start()
     {
         _myTransform = transform;
