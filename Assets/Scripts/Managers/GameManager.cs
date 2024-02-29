@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     static private GameManager _instance;
     
 
-    static public GameManager Instance // Todos podéis usar este método (escrito: GameManager.Instance) para acceder al GameManager y a cualquiera de sus métodos
+    static public GameManager Instance // Todos podÃ©is usar este mÃ©todo (escrito: GameManager.Instance) para acceder al GameManager y a cualquiera de sus mÃ©todos
     {
         get { return _instance; }
     }
@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     private int _cuerda = 0;
     private int _monedas = 0;
 
-    public int ObjetosTotales { get { return _cuerda; } } // ¿Qué hace este método?
+    public int ObjetosTotales { get { return _cuerda; } } // Â¿QuÃ© hace este mÃ©todo?
 
     #endregion
 
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (_instance == null) _instance = this; // Sólo queremos un GameManager, así que usamos el patrón singleton
+        if (_instance == null) _instance = this; // SÃ³lo queremos un GameManager, asÃ­ que usamos el patrÃ³n singleton
         else Destroy(gameObject);
     }
 
@@ -98,7 +98,10 @@ public class GameManager : MonoBehaviour
             _granjeroMovement.OvejaRecogida();
         }
     }
-
+public int ObtenerCuerdas()
+    {
+        return _cuerda;
+    }
     #endregion
 }
 
