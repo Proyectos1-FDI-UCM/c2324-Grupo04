@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class Create : MonoBehaviour
 {
@@ -20,10 +21,9 @@ public class Create : MonoBehaviour
         GameObject trampolin = Instantiate(Trampoline, _myTransform.position, Quaternion.identity);
         Debug.Log("Trampolín construido!");
     }
-}
     private void Start()
     {
-        _myTransform = transform;
+    _myTransform = transform;
     }
 
 }
