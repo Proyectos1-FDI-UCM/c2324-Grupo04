@@ -14,7 +14,7 @@ public class GranjeroMovement : MonoBehaviour
     [SerializeField] private float _impulsoOveja = 3;
     [SerializeField] private int _velocidadInicial = 3;
     [SerializeField] private float _impulsoInicial = 3;
-    [SerializeField] private float velCaida = 20;
+    [SerializeField] private float velCaida = 0;
 
 
 
