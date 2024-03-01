@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1640964514911560491}
   - component: {fileID: 469537455925326949}
   - component: {fileID: 8518572029356195981}
+  - component: {fileID: 3505807150843220732}
   m_Layer: 0
   m_Name: Granjero
   m_TagString: Untagged
@@ -232,3 +233,17 @@ MonoBehaviour:
   Trampoline: {fileID: 3268378158735985531, guid: 495aa111aa0c72144b8f376ac8472fb1, type: 3}
   _tacoste: 0
   _secoste: 0
+--- !u!114 &3505807150843220732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2465212164272183052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1d352d9ca4d5447b3576276f03fe29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHp: 3
+  _currentHp: 3
