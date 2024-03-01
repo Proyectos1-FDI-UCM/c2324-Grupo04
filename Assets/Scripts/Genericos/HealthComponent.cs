@@ -45,7 +45,8 @@ public class HealthComponent : MonoBehaviour
     {
         if (_thisIsPlayer)
         {
-           // GameManager.Instance.PlayerIsDead();
+            // GameManager.Instance.PlayerIsDead();
+            Debug.Log("Fin de la partida");
         }
         else
         {

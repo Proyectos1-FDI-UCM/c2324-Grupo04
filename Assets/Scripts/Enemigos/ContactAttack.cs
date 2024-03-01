@@ -6,7 +6,6 @@ public class ContactAttack : MonoBehaviour
 {
     private Transform _myTransform;
     private HealthComponent _healthComponent;
-    public GameObject player;
 
     [SerializeField] private int damage = -1;
     private void OnTriggerEnter2D(Collider2D collision)
@@ -14,7 +13,7 @@ public class ContactAttack : MonoBehaviour
         Debug.Log("Collision");
         if (collision.gameObject.GetComponent<GranjeroMovement>() != null || collision.gameObject.GetComponent<OvejaInteraction>() != null)
         {
-            player.GetComponent<HealthComponent>().ChangeHealth(damage);
+            collision.gameObject.GetComponent<HealthComponent>().ChangeHealth(damage);
             Debug.Log("Colisión con el granjero o con la oveja");
         }
     }
