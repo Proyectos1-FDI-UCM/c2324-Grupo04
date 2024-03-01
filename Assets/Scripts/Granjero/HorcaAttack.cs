@@ -12,7 +12,19 @@ public class HorcaAttack : MonoBehaviour
 
     void OnAction1()
     {                                                                          // Idealmente este vector director lo controla el GranjeroMovement
-        GameObject hitbox = Instantiate(_hitboxPrefab, _myTransform.position + Vector3.right * _horizontalOffset, _myTransform.rotation);
+        //GameObject hitbox = Instantiate(_hitboxPrefab, _myTransform.position + Vector3.right * _horizontalOffset, _myTransform.rotation);
+        GameObject hitbox;
+        if (_myGranjeroMovement.Movement().x >= 0)
+        {
+            hitbox = Instantiate(_hitboxPrefab, _myTransform.position, _myTransform.rotation);
+            hitbox.transform.position += Vector3.right * _horizontalOffset;
+        }
+        else
+        {
+            hitbox = Instantiate(_hitboxPrefab, _myTransform.position, _myTransform.rotation);
+            hitbox.transform.position += Vector3.left * _horizontalOffset;
+            Debug.Log("Vas para atrás");
+        }
         Destroy(hitbox, _hitboxDuration);
         Debug.Log("Ataca");
     }
