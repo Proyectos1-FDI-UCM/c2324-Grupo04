@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5309802202278772231}
   - component: {fileID: 1640964514911560491}
   - component: {fileID: 469537455925326949}
+  - component: {fileID: 8518572029356195981}
   m_Layer: 0
   m_Name: Granjero
   m_TagString: Untagged
@@ -213,3 +214,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
+--- !u!114 &8518572029356195981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2465212164272183052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6716e66647947fd4a8f6a17abdc259c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Trampoline: {fileID: 3268378158735985531, guid: 495aa111aa0c72144b8f376ac8472fb1, type: 3}
+  _tacoste: 0
+  _secoste: 0
