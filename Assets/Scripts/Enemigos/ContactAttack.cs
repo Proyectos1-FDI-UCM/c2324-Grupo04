@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AtaqueEnem : MonoBehaviour
+public class ContactAttack : MonoBehaviour
 {
     private Transform _myTransform;
     private HealthComponent _healthComponent;
@@ -12,10 +12,10 @@ public class AtaqueEnem : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Collision");
-        if (collision.gameObject.GetComponent<GranjeroMovement>() != null)
+        if (collision.gameObject.GetComponent<GranjeroMovement>() != null || collision.gameObject.GetComponent<OvejaInteraction>() != null)
         {
             player.GetComponent<HealthComponent>().ChangeHealth(damage);
-            Debug.Log("Collision Granjero");
+            Debug.Log("Colisión con el granjero o con la oveja");
         }
     }
     // Start is called before the first frame update
