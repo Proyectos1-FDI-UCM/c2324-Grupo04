@@ -16,17 +16,15 @@ public class HorcaAttack : MonoBehaviour
         GameObject hitbox;
         if (_myGranjeroMovement.Movement().x >= 0)
         {
-            hitbox = Instantiate(_hitboxPrefab, _myTransform.position, _myTransform.rotation);
+            hitbox = Instantiate(_hitboxPrefab, _myTransform.position, _myTransform.rotation, _myTransform);
             hitbox.transform.position += Vector3.right * _horizontalOffset;
         }
         else
         {
-            hitbox = Instantiate(_hitboxPrefab, _myTransform.position, _myTransform.rotation);
+            hitbox = Instantiate(_hitboxPrefab, _myTransform.position, _myTransform.rotation, _myTransform);
             hitbox.transform.position += Vector3.left * _horizontalOffset;
-            Debug.Log("Vas para atrás");
         }
         Destroy(hitbox, _hitboxDuration);
-        Debug.Log("Ataca");
     }
 
     // Start is called before the first frame update
