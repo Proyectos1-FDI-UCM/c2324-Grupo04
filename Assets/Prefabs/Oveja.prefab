@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7387803279936268349}
   - component: {fileID: 9091696225629495981}
   - component: {fileID: 2735028118702644052}
+  - component: {fileID: -3628959675988076477}
   m_Layer: 0
   m_Name: Oveja
   m_TagString: Untagged
@@ -135,3 +136,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHp: 3
   _currentHp: 3
+--- !u!114 &-3628959675988076477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5091619765839581776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb2ac38e76569e4aa61a5792cecc889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
