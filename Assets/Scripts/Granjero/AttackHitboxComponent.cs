@@ -4,9 +4,19 @@ using UnityEngine;
 
 public class AttackHitboxComponent : MonoBehaviour
 {
+    #region references 
+
+    private Transform _myTransform;
+    private Vector3 _parentTransform;
+
+    #endregion
+
     #region parameters
     //[SerializeField] float _duration; // En principio es el HorcaAttack el que destruye este objeto
-    [SerializeField] int _damage; // HA DE SER UN NÚMERO NEGATIVO
+    int _damage; // HA DE SER UN NÚMERO NEGATIVO
+    float _speed;
+    Vector2 _direction;
+    float _maxOffset;
     #endregion
 
     #region variables
@@ -14,6 +24,20 @@ public class AttackHitboxComponent : MonoBehaviour
     #endregion
 
 
+    private void Awake()
+    {
+        //Debug.Log("Existo");
+        _myTransform = transform;
+    }
+
+    public void SetUp(int damage, float speed, Vector2 dir, Vector3 parentPosition, float maxOffset)
+    {
+        _damage = damage;
+        _speed = speed;
+        _direction = dir;
+        _parentTransform = parentPosition;
+        _maxOffset = maxOffset;
+    }
 
 
     public void OnTriggerEnter(Collider other)
@@ -29,13 +53,15 @@ public class AttackHitboxComponent : MonoBehaviour
 
     
 
-    /*void Update() // En principio es el HorcaAttack el que destruye este objeto
+    void Update()
     {
-        if (_duration <= 0)
+        if ((_myTransform.position - _parentTransform).magnitude < _maxOffset)
         {
-            Destroy(this.GameObject)
+            _myTransform.position += _direction.x * Vector3.right * _speed * Time.deltaTime;
         }
+        
 
-        _duration -= Time.deltaTime;
-    }*/
+
+
+    }
 }
