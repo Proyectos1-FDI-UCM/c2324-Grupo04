@@ -29,6 +29,7 @@ public class PickUpComponent : MonoBehaviour
         if (granjeroMovement != null) // Comprueba que granjeroMovement existe (y por tanto que lo que ha chocado es el granjero)
         {
             GameManager.Instance.RefistrarObjetos(_codigo);
+            Destroy(gameObject);
         }
     }
 }
