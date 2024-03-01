@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     
 
     static public GameManager Instance // Todos podéis usar este método (escrito: GameManager.Instance) para acceder al GameManager y a cualquiera de sus métodos
+
     {
         get { return _instance; }
     }
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     private int _monedas = 0;
 
     public int ObjetosTotales { get { return _cuerda; } } // ¿Qué hace este método?
+
 
     #endregion
 

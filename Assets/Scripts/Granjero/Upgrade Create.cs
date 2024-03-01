@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
-public class Create : MonoBehaviour
+/*public class Create : MonoBehaviour
 {
     [SerializeField]
     private GameObject Trampoline;
@@ -39,4 +39,4 @@ public class Create : MonoBehaviour
     {
     _myTransform = transform;
     }
-}
+}*/

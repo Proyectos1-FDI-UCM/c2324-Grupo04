@@ -9,11 +9,11 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private float yOffset = 1f;
     [SerializeField] private Transform target;
     private float yOffsetStartx1 = 73f;
-	  private float yOffsetStarty1 = -3.5f;
-	  private float yOffsetEnd1 = 93f;
-	  private float zPos = -10f;
-    private float Camerax1=84.4f;
-	  private float Cameray1 = -9f;
+	private float yOffsetStarty1 = -3.5f;
+	private float yOffsetEnd1 = 93f;
+	private float zPos = -10f;
+    private float Camerax1=83.4f;
+	private float Cameray1 = -9f;
 
 
 	// Start is called before the first frame update
