@@ -400,7 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6716e66647947fd4a8f6a17abdc259c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Trampoline: {fileID: 0}
+  Trampoline: {fileID: 3268378158735985531, guid: 495aa111aa0c72144b8f376ac8472fb1, type: 3}
 --- !u!1 &1185466417
 GameObject:
   m_ObjectHideFlags: 0
