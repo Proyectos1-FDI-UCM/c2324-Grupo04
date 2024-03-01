@@ -178,6 +178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd74177fd47dafa40b16a7835851af10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damage: 2
+  _hitboxSpeed: 24
   _hitboxDuration: 0.4
   _hitboxPrefab: {fileID: 3472019101419376355, guid: b13fcce89b89a3046a48b4568c7a80bf, type: 3}
   _horizontalOffset: 1

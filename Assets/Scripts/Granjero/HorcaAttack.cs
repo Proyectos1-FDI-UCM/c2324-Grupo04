@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class HorcaAttack : MonoBehaviour
 {
+    [SerializeField] private int _damage = 2;
+    [SerializeField] private float _hitboxSpeed = 2;
+    private Vector2 _dir;
     [SerializeField] private float _hitboxDuration = 0.4f;
     [SerializeField] private GameObject _hitboxPrefab;
     [SerializeField] private float _horizontalOffset = 0.4f;
@@ -11,19 +14,18 @@ public class HorcaAttack : MonoBehaviour
     private GranjeroMovement _myGranjeroMovement;
 
     void OnAction1()
-    {                                                                          // Idealmente este vector director lo controla el GranjeroMovement
-        //GameObject hitbox = Instantiate(_hitboxPrefab, _myTransform.position + Vector3.right * _horizontalOffset, _myTransform.rotation);
-        GameObject hitbox;
+    {
+        GameObject hitbox = Instantiate(_hitboxPrefab, _myTransform.position, _myTransform.rotation);
         if (_myGranjeroMovement.Movement().x >= 0)
         {
-            hitbox = Instantiate(_hitboxPrefab, _myTransform.position, _myTransform.rotation, _myTransform);
-            hitbox.transform.position += Vector3.right * _horizontalOffset;
+            _dir = Vector2.right;
         }
         else
         {
-            hitbox = Instantiate(_hitboxPrefab, _myTransform.position, _myTransform.rotation, _myTransform);
-            hitbox.transform.position += Vector3.left * _horizontalOffset;
+            _dir = Vector2.left;
         }
+        hitbox.GetComponent<AttackHitboxComponent>().SetUp(_damage, _hitboxSpeed, _dir, _myTransform.position, _horizontalOffset);
+
         Destroy(hitbox, _hitboxDuration);
     }
 
