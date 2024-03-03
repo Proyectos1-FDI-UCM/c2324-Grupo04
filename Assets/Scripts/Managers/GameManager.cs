@@ -17,15 +17,28 @@ public class GameManager : MonoBehaviour
     
 
     static public GameManager Instance // Todos podéis usar este método (escrito: GameManager.Instance) para acceder al GameManager y a cualquiera de sus métodos
-
     {
         get { return _instance; }
     }
+
+    public Vector3 PlayerPosition()
+    {
+        return _playerTransform.position;
+    }
+
+    public Vector3 OvejaPosition()
+    {
+        return _ovejaTransform.position;
+    }
+
+
 
     private int _cuerda = 0;
     private int _monedas = 0;
 
     public int ObjetosTotales { get { return _cuerda; } } // ¿Qué hace este método?
+
+    public bool cargandoOveja = false;
 
 
     #endregion
@@ -35,9 +48,16 @@ public class GameManager : MonoBehaviour
     //[SerializeField] HorcaAttack _playersHorcaAttack;
     [SerializeField] HealthComponent _playerHealth;
     [SerializeField] GranjeroMovement _granjeroMovement;
+    private Transform _playerTransform;
+    [SerializeField] private Transform _ovejaTransform;
     #endregion 
 
     #region methods
+
+    public GranjeroMovement ReferenciaGranjero()
+    {
+        return _granjeroMovement;
+    }
 
     private void Awake()
     {
@@ -47,7 +67,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        
+        _playerTransform = _granjeroMovement.gameObject.transform;
     }
 
     private void ActivaHorca()
@@ -62,7 +82,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void RefistrarObjetos(int codigo)
+    public void RegistraObjetos(int codigo)
     {
         if (codigo < 10)
         {
@@ -100,7 +120,16 @@ public class GameManager : MonoBehaviour
             _granjeroMovement.OvejaRecogida();
         }
     }
-public int ObtenerCuerdas()
+
+    public void RegistraOveja()
+    {
+        _playerTransform.position = _ovejaTransform.position;
+        _granjeroMovement.OvejaRecogida();
+        cargandoOveja = true;
+    }
+
+
+    public int ObtenerCuerdas()
     {
         return _cuerda;
     }

@@ -13,7 +13,7 @@ public class PickUpComponent : MonoBehaviour
     /// 10 -> Horca
     /// 11 -> Pala
     /// A partir del 20 son recetas
-    /// 20 -> Receta se�uelo
+    /// 20 -> Receta señuelo
     /// 21 -> Receta trampol�n
     /// El 30 es la oveja
     /// 30 -> Oveja
@@ -28,7 +28,7 @@ public class PickUpComponent : MonoBehaviour
 
         if (granjeroMovement != null) // Comprueba que granjeroMovement existe (y por tanto que lo que ha chocado es el granjero)
         {
-            GameManager.Instance.RefistrarObjetos(_codigo);
+            GameManager.Instance.RegistraObjetos(_codigo);
             Destroy(gameObject);
         }
     }
