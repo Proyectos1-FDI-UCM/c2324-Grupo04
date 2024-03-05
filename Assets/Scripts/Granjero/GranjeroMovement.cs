@@ -20,6 +20,23 @@ public class GranjeroMovement : MonoBehaviour
     [SerializeField] private float velCaida = 0;
 
     
+    private bool choqueAbajo;
+    private bool choqueIzq;
+    private bool choqueDer;
+
+    public void SetBoolDown(bool value)
+    {
+        choqueAbajo = value;
+    }
+    public void SetBoolLeft(bool value)
+    {
+        choqueAbajo = value;
+    }
+    public void SetBoolRight(bool value)
+    {
+        choqueAbajo = value;
+    }
+
     public Vector2 Movement()
     {
         return movementTracker;
@@ -43,7 +60,7 @@ public class GranjeroMovement : MonoBehaviour
     private void  OnUp()
     {
         Debug.Log("Salto");
-        if(rb.velocity.y < 0.1)
+        if(rb.velocity.y < 0.1 && choqueAbajo)
         {
             rb.AddForce(Vector2.up * impulso, ForceMode2D.Impulse);
         }
@@ -52,7 +69,7 @@ public class GranjeroMovement : MonoBehaviour
     private void OnHorizontalMovement (InputValue value) 
     {
         movement = value.Get<Vector2>();
-        if(movement.x != 0)
+        if((movement.x < 0 && !choqueIzq) || (movement.x > 0 && !choqueDer))
         {
             movementTracker = movement;
         }

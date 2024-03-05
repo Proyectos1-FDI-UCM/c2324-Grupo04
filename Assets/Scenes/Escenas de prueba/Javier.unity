@@ -34948,9 +34948,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthIncrement: 2
   _maxHealthIncrement: 2
+  cargandoOveja: 0
   _playersHorcaAttack: {fileID: 0}
   _playerHealth: {fileID: 0}
   _granjeroMovement: {fileID: 0}
+  _ovejaTransform: {fileID: 0}
 --- !u!114 &1796217534
 MonoBehaviour:
   m_ObjectHideFlags: 0
