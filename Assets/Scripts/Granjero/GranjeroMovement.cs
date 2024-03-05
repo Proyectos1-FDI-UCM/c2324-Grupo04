@@ -60,7 +60,7 @@ public class GranjeroMovement : MonoBehaviour
     private void  OnUp()
     {
         Debug.Log("Salto");
-        if(rb.velocity.y < 0.1 && choqueAbajo)
+        if(rb.velocity.y < 0.1)// && choqueAbajo)
         {
             rb.AddForce(Vector2.up * impulso, ForceMode2D.Impulse);
         }

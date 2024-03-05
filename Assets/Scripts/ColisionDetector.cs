@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColisionDetector : MonoBehaviour
+/*public class ColisionDetector : MonoBehaviour
 {
 
     [SerializeField] private GameObject _player;
@@ -45,4 +45,4 @@ public class ColisionDetector : MonoBehaviour
     {
         _movimientoPlayer = _player.GetComponent<GranjeroMovement>();
     }
-}
+}*/

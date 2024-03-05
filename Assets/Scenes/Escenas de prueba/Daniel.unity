@@ -235,31 +235,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2465212164272183052, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 919079073}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
---- !u!1 &919079072 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2465212164272183052, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
-  m_PrefabInstance: {fileID: 919079071}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &919079073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919079072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6716e66647947fd4a8f6a17abdc259c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Trampoline: {fileID: 3268378158735985531, guid: 495aa111aa0c72144b8f376ac8472fb1, type: 3}
-  _tacoste: 0
-  _secoste: 0
 --- !u!1 &1185466417
 GameObject:
   m_ObjectHideFlags: 0
