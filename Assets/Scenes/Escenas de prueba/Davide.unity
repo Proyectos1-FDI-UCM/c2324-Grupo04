@@ -27578,6 +27578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   limit1: {fileID: 132100981}
   limit2: {fileID: 1391137288}
+  tiempoHuida: 3
 --- !u!114 &1625052925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27592,6 +27593,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerDetected: 0
   granjero: {fileID: 23019117}
+  ovejaDetected: 0
+  oveja: {fileID: 5091619765839581776, guid: a4a39fd6c06667148bafff6eca868a35, type: 3}
+  "se\xF1ueloDetected": 0
+  "se\xF1uelo": {fileID: 5091619765839581776, guid: 8a41b4a3e482b2048beeb98722315e69, type: 3}
   AreaDetecX: 10
   AreaDetecY: 5
 --- !u!61 &1625052926
@@ -27665,7 +27670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementEnemy: {x: 0, y: 0}
-  speed: 3
+  speed: 2
 --- !u!212 &1625052929
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -39481,6 +39486,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerDetected: 0
   granjero: {fileID: 23019117}
+  ovejaDetected: 0
+  oveja: {fileID: 5091619765839581776, guid: a4a39fd6c06667148bafff6eca868a35, type: 3}
+  "se\xF1ueloDetected": 0
+  "se\xF1uelo": {fileID: 5091619765839581776, guid: 8a41b4a3e482b2048beeb98722315e69, type: 3}
   AreaDetecX: 10
   AreaDetecY: 5
 --- !u!1001 &2145284527
@@ -39598,13 +39607,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8363042434839160541, guid: fc0820cc4d5186d40a94d87dc940503e, type: 3}
       propertyPath: m_Name
-      value: Enemigo
+      value: Lobo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8363042434839160541, guid: fc0820cc4d5186d40a94d87dc940503e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6175407392545446831}
   m_SourcePrefab: {fileID: 100100000, guid: fc0820cc4d5186d40a94d87dc940503e, type: 3}
+--- !u!1 &6175407392545446830 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8363042434839160541, guid: fc0820cc4d5186d40a94d87dc940503e, type: 3}
+  m_PrefabInstance: {fileID: 6175407392545446829}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6175407392545446831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6175407392545446830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ef09ecd6f9ed649a3525943a84e7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDetected: 0
+  granjero: {fileID: 23019117}
+  ovejaDetected: 0
+  oveja: {fileID: 5091619765839581776, guid: a4a39fd6c06667148bafff6eca868a35, type: 3}
+  "se\xF1ueloDetected": 0
+  "se\xF1uelo": {fileID: 5091619765839581776, guid: 8a41b4a3e482b2048beeb98722315e69, type: 3}
+  AreaDetecX: 10
+  AreaDetecY: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
