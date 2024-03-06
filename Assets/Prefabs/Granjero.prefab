@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 469537455925326949}
   - component: {fileID: 8518572029356195981}
   - component: {fileID: 3505807150843220732}
+  - component: {fileID: 8818317229978637465}
   m_Layer: 7
   m_Name: Granjero
   m_TagString: Untagged
@@ -166,6 +167,7 @@ MonoBehaviour:
   _velocidadInicial: 4
   _impulsoInicial: 19
   velCaida: 20
+  choqueAbajo: 0
 --- !u!114 &1640964514911560491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,3 +249,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHp: 3
   _currentHp: 3
+--- !u!114 &8818317229978637465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2465212164272183052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f506769ea641d44a32e8caa183ff8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceDown: 1
+  distanceSide: 0.5
+  layerToHit:
+    serializedVersion: 2
+    m_Bits: 256
