@@ -13,11 +13,12 @@ public class Create : MonoBehaviour
     [SerializeField]
     private float _secoste = 0;
 
+    private GranjeroMovement _playerMovement;
 
     private void OnAction2()
     {
 
-        if (GameManager.Instance.ObtenerCuerdas() >= _tacoste)
+        if (GameManager.Instance.ObtenerCuerdas() >= _tacoste && _playerMovement.choqueAbajo)
         {
             GameObject trampolin = Instantiate(Trampoline, _myTransform.position , Quaternion.identity);
             print(trampolin);
@@ -28,6 +29,7 @@ public class Create : MonoBehaviour
     private void Start()
     {
         _myTransform = transform;
+        _playerMovement = GetComponent<GranjeroMovement>();
     }
 
 }
