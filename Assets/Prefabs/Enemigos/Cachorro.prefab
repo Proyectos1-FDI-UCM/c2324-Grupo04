@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDetected: 0
-  granjero: {fileID: 0}
+  granjero: {fileID: 2465212164272183052, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
   ovejaDetected: 0
   oveja: {fileID: 5091619765839581776, guid: a4a39fd6c06667148bafff6eca868a35, type: 3}
   "se\xF1ueloDetected": 0
