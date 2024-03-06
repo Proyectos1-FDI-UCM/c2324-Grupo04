@@ -30,10 +30,8 @@ public class ZorroMov : MonoBehaviour
         }
     }
 
-    private void seguirGranjero()
+    private void seguir(int cambioDirec)
     {
-        _sensorEnem.seguirPlayer(ref cambioDirec);
-
         if (borde && cambioDirec != 0)
         {
             if (limit == 1 && cambioDirec == -1) { cambioDirec = 0; }
@@ -55,8 +53,6 @@ public class ZorroMov : MonoBehaviour
             GetComponent<EnemyMovement>().movementEnemy = Vector2.zero;
         }
     }
-
-    // Start is called before the first frame update
     void Start()
     {
         _enemyMovement = GetComponent<EnemyMovement>();
@@ -68,9 +64,20 @@ public class ZorroMov : MonoBehaviour
     {
         if (cambioDirec == 0) { cambioDirec = -1; }
         
-        if (_sensorEnem.playerDetected)
+        if (_sensorEnem.señueloDetected)
         {
-            seguirGranjero();
+            _sensorEnem.seguirSeñuelo(ref cambioDirec);
+            seguir(cambioDirec);
+        }
+        else if (_sensorEnem.playerDetected)
+        {
+            _sensorEnem.seguirPlayer(ref cambioDirec);
+            seguir(cambioDirec);
+        }
+        else if (_sensorEnem.ovejaDetected)
+        {
+            _sensorEnem.seguirOveja(ref cambioDirec);
+            seguir(cambioDirec);
         }
         
         else

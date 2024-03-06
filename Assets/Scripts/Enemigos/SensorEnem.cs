@@ -9,6 +9,10 @@ public class SensorEnem : MonoBehaviour
     private Transform _myTransform;
     public bool playerDetected = false;
     public GameObject granjero;
+    public bool ovejaDetected = false;
+    public GameObject oveja;
+    public bool señueloDetected = false;
+    public GameObject señuelo;
 
     [SerializeField]
     private float AreaDetecX;
@@ -31,13 +35,37 @@ public class SensorEnem : MonoBehaviour
         else { cambioDirec = 0; }
     }
 
-    // Start is called before the first frame update
+    public void seguirOveja(ref int cambioDirec)
+    {
+        if (oveja.transform.position.x - transform.position.x < -0.3)
+        {
+            cambioDirec = -1;
+        }
+        else if (oveja.transform.position.x - transform.position.x > 0.3)
+        {
+            cambioDirec = 1;
+        }
+        else { cambioDirec = 0; }
+    }
+
+    public void seguirSeñuelo(ref int cambioDirec)
+    {
+        if (señuelo.transform.position.x - transform.position.x < -0.3)
+        {
+            cambioDirec = -1;
+        }
+        else if (señuelo.transform.position.x - transform.position.x > 0.3)
+        {
+            cambioDirec = 1;
+        }
+        else { cambioDirec = 0; }
+    }
+
     void Start()
     {
         _myTransform = transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (playerDetected) { playerDetected = false; }
@@ -47,6 +75,21 @@ public class SensorEnem : MonoBehaviour
         {
             playerDetected = true;
         }
-       
+
+        if (ovejaDetected) { ovejaDetected = false; }
+        xDistance = Math.Abs(oveja.transform.position.x - transform.position.x);
+        yDistance = Math.Abs(oveja.transform.position.y - transform.position.y);
+        if (xDistance < AreaDetecX && yDistance < AreaDetecY)
+        {
+            ovejaDetected = true;
+        }
+
+        if (señueloDetected) { señueloDetected = false; }
+        xDistance = Math.Abs(señuelo.transform.position.x - transform.position.x);
+        yDistance = Math.Abs(señuelo.transform.position.y - transform.position.y);
+        if (xDistance < AreaDetecX && yDistance < AreaDetecY)
+        {
+            señueloDetected = true;
+        }
     }
 }
