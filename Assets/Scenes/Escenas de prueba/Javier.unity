@@ -157,7 +157,7 @@ MonoBehaviour:
   followSpeed: 2
   xOffset: 1
   yOffset: 1
-  target: {fileID: 739196717}
+  target: {fileID: 1438024667}
 --- !u!81 &47711061
 AudioListener:
   m_ObjectHideFlags: 0
@@ -304,7 +304,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1454866027
-  m_SortingLayer: -3
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -25116,11 +25116,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!4 &739196717 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5324502382298505244, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
-  m_PrefabInstance: {fileID: 1155779880}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1141043160
 GameObject:
   m_ObjectHideFlags: 0
@@ -25168,7 +25163,7 @@ Transform:
   - {fileID: 1789197506}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1155779880
+--- !u!1001 &1217872988
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -25179,18 +25174,6 @@ PrefabInstance:
     - target: {fileID: 2465212164272183052, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
       propertyPath: m_Name
       value: Granjero
-      objectReference: {fileID: 0}
-    - target: {fileID: 2465212164272183052, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5271356593743988914, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
-      propertyPath: m_SortingLayer
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5271356593743988914, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1790535283
       objectReference: {fileID: 0}
     - target: {fileID: 5324502382298505244, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25247,6 +25230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1340480273}
   - component: {fileID: 1340480272}
+  - component: {fileID: 1340480274}
   m_Layer: 0
   m_Name: Barrera de la muerte
   m_TagString: Untagged
@@ -25321,6 +25305,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1340480274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340480271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff214463d32ebf44d8618a5f70bd02b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: -1000
 --- !u!1 &1390756019
 GameObject:
   m_ObjectHideFlags: 0
@@ -25396,7 +25393,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -424262137
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -34242,6 +34239,11 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!4 &1438024667 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5324502382298505244, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
+  m_PrefabInstance: {fileID: 1217872988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1789197505
 GameObject:
   m_ObjectHideFlags: 0
@@ -34317,7 +34319,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -371145347
-  m_SortingLayer: -2
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -35001,4 +35003,4 @@ SceneRoots:
   - {fileID: 1796217536}
   - {fileID: 1141043162}
   - {fileID: 1340480273}
-  - {fileID: 1155779880}
+  - {fileID: 1217872988}
