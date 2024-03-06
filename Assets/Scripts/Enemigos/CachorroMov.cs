@@ -34,10 +34,8 @@ public class CachorroMov : MonoBehaviour
         }
     }
 
-    private void seguirOveja()
+    private void seguir(int cambioDirec)
     {
-        _sensorEnem.seguirPlayer(ref cambioDirec);
-
         if (borde && cambioDirec != 0)
         {
             if (limit == 1 && cambioDirec == -1) { cambioDirec = 0; }
@@ -59,7 +57,7 @@ public class CachorroMov : MonoBehaviour
             GetComponent<EnemyMovement>().movementEnemy = Vector2.zero;
         }
     }
-    
+
     private void huir()
     {
         _sensorEnem.seguirPlayer(ref cambioDirec);
@@ -105,10 +103,16 @@ public class CachorroMov : MonoBehaviour
                 huida = true;
                 _tiempoHuida = 0f;
             }
-            //else if (_sensorEnem.ovejaDetected)
-            //{
-            //    //seguirOveja();  
-            //}
+            else if (_sensorEnem.señueloDetected)
+            {
+                _sensorEnem.seguirSeñuelo(ref cambioDirec);
+                seguir(cambioDirec);
+            }
+            else if (_sensorEnem.ovejaDetected)
+            {
+                _sensorEnem.seguirOveja(ref cambioDirec);
+                seguir(cambioDirec);
+            }
             else
             {
                 if (limit == 1) { GetComponent<EnemyMovement>().movementEnemy = Vector2.right; }
