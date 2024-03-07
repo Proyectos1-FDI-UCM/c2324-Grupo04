@@ -8,7 +8,7 @@ public class HealthComponent : MonoBehaviour
     public int CurrentHealth { get { return _currentHp; } }
 
     [SerializeField] private int _maxHp = 3;
-    [SerializeField] private int _currentHp = 3;
+    [SerializeField] public int _currentHp = 3;
     bool _thisIsPlayer = false;
 
 
