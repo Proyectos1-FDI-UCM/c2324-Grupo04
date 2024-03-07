@@ -7,6 +7,7 @@ public class Create : MonoBehaviour
 {
     [SerializeField]
     private GameObject Trampoline;
+    private GameObject Señuelo;
     private Transform _myTransform;
 
 
@@ -31,6 +32,19 @@ public class Create : MonoBehaviour
             Debug.Log("Trampolin");
             _inventoryManager.ChangeCantidadCuerda(-1);
         } 
+    }
+
+    private void OnAction3()
+    {
+
+
+        if (_inventoryManager.nCuerda > 0 && _playerMovement.choqueAbajo)
+        {
+            GameObject señuelo = Instantiate(Señuelo, _myTransform.position, Quaternion.identity);
+            print(señuelo);
+            Debug.Log("Señuelo");
+            _inventoryManager.ChangeCantidadCuerda(-1);
+        }
     }
 
     private void Start()
