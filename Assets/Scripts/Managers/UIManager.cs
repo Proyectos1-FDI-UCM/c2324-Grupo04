@@ -7,19 +7,43 @@ public class UIManager : MonoBehaviour
     #region references
 
     [SerializeField] GameObject _menuDePausa;
-    #endregion 
+    [SerializeField] Canvas _instruccionesTrampolin;
+    [SerializeField] Canvas _instruccionesSeñuelo;
+
+    #endregion
+
+    #region variables
+
+    [SerializeField] private float _duracionInstrucciones = 1f;
+
+
+    #endregion
 
     private bool _paused = false;
     // Start is called before the first frame update
     void Start()
     {
         _menuDePausa.SetActive(false);
+        _instruccionesSeñuelo.enabled = false;
+        _instruccionesTrampolin.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void RecogidaRecetaSeñuelo()
+    {
+        _instruccionesSeñuelo.enabled = true;
+        Destroy(_instruccionesSeñuelo, _duracionInstrucciones);
+    }
+
+    public void RecogidaRecetaTrampolin()
+    {
+        _instruccionesTrampolin.enabled = true;
+        Destroy(_instruccionesTrampolin, _duracionInstrucciones);
     }
 
     private void OnPause()

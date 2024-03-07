@@ -155,7 +155,7 @@ public class GameManager : MonoBehaviour
         }
         else if (objeto == TipoObjeto.RecetaTrampolin)
         {
-            _playerCreate.ActivaTrampolin(); Debug.Log("A");
+            _playerCreate.ActivaTrampolin();
         }
         else if (objeto == TipoObjeto.Horca)
         {
@@ -172,6 +172,7 @@ public class GameManager : MonoBehaviour
     public void ChangeCantidadCuerda(int value)
     {
         _cuerda += value;
+        Debug.Log("Ahora tienes: " + _cuerda + " unidad(es) de cuerda");
     }
 
 

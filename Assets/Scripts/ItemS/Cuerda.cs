@@ -22,8 +22,8 @@ public class Cuerda : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D granjeroCollider)
     {
        if (granjeroCollider.gameObject.GetComponent<GranjeroMovement>() != null)
-        {
+       {
             _inventoryManager.ChangeCantidadCuerda(value); //
-        } 
+       } 
     }
 }
