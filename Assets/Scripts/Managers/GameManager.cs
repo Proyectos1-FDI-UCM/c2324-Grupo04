@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] HealthComponent _playerHealth;
     [SerializeField] GranjeroMovement _granjeroMovement;
     private Transform _playerTransform;
+    private Create _playerCreate;
     [SerializeField] private Transform _ovejaTransform;
     #endregion 
 
@@ -68,6 +69,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _playerTransform = _granjeroMovement.gameObject.transform;
+        _playerCreate = _granjeroMovement.gameObject.GetComponent<Create>();
     }
 
     private void ActivaHorca()
@@ -133,11 +135,15 @@ public class GameManager : MonoBehaviour
         }
         else if (objeto == TipoObjeto.RecetaSeñuelo)
         {
-            
+            _playerCreate.ActivaSeñuelo();
         }
         else if (objeto == TipoObjeto.RecetaTrampolin)
         {
-            
+            _playerCreate.ActivaTrampolin();
+        }
+        else if (objeto == TipoObjeto.Horca)
+        {
+            _playersHorcaAttack.ActivaHorca(); Debug.Log("A");
         }
     }
 

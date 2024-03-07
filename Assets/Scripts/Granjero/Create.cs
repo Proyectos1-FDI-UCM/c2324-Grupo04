@@ -20,6 +20,9 @@ public class Create : MonoBehaviour
     [SerializeField]
     private float _secoste = 0;
 
+    private bool _puedeTrampolin = false;
+    private bool _puedeSeñuelo = false;
+
     private GranjeroMovement _playerMovement;
 
     private void OnAction2()
@@ -27,7 +30,7 @@ public class Create : MonoBehaviour
        
            // if (GameManager.Instance.ObtenerCuerdas() >= _tacoste && _playerMovement.choqueAbajo)
             
-        if(_inventoryManager.nCuerda > 0 && _playerMovement.choqueAbajo)
+        if(_puedeTrampolin && _inventoryManager.nCuerda > 0 && _playerMovement.choqueAbajo)
         {
             GameObject trampolin = Instantiate(Trampoline, _myTransform.position , Quaternion.identity);
             print(trampolin);
@@ -38,13 +41,23 @@ public class Create : MonoBehaviour
 
     private void OnAction3()
     {
-        if (_inventoryManager.nCuerda > 0 && _playerMovement.choqueAbajo)
+        if (_puedeSeñuelo && _inventoryManager.nCuerda > 0 && _playerMovement.choqueAbajo)
         {
             GameObject señuelo = Instantiate(Señuelo, _myTransform.position, Quaternion.identity);
             print(señuelo);
             Debug.Log("Señuelo");
             _inventoryManager.ChangeCantidadCuerda(-1);
         }
+    }
+
+    public void ActivaTrampolin()
+    {
+        _puedeTrampolin = true;
+    }
+
+    public void ActivaSeñuelo()
+    {
+        _puedeSeñuelo = true;
     }
 
     private void Start()

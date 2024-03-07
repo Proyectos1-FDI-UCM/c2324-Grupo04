@@ -13,25 +13,34 @@ public class HorcaAttack : MonoBehaviour
     [SerializeField] private float _hitboxRadius = 1f;
     private Transform _myTransform;
     private GranjeroMovement _myGranjeroMovement;
+    private bool _puedeAtacar = false;
 
     void OnAction1()
     {
-        if (_myGranjeroMovement.Movement().x >= 0)
+        if (_puedeAtacar)
         {
-            _dir = Vector2.right;
-        }
-        else
-        {
-            _dir = Vector2.left;
-        }
+            if (_myGranjeroMovement.Movement().x >= 0)
+            {
+                _dir = Vector2.right;
+            }
+            else
+            {
+                _dir = Vector2.left;
+            }
 
-        //Collider2D[] results;
-        Vector2 position = _myTransform.position.x * Vector2.up + _myTransform.position.y * Vector2.right + _dir * _horizontalOffset;
-        Collider2D result = Physics2D.OverlapCircle(position, _hitboxRadius);
-        if (result.gameObject.GetComponent<EnemyMovement>())
-        {
-            result.gameObject.GetComponent<HealthComponent>().ChangeHealth(_damage);
+            //Collider2D[] results;
+            Vector2 position = _myTransform.position.x * Vector2.up + _myTransform.position.y * Vector2.right + _dir * _horizontalOffset;
+            Collider2D result = Physics2D.OverlapCircle(position, _hitboxRadius);
+            if (result.gameObject.GetComponent<EnemyMovement>())
+            {
+                result.gameObject.GetComponent<HealthComponent>().ChangeHealth(_damage);
+            }
         }
+    }
+
+    public void ActivaHorca()
+    {
+        _puedeAtacar = true;
     }
 
     // Start is called before the first frame update
