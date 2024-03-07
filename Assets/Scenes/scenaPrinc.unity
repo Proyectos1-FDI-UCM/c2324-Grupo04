@@ -299,6 +299,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5324502382298505244, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
   m_PrefabInstance: {fileID: 685486711}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &565602155 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3505807150843220732, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
+  m_PrefabInstance: {fileID: 685486711}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23019117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1d352d9ca4d5447b3576276f03fe29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &565602158 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1640964514911560491, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
+  m_PrefabInstance: {fileID: 685486711}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23019117}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd74177fd47dafa40b16a7835851af10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &565602159 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5309802202278772231, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
+  m_PrefabInstance: {fileID: 685486711}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23019117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d3f687e41c467f4b838e24598e6290b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &625928487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38092,10 +38125,10 @@ MonoBehaviour:
   _healthIncrement: 2
   _maxHealthIncrement: 2
   cargandoOveja: 0
-  _playersHorcaAttack: {fileID: 0}
-  _playerHealth: {fileID: 0}
-  _granjeroMovement: {fileID: 0}
-  _ovejaTransform: {fileID: 0}
+  _playersHorcaAttack: {fileID: 565602158}
+  _playerHealth: {fileID: 565602155}
+  _granjeroMovement: {fileID: 565602159}
+  _ovejaTransform: {fileID: 2051569316}
 --- !u!114 &1796217534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38121,6 +38154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24bd27a70269d9e41b89c0830ce0cf4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _menuDePausa: {fileID: 0}
 --- !u!4 &1796217536
 Transform:
   m_ObjectHideFlags: 0
@@ -38963,6 +38997,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!4 &2051569316 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4720660615894855115, guid: a4a39fd6c06667148bafff6eca868a35, type: 3}
+  m_PrefabInstance: {fileID: 625928487}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2145284527
 PrefabInstance:
   m_ObjectHideFlags: 0
