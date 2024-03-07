@@ -6,7 +6,7 @@ public class Cuerda : MonoBehaviour
 {
 
     [SerializeField]
-    private int _value = 1;
+    private int value = 1;
 
  
     private InventoryManager _inventoryManager;
@@ -23,7 +23,7 @@ public class Cuerda : MonoBehaviour
     {
        if (granjeroCollider.gameObject.GetComponent<GranjeroMovement>() != null)
         {
-            _inventoryManager.ChangeCantidadCuerda(_value); //
+            _inventoryManager.ChangeCantidadCuerda(value); //
         } 
     }
 }

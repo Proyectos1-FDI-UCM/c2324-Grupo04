@@ -27,10 +27,10 @@ public class Create : MonoBehaviour
 
     private void OnAction2()
     {
-       
-           // if (GameManager.Instance.ObtenerCuerdas() >= _tacoste && _playerMovement.choqueAbajo)
-            
-        if(_puedeTrampolin && _inventoryManager.nCuerda > 0 && _playerMovement.choqueAbajo)
+        Debug.Log("instanciaTrampolin");
+        // if (GameManager.Instance.ObtenerCuerdas() >= _tacoste && _playerMovement.choqueAbajo)
+
+        if ( _inventoryManager.nCuerda > 0 && _playerMovement.choqueAbajo) //_puedeTrampolin &&
         {
             GameObject trampolin = Instantiate(Trampoline, _myTransform.position , Quaternion.identity);
             print(trampolin);
@@ -41,7 +41,7 @@ public class Create : MonoBehaviour
 
     private void OnAction3()
     {
-        if (_puedeSeñuelo && _inventoryManager.nCuerda > 0 && _playerMovement.choqueAbajo)
+        if (_inventoryManager.nCuerda > 0 && _playerMovement.choqueAbajo) //_puedeSeñuelo && 
         {
             GameObject señuelo = Instantiate(Señuelo, _myTransform.position, Quaternion.identity);
             print(señuelo);
