@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Create : MonoBehaviour
@@ -8,8 +9,11 @@ public class Create : MonoBehaviour
     private GameObject Trampoline;
     private Transform _myTransform;
 
+
+    private InventoryManager _inventoryManager;
+
     [SerializeField]
-    private float _tacoste = 0;
+    private float _tacoste = 1;
     [SerializeField]
     private float _secoste = 0;
 
@@ -17,17 +21,22 @@ public class Create : MonoBehaviour
 
     private void OnAction2()
     {
-
-        if (GameManager.Instance.ObtenerCuerdas() >= _tacoste && _playerMovement.choqueAbajo)
+       
+           // if (GameManager.Instance.ObtenerCuerdas() >= _tacoste && _playerMovement.choqueAbajo)
+            
+        if(_inventoryManager.nCuerda > 0 && _playerMovement.choqueAbajo)
         {
             GameObject trampolin = Instantiate(Trampoline, _myTransform.position , Quaternion.identity);
             print(trampolin);
             Debug.Log("Trampolin");
-        }
+            _inventoryManager.ChangeCantidadCuerda(-1);
+        } 
     }
 
     private void Start()
     {
+        _inventoryManager = FindObjectOfType<InventoryManager>();
+
         _myTransform = transform;
         _playerMovement = GetComponent<GranjeroMovement>();
     }

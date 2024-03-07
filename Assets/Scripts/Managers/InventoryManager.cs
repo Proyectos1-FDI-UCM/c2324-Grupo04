@@ -29,7 +29,7 @@ public class InventoryManager : MonoBehaviour
 
     public void ChangeCantidadCuerda(int value) 
     {  
-        nCuerda = value;
+        nCuerda += value;
     }
 
     // Update is called once per frame

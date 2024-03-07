@@ -127,6 +127,10 @@ public class GameManager : MonoBehaviour
         _granjeroMovement.OvejaRecogida();
         cargandoOveja = true;
     }
+    public void ChangeCantidadCuerda(int value)
+    {
+        _cuerda += value;
+    }
 
 
     public int ObtenerCuerdas()
