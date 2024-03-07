@@ -10255,6 +10255,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9adf658c3d2aa5f47acde46b70043088, type: 3}
+--- !u!223 &1767888694 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 3584067054181135963, guid: 15c8d63b8b558494cacc16d450dab47e, type: 3}
+  m_PrefabInstance: {fileID: 5813162896119044941}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1789197505
 GameObject:
   m_ObjectHideFlags: 0
@@ -10654,8 +10659,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _menuDePausa: {fileID: 1827218515}
-  _instruccionesTrampolin: {fileID: 0}
-  "_instruccionesSe\xF1uelo": {fileID: 0}
+  _instruccionesTrampolin: {fileID: 1767888694}
+  "_instruccionesSe\xF1uelo": {fileID: 2054631148}
   _duracionInstrucciones: 1
 --- !u!4 &1796217536
 Transform:
@@ -10886,6 +10891,11 @@ Transform:
   - {fileID: 1001605136}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!223 &2054631148 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 8853572201228292634, guid: 40385d4a08cad884eacf1ebc7f28c540, type: 3}
+  m_PrefabInstance: {fileID: 6057632239452887240}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2083801032
 PrefabInstance:
   m_ObjectHideFlags: 0
