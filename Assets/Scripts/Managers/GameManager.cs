@@ -121,6 +121,26 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void RecogidaObjeto(TipoObjeto objeto)
+    {
+        if (objeto == TipoObjeto.Moneda)
+        {
+            _monedas++;
+        }
+        else if (objeto == TipoObjeto.Cuerda)
+        {
+            _cuerda++;
+        }
+        else if (objeto == TipoObjeto.RecetaSeñuelo)
+        {
+            
+        }
+        else if (objeto == TipoObjeto.RecetaTrampolin)
+        {
+            
+        }
+    }
+
     public void RegistraOveja()
     {
         _playerTransform.position = _ovejaTransform.position;
@@ -138,11 +158,25 @@ public class GameManager : MonoBehaviour
         return _cuerda;
     }
     #endregion
+
+    #region enums
+
+    public enum TipoObjeto
+    {
+        Moneda,
+        Cuerda,
+        RecetaSeñuelo,
+        RecetaTrampolin,
+        Horca
+    }
+
+
+    #endregion
 }
 
 
 
 
 
-    
+
 
