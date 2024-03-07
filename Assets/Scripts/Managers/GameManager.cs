@@ -60,15 +60,20 @@ public class GameManager : MonoBehaviour
         return _granjeroMovement;
     }
 
+    public Transform ReferenciaTransformGranjero()
+    {
+        return _playerTransform;
+    }
+
     private void Awake()
     {
         if (_instance == null) _instance = this; // Sólo queremos un GameManager, así que usamos el patrón singleton
         else Destroy(gameObject);
+        _playerTransform = _granjeroMovement.gameObject.transform;
     }
 
     private void Start()
     {
-        _playerTransform = _granjeroMovement.gameObject.transform;
         _playerCreate = _granjeroMovement.gameObject.GetComponent<Create>();
     }
 
@@ -81,8 +86,19 @@ public class GameManager : MonoBehaviour
 
     private void ActivaPala()
     {
-
+        // A implementar todavía
     }
+
+    public void ActivaMov()
+    {
+        // A implementar todavía
+    }
+
+    public void DesactivaMov()
+    {
+        // A implementar todavía
+    }
+
 
     public void RegistraObjetos(int codigo)
     {
@@ -139,11 +155,11 @@ public class GameManager : MonoBehaviour
         }
         else if (objeto == TipoObjeto.RecetaTrampolin)
         {
-            _playerCreate.ActivaTrampolin();
+            _playerCreate.ActivaTrampolin(); Debug.Log("A");
         }
         else if (objeto == TipoObjeto.Horca)
         {
-            _playersHorcaAttack.ActivaHorca(); Debug.Log("A");
+            _playersHorcaAttack.ActivaHorca(); 
         }
     }
 
