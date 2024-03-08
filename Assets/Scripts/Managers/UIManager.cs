@@ -36,7 +36,7 @@ public class UIManager : MonoBehaviour
 
     public void RecogidaRecetaSeñuelo()
     {
-        _instruccionesSeñuelo.enabled = true;
+        _instruccionesSeñuelo.enabled = true; Debug.Log("RecogidaRecetaSeñuelo");
         Destroy(_instruccionesSeñuelo, _duracionInstrucciones);
     }
 

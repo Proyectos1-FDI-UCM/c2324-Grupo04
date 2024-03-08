@@ -35,6 +35,14 @@ public class HorcaAttack : MonoBehaviour
             {
                 result.gameObject.GetComponent<HealthComponent>().ChangeHealth(_damage);
             }
+            if (result ==  null)
+            {
+                Debug.Log("No ha encontrado un collider");
+            }
+            if (result.gameObject.GetComponent<EnemyMovement>() != null)
+            {
+                Debug.Log("El collider no tiene EnemyMovement");
+            }
             //Vector2 position = _myTransform.position.x * Vector2.up + _myTransform.position.y * Vector2.right + _dir * _horizontalOffset;
             //Collider2D[] results = new Collider2D[10];
             //int n = Physics2D.OverlapCircle(position, _hitboxRadius, ContactFilter2D.NoFilter, results);
