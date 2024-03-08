@@ -60,6 +60,7 @@ public class LoboMov : MonoBehaviour
     void Start()
     {
         _enemyMovement = GetComponent<EnemyMovement>();
+        _sensorEnem = GetComponent<SensorEnem>();
     }
 
     // Update is called once per frame
