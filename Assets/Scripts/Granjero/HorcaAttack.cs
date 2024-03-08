@@ -28,13 +28,20 @@ public class HorcaAttack : MonoBehaviour
                 _dir = Vector2.left;
             }
 
-            //Collider2D[] results;
+            Collider2D[] results;
             Vector2 position = _myTransform.position.x * Vector2.up + _myTransform.position.y * Vector2.right + _dir * _horizontalOffset;
             Collider2D result = Physics2D.OverlapCircle(position, _hitboxRadius);
             if (result != null && result.gameObject.GetComponent<EnemyMovement>() != null)
             {
                 result.gameObject.GetComponent<HealthComponent>().ChangeHealth(_damage);
             }
+            //Vector2 position = _myTransform.position.x * Vector2.up + _myTransform.position.y * Vector2.right + _dir * _horizontalOffset;
+            //Collider2D[] results = new Collider2D[10];
+            //int n = Physics2D.OverlapCircle(position, _hitboxRadius, ContactFilter2D.NoFilter, results);
+            //if (results[0].gameObject.GetComponent<EnemyMovement>() != null)
+            //{
+            //    results[0].gameObject.GetComponent<HealthComponent>().ChangeHealth(_damage);
+            //}
         }
     }
 
