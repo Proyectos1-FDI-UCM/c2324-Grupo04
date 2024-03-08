@@ -31,7 +31,7 @@ public class HorcaAttack : MonoBehaviour
             //Collider2D[] results;
             Vector2 position = _myTransform.position.x * Vector2.up + _myTransform.position.y * Vector2.right + _dir * _horizontalOffset;
             Collider2D result = Physics2D.OverlapCircle(position, _hitboxRadius);
-            if (result.gameObject.GetComponent<EnemyMovement>())
+            if (result != null && result.gameObject.GetComponent<EnemyMovement>() != null)
             {
                 result.gameObject.GetComponent<HealthComponent>().ChangeHealth(_damage);
             }
