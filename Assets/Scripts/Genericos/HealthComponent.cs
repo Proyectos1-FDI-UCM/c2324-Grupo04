@@ -41,6 +41,7 @@ public class HealthComponent : MonoBehaviour
     {
         _maxHp += increment;
     }
+
     private void Die()
     {
         if (_thisIsPlayer)
