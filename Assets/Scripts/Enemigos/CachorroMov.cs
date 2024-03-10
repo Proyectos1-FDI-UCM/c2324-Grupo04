@@ -103,7 +103,7 @@ public class CachorroMov : MonoBehaviour
                 huida = true;
                 _tiempoHuida = 0f;
             }
-            else if (_sensorEnem.señueloDetected)
+            if (_sensorEnem.señueloDetected)
             {
                 _sensorEnem.seguirSeñuelo(ref cambioDirec);
                 seguir(cambioDirec);
