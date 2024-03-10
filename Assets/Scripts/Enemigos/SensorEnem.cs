@@ -77,8 +77,12 @@ public class SensorEnem : MonoBehaviour
         }
 
         if (ovejaDetected) { ovejaDetected = false; }
-        xDistance = Math.Abs(oveja.transform.position.x - transform.position.x);
-        yDistance = Math.Abs(oveja.transform.position.y - transform.position.y);
+        if (GameManager.Instance.cargandoOveja) { }
+        else
+        {
+            xDistance = Math.Abs(oveja.transform.position.x - transform.position.x);
+            yDistance = Math.Abs(oveja.transform.position.y - transform.position.y);
+        }
         if (xDistance < AreaDetecX && yDistance < AreaDetecY)
         {
             ovejaDetected = true;
