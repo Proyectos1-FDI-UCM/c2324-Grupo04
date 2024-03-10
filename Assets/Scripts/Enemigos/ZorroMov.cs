@@ -35,9 +35,7 @@ public class ZorroMov : MonoBehaviour
         if (borde && cambioDirec != 0)
         {
             if (limit == 1 && cambioDirec == -1) { cambioDirec = 0; }
-            else { borde = true; }
             if (limit == 2 && cambioDirec == 1) { cambioDirec = 0; }
-            else { borde = true; }
         }
 
         if (cambioDirec == -1)
@@ -73,11 +71,13 @@ public class ZorroMov : MonoBehaviour
         {
             _sensorEnem.seguirPlayer(ref cambioDirec);
             seguir(cambioDirec);
+            Debug.Log("Siguiendo player");
         }
         else if (_sensorEnem.ovejaDetected)
         {
             _sensorEnem.seguirOveja(ref cambioDirec);
             seguir(cambioDirec);
+            Debug.Log("Siguiendo oveja");
         }
         
         else

@@ -65,9 +65,7 @@ public class CachorroMov : MonoBehaviour
         if (borde && cambioDirec != 0)
         {
             if (limit == 1 && cambioDirec == 1) { cambioDirec = 0; }
-            else { borde = true; }
             if (limit == 2 && cambioDirec == -1) { cambioDirec = 0; }
-            else { borde = true; }
         }
 
         if (cambioDirec == -1)
