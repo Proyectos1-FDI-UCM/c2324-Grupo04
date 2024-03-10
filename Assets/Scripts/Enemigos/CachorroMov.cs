@@ -39,9 +39,7 @@ public class CachorroMov : MonoBehaviour
         if (borde && cambioDirec != 0)
         {
             if (limit == 1 && cambioDirec == -1) { cambioDirec = 0; }
-            else { borde = true; }
             if (limit == 2 && cambioDirec == 1) { cambioDirec = 0; }
-            else { borde = true; }
         }
 
         if (cambioDirec == -1)
@@ -100,8 +98,9 @@ public class CachorroMov : MonoBehaviour
                 huir();
                 huida = true;
                 _tiempoHuida = 0f;
+                Debug.Log("empieza a escapar");
             }
-            if (_sensorEnem.señueloDetected)
+            else if (_sensorEnem.señueloDetected)
             {
                 _sensorEnem.seguirSeñuelo(ref cambioDirec);
                 seguir(cambioDirec);
@@ -118,8 +117,9 @@ public class CachorroMov : MonoBehaviour
                 borde = false;
             }
         }
-        else { huir(); }
+        else { huir(); Debug.Log("escapando"); }
         _tiempoHuida += Time.deltaTime;
-        if (_tiempoHuida > tiempoHuida) { huida = false; }
+        if (_tiempoHuida > tiempoHuida) { huida = false; Debug.Log("termina de escapar"); }
+        Debug.Log("Cachorro borde: " + borde);
     }
 }

@@ -316,6 +316,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 8230544318532167626, guid: fc0820cc4d5186d40a94d87dc940503e, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8363042434839160541, guid: fc0820cc4d5186d40a94d87dc940503e, type: 3}
       propertyPath: m_Name
       value: Zorro
@@ -1157,7 +1161,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -37.74399, y: 2.0082707, z: -9.759361}
+  m_LocalPosition: {x: -37.74399, y: 2.0082705, z: -9.759361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1535,11 +1539,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5324502382298505244, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.28
+      value: -9.6
       objectReference: {fileID: 0}
     - target: {fileID: 5324502382298505244, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.8
+      value: -0.9
       objectReference: {fileID: 0}
     - target: {fileID: 5324502382298505244, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1790,7 +1794,7 @@ Transform:
   m_GameObject: {fileID: 787576141}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -42.210205, y: 0.19539964, z: -9.759361}
+  m_LocalPosition: {x: -43.530205, y: 1.0953996, z: -9.759361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -42614,9 +42618,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDetected: 0
-  granjero: {fileID: 2465212164272183052, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
+  granjero: {fileID: 23019117}
   ovejaDetected: 0
-  oveja: {fileID: 5091619765839581776, guid: a4a39fd6c06667148bafff6eca868a35, type: 3}
+  oveja: {fileID: 1436474183}
   "se\xF1ueloDetected": 0
   "se\xF1uelo": {fileID: 5091619765839581776, guid: 8a41b4a3e482b2048beeb98722315e69, type: 3}
   AreaDetecX: 5
