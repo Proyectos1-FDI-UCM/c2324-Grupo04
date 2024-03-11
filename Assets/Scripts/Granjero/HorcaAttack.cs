@@ -41,7 +41,7 @@ public class HorcaAttack : MonoBehaviour
             }
             if (result.gameObject.GetComponent<EnemyMovement>() != null)
             {
-                Debug.Log("El collider no tiene EnemyMovement");
+                Debug.Log("El collider no tiene EnemyMovement");    
             }
             //Vector2 position = _myTransform.position.x * Vector2.up + _myTransform.position.y * Vector2.right + _dir * _horizontalOffset;
             //Collider2D[] results = new Collider2D[10];
