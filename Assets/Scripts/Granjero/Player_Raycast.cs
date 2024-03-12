@@ -13,6 +13,7 @@ public class Player_Raycast : MonoBehaviour
     RaycastHit2D hitDown;
     RaycastHit2D hitLeft;
     [SerializeField] LayerMask layerToHit;
+    public bool _allowTrampoline = false;
 
     void Start()
     {
@@ -43,11 +44,13 @@ public class Player_Raycast : MonoBehaviour
         {
             Debug.DrawRay(transform.position, transform.up * -1, Color.green);
             _movimientoPlayer.SetBoolDown(true);
+            _allowTrampoline = false;
         }
         else
         {
             Debug.DrawRay(transform.position, transform.up * -1, Color.red);
             _movimientoPlayer.SetBoolDown(false);
+            _allowTrampoline = true;
         }
         if (hitLeft.collider != null)
         {
