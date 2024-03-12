@@ -166,6 +166,15 @@ public class GameManager : MonoBehaviour
         {
             _playersHorcaAttack.ActivaHorca(); 
         }
+        else if (objeto == TipoObjeto.Vida)
+        {
+            _playerHealth.ChangeHealth(_healthIncrement);
+        }
+        else if (objeto == TipoObjeto.VidaOveja)
+        {
+            _playerHealth.ChangeMaxHealth(_maxHealthIncrement);
+            _playerHealth.ChangeHealth(_maxHealthIncrement);
+        }
     }
 
     public void CogeOveja()
