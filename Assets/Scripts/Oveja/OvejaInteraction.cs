@@ -26,19 +26,22 @@ public class OvejaInteraction : MonoBehaviour
 
     private void OnInteraction1() // Método que se activa al recoger la oveja con la e
     {
+        //Debug.Log("OnInteraction1()");
+
         if (GameManager.Instance.cargandoOveja)
         {
+            //Debug.Log("Has dejado a la oveja");
             DejaOveja();
         }
         else if ((GameManager.Instance.PlayerPosition() - _myTransform.position).magnitude <= _interactionDistance)
         {
-            Debug.Log("Has recogido a la oveja");
+            //Debug.Log("Has recogido a la oveja");
             // Llamar a la desactivación de su sprite
             _mySR.enabled = false;
             // Llamar a la desactivación del rigidbody
             _myRB.simulated = false;
             // Llamar a la animación de recogida de la oveja del granjero
-            GameManager.Instance.cargandoOveja = true;
+            GameManager.Instance.CogeOveja();
         }
         else
         {
@@ -60,7 +63,7 @@ public class OvejaInteraction : MonoBehaviour
         }
         _myRB.simulated = true;
         _mySR.enabled = true;
-        GameManager.Instance.cargandoOveja = false;
+        GameManager.Instance.SueltaOveja();
     }
 
 

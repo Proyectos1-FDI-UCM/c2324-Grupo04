@@ -168,12 +168,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void RegistraOveja()
+    public void CogeOveja()
     {
         _playerTransform.position = _ovejaTransform.position;
         _granjeroMovement.OvejaRecogida();
         cargandoOveja = true;
     }
+
+    public void SueltaOveja()
+    {
+        _playerTransform.position = _ovejaTransform.position;
+        _granjeroMovement.OvejaRecogida();
+        cargandoOveja = true;
+    }
+
     public void ChangeCantidadCuerda(int value)
     {
         _cuerda += value;

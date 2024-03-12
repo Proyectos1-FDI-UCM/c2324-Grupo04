@@ -77,12 +77,14 @@ public class GranjeroMovement : MonoBehaviour
 
     public void OvejaSoltada()
     {
+        //Debug.Log("OvejaSoltada()");
         speed = _velocidadInicial;
         impulso = _impulsoInicial;
     }
 
     public void OvejaRecogida()
     {
+        //Debug.Log("OvejaRecogida()");
         speed = _velocidadOveja;
         impulso = _impulsoOveja;
     }

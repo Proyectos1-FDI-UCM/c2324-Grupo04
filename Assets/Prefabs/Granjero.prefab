@@ -163,11 +163,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementTracker: {x: 0, y: 0}
   _velocidadOveja: 3
-  _impulsoOveja: 3
+  _impulsoOveja: 14
   _velocidadInicial: 4
   _impulsoInicial: 19
   velCaida: 20
   choqueAbajo: 0
+  choqueIzq: 0
+  choqueDer: 0
 --- !u!114 &1640964514911560491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,3 +270,4 @@ MonoBehaviour:
   layerToHit:
     serializedVersion: 2
     m_Bits: 256
+  _allowTrampoline: 0
