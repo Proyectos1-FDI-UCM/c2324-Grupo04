@@ -208,7 +208,9 @@ public class GameManager : MonoBehaviour
         Cuerda,
         RecetaSeñuelo,
         RecetaTrampolin,
-        Horca
+        Horca,
+        Vida,
+        VidaOveja
     }
 
 
