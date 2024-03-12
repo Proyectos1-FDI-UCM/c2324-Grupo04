@@ -21,8 +21,8 @@ public class GranjeroMovement : MonoBehaviour
 
     
     public bool choqueAbajo;
-    private bool choqueIzq;
-    private bool choqueDer;
+    public bool choqueIzq;
+    public bool choqueDer;
 
     public void SetBoolDown(bool value)
     {
@@ -94,7 +94,8 @@ public class GranjeroMovement : MonoBehaviour
 
         //variante 2 con aceleracion1   (se puede cambiar el linear drag)
 
-        if (movement.x != 0){
+        if ((movement.x < 0 && !choqueIzq) || (movement.x > 0 && !choqueDer))
+        {
             rb.velocity = movement * speed + Vector2.up * rb.velocity.y;
         }
         if (rb.velocity.y < -velCaida)

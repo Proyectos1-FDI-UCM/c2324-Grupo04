@@ -30,7 +30,6 @@ public class Player_Raycast : MonoBehaviour
 
         if (hitRight.collider != null)
         {
-            Debug.Log(hitRight.collider);
             Debug.DrawRay(transform.position, transform.right, Color.green);
             _movimientoPlayer.SetBoolRight(true);
         }
