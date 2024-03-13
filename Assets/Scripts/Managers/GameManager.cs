@@ -32,6 +32,10 @@ public class GameManager : MonoBehaviour
         return _ovejaTransform.position;
     }
 
+    public Vector3 SeñueloPosition()
+    {
+        return _señueloTransform.position;
+    }
 
 
     private int _cuerda = 0;
@@ -53,6 +57,8 @@ public class GameManager : MonoBehaviour
     private Create _playerCreate;
     [SerializeField] private Transform _ovejaTransform;
     private UIManager _UIManager;
+    private Transform _señueloTransform;
+    public bool señueloExist = false;
     #endregion 
 
     #region methods
@@ -186,8 +192,8 @@ public class GameManager : MonoBehaviour
 
     public void SueltaOveja()
     {
-        _playerTransform.position = _ovejaTransform.position;
-        _granjeroMovement.OvejaRecogida();
+       // _playerTransform.position = _ovejaTransform.position;
+        _granjeroMovement.OvejaSoltada();
         cargandoOveja = false;
     }
 
@@ -201,6 +207,17 @@ public class GameManager : MonoBehaviour
     public int ObtenerCuerdas()
     {
         return _cuerda;
+    }
+
+    public void SeñueloCreado(Transform señeuloTransform)
+    {
+        señueloExist = true;
+        _señueloTransform = señeuloTransform;
+    }
+
+    public void SeñueloDestruido()
+    {
+        señueloExist = false;
     }
 
     public void ReiniciaEscena()
