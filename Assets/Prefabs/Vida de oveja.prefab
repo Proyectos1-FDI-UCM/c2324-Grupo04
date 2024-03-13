@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7850653546393138710}
   - component: {fileID: 4403445352735660678}
   - component: {fileID: 2975990070138704816}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Vida de oveja
   m_TagString: Untagged
   m_Icon: {fileID: 0}

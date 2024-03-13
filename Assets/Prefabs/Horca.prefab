@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 89207735091766116}
   - component: {fileID: 8881088025302967999}
   - component: {fileID: 6372539473961194809}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Horca
   m_TagString: Untagged
   m_Icon: {fileID: 0}

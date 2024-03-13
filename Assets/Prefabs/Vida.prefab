@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8699766253938068748}
   - component: {fileID: 6830518023002178392}
   - component: {fileID: 141438225318696271}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Vida
   m_TagString: Untagged
   m_Icon: {fileID: 0}
