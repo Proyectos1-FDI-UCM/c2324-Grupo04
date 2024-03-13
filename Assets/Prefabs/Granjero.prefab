@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceDown: 1
-  distanceSide: 0.5
+  distanceSide: 0.75
   layerToJump:
     serializedVersion: 2
     m_Bits: 576

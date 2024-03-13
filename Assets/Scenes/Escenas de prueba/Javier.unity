@@ -25395,6 +25395,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8818317229978637465, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
+      propertyPath: distanceSide
+      value: 0.75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25631,7 +25635,7 @@ GameObject:
   - component: {fileID: 1390756025}
   - component: {fileID: 1390756024}
   - component: {fileID: 1390756023}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34647,7 +34651,7 @@ GameObject:
   - component: {fileID: 1789197511}
   - component: {fileID: 1789197510}
   - component: {fileID: 1789197509}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
