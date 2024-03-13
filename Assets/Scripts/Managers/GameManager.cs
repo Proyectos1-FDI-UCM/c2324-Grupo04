@@ -192,8 +192,8 @@ public class GameManager : MonoBehaviour
 
     public void SueltaOveja()
     {
-        _playerTransform.position = _ovejaTransform.position;
-        _granjeroMovement.OvejaRecogida();
+       // _playerTransform.position = _ovejaTransform.position;
+        _granjeroMovement.OvejaSoltada();
         cargandoOveja = false;
     }
 
