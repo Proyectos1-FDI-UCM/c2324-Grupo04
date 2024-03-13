@@ -6,7 +6,7 @@ public class ArbustoComponent : MonoBehaviour
 {
     [SerializeField] private int _damage = -2;
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Has chocado con un arbusto");
         if (other.GetComponent<GranjeroMovement>() != null)
@@ -15,4 +15,14 @@ public class ArbustoComponent : MonoBehaviour
             other.GetComponent<HealthComponent>().ChangeHealth(_damage);
         }
     }
+
+    //public void OnCollisionEnter2D(Collision collision)
+    //{
+    //    Debug.Log("Has chocado con un arbusto");
+    //    if (collision.gameObject.GetComponent<GranjeroMovement>() != null)
+    //    {
+    //        Debug.Log("Eres un granjero");
+    //        collision.gameObject.GetComponent<HealthComponent>().ChangeHealth(_damage);
+    //    }
+    //}
 }
