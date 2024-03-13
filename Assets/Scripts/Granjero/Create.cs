@@ -87,11 +87,11 @@ public class Create : MonoBehaviour
 
     private void Update()
     {
-        if (_playerMovement.movement.x < 0 && !_playerMovement.choqueIzq)
+        if (_playerMovement.rb.velocity.x < 0 && !_playerMovement.choqueIzq)
         {
             spawnPos = new Vector2(transform.position.x - 1, _myTransform.position.y);
         }
-        if (_playerMovement.movement.x > 0 && !_playerMovement.choqueDer)
+        if (_playerMovement.rb.velocity.x > 0 && !_playerMovement.choqueDer)
         {
             spawnPos = new Vector2(transform.position.x + 1, _myTransform.position.y);
         }
