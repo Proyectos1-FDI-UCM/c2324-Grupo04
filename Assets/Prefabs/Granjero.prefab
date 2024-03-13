@@ -164,7 +164,7 @@ MonoBehaviour:
   movementTracker: {x: 0, y: 0}
   _velocidadOveja: 3
   _impulsoOveja: 14
-  _velocidadInicial: 4
+  _velocidadInicial: 5
   _impulsoInicial: 19
   velCaida: 20
   choqueAbajo: 0
