@@ -12,7 +12,8 @@ public class Player_Raycast : MonoBehaviour
     RaycastHit2D hitRight;
     RaycastHit2D hitDown;
     RaycastHit2D hitLeft;
-    [SerializeField] LayerMask layerToHit;
+    [SerializeField] LayerMask layerToJump;
+    [SerializeField] LayerMask layerToWalls;
     public bool _allowTrampoline = false;
 
     void Start()
@@ -24,9 +25,9 @@ public class Player_Raycast : MonoBehaviour
 
     void FixedUpdate()
     {
-        hitRight = Physics2D.Raycast(_myTransform.position, transform.right, distanceSide, layerToHit);
-        hitDown = Physics2D.Raycast(_myTransform.position, transform.up * -1, distanceDown, layerToHit);
-        hitLeft = Physics2D.Raycast(_myTransform.position, transform.right * -1, distanceSide, layerToHit);
+        hitRight = Physics2D.Raycast(_myTransform.position, transform.right, distanceSide, layerToWalls);
+        hitDown = Physics2D.Raycast(_myTransform.position, transform.up * -1, distanceDown, layerToJump);
+        hitLeft = Physics2D.Raycast(_myTransform.position, transform.right * -1, distanceSide, layerToWalls);
 
         if (hitRight.collider != null)
         {

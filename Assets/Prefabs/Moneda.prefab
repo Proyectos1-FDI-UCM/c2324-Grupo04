@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3772181069011950300}
   - component: {fileID: 3602095033202529061}
   - component: {fileID: 3756486174892926492}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Moneda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 846192741
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 39288c5c9181d3f4eb883ff7db27ee4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1ea8403d2f73fc468d765457524c8fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _codigo: 1
+  _objeto: 0
 --- !u!58 &3756486174892926492
 CircleCollider2D:
   m_ObjectHideFlags: 0

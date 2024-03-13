@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 2077912938585763071}
   - component: {fileID: 7712492854165039839}
   - component: {fileID: 2515273935904450785}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: "Receta trampol\xEDn"
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 8518572029356195981}
   - component: {fileID: 3505807150843220732}
   - component: {fileID: 8818317229978637465}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Granjero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceDown: 1
   distanceSide: 0.5
-  layerToHit:
+  layerToJump:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
+  layerToWalls:
+    serializedVersion: 2
+    m_Bits: 0
   _allowTrampoline: 0
