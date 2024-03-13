@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class GranjeroMovement : MonoBehaviour
 {
-    private Vector2 movement;
+    public Vector2 movement;
     private Rigidbody2D rb;
     private float Horizontal;
     public Vector2 movementTracker;

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5304883230491407647}
   - component: {fileID: 7194170184974943310}
   - component: {fileID: 4130756477129347693}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Cuerda
   m_TagString: Untagged
   m_Icon: {fileID: 0}

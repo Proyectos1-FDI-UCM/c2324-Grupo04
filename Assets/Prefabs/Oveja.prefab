@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -3628959675988076477}
   - component: {fileID: -558316822186244850}
   - component: {fileID: 3146302603884518501}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Oveja
   m_TagString: Untagged
   m_Icon: {fileID: 0}
