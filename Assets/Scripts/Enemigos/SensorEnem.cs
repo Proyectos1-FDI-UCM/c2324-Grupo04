@@ -14,7 +14,6 @@ public class SensorEnem : MonoBehaviour
     public GameObject oveja;
     public bool señueloDetected = false;
     private Vector3 _señueloTransform;
-    private bool señueloExist = false;
 
     [SerializeField]
     private float AreaDetecX;
@@ -70,10 +69,9 @@ public class SensorEnem : MonoBehaviour
 
     void Update()
     {
-        if (señueloExist)
+        if (GameManager.Instance.señueloExist)
         {
             _señueloTransform = GameManager.Instance.SeñueloPosition();
-
         }
         else
         {

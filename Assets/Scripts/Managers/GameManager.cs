@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform _ovejaTransform;
     private UIManager _UIManager;
     private Transform _señueloTransform;
+    public bool señueloExist = false;
     #endregion 
 
     #region methods
@@ -206,6 +207,17 @@ public class GameManager : MonoBehaviour
     public int ObtenerCuerdas()
     {
         return _cuerda;
+    }
+
+    public void SeñueloCreado(Transform señeuloTransform)
+    {
+        señueloExist = true;
+        _señueloTransform = señeuloTransform;
+    }
+
+    public void SeñueloDestruido()
+    {
+        señueloExist = false;
     }
 
     public void ReiniciaEscena()
