@@ -38,14 +38,7 @@ public class Create : MonoBehaviour
         //    Debug.Log("Trampolin");
         //    _inventoryManager.ChangeCantidadCuerda(-1);
         //}
-        if (_playerMovement.movement.x < 0 && !_playerMovement.choqueIzq)
-        {
-            spawnPos = new Vector2(transform.position.x - 1, _myTransform.position.y);
-        }
-        if (_playerMovement.movement.x > 0 && !_playerMovement.choqueDer)
-        {
-            spawnPos = new Vector2(transform.position.x + 1, _myTransform.position.y);
-        }
+        
         /*if (_playerMovement.movement.x < 0 && !_playerMovement.choqueIzq)
             {
                 spawnPos = new Vector2(_myTransform.position.x + 1, _myTransform.position.y);
@@ -92,4 +85,15 @@ public class Create : MonoBehaviour
         _playerMovement = GetComponent<GranjeroMovement>();
     }
 
+    private void Update()
+    {
+        if (_playerMovement.movement.x < 0 && !_playerMovement.choqueIzq)
+        {
+            spawnPos = new Vector2(transform.position.x - 1, _myTransform.position.y);
+        }
+        if (_playerMovement.movement.x > 0 && !_playerMovement.choqueDer)
+        {
+            spawnPos = new Vector2(transform.position.x + 1, _myTransform.position.y);
+        }
+    }
 }
