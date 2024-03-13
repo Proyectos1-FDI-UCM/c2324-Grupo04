@@ -194,7 +194,7 @@ public class GameManager : MonoBehaviour
     {
         _playerTransform.position = _ovejaTransform.position;
         _granjeroMovement.OvejaRecogida();
-        cargandoOveja = true;
+        cargandoOveja = false;
     }
 
     public void ChangeCantidadCuerda(int value)
