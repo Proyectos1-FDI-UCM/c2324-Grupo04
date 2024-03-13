@@ -269,8 +269,8 @@ MonoBehaviour:
   distanceSide: 0.5
   layerToJump:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 576
   layerToWalls:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   _allowTrampoline: 0
