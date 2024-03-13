@@ -14,6 +14,7 @@ public class SensorEnem : MonoBehaviour
     public GameObject oveja;
     public bool señueloDetected = false;
     private Vector3 _señueloTransform;
+    private bool señueloExist = false;
 
     [SerializeField]
     private float AreaDetecX;
@@ -69,7 +70,15 @@ public class SensorEnem : MonoBehaviour
 
     void Update()
     {
-        _señueloTransform = GameManager.Instance.SeñueloPosition();
+        if (señueloExist)
+        {
+            _señueloTransform = GameManager.Instance.SeñueloPosition();
+
+        }
+        else
+        {
+            _señueloTransform = new Vector3 (-20, 0, 0);
+        }
 
         if (playerDetected) { playerDetected = false; }
         xDistance = Math.Abs(granjero.transform.position.x - transform.position.x);
