@@ -32,6 +32,10 @@ public class GameManager : MonoBehaviour
         return _ovejaTransform.position;
     }
 
+    public Vector3 SeñueloPosition()
+    {
+        return _señueloTransform.position;
+    }
 
 
     private int _cuerda = 0;
@@ -53,6 +57,7 @@ public class GameManager : MonoBehaviour
     private Create _playerCreate;
     [SerializeField] private Transform _ovejaTransform;
     private UIManager _UIManager;
+    private Transform _señueloTransform;
     #endregion 
 
     #region methods

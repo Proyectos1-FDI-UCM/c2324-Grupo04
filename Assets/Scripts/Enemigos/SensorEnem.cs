@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class SensorEnem : MonoBehaviour
@@ -12,7 +13,7 @@ public class SensorEnem : MonoBehaviour
     public bool ovejaDetected = false;
     public GameObject oveja;
     public bool señueloDetected = false;
-    public GameObject señuelo;
+    private Vector3 _señueloTransform;
 
     [SerializeField]
     private float AreaDetecX;
@@ -50,11 +51,11 @@ public class SensorEnem : MonoBehaviour
 
     public void seguirSeñuelo(ref int cambioDirec)
     {
-        if (señuelo.transform.position.x - transform.position.x < -0.3)
+        if (_señueloTransform.x - transform.position.x < -0.3)
         {
             cambioDirec = -1;
         }
-        else if (señuelo.transform.position.x - transform.position.x > 0.3)
+        else if (_señueloTransform.x - transform.position.x > 0.3)
         {
             cambioDirec = 1;
         }
@@ -68,6 +69,8 @@ public class SensorEnem : MonoBehaviour
 
     void Update()
     {
+        _señueloTransform = GameManager.Instance.SeñueloPosition();
+
         if (playerDetected) { playerDetected = false; }
         xDistance = Math.Abs(granjero.transform.position.x - transform.position.x);
         yDistance = Math.Abs(granjero.transform.position.y - transform.position.y);
@@ -89,8 +92,8 @@ public class SensorEnem : MonoBehaviour
         }
 
         if (señueloDetected) { señueloDetected = false; }
-        xDistance = Math.Abs(señuelo.transform.position.x - transform.position.x);
-        yDistance = Math.Abs(señuelo.transform.position.y - transform.position.y);
+        xDistance = Math.Abs(_señueloTransform.x - transform.position.x);
+        yDistance = Math.Abs(_señueloTransform.y - transform.position.y);
         if (xDistance < AreaDetecX && yDistance < AreaDetecY)
         {
             señueloDetected = true;
