@@ -61,6 +61,7 @@ public class Create : MonoBehaviour
         //}
         if (_puedeSeñuelo && GameManager.Instance.ObtenerCuerdas() > 0 && _playerMovement.choqueAbajo) //_puedeSeñuelo && 
         {
+            GameManager.Instance.nseñuelo++;
             GameObject señuelo = Instantiate(Señuelo, _myTransform.position, Quaternion.identity);
             Debug.Log("Señuelo");
             GameManager.Instance.ChangeCantidadCuerda(-1);
@@ -95,5 +96,6 @@ public class Create : MonoBehaviour
         {
             spawnPos = new Vector2(transform.position.x + 1, _myTransform.position.y);
         }
+
     }
 }

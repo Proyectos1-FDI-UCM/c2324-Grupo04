@@ -8,6 +8,13 @@ public class Señuelo : MonoBehaviour
     [SerializeField]
     private float duracionSeñuelo;
     private float _duracionSeñuelo;
+
+    public void Destruido()
+    {
+        GameManager.Instance.SeñueloDestruido();
+        Destroy(this.gameObject);
+    }
+
     void Start()
     {
         _myTransform = transform;
@@ -20,8 +27,11 @@ public class Señuelo : MonoBehaviour
         _duracionSeñuelo += Time.deltaTime;
         if (_duracionSeñuelo > duracionSeñuelo)
         {
-            GameManager.Instance.SeñueloDestruido();
-            Destroy(this.gameObject);
+            Destruido();
+        }
+        if (GameManager.Instance.nseñuelo > 1)
+        {
+            Destruido();
         }
     }
 }
