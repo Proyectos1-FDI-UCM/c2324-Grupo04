@@ -73,6 +73,11 @@ public class GameManager : MonoBehaviour
         return _playerTransform;
     }
 
+    public Transform ReferenciaTransformOveja()
+    {
+        return _ovejaTransform;
+    }
+
     private void Awake()
     {
         if (_instance == null) _instance = this; // Sólo queremos un GameManager, así que usamos el patrón singleton

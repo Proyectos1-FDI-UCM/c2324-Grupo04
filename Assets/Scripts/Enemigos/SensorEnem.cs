@@ -9,9 +9,9 @@ public class SensorEnem : MonoBehaviour
 {
     private Transform _myTransform;
     public bool playerDetected = false;
-    public GameObject granjero;
+    public Transform _granjero;
     public bool ovejaDetected = false;
-    public GameObject oveja;
+    public Transform _oveja;
     public bool señueloDetected = false;
     private Vector3 _señueloTransform;
 
@@ -25,11 +25,11 @@ public class SensorEnem : MonoBehaviour
 
     public void seguirPlayer(ref int cambioDirec)
     {
-        if (granjero.transform.position.x - transform.position.x < -0.3)
+        if (_granjero.position.x - transform.position.x < -0.3)
         {
             cambioDirec = -1;
         }
-        else if (granjero.transform.position.x - transform.position.x > 0.3)
+        else if (_granjero.position.x - transform.position.x > 0.3)
         {
             cambioDirec = 1;
         }
@@ -38,11 +38,11 @@ public class SensorEnem : MonoBehaviour
 
     public void seguirOveja(ref int cambioDirec)
     {
-        if (oveja.transform.position.x - transform.position.x < -0.3)
+        if (_oveja.position.x - transform.position.x < -0.3)
         {
             cambioDirec = -1;
         }
-        else if (oveja.transform.position.x - transform.position.x > 0.3)
+        else if (_oveja.position.x - transform.position.x > 0.3)
         {
             cambioDirec = 1;
         }
@@ -65,6 +65,8 @@ public class SensorEnem : MonoBehaviour
     void Start()
     {
         _myTransform = transform;
+        _granjero = GameManager.Instance.ReferenciaTransformGranjero();
+        _oveja = GameManager.Instance.ReferenciaTransformOveja();
     }
 
     void Update()
@@ -79,8 +81,8 @@ public class SensorEnem : MonoBehaviour
         }
 
         if (playerDetected) { playerDetected = false; }
-        xDistance = Math.Abs(granjero.transform.position.x - transform.position.x);
-        yDistance = Math.Abs(granjero.transform.position.y - transform.position.y);
+        xDistance = Math.Abs(_granjero.position.x - transform.position.x);
+        yDistance = Math.Abs(_granjero.position.y - transform.position.y);
         if (xDistance < AreaDetecX && yDistance < AreaDetecY)
         {
             playerDetected = true;
@@ -90,8 +92,8 @@ public class SensorEnem : MonoBehaviour
         if (GameManager.Instance.cargandoOveja) { }
         else
         {
-            xDistance = Math.Abs(oveja.transform.position.x - transform.position.x);
-            yDistance = Math.Abs(oveja.transform.position.y - transform.position.y);
+            xDistance = Math.Abs(_oveja.position.x - transform.position.x);
+            yDistance = Math.Abs(_oveja.position.y - transform.position.y);
         }
         if (xDistance < AreaDetecX && yDistance < AreaDetecY)
         {
