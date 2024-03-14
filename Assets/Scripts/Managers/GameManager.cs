@@ -209,6 +209,11 @@ public class GameManager : MonoBehaviour
         return _cuerda;
     }
 
+    public int ObtenerMonedas()
+    {
+        return _monedas;
+    }
+
     public void SeñueloCreado(Transform señeuloTransform)
     {
         señueloExist = true;
