@@ -19,7 +19,11 @@ public class Create : MonoBehaviour
     [SerializeField]
     private float _tacoste = 1;
     [SerializeField]
+    private float _trampolinOffset = 1;
+    [SerializeField]
     private float _secoste = 0;
+    [SerializeField]
+    private float _señueloOffset = 1;
 
     private bool _puedeTrampolin = false;
     private bool _puedeSeñuelo = false;
@@ -88,13 +92,13 @@ public class Create : MonoBehaviour
 
     private void Update()
     {
-        if (_playerMovement.rb.velocity.x < 0 && !_playerMovement.choqueIzq)
-        {
-            spawnPos = new Vector2(transform.position.x - 1, _myTransform.position.y);
+        if (_playerMovement.Movement().x < 0 && !_playerMovement.choqueIzq)
+        {   
+            spawnPos = new Vector2(_myTransform.position.x - _trampolinOffset, _myTransform.position.y);
         }
-        if (_playerMovement.rb.velocity.x > 0 && !_playerMovement.choqueDer)
+        else
         {
-            spawnPos = new Vector2(transform.position.x + 1, _myTransform.position.y);
+            spawnPos = new Vector2(_myTransform.position.x + _trampolinOffset, _myTransform.position.y);
         }
 
     }
