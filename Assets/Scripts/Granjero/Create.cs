@@ -19,11 +19,9 @@ public class Create : MonoBehaviour
     [SerializeField]
     private float _tacoste = 1;
     [SerializeField]
-    private float _trampolinOffset = 1;
-    [SerializeField]
     private float _secoste = 0;
     [SerializeField]
-    private float _señueloOffset = 1;
+    private float _horizontalOffset = 1;
 
     private bool _puedeTrampolin = false;
     private bool _puedeSeñuelo = false;
@@ -94,11 +92,11 @@ public class Create : MonoBehaviour
     {
         if (_playerMovement.Movement().x < 0 && !_playerMovement.choqueIzq)
         {   
-            spawnPos = new Vector2(_myTransform.position.x - _trampolinOffset, _myTransform.position.y);
+            spawnPos = new Vector2(_myTransform.position.x - _horizontalOffset, _myTransform.position.y);
         }
         else
         {
-            spawnPos = new Vector2(_myTransform.position.x + _trampolinOffset, _myTransform.position.y);
+            spawnPos = new Vector2(_myTransform.position.x + _horizontalOffset, _myTransform.position.y);
         }
 
     }
