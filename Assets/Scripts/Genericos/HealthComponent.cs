@@ -20,7 +20,7 @@ public class HealthComponent : MonoBehaviour
     {
         //_currentHp = _maxHp;
         _thisIsPlayer = GetComponent<GranjeroMovement>() != null;
-        _thisIsPlayer = GetComponent<OvejaInteraction>() != null;
+        _thisIsSheep = GetComponent<OvejaInteraction>() != null;
         _thisIsSeñuelo = GetComponent<Señuelo>() != null;
     }
 
@@ -48,6 +48,7 @@ public class HealthComponent : MonoBehaviour
 
     private void Die()
     {
+        Debug.Log("This is player: " + _thisIsPlayer);
         if (_thisIsPlayer || _thisIsSheep)
         {
             GameManager.Instance.ReiniciaEscena();
