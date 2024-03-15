@@ -191,7 +191,7 @@ public class GameManager : MonoBehaviour
 
     public void CogeOveja()
     {
-        _playerTransform.position = _ovejaTransform.position;
+        //_playerTransform.position = _ovejaTransform.position;
         _granjeroMovement.OvejaRecogida();
         cargandoOveja = true;
     }
