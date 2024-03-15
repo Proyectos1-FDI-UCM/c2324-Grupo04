@@ -107,52 +107,15 @@ public class GameManager : MonoBehaviour
     public void ActivaMov()
     {
         // A implementar todavía
+        _granjeroMovement.enabled = true;
     }
 
     public void DesactivaMov()
     {
         // A implementar todavía
+        _granjeroMovement.enabled = false;
     }
 
-
-    public void RegistraObjetos(int codigo)
-    {
-        if (codigo < 10)
-        {
-            if (codigo == 0)
-            {
-                _cuerda++; Debug.Log("Tienes " + _cuerda + " unidades de cuerda");
-            }
-            else if (codigo == 1)
-            {
-                _monedas++; Debug.Log("Tienes " + _monedas + " monedas");
-            }
-            else if (codigo == 2)
-            {
-                _playerHealth.ChangeHealth(_healthIncrement);
-            }
-            else if (codigo == 3)
-            {
-                _playerHealth.ChangeMaxHealth(_maxHealthIncrement);
-            }
-        }
-        else if (codigo < 20)
-        {
-            if (codigo == 10)
-            {
-                ActivaHorca();
-            }
-            else if (codigo == 11)
-            {
-                ActivaPala();
-            }
-        }
-        else if (codigo == 30)
-        {
-            Debug.Log("Has recogido la oveja");
-            _granjeroMovement.OvejaRecogida();
-        }
-    }
 
     public void RecogidaObjeto(TipoObjeto objeto)
     {
