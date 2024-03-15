@@ -10,6 +10,7 @@ public class HealthComponent : MonoBehaviour
     [SerializeField] private int _maxHp = 3;
     [SerializeField] public int _currentHp = 3;
     bool _thisIsPlayer = false;
+    bool _thisIsSheep = false;
     bool _thisIsSeñuelo = false;
 
 
@@ -19,6 +20,7 @@ public class HealthComponent : MonoBehaviour
     {
         //_currentHp = _maxHp;
         _thisIsPlayer = GetComponent<GranjeroMovement>() != null;
+        _thisIsPlayer = GetComponent<OvejaInteraction>() != null;
         _thisIsSeñuelo = GetComponent<Señuelo>() != null;
     }
 
@@ -46,7 +48,7 @@ public class HealthComponent : MonoBehaviour
 
     private void Die()
     {
-        if (_thisIsPlayer)
+        if (_thisIsPlayer || _thisIsSheep)
         {
             GameManager.Instance.ReiniciaEscena();
             Debug.Log("Fin de la partida");

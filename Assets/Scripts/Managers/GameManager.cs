@@ -116,7 +116,6 @@ public class GameManager : MonoBehaviour
         _granjeroMovement.enabled = false;
     }
 
-
     public void RecogidaObjeto(TipoObjeto objeto)
     {
         if (objeto == TipoObjeto.Moneda)
