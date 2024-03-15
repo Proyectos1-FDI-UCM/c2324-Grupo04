@@ -34,8 +34,8 @@ public class ZorroMov : MonoBehaviour
     {
         if (borde && cambioDirec != 0)
         {
-            if (limit == 2 && cambioDirec == -1) { cambioDirec = 0; }
-            if (limit == 1 && cambioDirec == 1) { cambioDirec = 0; }
+            if (limit == 1 && cambioDirec == -1) { cambioDirec = 0; }
+            if (limit == 2 && cambioDirec == 1) { cambioDirec = 0; }
         }
 
         if (cambioDirec == -1)
@@ -84,7 +84,8 @@ public class ZorroMov : MonoBehaviour
         {
             if (limit == 1) { GetComponent<EnemyMovement>().movementEnemy = Vector2.right; }
             else { GetComponent<EnemyMovement>().movementEnemy = Vector2.left; }
-            borde = false;
         }
+
+        borde = false;
     }
 }

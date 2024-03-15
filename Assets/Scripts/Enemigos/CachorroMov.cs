@@ -38,8 +38,8 @@ public class CachorroMov : MonoBehaviour
     {
         if (borde && cambioDirec != 0)
         {
-            if (limit == 2 && cambioDirec == -1) { cambioDirec = 0; }
-            if (limit == 1 && cambioDirec == 1) { cambioDirec = 0; }
+            if (limit == 1 && cambioDirec == -1) { cambioDirec = 0; }
+            if (limit == 2 && cambioDirec == 1) { cambioDirec = 0; }
         }
 
         if (cambioDirec == -1)
@@ -114,12 +114,12 @@ public class CachorroMov : MonoBehaviour
             {
                 if (limit == 1) { GetComponent<EnemyMovement>().movementEnemy = Vector2.right; }
                 else { GetComponent<EnemyMovement>().movementEnemy = Vector2.left; }
-                borde = false;
             }
         }
         else { huir(); Debug.Log("escapando"); }
         _tiempoHuida += Time.deltaTime;
         if (_tiempoHuida > tiempoHuida) { huida = false; Debug.Log("termina de escapar"); }
         Debug.Log("Cachorro borde: " + borde);
+        borde = false;
     }
 }

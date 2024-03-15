@@ -29,7 +29,7 @@ public class LoboMov : MonoBehaviour
                 limit2.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
                 Debug.Log("Interacting with Child 2");
             }
-            Debug.Log(_enemyMovement.movementEnemy);
+            borde = true;
         }
     }
 
@@ -37,8 +37,8 @@ public class LoboMov : MonoBehaviour
     {
         if (borde && cambioDirec != 0)
         {
-            if (limit == 2 && cambioDirec == -1) { cambioDirec = 0; }
-            if (limit == 1 && cambioDirec == 1) { cambioDirec = 0; }
+            if (limit == 1 && cambioDirec == -1) { cambioDirec = 0; Debug.Log("AA" + cambioDirec); }
+            if (limit == 2 && cambioDirec == 1) { cambioDirec = 0; Debug.Log("BB" + cambioDirec); }
         }
 
         if (cambioDirec == -1)
@@ -76,7 +76,8 @@ public class LoboMov : MonoBehaviour
         {
             if (limit == 1) { GetComponent<EnemyMovement>().movementEnemy = Vector2.right; }
             else { GetComponent<EnemyMovement>().movementEnemy = Vector2.left; }
-            borde = false;
         }
+
+        borde = false;
     }
 }
