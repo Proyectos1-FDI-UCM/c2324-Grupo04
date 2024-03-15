@@ -8,10 +8,12 @@ public class HudManager : MonoBehaviour
     public static HudManager instance;
     
     [SerializeField] private TMP_Text coinText;
-    [SerializeField] private int currentCoins = 0;
+  	[SerializeField] private TMP_Text cuerdaText;
+	  [SerializeField] private int currentCoins = 0;
+    [SerializeField] private int currentCuerda = 0;
 
 
-    void Awake()
+	void Awake()
     {
         instance = this;
     }
@@ -19,7 +21,8 @@ public class HudManager : MonoBehaviour
     void Start()
     {
         coinText.text = "X " + currentCoins.ToString();
-    }
+		    cuerdaText.text = "X " + currentCuerda.ToString();
+	}
 
     // Update is called once per frame
     public void IncreaseCoins(int v)
@@ -27,4 +30,9 @@ public class HudManager : MonoBehaviour
         currentCoins += v;
         coinText.text = "X " + currentCoins.ToString();
     }
+	  public void IncreaseCuerda(int v)
+	  {
+	  	currentCuerda += v;
+	  	cuerdaText.text = "X " + currentCuerda.ToString();
+  	}
 }
