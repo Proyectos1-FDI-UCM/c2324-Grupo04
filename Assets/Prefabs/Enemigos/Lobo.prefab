@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff214463d32ebf44d8618a5f70bd02b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invulnerabilidad: 3
   damage: -2
 --- !u!114 &672776492179910538
 MonoBehaviour:
@@ -309,11 +310,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDetected: 0
-  granjero: {fileID: 2465212164272183052, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
+  _granjero: {fileID: 0}
   ovejaDetected: 0
-  oveja: {fileID: 5091619765839581776, guid: a4a39fd6c06667148bafff6eca868a35, type: 3}
+  _oveja: {fileID: 0}
   "se\xF1ueloDetected": 0
-  "se\xF1uelo": {fileID: 5091619765839581776, guid: 8a41b4a3e482b2048beeb98722315e69, type: 3}
   AreaDetecX: 10
   AreaDetecY: 5
 --- !u!1 &7597456617014043034

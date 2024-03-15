@@ -16,7 +16,7 @@ public class CachorroMov : MonoBehaviour
     private float _tiempoHuida;
     private bool huida;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<BordePlataforma>() != null)
         {
@@ -38,8 +38,8 @@ public class CachorroMov : MonoBehaviour
     {
         if (borde && cambioDirec != 0)
         {
-            if (limit == 1 && cambioDirec == -1) { cambioDirec = 0; }
-            if (limit == 2 && cambioDirec == 1) { cambioDirec = 0; }
+            if (limit == 2 && cambioDirec == -1) { cambioDirec = 0; }
+            if (limit == 1 && cambioDirec == 1) { cambioDirec = 0; }
         }
 
         if (cambioDirec == -1)

@@ -923,6 +923,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.02
       objectReference: {fileID: 0}
+    - target: {fileID: 727667555864350550, guid: fc0820cc4d5186d40a94d87dc940503e, type: 3}
+      propertyPath: invulnerabilidad
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1121043398370426564, guid: fc0820cc4d5186d40a94d87dc940503e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1128,7 +1132,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -34.5046, y: 2.0133824, z: -9.759361}
+  m_LocalPosition: {x: -37.74399, y: 2.0082703, z: -9.759361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1820,7 +1824,7 @@ Transform:
   m_GameObject: {fileID: 787576141}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -40.682327, y: -0.9046005, z: -9.759361}
+  m_LocalPosition: {x: -41.330204, y: -0.9046005, z: -9.759361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -29304,11 +29308,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDetected: 0
-  granjero: {fileID: 23019117}
+  _granjero: {fileID: 0}
   ovejaDetected: 0
-  oveja: {fileID: 1436474183}
+  _oveja: {fileID: 0}
   "se\xF1ueloDetected": 0
-  "se\xF1uelo": {fileID: 5091619765839581776, guid: 8a41b4a3e482b2048beeb98722315e69, type: 3}
   AreaDetecX: 10
   AreaDetecY: 5
 --- !u!1001 &1399482222
@@ -29429,11 +29432,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3612719142133887755, guid: c55ddc5f8dd868e46b7c12c0cb63bf3f, type: 3}
   m_PrefabInstance: {fileID: 444293145}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1436474183 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5091619765839581776, guid: a4a39fd6c06667148bafff6eca868a35, type: 3}
-  m_PrefabInstance: {fileID: 625928487}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1443497803
 PrefabInstance:
@@ -29724,6 +29722,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1173126318}
     m_Modifications:
+    - target: {fileID: 727667555864350550, guid: fc0820cc4d5186d40a94d87dc940503e, type: 3}
+      propertyPath: invulnerabilidad
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1121043398370426564, guid: fc0820cc4d5186d40a94d87dc940503e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 43.865616
@@ -41248,6 +41250,8 @@ MonoBehaviour:
   _playerHealth: {fileID: 565602155}
   _granjeroMovement: {fileID: 565602159}
   _ovejaTransform: {fileID: 2051569316}
+  "nse\xF1uelo": 0
+  "se\xF1ueloExist": 0
 --- !u!114 &1796217534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42685,11 +42689,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDetected: 0
-  granjero: {fileID: 23019117}
+  _granjero: {fileID: 0}
   ovejaDetected: 0
-  oveja: {fileID: 1436474183}
+  _oveja: {fileID: 0}
   "se\xF1ueloDetected": 0
-  "se\xF1uelo": {fileID: 5091619765839581776, guid: 8a41b4a3e482b2048beeb98722315e69, type: 3}
   AreaDetecX: 5
   AreaDetecY: 5
 --- !u!114 &2115649695

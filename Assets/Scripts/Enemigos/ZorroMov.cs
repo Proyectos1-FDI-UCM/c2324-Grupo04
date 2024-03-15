@@ -12,7 +12,7 @@ public class ZorroMov : MonoBehaviour
     private int cambioDirec = 0;
     private bool borde;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<BordePlataforma>() != null)
         {
@@ -34,8 +34,8 @@ public class ZorroMov : MonoBehaviour
     {
         if (borde && cambioDirec != 0)
         {
-            if (limit == 1 && cambioDirec == -1) { cambioDirec = 0; }
-            if (limit == 2 && cambioDirec == 1) { cambioDirec = 0; }
+            if (limit == 2 && cambioDirec == -1) { cambioDirec = 0; }
+            if (limit == 1 && cambioDirec == 1) { cambioDirec = 0; }
         }
 
         if (cambioDirec == -1)

@@ -10,6 +10,7 @@ public class HealthComponent : MonoBehaviour
     [SerializeField] private int _maxHp = 3;
     [SerializeField] public int _currentHp = 3;
     bool _thisIsPlayer = false;
+    bool _thisIsSeñuelo = false;
 
 
 
@@ -18,6 +19,7 @@ public class HealthComponent : MonoBehaviour
     {
         //_currentHp = _maxHp;
         _thisIsPlayer = GetComponent<GranjeroMovement>() != null;
+        _thisIsSeñuelo = GetComponent<Señuelo>() != null;
     }
 
     // Update is called once per frame
@@ -51,6 +53,7 @@ public class HealthComponent : MonoBehaviour
         }
         else
         {
+            if (_thisIsSeñuelo) { GameManager.Instance.SeñueloDestruido(); }
             Destroy(this.gameObject);
         }
     }
