@@ -8,7 +8,8 @@ public class OvejaInteraction : MonoBehaviour
     #region variables
 
     [SerializeField]    private float _interactionDistance = 1.8f;
-    [SerializeField] private float _horizontalOffset = 2f;
+    //[SerializeField] private float _horizontalOffset = 2f;
+    [SerializeField] private float _verticalOffset = 1f;
 
     #endregion
 
@@ -51,16 +52,22 @@ public class OvejaInteraction : MonoBehaviour
 
     public void DejaOveja()
     {
-        // Llamar 
+        // Llamar a la animación
 
-        if (_myGranjeroMovement.Movement().x >= 0)
-        {
-            _myTransform.position = GameManager.Instance.PlayerPosition() + _horizontalOffset * Vector3.right;
-        }
-        else
-        {
-            _myTransform.position = GameManager.Instance.PlayerPosition() + _horizontalOffset * Vector3.left;
-        }
+        // VERSIÓN EN LA QUE LA OVEJA SE SUELTA EN HORIZONTAL
+        //if (_myGranjeroMovement.Movement().x >= 0)
+        //{
+        //    _myTransform.position = GameManager.Instance.PlayerPosition() + _horizontalOffset * Vector3.right;
+        //}
+        //else
+        //{
+        //    _myTransform.position = GameManager.Instance.PlayerPosition() + _horizontalOffset * Vector3.left;
+        //}
+        //_myRB.simulated = true;
+        //_mySR.enabled = true;
+        //GameManager.Instance.SueltaOveja();
+
+        _myTransform.position = GameManager.Instance.PlayerPosition() + _verticalOffset * Vector3.up;
         _myRB.simulated = true;
         _mySR.enabled = true;
         GameManager.Instance.SueltaOveja();
