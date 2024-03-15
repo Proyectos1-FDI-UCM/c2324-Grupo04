@@ -6,6 +6,9 @@ public class HorcaAttack : MonoBehaviour
 {
     [SerializeField] private int _damage = - 2;
     [SerializeField] private float _hitboxSpeed = 2;
+
+    [SerializeField] private LayerMask _Layer;
+
     private Vector2 _dir;
     [SerializeField] private float _hitboxDuration = 0.4f;
     [SerializeField] private GameObject _hitboxPrefab;
@@ -30,16 +33,18 @@ public class HorcaAttack : MonoBehaviour
 
             Collider2D[] results;
             Vector2 position = _myTransform.position.x * Vector2.up + _myTransform.position.y * Vector2.right + _dir * _horizontalOffset;
-            Collider2D result = Physics2D.OverlapCircle(position, _hitboxRadius);
+            Collider2D result = Physics2D.OverlapCircle(position, _hitboxRadius, _Layer);
+
             if (result != null && result.gameObject.GetComponent<EnemyMovement>() != null)
             {
                 result.gameObject.GetComponent<HealthComponent>().ChangeHealth(_damage);
+                Debug.Log("Colisiona");
             }
             if (result ==  null)
             {
                 Debug.Log("No ha encontrado un collider");
             }
-            if (result.gameObject.GetComponent<EnemyMovement>() != null)
+            else if (result.gameObject.GetComponent<EnemyMovement>() == null)
             {
                 Debug.Log("El collider no tiene EnemyMovement");    
             }
