@@ -246,7 +246,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8927058815523446700, guid: 15c8d63b8b558494cacc16d450dab47e, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15c8d63b8b558494cacc16d450dab47e, type: 3}
@@ -1533,7 +1534,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33.26166, y: 2.796494, z: -9.759361}
+  m_LocalPosition: {x: 33.0408, y: 2.7966218, z: -9.759361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2541,7 +2542,7 @@ Transform:
   m_GameObject: {fileID: 787576141}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33.2616, y: 3.1553993, z: -9.759361}
+  m_LocalPosition: {x: 33.040737, y: 3.1553993, z: -9.759361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3181,7 +3182,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2980344303703420876, guid: 40385d4a08cad884eacf1ebc7f28c540, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40385d4a08cad884eacf1ebc7f28c540, type: 3}
@@ -30036,11 +30038,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6966273397031816426, guid: 15c8d63b8b558494cacc16d450dab47e, type: 3}
   m_PrefabInstance: {fileID: 30383610}
   m_PrefabAsset: {fileID: 0}
---- !u!223 &1101543059 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 8853572201228292634, guid: 40385d4a08cad884eacf1ebc7f28c540, type: 3}
-  m_PrefabInstance: {fileID: 873762850}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1119096179
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30840,11 +30837,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1121043398370426564, guid: fc0820cc4d5186d40a94d87dc940503e, type: 3}
   m_PrefabInstance: {fileID: 1524258864}
-  m_PrefabAsset: {fileID: 0}
---- !u!223 &1463217498 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 3584067054181135963, guid: 15c8d63b8b558494cacc16d450dab47e, type: 3}
-  m_PrefabInstance: {fileID: 30383610}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1486457799
 PrefabInstance:
@@ -42706,8 +42698,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _menuDePausa: {fileID: 1673487188}
-  _instruccionesTrampolin: {fileID: 1463217498}
-  "_instruccionesSe\xF1uelo": {fileID: 1101543059}
+  _instruccionesTrampolin: {fileID: 0}
+  "_instruccionesSe\xF1uelo": {fileID: 0}
   _duracionInstrucciones: 1
 --- !u!4 &1796217536
 Transform:
