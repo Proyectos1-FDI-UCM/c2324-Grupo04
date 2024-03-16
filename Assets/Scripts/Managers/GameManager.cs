@@ -138,7 +138,8 @@ public class GameManager : MonoBehaviour
         }
         else if (objeto == TipoObjeto.Horca)
         {
-            _playersHorcaAttack.ActivaHorca(); 
+            _UIManager.RecogidaHorca();
+            _playersHorcaAttack.ActivaHorca();
         }
         else if (objeto == TipoObjeto.Vida)
         {
