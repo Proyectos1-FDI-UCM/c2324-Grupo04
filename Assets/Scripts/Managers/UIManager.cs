@@ -6,9 +6,14 @@ public class UIManager : MonoBehaviour
 {
     #region references
 
-    [SerializeField] GameObject _menuDePausa;
-    [SerializeField] GameObject _instruccionesTrampolin;
-    [SerializeField] GameObject _instruccionesSeñuelo;
+    [SerializeField]
+    GameObject _menuDePausa;
+    [SerializeField]
+    GameObject _instruccionesTrampolin;
+    [SerializeField]
+    GameObject _instruccionesSeñuelo;
+    [SerializeField]
+    GameObject _instruccionesHorca;
 
     #endregion
 

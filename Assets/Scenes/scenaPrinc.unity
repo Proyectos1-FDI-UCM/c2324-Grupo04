@@ -1026,6 +1026,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 569180896674550628, guid: 9adf658c3d2aa5f47acde46b70043088, type: 3}
   m_PrefabInstance: {fileID: 1876392834}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &393918376 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9155463306568556418, guid: 2ace84654c763a843986e4570871b082, type: 3}
+  m_PrefabInstance: {fileID: 808645463401413603}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &403440063
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1277,6 +1282,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objeto: 0
   value: 1
+--- !u!1 &452303925 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8106255569320004014, guid: 7e41cc4daf23a494e9c774496c0c1774, type: 3}
+  m_PrefabInstance: {fileID: 5753889926678581883}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &463536270 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2631542976574063986, guid: 9adf658c3d2aa5f47acde46b70043088, type: 3}
@@ -42302,6 +42312,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1692431728 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2205960351055961836, guid: d5784e75292fcb842b35b0887de0d180, type: 3}
+  m_PrefabInstance: {fileID: 1637823112018370195}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1709946909 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6221123010804650802, guid: 00b2b64c9397734458bb857bac5c82c2, type: 3}
@@ -42702,8 +42717,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _menuDePausa: {fileID: 1673487188}
-  _instruccionesTrampolin: {fileID: 0}
-  "_instruccionesSe\xF1uelo": {fileID: 0}
+  _instruccionesTrampolin: {fileID: 452303925}
+  "_instruccionesSe\xF1uelo": {fileID: 1692431728}
+  _instruccionesHorca: {fileID: 393918376}
   _duracionInstrucciones: 1
 --- !u!4 &1796217536
 Transform:
