@@ -7,8 +7,8 @@ public class UIManager : MonoBehaviour
     #region references
 
     [SerializeField] GameObject _menuDePausa;
-    [SerializeField] Canvas _instruccionesTrampolin;
-    [SerializeField] Canvas _instruccionesSeñuelo;
+    [SerializeField] GameObject _instruccionesTrampolin;
+    [SerializeField] GameObject _instruccionesSeñuelo;
 
     #endregion
 
@@ -24,8 +24,8 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         _menuDePausa.SetActive(false);
-        _instruccionesSeñuelo.enabled = false;
-        _instruccionesTrampolin.enabled = false;
+        _instruccionesSeñuelo.SetActive(false);
+        _instruccionesTrampolin.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,13 +36,13 @@ public class UIManager : MonoBehaviour
 
     public void RecogidaRecetaSeñuelo()
     {
-        _instruccionesSeñuelo.enabled = true; Debug.Log("RecogidaRecetaSeñuelo");
+        _instruccionesSeñuelo.SetActive(true); Debug.Log("RecogidaRecetaSeñuelo");
         Destroy(_instruccionesSeñuelo, _duracionInstrucciones);
     }
 
     public void RecogidaRecetaTrampolin()
     {
-        _instruccionesTrampolin.enabled = true;
+        _instruccionesTrampolin.SetActive(true);
         Destroy(_instruccionesTrampolin, _duracionInstrucciones);
     }
 
