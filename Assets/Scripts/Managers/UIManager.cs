@@ -56,7 +56,7 @@ public class UIManager : MonoBehaviour
         Destroy(_instruccionesTrampolin, _duracionInstrucciones);
     }
 
-    public void RecogidaRecetaHorca()
+    public void RecogidaHorca()
     {
         _instruccionesHorca.SetActive(true);
         Destroy(_instruccionesHorca, _duracionInstrucciones);
