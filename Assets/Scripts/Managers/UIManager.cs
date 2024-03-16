@@ -14,6 +14,8 @@ public class UIManager : MonoBehaviour
     GameObject _instruccionesSeñuelo;
     [SerializeField]
     GameObject _instruccionesHorca;
+    [SerializeField]
+    GameObject _instruccionesMovimiento;
 
     #endregion
 
@@ -31,6 +33,9 @@ public class UIManager : MonoBehaviour
         _menuDePausa.SetActive(false);
         _instruccionesSeñuelo.SetActive(false);
         _instruccionesTrampolin.SetActive(false);
+        _instruccionesHorca.SetActive(false);
+        _instruccionesMovimiento.SetActive(true);
+        Destroy(_instruccionesMovimiento, _duracionInstrucciones);
     }
 
     // Update is called once per frame
@@ -49,6 +54,12 @@ public class UIManager : MonoBehaviour
     {
         _instruccionesTrampolin.SetActive(true);
         Destroy(_instruccionesTrampolin, _duracionInstrucciones);
+    }
+
+    public void RecogidaRecetaHorca()
+    {
+        _instruccionesHorca.SetActive(true);
+        Destroy(_instruccionesHorca, _duracionInstrucciones);
     }
 
     private void OnPause()

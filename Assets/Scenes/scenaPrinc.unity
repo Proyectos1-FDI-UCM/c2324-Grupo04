@@ -30790,6 +30790,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1121043398370426564, guid: fc0820cc4d5186d40a94d87dc940503e, type: 3}
   m_PrefabInstance: {fileID: 1524258864}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1483755718 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8106255569320004014, guid: 021418eb62bafc04a8b51e86bfc7c080, type: 3}
+  m_PrefabInstance: {fileID: 2115435822}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1486457799
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42657,6 +42662,7 @@ MonoBehaviour:
   _instruccionesTrampolin: {fileID: 452303925}
   "_instruccionesSe\xF1uelo": {fileID: 1692431728}
   _instruccionesHorca: {fileID: 393918376}
+  _instruccionesMovimiento: {fileID: 1483755718}
   _duracionInstrucciones: 1
 --- !u!4 &1796217536
 Transform:
