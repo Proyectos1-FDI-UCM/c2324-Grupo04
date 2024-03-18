@@ -9,8 +9,9 @@ public class HudManager : MonoBehaviour
     
     [SerializeField] private TMP_Text coinText;
   	[SerializeField] private TMP_Text cuerdaText;
-	  [SerializeField] private int currentCoins = 0;
-    [SerializeField] private int currentCuerda = 0;
+	private int currentCoins;
+    private int currentCuerda;
+    private int cuerdaTexto;
 
 
 	void Awake()
@@ -30,9 +31,11 @@ public class HudManager : MonoBehaviour
         currentCoins += v;
         coinText.text = "X " + currentCoins.ToString();
     }
-	  public void IncreaseCuerda(int v)
-	  {
-	  	currentCuerda += v;
+	public void UpdateCuerda(int v)
+	{
+        currentCuerda = v * GameManager.Instance.ObtenerCuerdas();
+        Debug.Log(currentCuerda);
 	  	cuerdaText.text = "X " + currentCuerda.ToString();
   	}
+
 }

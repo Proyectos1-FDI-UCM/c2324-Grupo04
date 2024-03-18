@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static GameManager;
 
 public class PickUpComponent : MonoBehaviour
 {
@@ -21,6 +23,7 @@ public class PickUpComponent : MonoBehaviour
     
     [SerializeField]
     public GameManager.TipoObjeto _objeto;
+    private int value = 1;
 
     void OnTriggerEnter2D(Collider2D collision) // Se activa cuando �lgo colisiona con �l
     {
@@ -31,6 +34,38 @@ public class PickUpComponent : MonoBehaviour
         {
             GameManager.Instance.RecogidaObjeto(_objeto);
             Destroy(gameObject);
+
+            if (_objeto == TipoObjeto.Moneda)
+            {
+                Debug.Log("Recoge Moneda");
+                HudManager.instance.IncreaseCoins(value);
+            }
+            else if (_objeto == TipoObjeto.Cuerda)
+            {
+                HudManager.instance.UpdateCuerda(value);
+            }
+            //else if (_objeto == TipoObjeto.RecetaSeñuelo)
+            //{
+            //    HudManager.instance.DecreaseCuerda(value);
+            //}
+            //else if (_objeto == TipoObjeto.RecetaTrampolin)
+            //{
+            //    HudManager.instance.DecreaseCuerda(value);
+            //}
+            //else if (_objeto == TipoObjeto.Horca)
+            //{
+            //    _UIManager.RecogidaHorca();
+            //    _playersHorcaAttack.ActivaHorca();
+            //}
+            //else if (_objeto == TipoObjeto.Vida)
+            //{
+            //    _playerHealth.ChangeHealth(_healthIncrement);
+            //}
+            //else if (_objeto == TipoObjeto.VidaOveja)
+            //{
+            //    _playerHealth.ChangeMaxHealth(_maxHealthIncrement);
+            //    _playerHealth.ChangeHealth(_maxHealthIncrement);
+            //}
         }
     }
 }

@@ -35,6 +35,7 @@ public class Create : MonoBehaviour
         {
             GameObject trampolin = Instantiate(Trampoline, spawnPos, Quaternion.identity);
             GameManager.Instance.ChangeCantidadCuerda(-1);
+            HudManager.instance.UpdateCuerda(1);
         }
     }
 
@@ -47,6 +48,7 @@ public class Create : MonoBehaviour
             GameObject señuelo = Instantiate(Señuelo, spawnPos, Quaternion.identity);
             Debug.Log("Señuelo");
             GameManager.Instance.ChangeCantidadCuerda(-1);
+            HudManager.instance.UpdateCuerda(1);
         }
     }
 
