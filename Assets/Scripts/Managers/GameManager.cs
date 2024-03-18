@@ -50,7 +50,6 @@ public class GameManager : MonoBehaviour
 
     #region references 
     [SerializeField] HorcaAttack _playersHorcaAttack;
-    //[SerializeField] HorcaAttack _playersHorcaAttack;
     [SerializeField] HealthComponent _playerHealth;
     [SerializeField] GranjeroMovement _granjeroMovement;
     private Transform _playerTransform;
@@ -95,7 +94,6 @@ public class GameManager : MonoBehaviour
     private void ActivaHorca()
     {
         Debug.Log("Horca activada");
-        //_playersHorcaAttack.SetActive(true);
         _playersHorcaAttack.enabled = true;
     }
 
@@ -154,14 +152,12 @@ public class GameManager : MonoBehaviour
 
     public void CogeOveja()
     {
-        //_playerTransform.position = _ovejaTransform.position;
         _granjeroMovement.OvejaRecogida();
         cargandoOveja = true;
     }
 
     public void SueltaOveja()
     {
-       // _playerTransform.position = _ovejaTransform.position;
         _granjeroMovement.OvejaSoltada();
         cargandoOveja = false;
     }
@@ -213,14 +209,5 @@ public class GameManager : MonoBehaviour
         Vida,
         VidaOveja
     }
-
-
     #endregion
 }
-
-
-
-
-
-
-

@@ -48,13 +48,7 @@ public class HorcaAttack : MonoBehaviour
             {
                 Debug.Log("El collider no tiene EnemyMovement");    
             }
-            //Vector2 position = _myTransform.position.x * Vector2.up + _myTransform.position.y * Vector2.right + _dir * _horizontalOffset;
-            //Collider2D[] results = new Collider2D[10];
-            //int n = Physics2D.OverlapCircle(position, _hitboxRadius, ContactFilter2D.NoFilter, results);
-            //if (results[0].gameObject.GetComponent<EnemyMovement>() != null)
-            //{
-            //    results[0].gameObject.GetComponent<HealthComponent>().ChangeHealth(_damage);
-            //}
+
         }
     }
 
@@ -63,16 +57,9 @@ public class HorcaAttack : MonoBehaviour
         _puedeAtacar = true;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         _myTransform = transform;
         _myGranjeroMovement = GetComponent<GranjeroMovement>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

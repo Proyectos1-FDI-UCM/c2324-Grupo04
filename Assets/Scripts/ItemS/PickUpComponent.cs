@@ -18,8 +18,7 @@ public class PickUpComponent : MonoBehaviour
     /// El 30 es la oveja
     /// 30 -> Oveja
     ///</leyenda>
-    //[SerializeField]
-    //public int _codigo = 0;
+    
     [SerializeField]
     public GameManager.TipoObjeto _objeto;
 
@@ -30,7 +29,6 @@ public class PickUpComponent : MonoBehaviour
 
         if (granjeroMovement != null) // Comprueba que granjeroMovement existe (y por tanto que lo que ha chocado es el granjero)
         {
-            //GameManager.Instance.RegistraObjetos(_codigo);
             GameManager.Instance.RecogidaObjeto(_objeto);
             Destroy(gameObject);
         }

@@ -31,8 +31,8 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         _menuDePausa.SetActive(false);
-        _instruccionesSeñuelo.SetActive(false);
-        _instruccionesTrampolin.SetActive(false);
+        _instruccionesSeñuelo.SetActive(true);
+        _instruccionesTrampolin.SetActive(true);
         _instruccionesHorca.SetActive(false);
         _instruccionesMovimiento.SetActive(true);
         Destroy(_instruccionesMovimiento, _duracionInstrucciones);

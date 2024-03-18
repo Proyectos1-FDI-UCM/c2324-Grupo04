@@ -30,22 +30,8 @@ public class Create : MonoBehaviour
 
     private void OnAction2()
     {
-        //Debug.Log("instanciaTrampolin");
-        // if (GameManager.Instance.ObtenerCuerdas() >= _tacoste && _playerMovement.choqueAbajo)
 
-        //if ( _inventoryManager.nCuerda > 0 && _playerMovement.choqueAbajo) //_puedeTrampolin &&
-        //{
-        //    GameObject trampolin = Instantiate(Trampoline, _myTransform.position , Quaternion.identity);
-        //    print(trampolin);
-        //    Debug.Log("Trampolin");
-        //    _inventoryManager.ChangeCantidadCuerda(-1);
-        //}
-        
-        /*if (_playerMovement.movement.x < 0 && !_playerMovement.choqueIzq)
-            {
-                spawnPos = new Vector2(_myTransform.position.x + 1, _myTransform.position.y);
-        }*/
-        if (_puedeTrampolin && GameManager.Instance.ObtenerCuerdas() > 0 && _playerMovement.choqueAbajo) //_puedeTrampolin &&
+        if (_puedeTrampolin && GameManager.Instance.ObtenerCuerdas() > 0 && _playerMovement.choqueAbajo) 
         {
             GameObject trampolin = Instantiate(Trampoline, spawnPos, Quaternion.identity);
             GameManager.Instance.ChangeCantidadCuerda(-1);
@@ -54,14 +40,8 @@ public class Create : MonoBehaviour
 
     private void OnAction3()
     {
-        //if (_inventoryManager.nCuerda > 0 && _playerMovement.choqueAbajo) //_puedeSeñuelo && 
-        //{
-        //    GameObject señuelo = Instantiate(Señuelo, _myTransform.position, Quaternion.identity);
-        //    print(señuelo);
-        //    Debug.Log("Señuelo");
-        //    _inventoryManager.ChangeCantidadCuerda(-1);
-        //}
-        if (_puedeSeñuelo && GameManager.Instance.ObtenerCuerdas() > 0 && _playerMovement.choqueAbajo) //_puedeSeñuelo && 
+
+        if (_puedeSeñuelo && GameManager.Instance.ObtenerCuerdas() > 0 && _playerMovement.choqueAbajo) 
         {
             GameManager.Instance.nseñuelo++;
             GameObject señuelo = Instantiate(Señuelo, spawnPos, Quaternion.identity);
@@ -82,8 +62,6 @@ public class Create : MonoBehaviour
 
     private void Start()
     {
-        //_inventoryManager = FindObjectOfType<InventoryManager>();
-
         _myTransform = transform;
         _playerMovement = GetComponent<GranjeroMovement>();
     }

@@ -51,17 +51,11 @@ public class AttackHitboxComponent : MonoBehaviour
         }
     }
 
-    
-
     void Update()
     {
         if ((_myTransform.position - _parentTransform).magnitude < _maxOffset)
         {
             _myTransform.position += _direction.x * Vector3.right * _speed * Time.deltaTime;
         }
-        
-
-
-
     }
 }
