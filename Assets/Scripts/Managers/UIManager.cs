@@ -16,6 +16,9 @@ public class UIManager : MonoBehaviour
     GameObject _instruccionesHorca;
     [SerializeField]
     GameObject _instruccionesMovimiento;
+    [SerializeField]
+    GameObject _corazonesHUD;
+    GameObject[] _corazones;
 
     #endregion
 
@@ -36,6 +39,8 @@ public class UIManager : MonoBehaviour
         _instruccionesHorca.SetActive(false);
         _instruccionesMovimiento.SetActive(true);
         Destroy(_instruccionesMovimiento, _duracionInstrucciones);
+        _corazones = new GameObject[4];
+        //for (int i = 0; )
     }
 
     // Update is called once per frame
@@ -43,7 +48,10 @@ public class UIManager : MonoBehaviour
     {
         
     }
+    #region interfaz de usuario
 
+    #endregion
+    #region instrucciones
     public void RecogidaRecetaSeñuelo()
     {
         _instruccionesSeñuelo.SetActive(true); Debug.Log("RecogidaRecetaSeñuelo");
@@ -61,7 +69,8 @@ public class UIManager : MonoBehaviour
         _instruccionesHorca.SetActive(true);
         Destroy(_instruccionesHorca, _duracionInstrucciones);
     }
-
+    #endregion
+    #region menús
     private void OnPause()
     {
         
@@ -80,4 +89,5 @@ public class UIManager : MonoBehaviour
             _paused = true;
         }
     }
+    #endregion
 }
