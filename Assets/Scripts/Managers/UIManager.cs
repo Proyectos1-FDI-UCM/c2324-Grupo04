@@ -17,7 +17,6 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     GameObject _instruccionesMovimiento;
     [SerializeField]
-    GameObject _corazonesHUD;
     GameObject[] _corazones;
 
     #endregion
@@ -39,8 +38,6 @@ public class UIManager : MonoBehaviour
         _instruccionesHorca.SetActive(false);
         _instruccionesMovimiento.SetActive(true);
         Destroy(_instruccionesMovimiento, _duracionInstrucciones);
-        _corazones = new GameObject[4];
-        //for (int i = 0; )
     }
 
     // Update is called once per frame

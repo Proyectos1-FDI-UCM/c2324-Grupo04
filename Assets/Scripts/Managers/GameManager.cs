@@ -78,6 +78,11 @@ public class GameManager : MonoBehaviour
         return _ovejaTransform;
     }
 
+    public HealthComponent ReferenciaVidaGranjero()
+    {
+        return _playerHealth;
+    }
+
     private void Awake()
     {
         if (_instance == null) _instance = this; // Sólo queremos un GameManager, así que usamos el patrón singleton

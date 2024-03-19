@@ -7,6 +7,12 @@ public class HealthComponent : MonoBehaviour
 
     public int CurrentHealth { get { return _currentHp; } }
 
+
+    public int MaxHealth()
+    {
+        return _maxHp;
+    }
+
     [SerializeField] private int _maxHp = 3;
     [SerializeField] public int _currentHp = 3;
     bool _thisIsPlayer = false;
@@ -60,4 +66,5 @@ public class HealthComponent : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
 }
