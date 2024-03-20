@@ -40,6 +40,15 @@ public class HealthComponent : MonoBehaviour
             _currentHp = _maxHp;
         }
 
+        if (_thisIsPlayer)
+        {
+            UIManager.Instance.ActualizaVidaGranjero();
+        }
+        else if (_thisIsPlayer)
+        {
+            UIManager.Instance.ActualizaVidaOveja();
+        }
+
         if (_currentHp <= 0)
         {
             Die();
