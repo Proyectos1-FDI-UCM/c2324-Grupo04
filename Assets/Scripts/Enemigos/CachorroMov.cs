@@ -8,7 +8,9 @@ public class CachorroMov : MonoBehaviour
     private EnemyMovement _enemyMovement;
     public GameObject limit1;
     public GameObject limit2;
+    [SerializeField]
     private int limit;
+    [SerializeField]
     private int cambioDirec = 0;
     private bool borde;
     [SerializeField]
@@ -56,10 +58,8 @@ public class CachorroMov : MonoBehaviour
         }
     }
 
-    private void huir()
+    private void huir(int cambioDirec)
     {
-        _sensorEnem.seguirPlayer(ref cambioDirec);
-
         if (borde && cambioDirec != 0)
         {
             if (limit == 1 && cambioDirec == 1) { cambioDirec = 0; }
@@ -95,7 +95,8 @@ public class CachorroMov : MonoBehaviour
             if (cambioDirec == 0) { cambioDirec = -1; }
             if (_sensorEnem.playerDetected)
             {
-                huir();
+                _sensorEnem.seguirPlayer(ref cambioDirec);
+                huir(cambioDirec);
                 huida = true;
                 _tiempoHuida = 0f;
                 Debug.Log("empieza a escapar");
@@ -116,7 +117,7 @@ public class CachorroMov : MonoBehaviour
                 else { GetComponent<EnemyMovement>().movementEnemy = Vector2.left; }
             }
         }
-        else { huir(); Debug.Log("escapando"); }
+        else { _sensorEnem.seguirPlayer(ref cambioDirec); huir(cambioDirec); Debug.Log("escapando"); }
         _tiempoHuida += Time.deltaTime;
         if (_tiempoHuida > tiempoHuida) { huida = false; Debug.Log("termina de escapar"); }
         Debug.Log("Cachorro borde: " + borde);
