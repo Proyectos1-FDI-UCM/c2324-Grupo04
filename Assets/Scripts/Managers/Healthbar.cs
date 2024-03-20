@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using HeartIcon;
 
 public class Healthbar : MonoBehaviour
 {
@@ -31,6 +30,8 @@ public class Healthbar : MonoBehaviour
         {
             _corazones[i] = Instantiate(_corazones[i], _myTransform.position + Vector3.right * i, _myTransform.rotation);
         }
-        _vidaGranjero = GameManager.Instance.ReferenciaVidaGranjero;
+        _vidaGranjero = GameManager.Instance.ReferenciaVidaGranjero();
     }
+
+
 }
