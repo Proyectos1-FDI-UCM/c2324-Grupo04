@@ -40,16 +40,15 @@ public class StairComponent : MonoBehaviour
         }
         if ( _goingDown )
         {
-            Debug.Log("Ya est·s bajando");
+            Debug.Log("Ya est√°s bajando");
         }
         if (Mathf.Abs((_myTransform.position - _playerTransform.position).magnitude) > _maxDistance)
         {
-            Debug.Log("Est·s muy lejos");
+            Debug.Log("Est√°s muy lejos");
         }
     }
 
     #endregion
-
 
 
     // Start is called before the first frame update
