@@ -25,27 +25,38 @@ public class StairComponent : MonoBehaviour
     #region parameters
 
     private bool _goingDown = false;
+    private bool _goingUp = false;
 
     #endregion
 
     #region methods
 
-    private void OnGoDown()
+    private void OnUseStaircase(InputAction.CallbackContext context)
     {
-        if (!_goingDown && Mathf.Abs((_myTransform.position - _playerTransform.position).magnitude) <= _maxDistance)
+        if (context.started)
         {
-            _playerTransform.position = _myTransform.position;
-            _goingDown = true; Debug.Log("_goingDown: " + _goingDown);
-            _myCollider.enabled = false;
+            if (context.action.name == "GoDown" && !_goingDown && Mathf.Abs((_myTransform.position - _playerTransform.position).magnitude) <= _maxDistance)
+            {
+                StartDescending();
+            }
+            else if (context.action.name == "GoUp" && !_goingUp && Mathf.Abs((_myTransform.position - _playerTransform.position).magnitude) <= _maxDistance)
+            {
+                StartAscending();
+            }
         }
-        if ( _goingDown )
-        {
-            Debug.Log("Ya estás bajando");
-        }
-        if (Mathf.Abs((_myTransform.position - _playerTransform.position).magnitude) > _maxDistance)
-        {
-            Debug.Log("Estás muy lejos");
-        }
+    }
+
+    private void StartDescending()
+    {
+        _playerTransform.position = _myTransform.position;
+        _goingDown = true;
+        _myCollider.enabled = false;
+    }
+
+    private void StartAscending()
+    {
+        _goingUp = true;
+        _myCollider.enabled = false;
     }
 
     #endregion
@@ -58,22 +69,56 @@ public class StairComponent : MonoBehaviour
         _myTransform = transform;
         _playerTransform = GameManager.Instance.ReferenciaTransformGranjero();
         _myCollider = GetComponent<BoxCollider2D>();
+
+        // Suscribirse a las acciones de "GoDown" y "GoUp"
+        InputAction goDownAction = new InputAction(binding: "<Gamepad>/buttonSouth");
+        goDownAction.performed += OnUseStaircase;
+        goDownAction.Enable();
+
+        InputAction goUpAction = new InputAction(binding: "<Gamepad>/buttonNorth");
+        goUpAction.performed += OnUseStaircase;
+        goUpAction.Enable();
     }
+
 
     // Update is called once per frame
     void Update()
+   {
+    if (_goingDown)
+    {
+        if (Mathf.Abs((_myTransform.position - (_myTransform.position + _endTransform.position)).magnitude) <= _maxDistance)
+        {
+            FinishMovement();
+            Debug.Log("Has llegado al fin de las escaleras");
+        }
+        else
+        {
+            _playerTransform.position = Vector3.Lerp(_playerTransform.position, _endTransform.position, Time.deltaTime * _lerpFactor);
+        }
+    }
+    else if (_goingUp)
+    {
+        if (Mathf.Abs((_myTransform.position - (_myTransform.position + _endTransform.position)).magnitude) <= _maxDistance)
+        {
+            FinishMovement();
+            Debug.Log("Has llegado arriba de las escaleras");
+        }
+        else
+        {
+            _playerTransform.position = Vector3.Lerp(_playerTransform.position, _myTransform.position, Time.deltaTime * _lerpFactor);
+        }
+    }
+  }
+    private void FinishMovement()
     {
         if (_goingDown)
         {
-            if (Mathf.Abs((_myTransform.position - (_myTransform.position + _endTransform.position)).magnitude) <= _maxDistance)
-            {
-                _goingDown = false;
-                Debug.Log("Has llegado al fin de las escaleras");
-            }
-            else
-            {
-                _playerTransform.position = Vector3.Lerp(_playerTransform.position, _endTransform.position, Time.deltaTime * _lerpFactor);
-            }
+            _goingDown = false;
         }
+        else if (_goingUp)
+        {
+            _goingUp = false;
+        }
+        _myCollider.enabled = true;
     }
 }
