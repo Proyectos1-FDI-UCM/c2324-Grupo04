@@ -12,6 +12,8 @@ public class Healthbar : MonoBehaviour
     private GameObject[] _corazones;
 
     private Transform _myTransform;
+
+    private HealthComponent _vidaGranjero;
     #endregion
 
     #region properties
@@ -29,5 +31,6 @@ public class Healthbar : MonoBehaviour
         {
             _corazones[i] = Instantiate(_corazones[i], _myTransform.position + Vector3.right * i, _myTransform.rotation);
         }
+        _vidaGranjero = GameManager.Instance.ReferenciaVidaGranjero;
     }
 }
