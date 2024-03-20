@@ -25,12 +25,10 @@ public class CachorroMov : MonoBehaviour
             if (collision.gameObject == limit1)
             {
                 limit = 1;
-                limit1.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
             }
             if (collision.gameObject == limit2)
             {
                 limit = 2;
-                limit2.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
             }
             borde = true;
         }
@@ -90,6 +88,19 @@ public class CachorroMov : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (borde)
+        {
+            if (limit == 1)
+            {
+                limit1.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
+            }
+            else
+            {
+                limit2.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
+            }
+        }
+
+        Debug.Log("Cachorro huida; " + huida);
         if (!huida)
         {
             if (cambioDirec == 0) { cambioDirec = -1; }
@@ -99,7 +110,7 @@ public class CachorroMov : MonoBehaviour
                 huir(cambioDirec);
                 huida = true;
                 _tiempoHuida = 0f;
-                Debug.Log("empieza a escapar");
+                Debug.Log("Cachorro empieza a escapar");
             }
             else if (_sensorEnem.señueloDetected)
             {
@@ -117,10 +128,11 @@ public class CachorroMov : MonoBehaviour
                 else { GetComponent<EnemyMovement>().movementEnemy = Vector2.left; }
             }
         }
-        else { _sensorEnem.seguirPlayer(ref cambioDirec); huir(cambioDirec); Debug.Log("escapando"); }
+        else { _sensorEnem.seguirPlayer(ref cambioDirec); huir(cambioDirec); Debug.Log("Cachorro escapando"); }
         _tiempoHuida += Time.deltaTime;
-        if (_tiempoHuida > tiempoHuida) { huida = false; Debug.Log("termina de escapar"); }
+        if (_tiempoHuida > tiempoHuida) { huida = false; Debug.Log("Cachorro termina de escapar"); }
         Debug.Log("Cachorro borde: " + borde);
+
         borde = false;
     }
 }

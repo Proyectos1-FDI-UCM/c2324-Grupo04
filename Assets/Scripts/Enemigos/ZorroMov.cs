@@ -19,12 +19,10 @@ public class ZorroMov : MonoBehaviour
             if (collision.gameObject == limit1)
             {
                 limit = 1;
-                limit1.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
             }
             if (collision.gameObject == limit2)
             {
                 limit = 2;
-                limit2.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
             }
             borde = true;
         }
@@ -60,6 +58,18 @@ public class ZorroMov : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (borde)
+        {
+            if (limit == 1)
+            {
+                limit1.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
+            }
+            else
+            {
+                limit2.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
+            }
+        }
+
         if (cambioDirec == 0) { cambioDirec = -1; }
         
         if (_sensorEnem.señueloDetected)
