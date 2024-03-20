@@ -38,13 +38,38 @@ public class HeartIcon : MonoBehaviour
     void Start()
     {
         _mySpriteRenderer = GetComponent<SpriteRenderer>();
-        Debug.Log("Corazón inicializado");
+        Debug.Log("Corazón Start()");
+        //if (_mySpriteRenderer != null)
+        //{
+        //    Debug.Log("_mySpriteRenderer del corazón se ha pillado bien");
+        //}
+        //if (_mySpriteRenderer == null)
+        //{
+        //    Debug.Log("_mySpriteRenderer del corazón no se ha pillado");
+        //}
+        estado = Estado.Desactivado;
+        if (estado == Estado.Entero)
+        {
+            Debug.Log("Corazón: Está encendido");
+        }
+        else if (estado == Estado.Desactivado)
+        {
+            Debug.Log("Corazón: Está apagado");
+        }
     }
 
     public void Inicializacion()
     {
-        _mySpriteRenderer = GetComponent<SpriteRenderer>();
         Debug.Log("Corazón inicializado");
+        _mySpriteRenderer = GetComponent<SpriteRenderer>();
+        if ( _mySpriteRenderer != null )
+        {
+            Debug.Log("_mySpriteRenderer del corazón no es null");
+        }
+        if (_mySpriteRenderer == null)
+        {
+            Debug.Log("_mySpriteRenderer del corazón no se ha pillado");
+        }
     }
 
     public void Actualiza()

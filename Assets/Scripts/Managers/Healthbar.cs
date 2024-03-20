@@ -25,13 +25,12 @@ public class Healthbar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Healthbar inicializado");
         _myTransform = transform;
         _corazones = new HeartIcon[4];
         for (int i = 0; i < 4; i++)
         {
             _corazones[i] = Instantiate(_prefabCorazon, _myTransform.position + Vector3.right * i, _myTransform.rotation, _myTransform).GetComponent<HeartIcon>();
-            _corazones[i].Inicializacion();
+            //_corazones[i].Inicializacion();
         }
         ActualizaEstados();
     }
@@ -42,14 +41,15 @@ public class Healthbar : MonoBehaviour
         int maxHealth = _vidaRepresentada.MaxHealth();
         Debug.Log("Vida: " +  currentHealth + " vida máxima: " +  maxHealth);
 
-        for (int i = 0; i < 4 && i < currentHealth; i++)
+        for (int i = 0; i < currentHealth; i++)
         {
+            Debug.Log("Entro en el bucle");
             _corazones[i].Entero();
         }
-        for (int i = currentHealth; i < 4 && i < maxHealth; i++)
-        {
-            _corazones[i].Vacio();
-        }
+        //for (int i = currentHealth; i < 4 && i < maxHealth; i++)
+        //{
+        //    _corazones[i].Vacio();
+        //}
     }
 
 }

@@ -29776,11 +29776,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1084777229787122712, guid: 4d46d3af0f731c041b493d00dce3a5c3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5.94
       objectReference: {fileID: 0}
     - target: {fileID: 1084777229787122712, guid: 4d46d3af0f731c041b493d00dce3a5c3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 5.65
       objectReference: {fileID: 0}
     - target: {fileID: 1084777229787122712, guid: 4d46d3af0f731c041b493d00dce3a5c3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -42145,7 +42145,7 @@ MonoBehaviour:
   _instruccionesHorca: {fileID: 393918376}
   _instruccionesMovimiento: {fileID: 1483755718}
   _corazones: []
-  _duracionInstrucciones: 1
+  _duracionInstrucciones: 2.6
 --- !u!4 &1796217536
 Transform:
   m_ObjectHideFlags: 0
