@@ -65,6 +65,35 @@ public class HeartIcon : MonoBehaviour
         
     }
 
+    public void Entero()
+    {
+        _mySpriteRenderer.enabled = true;
+        estado = Estado.Entero;
+    }
+
+    public void Medio()
+    {
+        _mySpriteRenderer.enabled = true;
+        estado = Estado.Medio;
+    }
+
+    public void Vacio()
+    {
+        _mySpriteRenderer.enabled = true;
+        estado = Estado.Vacio;
+    }
+
+    public void Desactivar()
+    {
+        _mySpriteRenderer.enabled = false;
+        estado = Estado.Desactivado;
+    }
+
+    public Estado Estado()
+    {
+        return estado;
+    }
+
     // Update is called once per frame
     void Update()
     {
