@@ -23,6 +23,10 @@ public class OvejaBalido : MonoBehaviour
     private float _tiempoBalido;
     private bool ovejaBalido = false;
     System.Random rnd = new System.Random();
+    [SerializeField]
+    private int rnd1;
+    [SerializeField]
+    private int rnd2;
 
 
     private void DetectarPlayer()
@@ -50,7 +54,7 @@ public class OvejaBalido : MonoBehaviour
         _myTransform = transform;
         _granjero = GameManager.Instance.ReferenciaTransformGranjero();
         _tiempoBalido = 0;
-        tiempoRNDBalido = rnd.Next(5, 10);
+        tiempoRNDBalido = rnd.Next(rnd1, rnd2);
     }
 
     // Update is called once per frame
@@ -70,6 +74,7 @@ public class OvejaBalido : MonoBehaviour
         if (_tiempoBalido > tiempoPrimerBalido)
         {
             ovejaBalido = true;
+            Balar();
         }
 
         if (ovejaBalido)
@@ -77,7 +82,7 @@ public class OvejaBalido : MonoBehaviour
             if (_tiempoBalido > tiempoRNDBalido)
             {
                 Balar();
-                tiempoRNDBalido = rnd.Next(5, 10);
+                tiempoRNDBalido = rnd.Next(rnd1, rnd2);
                 _tiempoBalido = 0;
             }
         }
