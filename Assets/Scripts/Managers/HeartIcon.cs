@@ -89,7 +89,7 @@ public class HeartIcon : MonoBehaviour
         estado = Estado.Desactivado;
     }
 
-    public Estado Estado()
+    public Estado VerEstado()
     {
         return estado;
     }
