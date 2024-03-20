@@ -41,7 +41,7 @@ public class Healthbar : MonoBehaviour
         int maxHealth = _vidaRepresentada.MaxHealth();
         Debug.Log("Vida: " +  currentHealth + " vida máxima: " +  maxHealth);
 
-        for (int i = 0; i < currentHealth; i++)
+        for (int i = 0; i < 3; i++)
         {
             Debug.Log("Entro en el bucle");
             _corazones[i].Entero();

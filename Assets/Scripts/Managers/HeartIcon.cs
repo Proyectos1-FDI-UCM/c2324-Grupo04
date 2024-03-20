@@ -12,7 +12,7 @@ public class HeartIcon : MonoBehaviour
     [SerializeField]
     private Sprite vacio;
 
-
+    [SerializeField]
     private SpriteRenderer _mySpriteRenderer;
     #endregion
 
@@ -39,23 +39,23 @@ public class HeartIcon : MonoBehaviour
     {
         _mySpriteRenderer = GetComponent<SpriteRenderer>();
         Debug.Log("Corazón Start()");
-        //if (_mySpriteRenderer != null)
-        //{
-        //    Debug.Log("_mySpriteRenderer del corazón se ha pillado bien");
-        //}
+        if (_mySpriteRenderer != null)
+        {
+            Debug.Log("_mySpriteRenderer del corazón se ha pillado bien");
+        }
         //if (_mySpriteRenderer == null)
         //{
         //    Debug.Log("_mySpriteRenderer del corazón no se ha pillado");
         //}
-        estado = Estado.Desactivado;
-        if (estado == Estado.Entero)
-        {
-            Debug.Log("Corazón: Está encendido");
-        }
-        else if (estado == Estado.Desactivado)
-        {
-            Debug.Log("Corazón: Está apagado");
-        }
+        Desactivar();
+        //if (estado == Estado.Entero)
+        //{
+        //    Debug.Log("Corazón: Está encendido");
+        //}
+        //else if (estado == Estado.Desactivado)
+        //{
+        //    Debug.Log("Corazón: Está apagado");
+        //}
     }
 
     public void Inicializacion()
@@ -99,19 +99,23 @@ public class HeartIcon : MonoBehaviour
 
     public void Entero()
     {
-        _mySpriteRenderer.enabled = true;
+        Debug.Log("Corazón Entero()");
+        _mySpriteRenderer.enabled = true;   
+        _mySpriteRenderer.sprite = entero;
         estado = Estado.Entero;
     }
 
     public void Medio()
     {
         _mySpriteRenderer.enabled = true;
+        _mySpriteRenderer.sprite = medio;
         estado = Estado.Medio;
     }
 
     public void Vacio()
     {
         _mySpriteRenderer.enabled = true;
+        _mySpriteRenderer.sprite = vacio;
         estado = Estado.Vacio;
     }
 
