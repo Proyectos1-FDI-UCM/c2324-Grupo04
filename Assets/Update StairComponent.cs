@@ -72,12 +72,11 @@ public class StairComponent : MonoBehaviour
         _myCollider = GetComponent<BoxCollider2D>();
 
         InputAction goDownAction = GetComponent<PlayerInput>().actions["GoDown"];
-        InputAction goUpAction = GetComponent<PlayerInput>().actions["GoUp"];
-
         goDownAction.performed += OnUseStaircase;
-        goUpAction.performed += OnUseStaircase;
-
         goDownAction.Enable();
+        
+        InputAction goUpAction = GetComponent<PlayerInput>().actions["GoUp"];
+        goUpAction.performed += OnUseStaircase;
         goUpAction.Enable();
     }
 
