@@ -20,14 +20,10 @@ public class LoboMov : MonoBehaviour
             if (collision.gameObject == limit1)
             {
                 limit = 1;
-                limit1.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
-                Debug.Log("Interacting with Child 1");
             }
             if (collision.gameObject == limit2)
             {
                 limit = 2;
-                limit2.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
-                Debug.Log("Interacting with Child 2");
             }
             borde = true;
         }
@@ -64,6 +60,18 @@ public class LoboMov : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (borde)
+        {
+            if (limit == 1)
+            {
+                limit1.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
+            }
+            else
+            {
+                limit2.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
+            }
+        }
+
         if (cambioDirec == 0) { cambioDirec = -1; }
 
         if (_sensorEnem.señueloDetected)
