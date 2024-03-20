@@ -26,9 +26,9 @@ public class HudManager : MonoBehaviour
 	}
 
     // Update is called once per frame
-    public void IncreaseCoins(int v)
+    public void IncreaseCoins()
     {
-        currentCoins += v;
+        currentCoins++;
         coinText.text = "X " + currentCoins.ToString();
     }
 	public void UpdateCuerda(int v)

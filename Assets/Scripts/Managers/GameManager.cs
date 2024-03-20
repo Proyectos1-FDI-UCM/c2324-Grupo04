@@ -124,10 +124,12 @@ public class GameManager : MonoBehaviour
         if (objeto == TipoObjeto.Moneda)
         {
             _monedas++;
+            HudManager.instance.IncreaseCoins();
         }
         else if (objeto == TipoObjeto.Cuerda)
         {
             _cuerda++;
+            HudManager.instance.UpdateCuerda(1);
         }
         else if (objeto == TipoObjeto.RecetaSeñuelo)
         {

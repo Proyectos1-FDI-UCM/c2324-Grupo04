@@ -34,38 +34,6 @@ public class PickUpComponent : MonoBehaviour
         {
             GameManager.Instance.RecogidaObjeto(_objeto);
             Destroy(gameObject);
-
-            if (_objeto == TipoObjeto.Moneda)
-            {
-                Debug.Log("Recoge Moneda");
-                HudManager.instance.IncreaseCoins(value);
-            }
-            else if (_objeto == TipoObjeto.Cuerda)
-            {
-                HudManager.instance.UpdateCuerda(value);
-            }
-            //else if (_objeto == TipoObjeto.RecetaSeñuelo)
-            //{
-            //    HudManager.instance.DecreaseCuerda(value);
-            //}
-            //else if (_objeto == TipoObjeto.RecetaTrampolin)
-            //{
-            //    HudManager.instance.DecreaseCuerda(value);
-            //}
-            //else if (_objeto == TipoObjeto.Horca)
-            //{
-            //    _UIManager.RecogidaHorca();
-            //    _playersHorcaAttack.ActivaHorca();
-            //}
-            //else if (_objeto == TipoObjeto.Vida)
-            //{
-            //    _playerHealth.ChangeHealth(_healthIncrement);
-            //}
-            //else if (_objeto == TipoObjeto.VidaOveja)
-            //{
-            //    _playerHealth.ChangeMaxHealth(_maxHealthIncrement);
-            //    _playerHealth.ChangeHealth(_maxHealthIncrement);
-            //}
         }
     }
 }
