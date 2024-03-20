@@ -28,6 +28,34 @@ public class UIManager : MonoBehaviour
 
     #endregion
 
+    #region properties
+
+    static private UIManager _instance;
+
+
+    static public UIManager Instance // Todos podéis usar este método (escrito: UIManager.Instance) para acceder al UIManager y a cualquiera de sus métodos
+    {
+        get { return _instance; }
+    }
+
+
+    #endregion
+
+    #region methods
+
+    public void ActualizaVidaGranjero()
+    {
+
+    }
+
+    public void ActualizaVidaOveja()
+    {
+
+    }
+
+
+    #endregion
+
     private bool _paused = false;
     // Start is called before the first frame update
     void Start()

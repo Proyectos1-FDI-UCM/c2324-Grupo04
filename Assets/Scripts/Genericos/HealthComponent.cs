@@ -5,7 +5,10 @@ using UnityEngine;
 public class HealthComponent : MonoBehaviour
 {
 
-    public int CurrentHealth { get { return _currentHp; } }
+    public int CurrentHealth() 
+    {
+        return _currentHp;
+    }
 
 
     public int MaxHealth()
@@ -38,6 +41,15 @@ public class HealthComponent : MonoBehaviour
         if (_currentHp > _maxHp)
         {
             _currentHp = _maxHp;
+        }
+
+        if (_thisIsPlayer)
+        {
+            UIManager.Instance.ActualizaVidaGranjero();
+        }
+        else if (_thisIsPlayer)
+        {
+            UIManager.Instance.ActualizaVidaOveja();
         }
 
         if (_currentHp <= 0)
