@@ -74,18 +74,18 @@ public class ZorroMov : MonoBehaviour
         
         if (_sensorEnem.señueloDetected)
         {
-            _sensorEnem.seguirSeñuelo(ref cambioDirec);
+            _sensorEnem.seguirSeñuelo(out cambioDirec);
             seguir(cambioDirec);
         }
         else if (_sensorEnem.playerDetected)
         {
-            _sensorEnem.seguirPlayer(ref cambioDirec);
+            _sensorEnem.seguirPlayer(out cambioDirec);
             seguir(cambioDirec);
             Debug.Log("Siguiendo player");
         }
         else if (_sensorEnem.ovejaDetected)
         {
-            _sensorEnem.seguirOveja(ref cambioDirec);
+            _sensorEnem.seguirOveja(out cambioDirec);
             seguir(cambioDirec);
             Debug.Log("Siguiendo oveja");
         }

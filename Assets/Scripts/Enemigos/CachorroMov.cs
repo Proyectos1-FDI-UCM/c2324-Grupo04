@@ -106,7 +106,7 @@ public class CachorroMov : MonoBehaviour
             if (cambioDirec == 0) { cambioDirec = -1; }
             if (_sensorEnem.playerDetected)
             {
-                _sensorEnem.seguirPlayer(ref cambioDirec);
+                _sensorEnem.seguirPlayer(out cambioDirec);
                 huir(cambioDirec);
                 huida = true;
                 _tiempoHuida = 0f;
@@ -114,12 +114,12 @@ public class CachorroMov : MonoBehaviour
             }
             else if (_sensorEnem.señueloDetected)
             {
-                _sensorEnem.seguirSeñuelo(ref cambioDirec);
+                _sensorEnem.seguirSeñuelo(out cambioDirec);
                 seguir(cambioDirec);
             }
             else if (_sensorEnem.ovejaDetected)
             {
-                _sensorEnem.seguirOveja(ref cambioDirec);
+                _sensorEnem.seguirOveja(out cambioDirec);
                 seguir(cambioDirec);
             }
             else
@@ -128,7 +128,7 @@ public class CachorroMov : MonoBehaviour
                 else { GetComponent<EnemyMovement>().movementEnemy = Vector2.left; }
             }
         }
-        else { _sensorEnem.seguirPlayer(ref cambioDirec); huir(cambioDirec); Debug.Log("Cachorro escapando"); }
+        else { _sensorEnem.seguirPlayer(out cambioDirec); huir(cambioDirec); Debug.Log("Cachorro escapando"); }
         _tiempoHuida += Time.deltaTime;
         if (_tiempoHuida > tiempoHuida) { huida = false; Debug.Log("Cachorro termina de escapar"); }
         Debug.Log("Cachorro borde: " + borde);

@@ -23,7 +23,7 @@ public class SensorEnem : MonoBehaviour
     private float xDistance;
     private float yDistance;
 
-    public void seguirPlayer(ref int cambioDirec)
+    public void seguirPlayer(out int cambioDirec)
     {
         if (_granjero.position.x - transform.position.x < -0.3)
         {
@@ -36,7 +36,7 @@ public class SensorEnem : MonoBehaviour
         else { cambioDirec = 0; }
     }
 
-    public void seguirOveja(ref int cambioDirec)
+    public void seguirOveja(out int cambioDirec)
     {
         if (_oveja.position.x - transform.position.x < -0.3)
         {
@@ -49,7 +49,7 @@ public class SensorEnem : MonoBehaviour
         else { cambioDirec = 0; }
     }
 
-    public void seguirSeñuelo(ref int cambioDirec)
+    public void seguirSeñuelo(out int cambioDirec)
     {
         if (_señueloTransform.x - transform.position.x < -0.3)
         {
