@@ -66,17 +66,18 @@ public class StairComponent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         _myTransform = transform;
         _playerTransform = GameManager.Instance.ReferenciaTransformGranjero();
         _myCollider = GetComponent<BoxCollider2D>();
 
-        // Suscribirse a las acciones de "GoDown" y "GoUp"
-        InputAction goDownAction = new InputAction(binding: "<Gamepad>/buttonSouth");
-        goDownAction.performed += OnUseStaircase;
-        goDownAction.Enable();
+        InputAction goDownAction = GetComponent<PlayerInput>().actions["GoDown"];
+        InputAction goUpAction = GetComponent<PlayerInput>().actions["GoUp"];
 
-        InputAction goUpAction = new InputAction(binding: "<Gamepad>/buttonNorth");
+        goDownAction.performed += OnUseStaircase;
         goUpAction.performed += OnUseStaircase;
+
+        goDownAction.Enable();
         goUpAction.Enable();
     }
 
