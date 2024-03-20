@@ -38,6 +38,13 @@ public class HeartIcon : MonoBehaviour
     void Start()
     {
         _mySpriteRenderer = GetComponent<SpriteRenderer>();
+        Debug.Log("Corazón inicializado");
+    }
+
+    public void Inicializacion()
+    {
+        _mySpriteRenderer = GetComponent<SpriteRenderer>();
+        Debug.Log("Corazón inicializado");
     }
 
     public void Actualiza()

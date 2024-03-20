@@ -8,11 +8,12 @@ public class Healthbar : MonoBehaviour
     [SerializeField]
     private GameObject _prefabCorazon;
 
-    private GameObject[] _corazones;
+    private HeartIcon[] _corazones;
 
     private Transform _myTransform;
 
-    private HealthComponent _vidaGranjero;
+    [SerializeField]
+    private HealthComponent _vidaRepresentada;
     #endregion
 
     #region properties
@@ -24,14 +25,31 @@ public class Healthbar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Healthbar inicializado");
         _myTransform = transform;
-        _corazones = new GameObject[4];
+        _corazones = new HeartIcon[4];
         for (int i = 0; i < 4; i++)
         {
-            _corazones[i] = Instantiate(_corazones[i], _myTransform.position + Vector3.right * i, _myTransform.rotation);
+            _corazones[i] = Instantiate(_prefabCorazon, _myTransform.position + Vector3.right * i, _myTransform.rotation, _myTransform).GetComponent<HeartIcon>();
+            _corazones[i].Inicializacion();
         }
-        _vidaGranjero = GameManager.Instance.ReferenciaVidaGranjero();
+        ActualizaEstados();
     }
 
+    public void ActualizaEstados()
+    {
+        int currentHealth = _vidaRepresentada.CurrentHealth();
+        int maxHealth = _vidaRepresentada.MaxHealth();
+        Debug.Log("Vida: " +  currentHealth + " vida máxima: " +  maxHealth);
+
+        for (int i = 0; i < 4 && i < currentHealth; i++)
+        {
+            _corazones[i].Entero();
+        }
+        for (int i = currentHealth; i < 4 && i < maxHealth; i++)
+        {
+            _corazones[i].Vacio();
+        }
+    }
 
 }
