@@ -76,7 +76,7 @@ public class LoboMov : MonoBehaviour
 
         if (_sensorEnem.señueloDetected)
         {
-            _sensorEnem.seguirSeñuelo(ref cambioDirec);
+            _sensorEnem.seguirSeñuelo(out cambioDirec);
             seguir(cambioDirec);
         }
 
