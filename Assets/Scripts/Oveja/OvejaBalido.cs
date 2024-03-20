@@ -6,7 +6,7 @@ using UnityEngine;
 public class OvejaBalido : MonoBehaviour
 {
     private Transform _myTransform;
-    public bool playerDetected = false;
+    private bool playerDetected = false;
     public Transform _granjero;
 
     [SerializeField]
@@ -21,7 +21,9 @@ public class OvejaBalido : MonoBehaviour
     private float tiempoPrimerBalido;
     private float tiempoRNDBalido;
     private float _tiempoBalido;
-    bool ovejaBalido = false;
+    private bool ovejaBalido = false;
+    System.Random rnd = new System.Random();
+
 
     private void DetectarPlayer()
     {
@@ -34,12 +36,21 @@ public class OvejaBalido : MonoBehaviour
         }
     }
 
+    private void Balar()
+    {
+        if (playerDetected && ovejaBalido)
+        {
+            //Script para sonido
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         _myTransform = transform;
         _granjero = GameManager.Instance.ReferenciaTransformGranjero();
         _tiempoBalido = 0;
+        tiempoRNDBalido = rnd.Next(5, 10);
     }
 
     // Update is called once per frame
@@ -58,7 +69,17 @@ public class OvejaBalido : MonoBehaviour
 
         if (_tiempoBalido > tiempoPrimerBalido)
         {
+            ovejaBalido = true;
+        }
 
+        if (ovejaBalido)
+        {
+            if (_tiempoBalido > tiempoRNDBalido)
+            {
+                Balar();
+                tiempoRNDBalido = rnd.Next(5, 10);
+                _tiempoBalido = 0;
+            }
         }
     }
 }
