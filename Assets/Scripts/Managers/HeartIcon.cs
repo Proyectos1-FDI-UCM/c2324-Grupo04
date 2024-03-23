@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//namespace HeartIcons;
 public class HeartIcon : MonoBehaviour
 {
     #region references
@@ -11,6 +12,8 @@ public class HeartIcon : MonoBehaviour
     private Sprite medio;
     [SerializeField]
     private Sprite vacio;
+    [SerializeField]
+    private Sprite desactivado;
 
     [SerializeField]
     private SpriteRenderer _mySpriteRenderer;
@@ -47,7 +50,7 @@ public class HeartIcon : MonoBehaviour
         //{
         //    Debug.Log("_mySpriteRenderer del corazón no se ha pillado");
         //}
-        Desactivar();
+        //Desactivado();
         //if (estado == Estado.Entero)
         //{
         //    Debug.Log("Corazón: Está encendido");
@@ -74,54 +77,55 @@ public class HeartIcon : MonoBehaviour
 
     public void Actualiza()
     {
-        if (estado == Estado.Desactivado)
+        if (estado == Estado.Entero)
         {
-            _mySpriteRenderer.enabled = false;
+            _mySpriteRenderer.sprite = entero;
+        }
+        else if (estado == Estado.Medio)
+        {
+            _mySpriteRenderer.sprite = medio;
+        }
+        else if (estado == Estado.Vacio)
+        {
+            _mySpriteRenderer.sprite = vacio;
         }
         else
         {
-            _mySpriteRenderer.enabled = true;
-            if (estado == Estado.Entero)
-            {
-                _mySpriteRenderer.sprite = entero;
-            }
-            else if (estado == Estado.Medio)
-            {
-                _mySpriteRenderer.sprite = medio;
-            }
-            else
-            {
-                _mySpriteRenderer.sprite = vacio;
-            }
+            _mySpriteRenderer.sprite = desactivado;
         }
-        
+
+    }
+
+    public void CambiarEstado(Estado nuevoEstado)
+    {
+        estado = nuevoEstado;
     }
 
     public void Entero()
     {
         Debug.Log("Corazón Entero()");
-        _mySpriteRenderer.enabled = true;   
         _mySpriteRenderer.sprite = entero;
         estado = Estado.Entero;
     }
 
     public void Medio()
     {
-        _mySpriteRenderer.enabled = true;
+        //Debug.Log("Corazón Medio()");
         _mySpriteRenderer.sprite = medio;
         estado = Estado.Medio;
     }
 
     public void Vacio()
     {
-        _mySpriteRenderer.enabled = true;
+        //Debug.Log("Corazón Vacio()");
         _mySpriteRenderer.sprite = vacio;
         estado = Estado.Vacio;
     }
 
-    public void Desactivar()
+    public void Desactivado()
     {
-        _mySpriteRenderer.enabled = false;
+        Debug.Log("Corazón " + transform.position.x + " Desactivado()");
+        _mySpriteRenderer.sprite = desactivado;
         estado = Estado.Desactivado;
     }
 

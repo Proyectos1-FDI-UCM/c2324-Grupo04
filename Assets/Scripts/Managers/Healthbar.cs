@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using HeartIcons;
 
 public class Healthbar : MonoBehaviour
 {
@@ -41,15 +42,40 @@ public class Healthbar : MonoBehaviour
         int maxHealth = _vidaRepresentada.MaxHealth();
         Debug.Log("Vida: " +  currentHealth + " vida máxima: " +  maxHealth);
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < currentHealth; i++)
         {
-            Debug.Log("Entro en el bucle");
+            Debug.Log("Entro en el bucle 1: " + i);
             _corazones[i].Entero();
+        }
+        for (int i = currentHealth; i < maxHealth; i++)
+        {
+            Debug.Log("Entro en el bucle 2: " + i);
+            _corazones[i].Vacio();
+        }
+        for (int i = maxHealth; i < _corazones.Length; i++)
+        {
+            Debug.Log("Entro en el bucle 3: " + i);
+            _corazones[i].Desactivado();
         }
         //for (int i = currentHealth; i < 4 && i < maxHealth; i++)
         //{
         //    _corazones[i].Vacio();
         //}
+    }
+
+    void Update()
+    {
+        //HERRAMIENTA DE DEPURACIÓN
+        if (Input.GetKeyDown("up")) 
+        {
+            GameObject.Find("Granjero").GetComponent<HealthComponent>().ChangeMaxHealth(1);
+            print("vida máxima aumentada");
+            ActualizaEstados();
+        }
+        else if (Input.GetKeyDown("down"))
+        {
+            print("down arrow key is held down");
+        }
     }
 
 }

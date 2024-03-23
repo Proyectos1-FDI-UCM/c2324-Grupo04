@@ -100,4 +100,5 @@ MonoBehaviour:
   entero: {fileID: 21300000, guid: 41d3be1dfbba6814e963a7dd56e7f3b6, type: 3}
   medio: {fileID: 21300000, guid: c0803deb8fe1a2343a41c1f7b5e700b1, type: 3}
   vacio: {fileID: 21300000, guid: 8058905d1b039714aaadae9c5bbcf1ed, type: 3}
+  desactivado: {fileID: 21300000, guid: 2358359b2ad977e4a98cea0420c93997, type: 3}
   _mySpriteRenderer: {fileID: 2416354920260836466}
