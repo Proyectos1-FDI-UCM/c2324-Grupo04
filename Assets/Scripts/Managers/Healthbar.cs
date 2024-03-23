@@ -21,13 +21,19 @@ public class Healthbar : MonoBehaviour
 
     #endregion
 
+    #region variables
+
+    [SerializeField]
+    private int _maxCorazones = 4;
+
+    #endregion
 
 
     // Start is called before the first frame update
     void Start()
     {
         _myTransform = transform;
-        _corazones = new HeartIcon[4];
+        _corazones = new HeartIcon[_maxCorazones];
         for (int i = 0; i < 4; i++)
         {
             _corazones[i] = Instantiate(_prefabCorazon, _myTransform.position + Vector3.right * i, _myTransform.rotation, _myTransform).GetComponent<HeartIcon>();
