@@ -62,6 +62,10 @@ public class HealthComponent : MonoBehaviour
     public void ChangeMaxHealth(int increment)
     {
         _maxHp += increment;
+        if (_currentHp > _maxHp)
+        {
+            _currentHp = _maxHp;
+        }
     }
 
     private void Die()
