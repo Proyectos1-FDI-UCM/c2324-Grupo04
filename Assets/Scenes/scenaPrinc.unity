@@ -1155,6 +1155,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8363042434839160541, guid: fc0820cc4d5186d40a94d87dc940503e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1382498145}
+    - targetCorrespondingSourceObject: {fileID: 8363042434839160541, guid: fc0820cc4d5186d40a94d87dc940503e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1382498151}
   m_SourcePrefab: {fileID: 100100000, guid: fc0820cc4d5186d40a94d87dc940503e, type: 3}
 --- !u!1001 &514325365
 PrefabInstance:
@@ -1302,7 +1305,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -37.73936, y: 2.3033328, z: -9.759361}
+  m_LocalPosition: {x: -36.635056, y: 2.31356, z: -9.759361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1572,6 +1575,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9daee4886f8d5354ba0187fd7512edad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &571136113 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8626631034974368029, guid: fc0820cc4d5186d40a94d87dc940503e, type: 3}
+  m_PrefabInstance: {fileID: 511486522}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &595446376
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1702,6 +1710,10 @@ PrefabInstance:
     - target: {fileID: -558316822186244850, guid: a4a39fd6c06667148bafff6eca868a35, type: 3}
       propertyPath: m_Mass
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2735028118702644052, guid: a4a39fd6c06667148bafff6eca868a35, type: 3}
+      propertyPath: invulnerabilidad
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4720660615894855115, guid: a4a39fd6c06667148bafff6eca868a35, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1935,6 +1947,10 @@ PrefabInstance:
     - target: {fileID: 2465212164272183052, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
       propertyPath: m_Name
       value: Granjero
+      objectReference: {fileID: 0}
+    - target: {fileID: 3505807150843220732, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
+      propertyPath: invulnerabilidad
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5324502382298505244, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2314,7 +2330,7 @@ Transform:
   m_GameObject: {fileID: 787576141}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -43.659264, y: -1.2546004, z: -9.759361}
+  m_LocalPosition: {x: -43.4384, y: -1.2546004, z: -9.759361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -30045,6 +30061,20 @@ MonoBehaviour:
   "se\xF1ueloDetected": 0
   AreaDetecX: 10
   AreaDetecY: 5
+--- !u!114 &1382498151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208028097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4b8bc20c32d85f4b8097d5efb0e819a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  limit1: {fileID: 1776513506}
+  limit2: {fileID: 571136113}
 --- !u!1001 &1399482222
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30428,8 +30458,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cachorro
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7010213244582218074, guid: fc0820cc4d5186d40a94d87dc940503e, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -42015,6 +42044,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9adf658c3d2aa5f47acde46b70043088, type: 3}
+--- !u!1 &1776513506 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8240787562782601966, guid: fc0820cc4d5186d40a94d87dc940503e, type: 3}
+  m_PrefabInstance: {fileID: 511486522}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1796217532
 GameObject:
   m_ObjectHideFlags: 0
@@ -43870,7 +43904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9ef09ecd6f9ed649a3525943a84e7dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDetected: 0
+  playerDetected: 1
   _granjero: {fileID: 0}
   ovejaDetected: 0
   _oveja: {fileID: 0}

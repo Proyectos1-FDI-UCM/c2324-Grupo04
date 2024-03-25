@@ -137,6 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHp: 3
   _currentHp: 3
+  invulnerabilidad: 2
 --- !u!50 &-558316822186244850
 Rigidbody2D:
   serializedVersion: 4

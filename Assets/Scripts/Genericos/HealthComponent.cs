@@ -21,6 +21,11 @@ public class HealthComponent : MonoBehaviour
     bool _thisIsPlayer = false;
     bool _thisIsSheep = false;
     bool _thisIsSeñuelo = false;
+    [SerializeField] private float invulnerabilidad;
+    private float _invulnerabilidadGranjero;
+    private float _invulnerabilidadOveja;
+    private float _invulnerabilidadSeñuelo;
+    bool _recibeDaño = false;
 
 
 
@@ -31,32 +36,54 @@ public class HealthComponent : MonoBehaviour
         _thisIsPlayer = GetComponent<GranjeroMovement>() != null;
         _thisIsSheep = GetComponent<OvejaInteraction>() != null;
         _thisIsSeñuelo = GetComponent<Señuelo>() != null;
+        _invulnerabilidadGranjero = 0;
+        _invulnerabilidadOveja = 0;
+        _invulnerabilidadSeñuelo = 0;
     }
 
     // Update is called once per frame
+    void Update()
+    {
+        _invulnerabilidadGranjero += Time.deltaTime;
+        _invulnerabilidadOveja += Time.deltaTime;
+        _invulnerabilidadSeñuelo += Time.deltaTime;
+    }
+
     public void ChangeHealth(int increment)
     {
-        Debug.Log("Cambio de vida: " +  increment);
-        _currentHp += increment;
+        _recibeDaño = false;
+        if (_thisIsPlayer && _invulnerabilidadGranjero > invulnerabilidad)
+        {
+            _recibeDaño = true;
+            _invulnerabilidadGranjero = 0;
+            //UIManager.Instance.ActualizaVidaGranjero();
+        }
+        else if (_thisIsSheep && _invulnerabilidadOveja > invulnerabilidad)
+        {
+            _recibeDaño = true;
+            _invulnerabilidadOveja = 0;
+            //UIManager.Instance.ActualizaVidaOveja();
+        }
+        else if (_thisIsSeñuelo && _invulnerabilidadSeñuelo > invulnerabilidad)
+        {
+            _recibeDaño = true;
+            _invulnerabilidadSeñuelo = 0;
+        }
+
+        if (_recibeDaño)
+        {
+            Debug.Log("Cambio de vida: " + increment);
+            _currentHp += increment;
+        }
         if (_currentHp > _maxHp)
         {
             _currentHp = _maxHp;
-        }
-
-        if (_thisIsPlayer)
-        {
-            //UIManager.Instance.ActualizaVidaGranjero();
-        }
-        else if (_thisIsSheep)
-        {
-            //UIManager.Instance.ActualizaVidaOveja();
         }
 
         if (_currentHp <= 0)
         {
             Die();
         }
-
     }
 
     public void ChangeMaxHealth(int increment)

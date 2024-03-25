@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 5183458411352786853}
   - component: {fileID: 8230544318532167626}
   - component: {fileID: 727667555864350550}
-  - component: {fileID: 7010213244582218074}
   - component: {fileID: 3475511807423384028}
   m_Layer: 7
   m_Name: Enemigo
@@ -235,21 +234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff214463d32ebf44d8618a5f70bd02b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invulnerabilidad: 0
   damage: -1
---- !u!114 &7010213244582218074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8363042434839160541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4b8bc20c32d85f4b8097d5efb0e819a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  limit1: {fileID: 8240787562782601966}
-  limit2: {fileID: 8626631034974368029}
 --- !u!61 &3475511807423384028
 BoxCollider2D:
   m_ObjectHideFlags: 0
