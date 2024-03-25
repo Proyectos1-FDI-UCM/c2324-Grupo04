@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8240334887287368382}
   - component: {fileID: 662570674061611245}
   - component: {fileID: 5373581209693051541}
-  - component: {fileID: 7251105978320697814}
   - component: {fileID: 3353092343778250144}
+  - component: {fileID: 4592883929781158819}
   m_Layer: 6
   m_Name: Arbusto
   m_TagString: Untagged
@@ -132,19 +132,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7251105978320697814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7698512372626023350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5924768a72d868a419904eddac1f1e0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: -1
 --- !u!61 &3353092343778250144
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -190,3 +177,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 0.9}
   m_EdgeRadius: 0
+--- !u!114 &4592883929781158819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7698512372626023350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff214463d32ebf44d8618a5f70bd02b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: -1

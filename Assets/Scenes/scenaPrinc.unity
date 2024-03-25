@@ -915,10 +915,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1998723827299765408, guid: fe4a738cd810f104ca8a8318c09c443e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1679737404}
   m_SourcePrefab: {fileID: 100100000, guid: fe4a738cd810f104ca8a8318c09c443e, type: 3}
 --- !u!1001 &432861234
 PrefabInstance:
@@ -1379,7 +1383,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 357b3422c0812e546a79dc44482dfdc6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1759,13 +1763,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Oveja
       objectReference: {fileID: 0}
+    - target: {fileID: 6755683820496257371, guid: a4a39fd6c06667148bafff6eca868a35, type: 3}
+      propertyPath: _balido
+      value: 
+      objectReference: {fileID: 2051569331}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5091619765839581776, guid: a4a39fd6c06667148bafff6eca868a35, type: 3}
-      insertIndex: 5
-      addedObject: {fileID: 2051569323}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4a39fd6c06667148bafff6eca868a35, type: 3}
 --- !u!4 &627847788 stripped
 Transform:
@@ -2711,6 +2716,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4794730286081699115, guid: 00b2b64c9397734458bb857bac5c82c2, type: 3}
   m_PrefabInstance: {fileID: 916943564}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &842400224 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1998723827299765408, guid: fe4a738cd810f104ca8a8318c09c443e, type: 3}
+  m_PrefabInstance: {fileID: 403440063}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &849660814 stripped
 GameObject:
@@ -29964,11 +29974,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2631542976574063986, guid: 9adf658c3d2aa5f47acde46b70043088, type: 3}
   m_PrefabInstance: {fileID: 1449273877}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1324729314 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5091619765839581776, guid: a4a39fd6c06667148bafff6eca868a35, type: 3}
-  m_PrefabInstance: {fileID: 625928487}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1375856446
 GameObject:
   m_ObjectHideFlags: 0
@@ -30929,6 +30934,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3349336267283778972, guid: fe4a738cd810f104ca8a8318c09c443e, type: 3}
   m_PrefabInstance: {fileID: 403440063}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1679737404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842400224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff214463d32ebf44d8618a5f70bd02b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: -1
 --- !u!1 &1688970308
 GameObject:
   m_ObjectHideFlags: 0
@@ -43626,24 +43644,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4720660615894855115, guid: a4a39fd6c06667148bafff6eca868a35, type: 3}
   m_PrefabInstance: {fileID: 625928487}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2051569323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!82 &2051569331 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8896197169464522323, guid: a4a39fd6c06667148bafff6eca868a35, type: 3}
+  m_PrefabInstance: {fileID: 625928487}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1324729314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a35bb7211a17f9f448b8e189b60e1354, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _granjero: {fileID: 5324502382298505244, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
-  AreaDetecX: 25
-  AreaDetecY: 20
-  tiempoPrimerBalido: 25
-  rnd1: 5
-  rnd2: 10
 --- !u!4 &2054401417 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2631542976574063986, guid: 9adf658c3d2aa5f47acde46b70043088, type: 3}

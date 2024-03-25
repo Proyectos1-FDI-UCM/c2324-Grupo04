@@ -49,9 +49,9 @@ public class OvejaBalido : MonoBehaviour
     {
         if (playerDetected && ovejaBalido)
         {
-            _balido = rnd.Next(0, 2);
-            if (_balido == 0) { _balido1.Play(); }
-            else if (_balido == 1) { _balido2.Play(); }
+            _balido = rnd.Next(0,100);
+            if (_balido > 60) { _balido1.Play(); }
+            else if (_balido < 40) { _balido2.Play(); }
             else { _balido3.Play(); }
         }
     }
