@@ -45,11 +45,11 @@ public class HealthComponent : MonoBehaviour
 
         if (_thisIsPlayer)
         {
-            UIManager.Instance.ActualizaVidaGranjero();
+            //UIManager.Instance.ActualizaVidaGranjero();
         }
-        else if (_thisIsPlayer)
+        else if (_thisIsSheep)
         {
-            UIManager.Instance.ActualizaVidaOveja();
+            //UIManager.Instance.ActualizaVidaOveja();
         }
 
         if (_currentHp <= 0)
