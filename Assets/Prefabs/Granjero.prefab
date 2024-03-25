@@ -185,6 +185,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: -2
   _hitboxSpeed: 24
+  _Layer:
+    serializedVersion: 2
+    m_Bits: 0
   _hitboxDuration: 0.4
   _hitboxPrefab: {fileID: 3472019101419376355, guid: b13fcce89b89a3046a48b4568c7a80bf, type: 3}
   _horizontalOffset: 1
@@ -255,6 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHp: 3
   _currentHp: 3
+  invulnerabilidad: 2
 --- !u!114 &8818317229978637465
 MonoBehaviour:
   m_ObjectHideFlags: 0
