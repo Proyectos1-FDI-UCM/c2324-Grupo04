@@ -8,6 +8,11 @@ public class OvejaBalido : MonoBehaviour
     private Transform _myTransform;
     private bool playerDetected = false;
     public Transform _granjero;
+    [SerializeField] private AudioSource _balido1;
+    [SerializeField] private AudioSource _balido2;
+    [SerializeField] private AudioSource _balido3;
+    private int _balido = 0;
+
 
     [SerializeField]
     private float AreaDetecX;
@@ -44,7 +49,10 @@ public class OvejaBalido : MonoBehaviour
     {
         if (playerDetected && ovejaBalido)
         {
-            //Script para sonido
+            _balido = rnd.Next(0, 2);
+            if (_balido == 0) { _balido1.Play(); }
+            else if (_balido == 1) { _balido2.Play(); }
+            else { _balido3.Play(); }
         }
     }
 
@@ -53,6 +61,9 @@ public class OvejaBalido : MonoBehaviour
     {
         _myTransform = transform;
         _granjero = GameManager.Instance.ReferenciaTransformGranjero();
+        _balido1 = GetComponent<AudioSource>();
+        _balido2 = GetComponent<AudioSource>();
+        _balido3 = GetComponent<AudioSource>();
         _tiempoBalido = 0;
         tiempoRNDBalido = rnd.Next(rnd1, rnd2);
     }
