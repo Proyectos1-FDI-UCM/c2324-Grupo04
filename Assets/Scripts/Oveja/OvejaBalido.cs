@@ -61,9 +61,6 @@ public class OvejaBalido : MonoBehaviour
     {
         _myTransform = transform;
         _granjero = GameManager.Instance.ReferenciaTransformGranjero();
-        _balido1 = GetComponent<AudioSource>();
-        _balido2 = GetComponent<AudioSource>();
-        _balido3 = GetComponent<AudioSource>();
         _tiempoBalido = 0;
         tiempoRNDBalido = rnd.Next(rnd1, rnd2);
     }
