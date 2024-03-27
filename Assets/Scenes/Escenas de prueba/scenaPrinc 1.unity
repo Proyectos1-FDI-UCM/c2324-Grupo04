@@ -1128,7 +1128,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -34.5046, y: 2.0133824, z: -9.759361}
+  m_LocalPosition: {x: -36.64518, y: 2.0100045, z: -9.759361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1820,7 +1820,7 @@ Transform:
   m_GameObject: {fileID: 787576141}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -40.682327, y: -0.9046005, z: -9.759361}
+  m_LocalPosition: {x: -41.110443, y: -0.9046005, z: -9.759361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -29304,11 +29304,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDetected: 0
-  granjero: {fileID: 23019117}
+  _granjero: {fileID: 0}
   ovejaDetected: 0
-  oveja: {fileID: 1436474183}
+  _oveja: {fileID: 0}
   "se\xF1ueloDetected": 0
-  "se\xF1uelo": {fileID: 5091619765839581776, guid: 8a41b4a3e482b2048beeb98722315e69, type: 3}
   AreaDetecX: 10
   AreaDetecY: 5
 --- !u!1001 &1399482222
@@ -29429,11 +29428,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3612719142133887755, guid: c55ddc5f8dd868e46b7c12c0cb63bf3f, type: 3}
   m_PrefabInstance: {fileID: 444293145}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1436474183 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5091619765839581776, guid: a4a39fd6c06667148bafff6eca868a35, type: 3}
-  m_PrefabInstance: {fileID: 625928487}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1443497803
 PrefabInstance:
@@ -41248,6 +41242,8 @@ MonoBehaviour:
   _playerHealth: {fileID: 565602155}
   _granjeroMovement: {fileID: 565602159}
   _ovejaTransform: {fileID: 2051569316}
+  "nse\xF1uelo": 0
+  "se\xF1ueloExist": 0
 --- !u!114 &1796217534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41276,6 +41272,9 @@ MonoBehaviour:
   _menuDePausa: {fileID: 1673487188}
   _instruccionesTrampolin: {fileID: 1463217498}
   "_instruccionesSe\xF1uelo": {fileID: 1101543059}
+  _instruccionesHorca: {fileID: 0}
+  _instruccionesMovimiento: {fileID: 0}
+  _corazones: []
   _duracionInstrucciones: 1
 --- !u!4 &1796217536
 Transform:
@@ -42685,11 +42684,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDetected: 0
-  granjero: {fileID: 23019117}
+  _granjero: {fileID: 0}
   ovejaDetected: 0
-  oveja: {fileID: 1436474183}
+  _oveja: {fileID: 0}
   "se\xF1ueloDetected": 0
-  "se\xF1uelo": {fileID: 5091619765839581776, guid: 8a41b4a3e482b2048beeb98722315e69, type: 3}
   AreaDetecX: 5
   AreaDetecY: 5
 --- !u!114 &2115649695
@@ -42706,6 +42704,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   limit1: {fileID: 849660814}
   limit2: {fileID: 62803886}
+  limit: 0
+  cambioDirec: 0
   tiempoHuida: 3
 --- !u!1001 &2128509576
 PrefabInstance:
