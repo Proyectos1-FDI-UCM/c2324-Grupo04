@@ -36,7 +36,7 @@ public class Healthbar : MonoBehaviour
         _corazones = new HeartIcon[_maxCorazones];
         for (int i = 0; i < 4; i++)
         {
-            _corazones[i] = Instantiate(_prefabCorazon, _myTransform.position + Vector3.right * i, _myTransform.rotation, _myTransform).GetComponent<HeartIcon>();
+            _corazones[i] = Instantiate(_prefabCorazon, _myTransform.position + Vector3.right * (i + 1), _myTransform.rotation, _myTransform).GetComponent<HeartIcon>();
             //_corazones[i].Inicializacion();
         }
         ActualizaEstados();
@@ -46,7 +46,7 @@ public class Healthbar : MonoBehaviour
     {
         int currentHealth = _vidaRepresentada.CurrentHealth();
         int maxHealth = _vidaRepresentada.MaxHealth();
-        Debug.Log("Vida: " +  currentHealth + " vida máxima: " +  maxHealth);
+        Debug.Log("Vida: " + currentHealth + " vida máxima: " + maxHealth);
 
         for (int i = 0; i < currentHealth; i++)
         {
@@ -72,7 +72,7 @@ public class Healthbar : MonoBehaviour
     void Update()
     {
         //HERRAMIENTA DE DEPURACIÓN
-        if (Input.GetKeyDown("up")) 
+        if (Input.GetKeyDown("up"))
         {
             GameObject.Find("Granjero").GetComponent<HealthComponent>().ChangeMaxHealth(1);
             print("vida máxima aumentada");
