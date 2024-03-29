@@ -48,6 +48,7 @@ MonoBehaviour:
   _prefabCorazon: {fileID: 3046881171574120010, guid: 649976df90bd6cb4891d85ca18f72a1f, type: 3}
   _vidaRepresentada: {fileID: 0}
   _maxCorazones: 4
+  _initialOffset: 1.4
 --- !u!212 &6792677363333716343
 SpriteRenderer:
   m_ObjectHideFlags: 0

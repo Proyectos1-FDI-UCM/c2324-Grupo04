@@ -26,6 +26,9 @@ public class Healthbar : MonoBehaviour
     [SerializeField]
     private int _maxCorazones = 4;
 
+    [SerializeField]
+    private float _initialOffset = 1;
+
     #endregion
 
 
@@ -36,7 +39,7 @@ public class Healthbar : MonoBehaviour
         _corazones = new HeartIcon[_maxCorazones];
         for (int i = 0; i < 4; i++)
         {
-            _corazones[i] = Instantiate(_prefabCorazon, _myTransform.position + Vector3.right * (i + 1), _myTransform.rotation, _myTransform).GetComponent<HeartIcon>();
+            _corazones[i] = Instantiate(_prefabCorazon, _myTransform.position + Vector3.right * (i + _initialOffset), _myTransform.rotation, _myTransform).GetComponent<HeartIcon>();
             //_corazones[i].Inicializacion();
         }
         ActualizaEstados();
