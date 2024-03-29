@@ -69,6 +69,11 @@ public class Healthbar : MonoBehaviour
         //}
     }
 
+    public void Mueve(Vector3 desplazamiento)
+    {
+        _myTransform.position = _myTransform.position + desplazamiento;
+    }
+
     void Update()
     {
         //HERRAMIENTA DE DEPURACIÓN
