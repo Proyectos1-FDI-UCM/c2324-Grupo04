@@ -119,6 +119,15 @@ public class Healthbar : MonoBehaviour
         {
             print("la vida es " + _vidaRepresentada.CurrentHealth());
         }
+        else if (Input.GetKeyDown("b"))
+        {
+            print("bajando la vida");
+            if (_vidaRepresentada.gameObject.GetComponent<HealthComponent>() != null)
+            {
+                print("Se ha cogido bien el HC");
+            }
+            _vidaRepresentada.gameObject.GetComponent<HealthComponent>().ChangeHealth(-1);
+        }
     }
 
 }
