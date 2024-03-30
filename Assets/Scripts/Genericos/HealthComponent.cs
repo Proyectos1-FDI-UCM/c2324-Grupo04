@@ -44,7 +44,7 @@ public class HealthComponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _invulnerabilidadGranjero += Time.deltaTime;
+        _invulnerabilidadGranjero += Time.deltaTime; // No creo que sea necesario tener tres temporizadores independientes a la vez - R
         _invulnerabilidadOveja += Time.deltaTime;
         _invulnerabilidadSeñuelo += Time.deltaTime;
     }
@@ -52,17 +52,17 @@ public class HealthComponent : MonoBehaviour
     public void ChangeHealth(int increment)
     {
         _recibeDaño = false;
-        if (_thisIsPlayer && _invulnerabilidadGranjero > invulnerabilidad)
+        if (_thisIsPlayer && _invulnerabilidadGranjero > invulnerabilidad) // Creo que nos podríamos ahorrar algunas de estas comprobaciones con lo que he comentado en el método Update() - R 
         {
             _recibeDaño = true;
             _invulnerabilidadGranjero = 0;
-            //UIManager.Instance.ActualizaVidaGranjero();
+            UIManager.Instance.ActualizaVidaGranjero();
         }
         else if (_thisIsSheep && _invulnerabilidadOveja > invulnerabilidad)
         {
             _recibeDaño = true;
             _invulnerabilidadOveja = 0;
-            //UIManager.Instance.ActualizaVidaOveja();
+            UIManager.Instance.ActualizaVidaOveja();
         }
         else if (_thisIsSeñuelo && _invulnerabilidadSeñuelo > invulnerabilidad)
         {
@@ -70,7 +70,7 @@ public class HealthComponent : MonoBehaviour
             _invulnerabilidadSeñuelo = 0;
         }
 
-        if (_recibeDaño)
+        if (_recibeDaño) // Quizá sea mejor que el método ChangeHealth sea ciego a la invulnerabilidad, no sé - R
         {
             Debug.Log("Cambio de vida: " + increment);
             _currentHp += increment;

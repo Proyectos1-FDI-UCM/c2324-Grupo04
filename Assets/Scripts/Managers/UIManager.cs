@@ -17,7 +17,9 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     GameObject _instruccionesMovimiento;
     [SerializeField]
-    GameObject[] _corazones;
+    Healthbar _corazonesHUD;
+    [SerializeField]
+    Healthbar _corazonesHUDOveja;
 
     #endregion
 
@@ -45,11 +47,13 @@ public class UIManager : MonoBehaviour
 
     public void ActualizaVidaGranjero()
     {
+        Debug.Log("ActualizaVidaGranjero()");
 
     }
 
     public void ActualizaVidaOveja()
     {
+        Debug.Log("ActualizaVidaOveja()");
 
     }
 

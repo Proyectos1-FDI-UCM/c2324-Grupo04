@@ -51,12 +51,20 @@ public class Healthbar : MonoBehaviour
         int maxHealth = _vidaRepresentada.MaxHealth();
         Debug.Log("Vida: " + currentHealth + " vida máxima: " + maxHealth);
 
-        for (int i = 0; i < currentHealth; i++)
+        int corazonesDibujados = currentHealth / 2;
+        bool medioCorazon = currentHealth % 2 == 1;
+
+        for (int i = 0; i < corazonesDibujados; i++) // Dibuja todos los corazones enteros
         {
             Debug.Log("Entro en el bucle 1: " + i);
             _corazones[i].Entero();
         }
-        for (int i = currentHealth; i < maxHealth; i++)
+        if (medioCorazon)
+        {
+            _corazones[corazonesDibujados].Medio();
+            corazonesDibujados++;
+        }
+        for (int i = corazonesDibujados; i < maxHealth; i++)
         {
             Debug.Log("Entro en el bucle 2: " + i);
             _corazones[i].Vacio();
@@ -66,6 +74,23 @@ public class Healthbar : MonoBehaviour
             Debug.Log("Entro en el bucle 3: " + i);
             _corazones[i].Desactivado();
         }
+
+        //// VERSIÓN CON CORAZONES ENTEROS
+        //for (int i = 0; i < currentHealth; i++)
+        //{
+        //    Debug.Log("Entro en el bucle 1: " + i);
+        //    _corazones[i].Entero();
+        //}
+        //for (int i = currentHealth; i < maxHealth; i++)
+        //{
+        //    Debug.Log("Entro en el bucle 2: " + i);
+        //    _corazones[i].Vacio();
+        //}
+        //for (int i = maxHealth; i < _corazones.Length; i++)
+        //{
+        //    Debug.Log("Entro en el bucle 3: " + i);
+        //    _corazones[i].Desactivado();
+        //}
         //for (int i = currentHealth; i < 4 && i < maxHealth; i++)
         //{
         //    _corazones[i].Vacio();
@@ -89,6 +114,10 @@ public class Healthbar : MonoBehaviour
         else if (Input.GetKeyDown("down"))
         {
             print("down arrow key is held down");
+        }
+        else if (Input.GetKeyDown("v"))
+        {
+            print("la vida es " + _vidaRepresentada.CurrentHealth());
         }
     }
 
