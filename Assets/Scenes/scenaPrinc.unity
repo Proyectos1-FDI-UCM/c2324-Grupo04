@@ -30495,6 +30495,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1084777229787122712, guid: 73528adb8e6331a4d8d7108288e46325, type: 3}
   m_PrefabInstance: {fileID: 1869557132}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1577140814 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5333805399224822506, guid: 73528adb8e6331a4d8d7108288e46325, type: 3}
+  m_PrefabInstance: {fileID: 1869557132}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cf230843f9055f458b97fe59dfe8cd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1581689512
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42154,7 +42165,8 @@ MonoBehaviour:
   "_instruccionesSe\xF1uelo": {fileID: 1692431728}
   _instruccionesHorca: {fileID: 393918376}
   _instruccionesMovimiento: {fileID: 1483755718}
-  _corazones: []
+  _corazonesHUD: {fileID: 1875972415}
+  _corazonesHUDOveja: {fileID: 1577140814}
   _duracionInstrucciones: 1
 --- !u!4 &1796217536
 Transform:
@@ -42606,6 +42618,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1084777229787122712, guid: 4d46d3af0f731c041b493d00dce3a5c3, type: 3}
   m_PrefabInstance: {fileID: 1875972412}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1875972415 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5333805399224822506, guid: 4d46d3af0f731c041b493d00dce3a5c3, type: 3}
+  m_PrefabInstance: {fileID: 1875972412}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cf230843f9055f458b97fe59dfe8cd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1876392834
 PrefabInstance:
   m_ObjectHideFlags: 0
