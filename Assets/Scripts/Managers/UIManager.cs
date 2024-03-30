@@ -48,13 +48,13 @@ public class UIManager : MonoBehaviour
     public void ActualizaVidaGranjero()
     {
         Debug.Log("ActualizaVidaGranjero()");
-
+        _corazonesHUD.ActualizaEstados();
     }
 
     public void ActualizaVidaOveja()
     {
         Debug.Log("ActualizaVidaOveja()");
-
+        _corazonesHUDOveja.ActualizaEstados();
     }
 
 
