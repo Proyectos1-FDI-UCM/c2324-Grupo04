@@ -42470,6 +42470,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5333805399224822506, guid: 73528adb8e6331a4d8d7108288e46325, type: 3}
+      propertyPath: _vidaRepresentada
+      value: 
+      objectReference: {fileID: 2051569321}
     - target: {fileID: 8008325615334693041, guid: 73528adb8e6331a4d8d7108288e46325, type: 3}
       propertyPath: m_Name
       value: Vidas Oveja
@@ -43717,6 +43721,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4720660615894855115, guid: a4a39fd6c06667148bafff6eca868a35, type: 3}
   m_PrefabInstance: {fileID: 625928487}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2051569321 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2735028118702644052, guid: a4a39fd6c06667148bafff6eca868a35, type: 3}
+  m_PrefabInstance: {fileID: 625928487}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1d352d9ca4d5447b3576276f03fe29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2054401417 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2631542976574063986, guid: 9adf658c3d2aa5f47acde46b70043088, type: 3}
