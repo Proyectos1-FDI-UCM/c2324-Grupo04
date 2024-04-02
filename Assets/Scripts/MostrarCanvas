@@ -1,0 +1,21 @@
+using UnityEngine;
+
+public class MostrarCanvas : MonoBehaviour
+{
+    public Canvas canvas;
+
+    void Start()
+    {
+        canvas.enabled = false;
+    }
+
+    public void Mostrar()
+    {
+        canvas.enabled = true;
+    }
+
+    public void Ocultar()
+    {
+        canvas.enabled = false;
+    }
+}
