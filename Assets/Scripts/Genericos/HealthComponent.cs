@@ -21,6 +21,7 @@ public class HealthComponent : MonoBehaviour
     bool _thisIsPlayer = false;
     bool _thisIsSheep = false;
     bool _thisIsSeñuelo = false;
+    bool _thisIsEnemy = false;
     [SerializeField] private float invulnerabilidad;
     private float _invulnerabilidadGranjero;
     private float _invulnerabilidadOveja;
@@ -36,6 +37,7 @@ public class HealthComponent : MonoBehaviour
         _thisIsPlayer = GetComponent<GranjeroMovement>() != null;
         _thisIsSheep = GetComponent<OvejaInteraction>() != null;
         _thisIsSeñuelo = GetComponent<Señuelo>() != null;
+        _thisIsEnemy = GetComponent<EnemyMovement>() != null;
         _invulnerabilidadGranjero = 0;
         _invulnerabilidadOveja = 0;
         _invulnerabilidadSeñuelo = 0;
@@ -71,8 +73,12 @@ public class HealthComponent : MonoBehaviour
             _recibeDaño = true;
             _invulnerabilidadSeñuelo = 0;
         }
+        else if (_thisIsEnemy)
+        {
+            _recibeDaño = true;
+        }
 
-        else //if (_recibeDaño) // Quizá sea mejor que el método ChangeHealth sea ciego a la invulnerabilidad, no sé - R
+        if (_recibeDaño) // Quizá sea mejor que el método ChangeHealth sea ciego a la invulnerabilidad, no sé - R
         {
             Debug.Log("Cambio de vida: " + increment);
             _currentHp += increment;
