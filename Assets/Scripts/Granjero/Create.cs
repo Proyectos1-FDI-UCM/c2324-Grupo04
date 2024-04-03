@@ -11,7 +11,7 @@ public class Create : MonoBehaviour
     [SerializeField]
     private GameObject Señuelo;
     private Transform _myTransform;
-    private GranjeroAnimationController _myAnimation;
+    private GranjeroAnimationController _myAnimationController;
 
     private Vector2 spawnPos;
 
@@ -34,7 +34,7 @@ public class Create : MonoBehaviour
         if (_puedeTrampolin && GameManager.Instance.ObtenerCuerdas() > 0 && _playerMovement.choqueAbajo) 
         {
             //Llamada a la animación
-            _myAnimation.SueltaObjeto();
+            _myAnimationController.SueltaObjeto();
 
             GameObject trampolin = Instantiate(Trampoline, spawnPos, Quaternion.identity);
             GameManager.Instance.ChangeCantidadCuerda(-1);
@@ -47,7 +47,7 @@ public class Create : MonoBehaviour
         if (_puedeSeñuelo && GameManager.Instance.ObtenerCuerdas() > 0 && _playerMovement.choqueAbajo) 
         {
             //Llamada a la animación
-            _myAnimation.SueltaObjeto();
+            _myAnimationController.SueltaObjeto();
 
             GameManager.Instance.nseñuelo++;
             GameObject señuelo = Instantiate(Señuelo, spawnPos, Quaternion.identity);
@@ -71,7 +71,7 @@ public class Create : MonoBehaviour
     {
         _myTransform = transform;
         _playerMovement = GetComponent<GranjeroMovement>();
-        _myAnimation = GetComponent<GranjeroAnimationController>();
+        _myAnimationController = GetComponent<GranjeroAnimationController>();
     }
 
     private void Update()

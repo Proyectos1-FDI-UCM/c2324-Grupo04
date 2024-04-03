@@ -30,6 +30,7 @@ public class GranjeroAnimationController : MonoBehaviour
     void Start()
     {
         _myTransform = transform;
+        _myAnimator = GetComponent<Animator>();
     }
 
 

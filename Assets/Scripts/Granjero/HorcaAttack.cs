@@ -16,7 +16,7 @@ public class HorcaAttack : MonoBehaviour
     [SerializeField] private float _hitboxRadius = 1f;
     private Transform _myTransform;
     private GranjeroMovement _myGranjeroMovement;
-    private GranjeroAnimationController _myAnimation;
+    private GranjeroAnimationController _myAnimationController;
     private bool _puedeAtacar = false;
 
     void OnAction1()
@@ -24,7 +24,7 @@ public class HorcaAttack : MonoBehaviour
         if (_puedeAtacar)
         {
             // Llamada a la animación de ataque
-            _myAnimation.Ataca();
+            _myAnimationController.Ataca();
 
             if (_myGranjeroMovement.Movement().x >= 0)
             {
@@ -65,6 +65,6 @@ public class HorcaAttack : MonoBehaviour
     {
         _myTransform = transform;
         _myGranjeroMovement = GetComponent<GranjeroMovement>();
-        _myAnimation = GetComponent<GranjeroAnimationController>();
+        _myAnimationController = GetComponent<GranjeroAnimationController>();
     }
 }
