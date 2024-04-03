@@ -4,11 +4,26 @@ using UnityEngine;
 
 public class GranjeroAnimation : MonoBehaviour
 {
-
-
-
+    #region references
     private Transform _myTransform;
+    #endregion
+
+
+    #region parameters
+    #endregion
+
+
+    #region variables
     private bool miraDer = true;
+    #endregion
+
+
+    #region methods
+    #endregion
+
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +47,16 @@ public class GranjeroAnimation : MonoBehaviour
             _myTransform.localScale = new Vector3(-1, 1, 1);
             miraDer = true;
         }
+    }
+
+    public void Ataca()
+    {
+        print("Ataca (animación)");
+    }
+
+    public void SueltaObjeto()
+    {
+        print("Suelta objeto (animación)");
     }
 
 
