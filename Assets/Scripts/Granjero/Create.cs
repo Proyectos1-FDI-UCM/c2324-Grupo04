@@ -11,7 +11,7 @@ public class Create : MonoBehaviour
     [SerializeField]
     private GameObject Señuelo;
     private Transform _myTransform;
-    private GranjeroAnimator _myAnimation;
+    private GranjeroAnimationController _myAnimation;
 
     private Vector2 spawnPos;
 
@@ -71,7 +71,7 @@ public class Create : MonoBehaviour
     {
         _myTransform = transform;
         _playerMovement = GetComponent<GranjeroMovement>();
-        _myAnimation = GetComponent<GranjeroAnimator>();
+        _myAnimation = GetComponent<GranjeroAnimationController>();
     }
 
     private void Update()

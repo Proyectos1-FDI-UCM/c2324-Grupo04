@@ -16,7 +16,7 @@ public class HorcaAttack : MonoBehaviour
     [SerializeField] private float _hitboxRadius = 1f;
     private Transform _myTransform;
     private GranjeroMovement _myGranjeroMovement;
-    private GranjeroAnimator _myAnimation;
+    private GranjeroAnimationController _myAnimation;
     private bool _puedeAtacar = false;
 
     void OnAction1()
@@ -65,6 +65,6 @@ public class HorcaAttack : MonoBehaviour
     {
         _myTransform = transform;
         _myGranjeroMovement = GetComponent<GranjeroMovement>();
-        _myAnimation = GetComponent<GranjeroAnimator>();
+        _myAnimation = GetComponent<GranjeroAnimationController>();
     }
 }

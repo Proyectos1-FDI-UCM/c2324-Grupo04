@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GranjeroAnimator : MonoBehaviour
+public class GranjeroAnimationController : MonoBehaviour
 {
     #region references
     private Transform _myTransform;
+    private Animator _myAnimator;
     #endregion
 
 
@@ -62,10 +63,10 @@ public class GranjeroAnimator : MonoBehaviour
 
 
     #region plantillas
-    // _animator.CrossFade(state, transitionTime, animationLayer);
+    // _anim.CrossFade(state, transitionTime, animationLayer);
     // transitionTime = 0
     // animationLayer = 0
-    // _animator.CrossFade("Andar", 0, 0)
+    // _anim.CrossFade("Andar", 0, 0)
     #endregion
 
 }

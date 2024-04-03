@@ -18,7 +18,7 @@ public class GranjeroMovement : MonoBehaviour
     [SerializeField] private int _velocidadInicial = 3;
     [SerializeField] private float _impulsoInicial = 3;
     [SerializeField] private float velCaida = 0;
-    private GranjeroAnimator _myAnimation;
+    private GranjeroAnimationController _myAnimation;
 
     
     public bool choqueAbajo;
@@ -55,7 +55,7 @@ public class GranjeroMovement : MonoBehaviour
     {
         speed = _velocidadInicial;
         impulso = _impulsoInicial;
-        _myAnimation = GetComponent<GranjeroAnimator>();
+        _myAnimation = GetComponent<GranjeroAnimationController>();
     }
 
 
