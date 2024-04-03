@@ -104,30 +104,33 @@ public class Healthbar : MonoBehaviour
 
     void Update()
     {
-        //HERRAMIENTA DE DEPURACIÓN
-        if (Input.GetKeyDown("up"))
-        {
-            GameObject.Find("Granjero").GetComponent<HealthComponent>().ChangeMaxHealth(1);
-            print("vida máxima aumentada");
-            ActualizaEstados();
-        }
-        else if (Input.GetKeyDown("down"))
-        {
-            print("down arrow key is held down");
-        }
-        else if (Input.GetKeyDown("v"))
-        {
-            print("la vida es " + _vidaRepresentada.CurrentHealth());
-        }
-        else if (Input.GetKeyDown("b"))
-        {
-            print("bajando la vida");
-            if (_vidaRepresentada.gameObject.GetComponent<HealthComponent>() != null)
-            {
-                print("Se ha cogido bien el HC");
-            }
-            _vidaRepresentada.gameObject.GetComponent<HealthComponent>().ChangeHealth(-1);
-        }
+        //HERRAMIENTAS DE DEPURACIÓN
+
+        ActualizaEstados();
+
+        //if (Input.GetKeyDown("up"))
+        //{
+        //    GameObject.Find("Granjero").GetComponent<HealthComponent>().ChangeMaxHealth(1);
+        //    print("vida máxima aumentada");
+        //    ActualizaEstados();
+        //}
+        //else if (Input.GetKeyDown("down"))
+        //{
+        //    print("down arrow key is held down");
+        //}
+        //else if (Input.GetKeyDown("v"))
+        //{
+        //    print("la vida es " + _vidaRepresentada.CurrentHealth());
+        //}
+        //else if (Input.GetKeyDown("b"))
+        //{
+        //    print("bajando la vida");
+        //    if (_vidaRepresentada.gameObject.GetComponent<HealthComponent>() != null)
+        //    {
+        //        print("Se ha cogido bien el HC");
+        //    }
+        //    _vidaRepresentada.gameObject.GetComponent<HealthComponent>().ChangeHealth(-1);
+        //}
     }
 
 }
