@@ -18,6 +18,7 @@ public class GranjeroMovement : MonoBehaviour
     [SerializeField] private int _velocidadInicial = 3;
     [SerializeField] private float _impulsoInicial = 3;
     [SerializeField] private float velCaida = 0;
+    private GranjeroAnimation _myAnimation;
 
     
     public bool choqueAbajo;
@@ -54,6 +55,7 @@ public class GranjeroMovement : MonoBehaviour
     {
         speed = _velocidadInicial;
         impulso = _impulsoInicial;
+        _myAnimation = GetComponent<GranjeroAnimation>();
     }
 
 
@@ -69,10 +71,20 @@ public class GranjeroMovement : MonoBehaviour
     private void OnHorizontalMovement (InputValue value) 
     {
         movement = value.Get<Vector2>();
-        if((movement.x < 0 && !choqueIzq) || (movement.x > 0 && !choqueDer))
+        if ((movement.x < 0 && !choqueIzq) || (movement.x > 0 && !choqueDer))
         {
             movementTracker = movement;
+            _myAnimation.Gira(movement.x);
         }
+
+        //if (movement.x < 0 && !choqueIzq)
+        //{
+        //    movementTracker = movement;
+        //}
+        //else if (movement.x > 0 && !choqueDer)
+        //{
+        //    movementTracker = movement;
+        //}
     }
 
     public void OvejaSoltada()
