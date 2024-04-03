@@ -72,7 +72,7 @@ public class HealthComponent : MonoBehaviour
             _invulnerabilidadSeñuelo = 0;
         }
 
-        if (_recibeDaño) // Quizá sea mejor que el método ChangeHealth sea ciego a la invulnerabilidad, no sé - R
+        else //if (_recibeDaño) // Quizá sea mejor que el método ChangeHealth sea ciego a la invulnerabilidad, no sé - R
         {
             Debug.Log("Cambio de vida: " + increment);
             _currentHp += increment;
