@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GranjeroAnimation : MonoBehaviour
+public class GranjeroAnimator : MonoBehaviour
 {
     #region references
     private Transform _myTransform;
@@ -18,13 +18,13 @@ public class GranjeroAnimation : MonoBehaviour
     #endregion
 
 
+
+
+
+
+
+
     #region methods
-    #endregion
-
-
-
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +58,11 @@ public class GranjeroAnimation : MonoBehaviour
     {
         print("Suelta objeto (animación)");
     }
+    #endregion
 
+
+    #region plantillas
+    // _animator
+    #endregion
 
 }
