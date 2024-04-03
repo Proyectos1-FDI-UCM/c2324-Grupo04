@@ -62,7 +62,10 @@ public class GranjeroAnimator : MonoBehaviour
 
 
     #region plantillas
-    // _animator
+    // _animator.CrossFade(state, transitionTime, animationLayer);
+    // transitionTime = 0
+    // animationLayer = 0
+    // _animator.CrossFade("Andar", 0, 0)
     #endregion
 
 }

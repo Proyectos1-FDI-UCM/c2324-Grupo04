@@ -56,15 +56,15 @@ public class HealthComponent : MonoBehaviour
         {
             _recibeDaño = true;
             _invulnerabilidadGranjero = 0;
-            UIManager.Instance.ActualizaVidaGranjero();
-            print("Entro en el HC del granjero");
+            //UIManager.Instance.ActualizaVidaGranjero();
+            //print("Entro en el HC del granjero");
         }
         else if (_thisIsSheep && _invulnerabilidadOveja > invulnerabilidad)
         {
             _recibeDaño = true;
             _invulnerabilidadOveja = 0;
-            UIManager.Instance.ActualizaVidaOveja();
-            print("Entro en el HC de la oveja");
+            //UIManager.Instance.ActualizaVidaOveja();
+            //print("Entro en el HC de la oveja");
         }
         else if (_thisIsSeñuelo && _invulnerabilidadSeñuelo > invulnerabilidad)
         {
