@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 3505807150843220732}
   - component: {fileID: 8818317229978637465}
   - component: {fileID: -824686250816331138}
+  - component: {fileID: 7163601671013035740}
   m_Layer: 8
   m_Name: Granjero
   m_TagString: Untagged
@@ -293,3 +294,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d84d9686b7d3441b752b06fb97fc6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &7163601671013035740
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2465212164272183052}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ddf3c7c6f23247f438211c5f9bf1eaf9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
