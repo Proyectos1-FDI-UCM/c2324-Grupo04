@@ -165,10 +165,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   movementTracker: {x: 0, y: 0}
-  _velocidadOveja: 5
-  _impulsoOveja: 14
-  _velocidadInicial: 9
-  _impulsoInicial: 19
+  _velocidadOveja: 4
+  _impulsoOveja: 18
+  _velocidadInicial: 6
+  _impulsoInicial: 23
   velCaida: 20
   choqueAbajo: 0
   choqueIzq: 0
