@@ -1,15 +1,21 @@
 ﻿using Cinemachine;
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ZonaCamera : MonoBehaviour
 {
-	[SerializeField] private Transform Centro;
+	[SerializeField] private Transform CentroDentro;
+	[SerializeField] private Transform CentroFuera;
 	[SerializeField] private Transform Granjero;
-	private bool dentro=false;
 	[SerializeField] private CinemachineVirtualCamera vcam;
+	[SerializeField] private Transform camerapos;
+	private bool dentro = false;
+	private float time;
 
 	private void Start()
 	{
@@ -28,13 +34,13 @@ public class ZonaCamera : MonoBehaviour
 			Debug.Log("TrueColision");
 			if (!dentro)
 			{
-				vcam.Follow = Centro;
+				vcam.Follow = CentroDentro;
 				dentro = true;
 				Debug.Log("Dentro");
 			}
-			else
+			else if (dentro)
 			{
-				vcam.Follow = Granjero;
+				vcam.Follow = CentroFuera;
 				dentro = false;
 				Debug.Log("Fuera");
 			}
