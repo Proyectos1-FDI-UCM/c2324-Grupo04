@@ -685,7 +685,8 @@ MonoBehaviour:
   "_instruccionesSe\xF1uelo": {fileID: 0}
   _instruccionesHorca: {fileID: 0}
   _instruccionesMovimiento: {fileID: 0}
-  _corazones: []
+  _corazonesHUD: {fileID: 0}
+  _corazonesHUDOveja: {fileID: 0}
   _duracionInstrucciones: 1
 --- !u!114 &1351433441
 MonoBehaviour:
