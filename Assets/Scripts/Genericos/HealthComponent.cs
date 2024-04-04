@@ -60,6 +60,13 @@ public class HealthComponent : MonoBehaviour
             _invulnerabilidadGranjero = 0;
             //UIManager.Instance.ActualizaVidaGranjero();
             //print("Entro en el HC del granjero");
+            GetComponent<GranjeroAnimationController>().Parpadea();
+            ///<Aclaración>
+            /// Esto evidentemente no hay que buscarlo cada vez que se usa, pero referenciarlo en todos los objetos HealthComponent me parece insostenible
+            /// el Health Component se está volviendo un embrollo,
+            /// planeo hacer un script propio de vida del granjero y la oveja que tengan un objeto interno del tipo HealthComponent
+            /// reutilizar un script no es necesariamente usar el mismo para todo sin scripts auxiliares
+
         }
         else if (_thisIsSheep && _invulnerabilidadOveja > invulnerabilidad)
         {

@@ -7,6 +7,7 @@ public class GranjeroAnimationController : MonoBehaviour
     #region references
     private Transform _myTransform;
     private Animator _myAnimator;
+    //private GranjeroMovement _myMovement; // En principio no es necesario porque lo llaman desde fuera siempre que sea necesario
     #endregion
 
 
@@ -31,6 +32,7 @@ public class GranjeroAnimationController : MonoBehaviour
     {
         _myTransform = transform;
         _myAnimator = GetComponent<Animator>();
+        //_myMovement = GetComponent<GranjeroMovement>();
     }
 
 
@@ -59,6 +61,16 @@ public class GranjeroAnimationController : MonoBehaviour
     public void SueltaObjeto()
     {
         print("Suelta objeto (animación)");
+    }
+
+    public void Salta()
+    {
+        print("Salta (animación)");
+    }
+
+    public void Parpadea()
+    {
+        print("Parapadea (animación)");
     }
     #endregion
 

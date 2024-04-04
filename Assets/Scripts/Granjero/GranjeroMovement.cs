@@ -65,6 +65,8 @@ public class GranjeroMovement : MonoBehaviour
         if(rb.velocity.y < 0.1 && choqueAbajo)
         {
             rb.AddForce(Vector2.up * impulso, ForceMode2D.Impulse);
+            //Llamada a la animación de salto
+            _myAnimationController.Salta();
         }
     }
 
