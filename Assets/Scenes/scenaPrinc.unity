@@ -1314,7 +1314,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 40.088345, y: 1.8445112, z: -9.759361}
+  m_LocalPosition: {x: 39.8679, y: 1.844515, z: -9.759361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1585,6 +1585,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9daee4886f8d5354ba0187fd7512edad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!111 &565602175
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23019117}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &571136113 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8626631034974368029, guid: fc0820cc4d5186d40a94d87dc940503e, type: 3}
@@ -2017,6 +2032,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2465212164272183052, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
       insertIndex: -1
       addedObject: {fileID: 565602166}
+    - targetCorrespondingSourceObject: {fileID: 2465212164272183052, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 565602175}
   m_SourcePrefab: {fileID: 100100000, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
 --- !u!1 &704310638
 GameObject:
@@ -2350,7 +2368,7 @@ Transform:
   m_GameObject: {fileID: 787576141}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 40.08836, y: 16.334251, z: -9.759361}
+  m_LocalPosition: {x: 39.867916, y: 16.334251, z: -9.759361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -42269,7 +42287,7 @@ MonoBehaviour:
   _instruccionesMovimiento: {fileID: 1483755718}
   _corazonesHUD: {fileID: 1875972415}
   _corazonesHUDOveja: {fileID: 1577140814}
-  _duracionInstrucciones: 1
+  _duracionInstrucciones: 3
 --- !u!4 &1796217536
 Transform:
   m_ObjectHideFlags: 0
