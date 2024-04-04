@@ -7,7 +7,8 @@ public class GranjeroAnimationController : MonoBehaviour
     #region references
     private Transform _myTransform;
     private Animator _myAnimator;
-    private GranjeroMovement _myMovement; 
+    private GranjeroMovement _myMovement;
+    private Animation _anim;
     #endregion
 
 
