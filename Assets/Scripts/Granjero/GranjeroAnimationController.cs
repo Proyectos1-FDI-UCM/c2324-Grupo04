@@ -7,7 +7,7 @@ public class GranjeroAnimationController : MonoBehaviour
     #region references
     private Transform _myTransform;
     private Animator _myAnimator;
-    //private GranjeroMovement _myMovement; // En principio no es necesario porque lo llaman desde fuera siempre que sea necesario
+    private GranjeroMovement _myMovement; 
     #endregion
 
 
@@ -17,6 +17,7 @@ public class GranjeroAnimationController : MonoBehaviour
 
     #region variables
     private bool miraDer = true;
+    private bool saltando = false;
     #endregion
 
 
@@ -27,12 +28,20 @@ public class GranjeroAnimationController : MonoBehaviour
 
 
     #region methods
-    // Start is called before the first frame update
+    
     void Start()
     {
         _myTransform = transform;
         _myAnimator = GetComponent<Animator>();
-        //_myMovement = GetComponent<GranjeroMovement>();
+        _myMovement = GetComponent<GranjeroMovement>();
+    }
+
+    void Update()
+    {
+        if (saltando)
+        {
+            saltando = 
+        }
     }
 
 
