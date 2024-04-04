@@ -40,7 +40,7 @@ public class GranjeroAnimationController : MonoBehaviour
     {
         if (saltando)
         {
-            saltando = 
+            saltando = false;
         }
     }
 
