@@ -23,13 +23,21 @@ public class HealthComponent : MonoBehaviour
     bool _thisIsSeñuelo = false;
     bool _thisIsEnemy = false;
     [SerializeField] private float invulnerabilidad;
+    private float _tiempInv = 0f;
     private float _invulnerabilidadGranjero;
     private float _invulnerabilidadOveja;
     private float _invulnerabilidadSeñuelo;
     bool _recibeDaño = false;
 
+    #region setup methods
+    public void SetInvTime(float tiempo)
+    {
+        _tiempInv = tiempo;
+    }
+    #endregion
 
 
+    #region Unity methods
     // Start is called before the first frame update
     void Start()
     {
@@ -46,12 +54,17 @@ public class HealthComponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _tiempInv += Time.deltaTime;
+
         _invulnerabilidadGranjero += Time.deltaTime; // No creo que sea necesario tener tres temporizadores independientes a la vez - R
         _invulnerabilidadOveja += Time.deltaTime;
         _invulnerabilidadSeñuelo += Time.deltaTime;
     }
+    #endregion
 
-    public void ChangeHealth(int increment)
+
+    #region run methods
+    public bool ChangeHealth(int increment)
     {
         _recibeDaño = false;
         if (_thisIsPlayer && _invulnerabilidadGranjero > invulnerabilidad) // Creo que nos podríamos ahorrar algunas de estas comprobaciones con lo que he comentado en el método Update() - R 
@@ -94,11 +107,11 @@ public class HealthComponent : MonoBehaviour
         {
             _currentHp = _maxHp;
         }
-
         if (_currentHp <= 0)
         {
             Die();
         }
+        return _currentHp <= 0;
     }
 
     public void ChangeMaxHealth(int increment)
@@ -124,5 +137,7 @@ public class HealthComponent : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    #endregion
 
 }

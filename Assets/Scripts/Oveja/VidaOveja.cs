@@ -1,0 +1,44 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class VidaOveja : MonoBehaviour
+{
+    #region references
+    private HealthComponent _myHC;
+    #endregion
+
+    #region parameters
+    private float _tiempInv = 0.8f;
+    #endregion
+
+
+    #region mehtods
+    public void CambiaVidaOveja(int incremento)
+    {
+        if (_myHC.ChangeHealth(incremento))
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        Debug.Log("Fin de la partida (oveja)");
+        GameManager.Instance.ReiniciaEscena();
+    }
+    #endregion
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        _myHC = GetComponent<HealthComponent>();
+        _myHC.SetInvTime(_tiempInv);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+}
