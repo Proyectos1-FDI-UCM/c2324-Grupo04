@@ -100,7 +100,7 @@ public class UIManager : MonoBehaviour
     }
     #endregion
     #region menús
-    private void OnPause()
+    public void OnPause()
     {
         
         if (_paused)
