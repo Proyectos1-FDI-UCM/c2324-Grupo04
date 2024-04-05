@@ -8,17 +8,20 @@ public class GranjeroAnimationController : MonoBehaviour
     private Transform _myTransform;
     private Animator _myAnimator;
     private GranjeroMovement _myMovement;
-    private Animation _anim;
+    //private Animation _anim; // Definitivamente no sé qué estoy haciendo - R
     #endregion
 
 
     #region parameters
+    [SerializeField] private float _tiempoAtaque = 0.8f;
     #endregion
 
 
     #region variables
     private bool miraDer = true;
-    private bool saltando = false;
+    private float epsil = 0.1f;
+    private int estado = 0;
+    private float _tiempo = 0f;
     #endregion
 
 
@@ -39,14 +42,34 @@ public class GranjeroAnimationController : MonoBehaviour
 
     void Update()
     {
-        if (saltando)
+        //if (saltando)
+        //{
+        //    saltando = Mathf.Abs(_myMovement.Movement().y) > epsil;
+        //}
+        if (estado == 3)
         {
-            saltando = false;
+            _tiempo += Time.deltaTime;
+            if (_tiempo >= _tiempoAtaque)
+            {
+                _tiempo = 0f;
+                estado = 0;
+            }
+        }
+        else
+        {
+
         }
     }
 
 
 
+    public void Quieto()
+    {
+        print("Quieto (animación)");
+        _myAnimator.SetInteger("EstadoAnimacion", 0);
+    }
+    
+    
     public void Gira(float dir)
     {        
         if (miraDer && dir > 0)
@@ -61,11 +84,26 @@ public class GranjeroAnimationController : MonoBehaviour
             _myTransform.localScale = new Vector3(-1, 1, 1);
             miraDer = true;
         }
+        Anda();
+    }
+
+    private void Anda()
+    {
+        if (estado < 1) // Tal como está ahora la prioridad en animación es ataque > salto > caminar
+        {
+            estado = 1;
+            _myAnimator.SetInteger("EstadoAnimacion", estado);
+        }
     }
 
     public void Ataca()
     {
         print("Ataca (animación)");
+        if (estado < 3)
+        {
+            estado = 3;
+            _myAnimator.SetInteger("EstadoAnimacion", 3);
+        }
     }
 
     public void SueltaObjeto()
@@ -76,12 +114,37 @@ public class GranjeroAnimationController : MonoBehaviour
     public void Salta()
     {
         print("Salta (animación)");
+        //if (estado < 2)
+        //{
+        //    estado = 2;
+        //    _myAnimator.SetInteger("EstadoAnimacion", estado);
+        //}
     }
 
     public void Parpadea()
     {
         print("Parapadea (animación)");
     }
+    #endregion
+
+
+    //#region enums
+    //public enum Estado // Quizá lo use más tarde por claridad y por solidez, pero de momento tiramos con un código numérico (ni siquiera sé si se puede usar un tipo propio en el animator) - R
+    //{
+    //    Quieto,
+    //    Andando,
+    //    Atacando
+    //}
+    //#endregion
+
+
+    #region leyenda 
+    /// En principio ordenados por prioridad
+    /// 0 -> Quieto (Idle)
+    /// 1 -> Andando
+    /// 2 -> Salto
+    /// 3 -> Ataque
+    /// 4 -> Suelta objeto
     #endregion
 
 
