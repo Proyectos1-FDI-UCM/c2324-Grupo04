@@ -100,7 +100,7 @@ public class CachorroMov : MonoBehaviour
             }
         }
 
-        Debug.Log("Cachorro huida; " + huida);
+        //Debug.Log("Cachorro huida; " + huida);
         if (!huida)
         {
             if (cambioDirec == 0) { cambioDirec = -1; }
@@ -110,7 +110,7 @@ public class CachorroMov : MonoBehaviour
                 huir(cambioDirec);
                 huida = true;
                 _tiempoHuida = 0f;
-                Debug.Log("Cachorro empieza a escapar");
+                //Debug.Log("Cachorro empieza a escapar");
             }
             else if (_sensorEnem.señueloDetected)
             {
@@ -128,10 +128,10 @@ public class CachorroMov : MonoBehaviour
                 else { GetComponent<EnemyMovement>().movementEnemy = Vector2.left; }
             }
         }
-        else { _sensorEnem.seguirPlayer(out cambioDirec); huir(cambioDirec); Debug.Log("Cachorro escapando"); }
+        else { _sensorEnem.seguirPlayer(out cambioDirec); huir(cambioDirec); /*Debug.Log("Cachorro escapando")*/; }
         _tiempoHuida += Time.deltaTime;
-        if (_tiempoHuida > tiempoHuida) { huida = false; Debug.Log("Cachorro termina de escapar"); }
-        Debug.Log("Cachorro borde: " + borde);
+        if (_tiempoHuida > tiempoHuida) { huida = false; /*Debug.Log("Cachorro termina de escapar")*/; }
+        //Debug.Log("Cachorro borde: " + borde);
 
         borde = false;
     }

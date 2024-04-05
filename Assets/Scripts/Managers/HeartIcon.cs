@@ -103,7 +103,7 @@ public class HeartIcon : MonoBehaviour
 
     public void Entero()
     {
-        Debug.Log("Corazón Entero()");
+        //Debug.Log("Corazón Entero()");
         _mySpriteRenderer.sprite = entero;
         estado = Estado.Entero;
     }
@@ -124,7 +124,7 @@ public class HeartIcon : MonoBehaviour
 
     public void Desactivado()
     {
-        Debug.Log("Corazón " + transform.position.x + " Desactivado()");
+        //Debug.Log("Corazón " + transform.position.x + " Desactivado()");
         _mySpriteRenderer.sprite = desactivado;
         estado = Estado.Desactivado;
     }

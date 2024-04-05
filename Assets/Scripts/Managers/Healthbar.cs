@@ -49,7 +49,7 @@ public class Healthbar : MonoBehaviour
     {
         int currentHealth = _vidaRepresentada.CurrentHealth();
         int maxHealth = _vidaRepresentada.MaxHealth();
-        Debug.Log("Vida: " + currentHealth + " vida máxima: " + maxHealth);
+        //Debug.Log("Vida: " + currentHealth + " vida máxima: " + maxHealth);
 
         int corazonesDibujados = currentHealth / 2;
         bool medioCorazon = currentHealth % 2 == 1;

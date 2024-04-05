@@ -201,6 +201,7 @@ public class GameManager : MonoBehaviour
     public void ReiniciaEscena()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
     }
     #endregion
 
