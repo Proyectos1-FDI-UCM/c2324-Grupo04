@@ -56,7 +56,7 @@ public class Healthbar : MonoBehaviour
 
         for (int i = 0; i < corazonesDibujados; i++) // Dibuja todos los corazones enteros
         {
-            Debug.Log("Entro en el bucle 1: " + i);
+            //Debug.Log("Entro en el bucle 1: " + i);
             _corazones[i].Entero();
         }
         if (medioCorazon)
@@ -66,12 +66,12 @@ public class Healthbar : MonoBehaviour
         }
         for (int i = corazonesDibujados; i < maxHealth; i++)
         {
-            Debug.Log("Entro en el bucle 2: " + i);
+            //Debug.Log("Entro en el bucle 2: " + i);
             _corazones[i].Vacio();
         }
         for (int i = maxHealth; i < _corazones.Length; i++)
         {
-            Debug.Log("Entro en el bucle 3: " + i);
+            //Debug.Log("Entro en el bucle 3: " + i);
             _corazones[i].Desactivado();
         }
 
@@ -106,7 +106,7 @@ public class Healthbar : MonoBehaviour
     {
         //HERRAMIENTAS DE DEPURACIÓN
 
-        ActualizaEstados();
+        //ActualizaEstados();
 
         //if (Input.GetKeyDown("up"))
         //{
