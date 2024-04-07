@@ -7,10 +7,11 @@ public class Meta_NoLaEmpresa : MonoBehaviour
     private bool FinPartida = false;
     private void OnTriggerEnter2D(Collider2D Collider)
     {
-        if (Collider.gameObject.GetComponent<OvejaInteraction>())
+        if (Collider.gameObject.GetComponent<Create>() && GameManager.Instance.cargandoOveja == true)
         {
             FinPartida = true;
         }
+
     }
 
     // Start is called before the first frame update
@@ -22,6 +23,9 @@ public class Meta_NoLaEmpresa : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (FinPartida)
+        {
+            GameManager.Instance.ReiniciaEscena();
+        }
     }
 }
