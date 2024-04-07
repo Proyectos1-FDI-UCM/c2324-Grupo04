@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 5503804237394965872}
   - component: {fileID: 3281500027971723208}
   - component: {fileID: 14387969056406111}
+  - component: {fileID: -3837438779040756660}
   m_Layer: 7
   m_Name: Zorro
   m_TagString: Untagged
@@ -236,7 +237,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff214463d32ebf44d8618a5f70bd02b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invulnerabilidad: 3
   damage: -1
 --- !u!61 &5503804237394965872
 BoxCollider2D:
@@ -316,6 +316,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   limit1: {fileID: 6087491145438250310}
   limit2: {fileID: 6864696086989157005}
+--- !u!114 &-3837438779040756660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6828457111197771575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1d352d9ca4d5447b3576276f03fe29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHp: 3
+  _currentHp: 3
+  invulnerabilidad: 0
 --- !u!1 &6864696086989157005
 GameObject:
   m_ObjectHideFlags: 0

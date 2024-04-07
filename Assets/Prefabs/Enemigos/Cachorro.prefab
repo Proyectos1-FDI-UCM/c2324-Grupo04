@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 8517548389537429383}
   - component: {fileID: 6602502278562995129}
   - component: {fileID: 6451556256698380331}
+  - component: {fileID: 3534245010608589284}
+  - component: {fileID: -2197177632776795665}
   m_Layer: 7
   m_Name: Cachorro
   m_TagString: Untagged
@@ -117,7 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff214463d32ebf44d8618a5f70bd02b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invulnerabilidad: 3
   damage: -1
 --- !u!61 &8517548389537429383
 BoxCollider2D:
@@ -197,7 +198,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   limit1: {fileID: 8555955849793271340}
   limit2: {fileID: 7658494634656298659}
+  limit: 0
+  cambioDirec: 0
   tiempoHuida: 3
+--- !u!114 &3534245010608589284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2368549587807856747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1d352d9ca4d5447b3576276f03fe29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHp: 3
+  _currentHp: 3
+  invulnerabilidad: 0
+--- !u!95 &-2197177632776795665
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2368549587807856747}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e11e2d8309f6123469910f0d2aab49d3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7658494634656298659
 GameObject:
   m_ObjectHideFlags: 0

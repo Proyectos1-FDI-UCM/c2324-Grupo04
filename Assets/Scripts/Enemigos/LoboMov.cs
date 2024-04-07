@@ -11,7 +11,9 @@ public class LoboMov : MonoBehaviour
     private int limit;
     private int cambioDirec = 0;
     private bool borde;
+    private bool _enemyR;
     private Transform _transform;
+    [SerializeField] private int _cambioDirecIni;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -21,10 +23,12 @@ public class LoboMov : MonoBehaviour
             if (collision.gameObject == limit1)
             {
                 limit = 1;
+                flip();
             }
             if (collision.gameObject == limit2)
             {
                 limit = 2;
+                flip();
             }
             borde = true;
         }
@@ -56,23 +60,44 @@ public class LoboMov : MonoBehaviour
     {
         _enemyMovement = GetComponent<EnemyMovement>();
         _sensorEnem = GetComponent<SensorEnem>();
+        _cambioDirecIni = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (borde)
+        if (_cambioDirecIni >= 1) //Este if es para corregir la direccion al principio, para que no parezca que camina de espaldas
         {
             flip();
+            _cambioDirecIni--;
+        }
+
+        if (borde)
+        {
+            
             if (limit == 1)
             {
                 limit1.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
+               // _enemyR = true;               
             }
             else
             {
                 limit2.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
+                //_enemyR = true;
             }
         }
+
+       /* if (_enemyR && limit == 1) 
+        { 
+            flip();
+            _enemyR = false;
+        }
+        else if (_enemyR && limit != 1) 
+        { 
+            flip();
+            _enemyR = false;
+        }
+       */
 
         if (cambioDirec == 0) { cambioDirec = -1; }
 
@@ -105,4 +130,6 @@ public class LoboMov : MonoBehaviour
         localScale.x *= -1;
         transform.localScale = localScale;
     }
+
+
 }

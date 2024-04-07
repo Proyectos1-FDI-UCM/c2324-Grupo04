@@ -33,6 +33,12 @@ public class CachorroMov : MonoBehaviour
             borde = true;
         }
     }
+    private void flip() //Este método hace que la animación se de la vuelta
+    {
+        Vector2 localScale = transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
+    }
 
     private void seguir(int cambioDirec)
     {
@@ -90,8 +96,14 @@ public class CachorroMov : MonoBehaviour
     {
         if (borde)
         {
+            if (!huida)
+            {
+                flip();
+            }
+
             if (limit == 1)
             {
+                
                 limit1.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
             }
             else

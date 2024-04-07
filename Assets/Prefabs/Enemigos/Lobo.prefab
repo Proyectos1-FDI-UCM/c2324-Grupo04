@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 3091907722195848790}
   - component: {fileID: 2586334364905883988}
   - component: {fileID: 8369932624079091038}
+  - component: {fileID: -4512805681054060643}
   m_Layer: 7
   m_Name: Lobo
   m_TagString: Untagged
@@ -151,8 +152,8 @@ Transform:
   m_GameObject: {fileID: 4883529229959987404}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.77, y: -1.54, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -2.7855, y: -0.8451, z: 0}
+  m_LocalScale: {x: 2.9689, y: 2.5743, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3980761244551735060}
@@ -337,6 +338,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-4512805681054060643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4883529229959987404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1d352d9ca4d5447b3576276f03fe29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHp: 3
+  _currentHp: 3
+  invulnerabilidad: 0
 --- !u!1 &7597456617014043034
 GameObject:
   m_ObjectHideFlags: 0
