@@ -48,6 +48,7 @@ public class GranjeroAnimationController : MonoBehaviour
         //{
         //    saltando = Mathf.Abs(_myMovement.Movement().y) > epsil;
         //}
+        // El modelo actual no utili
         if (estado == 3)
         {
             _tiempo += Time.deltaTime;
@@ -62,13 +63,12 @@ public class GranjeroAnimationController : MonoBehaviour
             if (Mathf.Abs(_myRB.velocity.x) >= epsil)
             {
                 _myAnimator.SetInteger("EstadoAnimacion", 1);
-                print("Está andando");
+                //print("Está andando");
             }
             else
             {
                 _myAnimator.SetInteger("EstadoAnimacion", 0);
-                print("No está andando");
-
+                //print("No está andando");
             }
         }
     }
@@ -110,7 +110,7 @@ public class GranjeroAnimationController : MonoBehaviour
 
     public void Ataca()
     {
-        print("Ataca (animación)");
+        //print("Ataca (animación)");
         if (estado < 3)
         {
             estado = 3;
@@ -125,7 +125,7 @@ public class GranjeroAnimationController : MonoBehaviour
 
     public void Salta()
     {
-        print("Salta (animación)");
+        //print("Salta (animación)");
         //if (estado < 2)
         //{
         //    estado = 2;
