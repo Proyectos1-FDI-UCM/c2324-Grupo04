@@ -65,11 +65,11 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         _menuDePausa.SetActive(false);
-        _instruccionesSeñuelo.SetActive(true);
-        _instruccionesTrampolin.SetActive(true);
+        _instruccionesSeñuelo.SetActive(false);
+        _instruccionesTrampolin.SetActive(false);
         _instruccionesHorca.SetActive(false);
         _instruccionesMovimiento.SetActive(true);
-        Destroy(_instruccionesMovimiento, _duracionInstrucciones);
+        //Destroy(_instruccionesMovimiento, _duracionInstrucciones);
     }
 
     // Update is called once per frame
@@ -84,19 +84,19 @@ public class UIManager : MonoBehaviour
     public void RecogidaRecetaSeñuelo()
     {
         _instruccionesSeñuelo.SetActive(true); Debug.Log("RecogidaRecetaSeñuelo");
-        Destroy(_instruccionesSeñuelo, _duracionInstrucciones);
+        //Destroy(_instruccionesSeñuelo, _duracionInstrucciones);
     }
 
     public void RecogidaRecetaTrampolin()
     {
         _instruccionesTrampolin.SetActive(true);
-        Destroy(_instruccionesTrampolin, _duracionInstrucciones);
+        //Destroy(_instruccionesTrampolin, _duracionInstrucciones);
     }
 
     public void RecogidaHorca()
     {
         _instruccionesHorca.SetActive(true);
-        Destroy(_instruccionesHorca, _duracionInstrucciones);
+        //Destroy(_instruccionesHorca, _duracionInstrucciones);
     }
     #endregion
     #region menús
