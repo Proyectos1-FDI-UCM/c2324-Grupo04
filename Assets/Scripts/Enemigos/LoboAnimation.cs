@@ -5,6 +5,10 @@ using UnityEngine;
 //añadir exclmacion
 public class LoboAnimation : MonoBehaviour
 {
+
+    public GameObject limit1;
+    public GameObject limit2;
+
     [SerializeField] private Animator _animator;
     [SerializeField] Transform _transform;
     private LoboMov controller;
@@ -14,13 +18,17 @@ public class LoboAnimation : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _transform = transform;
-        controller = GetComponent<LoboMov>();
+        controller = GetComponent<LoboMov>();//no se muy bien para que se necesita el lobo movement??
+        _animator.SetBool("lobdcha", false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(transform == limit1)
+        {
+
+        }
     }
 
     public void Loboizq(bool lobdcha)

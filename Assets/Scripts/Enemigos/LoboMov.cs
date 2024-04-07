@@ -11,6 +11,7 @@ public class LoboMov : MonoBehaviour
     private int limit;
     private int cambioDirec = 0;
     private bool borde;
+    private Transform _transform;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -62,6 +63,7 @@ public class LoboMov : MonoBehaviour
     {
         if (borde)
         {
+            flip();
             if (limit == 1)
             {
                 limit1.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
@@ -82,10 +84,25 @@ public class LoboMov : MonoBehaviour
 
         else
         {
-            if (limit == 1) { GetComponent<EnemyMovement>().movementEnemy = Vector2.right; }
-            else { GetComponent<EnemyMovement>().movementEnemy = Vector2.left; }
+            if (limit == 1)
+            {
+                GetComponent<EnemyMovement>().movementEnemy = Vector2.right;
+                
+            }
+            else 
+            {
+                GetComponent<EnemyMovement>().movementEnemy = Vector2.left;
+                
+            }
         }
 
         borde = false;
+    }
+
+    private void flip() //Este método hace que la animación se de la vuelta
+    {
+        Vector2 localScale = transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
     }
 }
