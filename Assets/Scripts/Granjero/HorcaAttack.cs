@@ -13,7 +13,7 @@ public class HorcaAttack : MonoBehaviour
     [SerializeField] private float _hitboxDuration = 0.4f;
     [SerializeField] private GameObject _hitboxPrefab;
     [SerializeField] private float _horizontalOffset = 0.4f;
-    [SerializeField] private float _hitboxRadius = 1f;
+    [SerializeField] private float _hitboxRadius = 2f;
     private Transform _myTransform;
     private GranjeroMovement _myGranjeroMovement;
     private GranjeroAnimationController _myAnimationController;
@@ -24,7 +24,7 @@ public class HorcaAttack : MonoBehaviour
         if (_puedeAtacar)
         {
             // Llamada a la animación de ataque
-            _myAnimationController.Ataca();
+            //_myAnimationController.Ataca();
 
             if (_myGranjeroMovement.Movement().x >= 0)
             {
@@ -46,7 +46,7 @@ public class HorcaAttack : MonoBehaviour
             }
             if (result ==  null)
             {
-                Debug.Log("No ha encontrado un collider");
+                Debug.Log("NO Colisiona");
             }
             else if (result.gameObject.GetComponent<EnemyMovement>() == null)
             {
@@ -59,6 +59,7 @@ public class HorcaAttack : MonoBehaviour
     public void ActivaHorca()
     {
         _puedeAtacar = true;
+        Debug.Log("activa horca, puede atacar");
     }
 
     void Start()
