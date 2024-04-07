@@ -8,6 +8,7 @@ public class GranjeroAnimationController : MonoBehaviour
     private Transform _myTransform;
     private Animator _myAnimator;
     private GranjeroMovement _myMovement;
+    private Rigidbody2D _myRB;
     //private Animation _anim; // Definitivamente no sé qué estoy haciendo - R
     #endregion
 
@@ -38,6 +39,7 @@ public class GranjeroAnimationController : MonoBehaviour
         _myTransform = transform;
         _myAnimator = GetComponent<Animator>();
         _myMovement = GetComponent<GranjeroMovement>();
+        _myRB = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -57,7 +59,7 @@ public class GranjeroAnimationController : MonoBehaviour
         }
         else
         {
-            if (Mathf.Abs(_myMovement.Movement().x) >= epsil)
+            if (Mathf.Abs(_myRB.velocity.x) >= epsil)
             {
                 _myAnimator.SetInteger("EstadoAnimacion", 1);
                 print("Está andando");

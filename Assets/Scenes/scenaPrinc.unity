@@ -1449,7 +1449,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 40.088345, y: 1.8445112, z: -9.759361}
+  m_LocalPosition: {x: 39.8679, y: 1.844515, z: -9.759361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2054,6 +2054,14 @@ PrefabInstance:
       value: Granjero
       objectReference: {fileID: 0}
     - target: {fileID: 3505807150843220732, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
+      propertyPath: _maxHp
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3505807150843220732, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
+      propertyPath: _currentHp
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3505807150843220732, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
       propertyPath: invulnerabilidad
       value: 2
       objectReference: {fileID: 0}
@@ -2485,7 +2493,7 @@ Transform:
   m_GameObject: {fileID: 787576141}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 40.08836, y: 16.334251, z: -9.759361}
+  m_LocalPosition: {x: 39.867916, y: 16.334251, z: -9.759361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -30718,6 +30726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   limit1: {fileID: 1776513506}
   limit2: {fileID: 571136113}
+  _cambioDirecIni: 0
 --- !u!1 &1386569420
 GameObject:
   m_ObjectHideFlags: 0
