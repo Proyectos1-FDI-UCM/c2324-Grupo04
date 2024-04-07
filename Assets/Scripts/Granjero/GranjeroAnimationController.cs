@@ -57,7 +57,17 @@ public class GranjeroAnimationController : MonoBehaviour
         }
         else
         {
+            if (Mathf.Abs(_myMovement.Movement().x) >= epsil)
+            {
+                _myAnimator.SetInteger("EstadoAnimacion", 1);
+                print("Está andando");
+            }
+            else
+            {
+                _myAnimator.SetInteger("EstadoAnimacion", 0);
+                print("No está andando");
 
+            }
         }
     }
 
