@@ -10,7 +10,6 @@ using UnityEngine.UI;
 public class ZonaCamera : MonoBehaviour
 {
 	[SerializeField] private Transform CentroDentro;
-	[SerializeField] private Transform CentroFuera;
 	[SerializeField] private Transform Granjero;
 	[SerializeField] private CinemachineVirtualCamera vcam;
 	[SerializeField] private Transform camerapos;
@@ -40,7 +39,7 @@ public class ZonaCamera : MonoBehaviour
 			}
 			else if (dentro)
 			{
-				vcam.Follow = CentroFuera;
+				vcam.Follow = Granjero;
 				dentro = false;
 				Debug.Log("Fuera");
 			}
