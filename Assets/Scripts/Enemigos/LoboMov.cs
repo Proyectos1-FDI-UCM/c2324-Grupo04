@@ -38,27 +38,21 @@ public class LoboMov : MonoBehaviour
     {
         if (borde && cambioDirec != 0)
         {
-            if (limit == 1 && cambioDirec == -1)
-            {
-                cambioDirec = 0; //Debug.Log("AA" + cambioDirec); }
-                if (limit == 2 && cambioDirec == 1)
-                {
-                    cambioDirec = 0; //Debug.Log("BB" + cambioDirec); }
-                }
+            if (limit == 1 && cambioDirec == -1) { cambioDirec = 0; }
+            if (limit == 2 && cambioDirec == 1) { cambioDirec = 0; }
+        }
 
-                if (cambioDirec == -1)
-                {
-                    GetComponent<EnemyMovement>().movementEnemy = Vector2.left;
-                }
-                else if (cambioDirec == 1)
-                {
-                    GetComponent<EnemyMovement>().movementEnemy = Vector2.right;
-                }
-                else if (cambioDirec == 0)
-                {
-                    GetComponent<EnemyMovement>().movementEnemy = Vector2.zero;
-                }
-            }
+        if (cambioDirec == -1)
+        {
+            GetComponent<EnemyMovement>().movementEnemy = Vector2.left;
+        }
+        else if (cambioDirec == 1)
+        {
+            GetComponent<EnemyMovement>().movementEnemy = Vector2.right;
+        }
+        else if (cambioDirec == 0)
+        {
+            GetComponent<EnemyMovement>().movementEnemy = Vector2.zero;
         }
     }
     void Start()
@@ -69,13 +63,15 @@ public class LoboMov : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (_cambioDirecIni >= 1) //Este if es para corregir la direccion al principio, para que no parezca que camina de espaldas
         {
             flip();
             _cambioDirecIni--;
         }
+
+        if (cambioDirec == 0) { cambioDirec = -1; }
 
         if (borde)
         {
@@ -104,7 +100,6 @@ public class LoboMov : MonoBehaviour
          }
         */
 
-        if (cambioDirec == 0) { cambioDirec = -1; }
 
         if (_sensorEnem.señueloDetected)
         {
@@ -128,7 +123,9 @@ public class LoboMov : MonoBehaviour
                                
             }
             else if (limit == 2)
-            {
+            {  
+                GetComponent<EnemyMovement>().movementEnemy = Vector2.left;
+
                 _enemyR = true;
                 if (_enemyL)
                 {
@@ -136,8 +133,6 @@ public class LoboMov : MonoBehaviour
                     _enemyL = false;
                     print("R");
                 }
-                
-                GetComponent<EnemyMovement>().movementEnemy = Vector2.left;
                 print("L");
             }
         }
