@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Ladder",
+                    "type": "Value",
+                    "id": "feb5cc98-b61b-49f5-a4cc-e63a980939cd",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -109,6 +118,17 @@
                 },
                 {
                     "name": "",
+                    "id": "3f429d76-44d8-4507-a419-3a6c9f81919b",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Action1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "1493aae7-b6ac-4f39-9c74-fc4a7579c6e0",
                     "path": "<Keyboard>/w",
                     "interactions": "",
@@ -130,15 +150,26 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "3f429d76-44d8-4507-a419-3a6c9f81919b",
-                    "path": "<Keyboard>/j",
+                    "name": "Movement",
+                    "id": "9fbea61a-3751-4a08-88b7-404d6bb731d3",
+                    "path": "2DVector",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ladder",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "down",
+                    "id": "9fd6c71b-d844-410c-947f-109bb84af2bc",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Action1",
+                    "action": "Ladder",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 }
             ]
         }

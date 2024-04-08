@@ -170,9 +170,11 @@ MonoBehaviour:
   _velocidadInicial: 6
   _impulsoInicial: 23
   velCaida: 20
+  ladderSpeed: 2
   choqueAbajo: 0
   choqueIzq: 0
   choqueDer: 0
+  allowLadder: 0
 --- !u!114 &1640964514911560491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +283,9 @@ MonoBehaviour:
   layerToWalls:
     serializedVersion: 2
     m_Bits: 512
+  layerToLadder:
+    serializedVersion: 2
+    m_Bits: 0
   _allowTrampoline: 0
 --- !u!114 &-824686250816331138
 MonoBehaviour:

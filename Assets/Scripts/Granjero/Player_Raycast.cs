@@ -13,11 +13,13 @@ public class Player_Raycast : MonoBehaviour
     RaycastHit2D hitRightUp;
     RaycastHit2D hitRightDown;
     RaycastHit2D hitDown;
+    RaycastHit2D hitDownLadder;
     RaycastHit2D hitLeft;
     RaycastHit2D hitLeftUp;
     RaycastHit2D hitLeftDown;
     [SerializeField] LayerMask layerToJump;
     [SerializeField] LayerMask layerToWalls;
+    [SerializeField] LayerMask layerToLadder;
     public bool _allowTrampoline = false;
 
     void Start()
@@ -36,6 +38,7 @@ public class Player_Raycast : MonoBehaviour
         hitRightDown = Physics2D.Raycast(positionDown, transform.right, distanceSide, layerToWalls);
 
         hitDown = Physics2D.Raycast(_myTransform.position, transform.up * -1, distanceDown, layerToJump);
+        hitDownLadder = Physics2D.Raycast(_myTransform.position, transform.up * -1, distanceDown, layerToLadder);
 
         hitLeft = Physics2D.Raycast(_myTransform.position, transform.right * -1, distanceSide, layerToWalls);
         hitLeftUp = Physics2D.Raycast(positionUp, transform.right * -1, distanceSide, layerToWalls);
@@ -68,6 +71,7 @@ public class Player_Raycast : MonoBehaviour
             _movimientoPlayer.SetBoolDown(false);
             _allowTrampoline = true;
         }
+
         if (hitLeft.collider != null || hitLeftUp.collider != null || hitLeftDown.collider != null)
         {
             Debug.DrawRay(transform.position, transform.right * -1, Color.green);
@@ -81,6 +85,16 @@ public class Player_Raycast : MonoBehaviour
             Debug.DrawRay(positionUp, transform.right * -1, Color.red);
             Debug.DrawRay(positionDown, transform.right * -1, Color.red);
             _movimientoPlayer.SetBoolLeft(false);
+        }
+
+        if (hitDownLadder.collider != null)
+        {
+            Debug.DrawRay(transform.position, transform.up * -1, Color.yellow);
+            _movimientoPlayer.SetBoolLadder(true);
+        }
+        else
+        {
+            _movimientoPlayer.SetBoolLadder(false);
         }
     }
 }
