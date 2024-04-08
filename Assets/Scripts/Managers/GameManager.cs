@@ -94,6 +94,7 @@ public class GameManager : MonoBehaviour
     {
         _playerCreate = _granjeroMovement.gameObject.GetComponent<Create>();
         _UIManager = GetComponent<UIManager>();
+        Time.timeScale = 1.0f;
     }
 
     private void ActivaHorca()
