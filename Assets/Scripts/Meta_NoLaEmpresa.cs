@@ -10,6 +10,7 @@ public class Meta_NoLaEmpresa : MonoBehaviour
         if (Collider.gameObject.GetComponent<Create>() && GameManager.Instance.cargandoOveja == true)
         {
             FinPartida = true;
+            Debug.Log("Gnaste");
         }
 
     }
