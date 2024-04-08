@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
     Healthbar _corazonesHUD;
     [SerializeField]
     Healthbar _corazonesHUDOveja;
+    [SerializeField] GameObject victory;
 
     #endregion
 
@@ -102,21 +103,24 @@ public class UIManager : MonoBehaviour
     #region menús
     public void OnPause()
     {
+        if (!victory.active)
+        {
+            if (_paused)
+            {
+                Debug.Log("Salida de pausa");
+                _menuDePausa.SetActive(false);
+                Time.timeScale = 1.0f;
+                _paused = false;
+            }
+            else
+            {
+                Debug.Log("PAUSA");
+                _menuDePausa.SetActive(true);
+                Time.timeScale = 0.0f;
+                _paused = true;
+            }
+        }
         
-        if (_paused)
-        {
-            Debug.Log("Salida de pausa");
-            _menuDePausa.SetActive(false);
-            Time.timeScale = 1.0f;
-            _paused = false;
-        }
-        else
-        {
-            Debug.Log("PAUSA");
-            _menuDePausa.SetActive(true);
-            Time.timeScale = 0.0f;
-            _paused = true;
-        }
     }
     #endregion
 }
