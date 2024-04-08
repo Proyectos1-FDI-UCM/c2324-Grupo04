@@ -203,6 +203,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1;
     }
+
+    public void CambiaMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
     #endregion
 
     #region enums

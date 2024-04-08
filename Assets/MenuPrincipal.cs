@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class MenuPrincipal : MonoBehaviour
 {
@@ -38,6 +39,12 @@ public class MenuPrincipal : MonoBehaviour
     {
         _menuNiveles.SetActive(false);
         _menuAjustes.SetActive(true);
+    }
+
+
+    public void CambiaNivel1()
+    {
+        SceneManager.LoadScene(1);
     }
 
 
