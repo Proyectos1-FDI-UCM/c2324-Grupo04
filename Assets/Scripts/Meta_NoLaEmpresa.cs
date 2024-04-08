@@ -13,6 +13,7 @@ public class Meta_NoLaEmpresa : MonoBehaviour
             FinPartida = true;
             Debug.Log("Gnaste");
             victory.SetActive(true);
+            Time.timeScale = 0.0f;
         }
 
     }
