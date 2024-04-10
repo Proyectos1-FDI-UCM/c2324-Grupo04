@@ -14,7 +14,7 @@ public class GranjeroAnimationController : MonoBehaviour
 
 
     #region parameters
-    [SerializeField] private float _tiempoAtaque = 0.8f;
+    [SerializeField] private float _tiempoAtaque = 1f;
     #endregion
 
 
@@ -51,11 +51,12 @@ public class GranjeroAnimationController : MonoBehaviour
         // El modelo actual no utili
         if (estado == 3)
         {
+            print("Atacando (anim)");
             _tiempo += Time.deltaTime;
             if (_tiempo >= _tiempoAtaque)
             {
                 _tiempo = 0f;
-                estado = 0;
+                estado = 0; //Innecesario, no?
             }
         }
         else

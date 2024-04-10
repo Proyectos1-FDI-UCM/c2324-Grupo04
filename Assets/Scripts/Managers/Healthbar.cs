@@ -48,7 +48,7 @@ public class Healthbar : MonoBehaviour
     public void ActualizaEstados()
     {
         int currentHealth = _vidaRepresentada.CurrentHealth();
-        int maxHealth = _vidaRepresentada.MaxHealth();
+        int maxHealth = _vidaRepresentada.MaxHealth() / 2; // Precisión par en este parámetro
         //int currentHealth = Mathf.Clamp(_vidaRepresentada.CurrentHealth(), 0, _maxCorazones);
         //int maxHealth = Mathf.Clamp(_vidaRepresentada.MaxHealth(), 0, _maxCorazones);
         //Debug.Log("Vida: " + currentHealth + " vida máxima: " + maxHealth);
@@ -65,8 +65,8 @@ public class Healthbar : MonoBehaviour
         {
             _corazones[corazonesDibujados].Medio();
             corazonesDibujados++;
-            Debug.Log("Llevo " + corazonesDibujados + " corazones dibujados");
-            Debug.Log("La vida máxima es " + maxHealth);
+            //Debug.Log("Llevo " + corazonesDibujados + " corazones dibujados");
+            //Debug.Log("La vida máxima es " + maxHealth);
         }
         for (int i = corazonesDibujados; i < maxHealth; i++)
         {

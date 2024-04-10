@@ -24,7 +24,7 @@ public class HorcaAttack : MonoBehaviour
         if (_puedeAtacar)
         {
             // Llamada a la animación de ataque
-            //_myAnimationController.Ataca();
+            _myAnimationController.Ataca();
 
             if (_myGranjeroMovement.Movement().x >= 0)
             {
