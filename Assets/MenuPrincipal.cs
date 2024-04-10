@@ -55,6 +55,11 @@ public class MenuPrincipal : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(exitSettings);
     }
 
+    public void ExitGame() 
+    {
+        Application.Quit();
+    }
+
 
     public void CambiaNivel1()
     {
