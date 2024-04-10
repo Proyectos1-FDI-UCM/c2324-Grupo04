@@ -37,7 +37,7 @@
                 {
                     "name": "",
                     "id": "f4b07c1c-0e7e-475c-ace8-0fb55b6b8f13",
-                    "path": "<Keyboard>/r",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -48,7 +48,7 @@
                 {
                     "name": "",
                     "id": "6325640e-fe0f-4ead-8ff9-d74a5cd53962",
-                    "path": "<Keyboard>/q",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

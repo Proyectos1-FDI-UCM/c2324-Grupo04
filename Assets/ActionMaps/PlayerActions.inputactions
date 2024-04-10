@@ -58,6 +58,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Interaction1",
+                    "type": "Button",
+                    "id": "94601427-16ce-46a4-a227-c405425c0977",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -170,6 +179,17 @@
                     "action": "Ladder",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "089afa6f-3316-414f-8435-b38850ad9887",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interaction1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

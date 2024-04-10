@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Create : MonoBehaviour
 {
+    #region references
     [SerializeField]
     private GameObject Trampoline;
 
@@ -12,22 +13,32 @@ public class Create : MonoBehaviour
     private GameObject Señuelo;
     private Transform _myTransform;
     private GranjeroAnimationController _myAnimationController;
+    private GranjeroMovement _playerMovement;
+    private LanzaObjeto _lanzaObjeto;
 
-    private Vector2 spawnPos;
+    #endregion
+
+
+    private Vector2 spawnPos; // Esto sobra aquí
 
     //private InventoryManager _inventoryManager; // No se usa ya
-
+    #region parameters
     [SerializeField]
     private float _tacoste = 1;
     [SerializeField]
     private float _secoste = 0;
     [SerializeField]
     private float _horizontalOffset = 1;
+    #endregion
 
+
+    #region variables
     private bool _puedeTrampolin = false;
     private bool _puedeSeñuelo = false;
+    #endregion
 
-    private GranjeroMovement _playerMovement;
+
+    
 
     private void OnAction2()
     {
@@ -37,6 +48,7 @@ public class Create : MonoBehaviour
             _myAnimationController.SueltaObjeto();
 
             GameObject trampolin = Instantiate(Trampoline, spawnPos, Quaternion.identity);
+            //LanzaObjeto();
             GameManager.Instance.ChangeCantidadCuerda(-1);
             HudManager.instance.UpdateCuerda(1);
         }
@@ -72,6 +84,7 @@ public class Create : MonoBehaviour
         _myTransform = transform;
         _playerMovement = GetComponent<GranjeroMovement>();
         _myAnimationController = GetComponent<GranjeroAnimationController>();
+        _lanzaObjeto = GetComponent<LanzaObjeto>();
     }
 
     private void Update()
