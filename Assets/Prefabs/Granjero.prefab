@@ -20,6 +20,8 @@ GameObject:
   - component: {fileID: 8818317229978637465}
   - component: {fileID: -824686250816331138}
   - component: {fileID: 7163601671013035740}
+  - component: {fileID: -6139734476813441776}
+  - component: {fileID: 3482534228890473742}
   m_Layer: 8
   m_Name: Granjero
   m_TagString: Untagged
@@ -321,3 +323,32 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-6139734476813441776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2465212164272183052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 257c4d27b22783f4bb945d3a0e15021a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _distanciaInteraccion: 2
+  _verticalOffset: 1
+  _velocidadOveja: 5
+  _deceleracionOveja: 0
+  _tiempoDeInercia: 0.3
+--- !u!114 &3482534228890473742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2465212164272183052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ed7f6a05a42d5a47ba07c32f3a4aa59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -11,7 +11,7 @@ public class ContactAttack : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         Debug.Log("Collision");
-        if ((collision.gameObject.GetComponent<GranjeroMovement>() != null )||( collision.gameObject.GetComponent<OvejaInteraction>() != null)|| (collision.gameObject.GetComponent<Señuelo>() != null))
+        if ((collision.gameObject.GetComponent<GranjeroMovement>() != null )||( collision.gameObject.GetComponent<MovimientoOveja>() != null)|| (collision.gameObject.GetComponent<Señuelo>() != null))
         {
             collision.gameObject.GetComponent<HealthComponent>().ChangeHealth(damage);
             Debug.Log("Colisión con el granjero o con la oveja");

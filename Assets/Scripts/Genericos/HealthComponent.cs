@@ -43,7 +43,7 @@ public class HealthComponent : MonoBehaviour
     {
         //_currentHp = _maxHp;
         _thisIsPlayer = GetComponent<GranjeroMovement>() != null;
-        _thisIsSheep = GetComponent<OvejaInteraction>() != null;
+        _thisIsSheep = GetComponent<MovimientoOveja>() != null;
         _thisIsSeñuelo = GetComponent<Señuelo>() != null;
         _thisIsEnemy = GetComponent<EnemyMovement>() != null;
         _invulnerabilidadGranjero = 0;
