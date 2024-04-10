@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 3931370690879775375}
   - component: {fileID: 6069877623509709061}
   - component: {fileID: 8319513122133397769}
+  - component: {fileID: 3968308640430504454}
   m_Layer: 7
   m_Name: OVNI
   m_TagString: Untagged
@@ -317,6 +318,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   limit1: {fileID: 311225579259902102}
   limit2: {fileID: 7597456617014043034}
+--- !u!114 &3968308640430504454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3361062332415406408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ef09ecd6f9ed649a3525943a84e7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDetected: 0
+  _granjero: {fileID: 0}
+  ovejaDetected: 0
+  _oveja: {fileID: 0}
+  "se\xF1ueloDetected": 0
+  AreaDetecX: 25
+  AreaDetecY: 25
 --- !u!1 &4883529229959987404
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,7 +346,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5111469456208970424}
-  - component: {fileID: 1571561586206359093}
   m_Layer: 7
   m_Name: OVNI
   m_TagString: Untagged
@@ -352,25 +371,6 @@ Transform:
   - {fileID: 6402867874541975384}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1571561586206359093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4883529229959987404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9ef09ecd6f9ed649a3525943a84e7dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerDetected: 0
-  _granjero: {fileID: 0}
-  ovejaDetected: 0
-  _oveja: {fileID: 0}
-  "se\xF1ueloDetected": 0
-  AreaDetecX: 25
-  AreaDetecY: 25
 --- !u!1 &7597456617014043034
 GameObject:
   m_ObjectHideFlags: 0

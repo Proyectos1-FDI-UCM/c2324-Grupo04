@@ -38,15 +38,22 @@ public class SensorEnem : MonoBehaviour
 
     public void seguirOveja(out int cambioDirec)
     {
-        if (_oveja.position.x - transform.position.x < -0.3)
+        if (GameManager.Instance.cargandoOveja)
         {
-            cambioDirec = -1;
+            seguirPlayer(out cambioDirec);
         }
-        else if (_oveja.position.x - transform.position.x > 0.3)
+        else
         {
-            cambioDirec = 1;
+            if (_oveja.position.x - transform.position.x < -0.3)
+            {
+                cambioDirec = -1;
+            }
+            else if (_oveja.position.x - transform.position.x > 0.3)
+            {
+                cambioDirec = 1;
+            }
+            else { cambioDirec = 0; }
         }
-        else { cambioDirec = 0; }
     }
 
     public void seguirSeñuelo(out int cambioDirec)
@@ -77,7 +84,7 @@ public class SensorEnem : MonoBehaviour
         }
         else
         {
-            _señueloTransform = new Vector3 (-20, 0, 0);
+            _señueloTransform = new Vector3 (-200, 0, 0);
         }
 
         if (playerDetected) { playerDetected = false; }

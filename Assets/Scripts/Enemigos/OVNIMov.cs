@@ -53,7 +53,7 @@ public class OVNIMov : MonoBehaviour
     void Start()
     {
         _enemyMovement = GetComponent<EnemyMovement>();
-        _sensorEnem = GetComponentInParent<SensorEnem>();
+        _sensorEnem = GetComponent<SensorEnem>();
     }
 
     // Update is called once per frame
