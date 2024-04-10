@@ -86925,7 +86925,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4883529229959987404, guid: 1314994f475e55241a63c86dc78bcc06, type: 3}
       propertyPath: m_Name
-      value: Lobo (1)
+      value: Lobo
       objectReference: {fileID: 0}
     - target: {fileID: 5111469456208970424, guid: 1314994f475e55241a63c86dc78bcc06, type: 3}
       propertyPath: m_LocalPosition.x
