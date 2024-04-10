@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.Playables;
 
 public class MenuPrincipal : MonoBehaviour
 {
     [SerializeField] private GameObject _menuJugar;
     [SerializeField] private GameObject _menuNiveles;
     [SerializeField] private GameObject _menuAjustes;
+    [SerializeField] private PlayableDirector playableDirector;
 
     public GameObject selectplay, selectlevel1;
 
@@ -24,6 +26,7 @@ public class MenuPrincipal : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(selectplay);
+        playableDirector.Play();
     }
 
     public void ClickPlay()
