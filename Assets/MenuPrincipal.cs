@@ -9,6 +9,7 @@ public class MenuPrincipal : MonoBehaviour
     [SerializeField] private GameObject _menuJugar;
     [SerializeField] private GameObject _menuNiveles;
     [SerializeField] private GameObject _menuAjustes;
+
     public GameObject selectplay, selectlevel1;
 
 
@@ -31,7 +32,9 @@ public class MenuPrincipal : MonoBehaviour
         _menuNiveles.SetActive(true);
 
         EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(selectplay);
+        Debug.Log(EventSystem.current.alreadySelecting);
+        EventSystem.current.SetSelectedGameObject(selectlevel1);
+        Debug.Log(EventSystem.current.alreadySelecting);
 
     }
 
