@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Meta_NoLaEmpresa : MonoBehaviour
 {
     private bool FinPartida = false;
     [SerializeField] private GameObject victory;
+    [SerializeField] private GameObject resetButton;
     private void OnTriggerEnter2D(Collider2D Collider)
     {
         if (Collider.gameObject.GetComponent<GranjeroMovement>() && GameManager.Instance.cargandoOveja == true)
@@ -14,6 +16,8 @@ public class Meta_NoLaEmpresa : MonoBehaviour
             Debug.Log("Gnaste");
             victory.SetActive(true);
             Time.timeScale = 0.0f;
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(resetButton);
         }
 
     }

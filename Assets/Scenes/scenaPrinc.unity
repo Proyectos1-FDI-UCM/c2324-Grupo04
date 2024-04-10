@@ -1430,6 +1430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   victory: {fileID: 1487193008}
+  resetButton: {fileID: 1017781311}
 --- !u!4 &346539425 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2631542976574063986, guid: 9adf658c3d2aa5f47acde46b70043088, type: 3}
