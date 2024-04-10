@@ -15,7 +15,7 @@ public class Create : MonoBehaviour
 
     private Vector2 spawnPos;
 
-    private InventoryManager _inventoryManager;
+    //private InventoryManager _inventoryManager; // No se usa ya
 
     [SerializeField]
     private float _tacoste = 1;
