@@ -65,19 +65,19 @@ public class Healthbar : MonoBehaviour
         {
             _corazones[corazonesDibujados].Medio();
             corazonesDibujados++;
-            Debug.Log("Llevo " + corazonesDibujados + " corazones dibujados");
-            Debug.Log("La vida máxima es " + maxHealth);
+            //Debug.Log("Llevo " + corazonesDibujados + " corazones dibujados");
+            //Debug.Log("La vida máxima es " + maxHealth);
         }
-        for (int i = corazonesDibujados; i < maxHealth; i++)
-        {
-            //Debug.Log("Entro en el bucle 2: " + i);
-            _corazones[i].Vacio();
-        }
-        for (int i = maxHealth; i < _corazones.Length; i++)
-        {
-            //Debug.Log("Entro en el bucle 3: " + i);
-            _corazones[i].Desactivado();
-        }
+        //for (int i = corazonesDibujados; i < maxHealth; i++) // Fuera del rango?
+        //{
+        //    //Debug.Log("Entro en el bucle 2: " + i);
+        //    _corazones[i].Vacio();
+        //}
+        //for (int i = maxHealth; i < _corazones.Length; i++)
+        //{
+        //    //Debug.Log("Entro en el bucle 3: " + i);
+        //    _corazones[i].Desactivado();
+        //}
 
         //// VERSIÓN CON CORAZONES ENTEROS
         //for (int i = 0; i < currentHealth; i++)
