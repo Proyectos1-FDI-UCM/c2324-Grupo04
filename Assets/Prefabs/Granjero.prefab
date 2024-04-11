@@ -250,6 +250,10 @@ MonoBehaviour:
   _tacoste: 0
   _secoste: 0
   _horizontalOffset: 1
+  _verticalOffset: 1
+  _velocidad: 5
+  _tiempoInercia: 0.6
+  _umbralInercia: 1
 --- !u!114 &3505807150843220732
 MonoBehaviour:
   m_ObjectHideFlags: 0

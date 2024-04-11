@@ -59,6 +59,7 @@ public class LanzaObjeto : MonoBehaviour
         _direccion = direccion.normalized;
         _deceleracion = deceleracion;
         _tiempo = tiempo;
+        //print("objeto lanzado");
     }
 
     public void ReferenciaObjeto(Transform referencia) // En principio no se necesita
