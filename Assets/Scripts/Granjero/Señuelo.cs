@@ -7,7 +7,7 @@ public class Señuelo : MonoBehaviour
     private Transform _myTransform;
     [SerializeField]
     private float duracionSeñuelo;
-    private float _duracionSeñuelo;
+    private float tiempoSeñuelo;
 
     public void Destruido()
     {
@@ -24,14 +24,14 @@ public class Señuelo : MonoBehaviour
     void Start()
     {
         _myTransform = transform;
-        _duracionSeñuelo = 0f;
+        tiempoSeñuelo = 0f;
         GameManager.Instance.SeñueloCreado(_myTransform);
     }
 
     void Update()
     {
-        _duracionSeñuelo += Time.deltaTime;
-        if (_duracionSeñuelo > duracionSeñuelo)
+        tiempoSeñuelo += Time.deltaTime;
+        if (tiempoSeñuelo > duracionSeñuelo)
         {
             Destruido();
         }

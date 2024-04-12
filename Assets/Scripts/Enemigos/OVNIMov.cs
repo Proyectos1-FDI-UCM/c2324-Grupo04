@@ -9,11 +9,17 @@ public class OVNIMov : MonoBehaviour
     private OVNIAttack _OVNIAttack;
     public GameObject limit1;
     public GameObject limit2;
+    private Transform _transform;
     private int limit;
     private int cambioDirec = 0;
     private bool borde;
+    
+    
     private bool attakcing;
-    private Transform _transform;
+    [SerializeField] private float cooldown;
+    [SerializeField] private float windup;
+    private float _passedTime;
+
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -66,7 +72,6 @@ public class OVNIMov : MonoBehaviour
     {
         if (borde)
         {
-
             if (limit == 1)
             {
                 limit1.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
@@ -97,11 +102,11 @@ public class OVNIMov : MonoBehaviour
         {
             if (limit == 1)
             {
-                GetComponent<EnemyMovement>().movementEnemy = Vector2.right;
+                _enemyMovement.movementEnemy = Vector2.right;
             }
             else if (limit == 2)
             {
-                GetComponent<EnemyMovement>().movementEnemy = Vector2.left;
+                _enemyMovement.movementEnemy = Vector2.left;
             }
         }
 

@@ -15,7 +15,7 @@ public class LoboMov : MonoBehaviour
     private Transform _transform;
     [SerializeField] private int _cambioDirecIni;
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)//Detecta si hay colision con los bordes e indica que borde es
     {
         if (collision.gameObject.GetComponent<BordePlataforma>() != null)
         {
@@ -33,9 +33,9 @@ public class LoboMov : MonoBehaviour
         }
     }
 
-    private void seguir(int cambioDirec)
+    private void seguir(int cambioDirec)//Script para seguir al señuelo
     {
-        if (borde && cambioDirec != 0)
+        if (borde && cambioDirec != 0)//Si intenta salir del borde se anula el movimiemto
         {
             if (limit == 1 && cambioDirec == -1) { cambioDirec = 0; }
             if (limit == 2 && cambioDirec == 1) { cambioDirec = 0; }
@@ -43,15 +43,15 @@ public class LoboMov : MonoBehaviour
 
         if (cambioDirec == -1)
         {
-            GetComponent<EnemyMovement>().movementEnemy = Vector2.left;
+            _enemyMovement.movementEnemy = Vector2.left;
         }
         else if (cambioDirec == 1)
         {
-            GetComponent<EnemyMovement>().movementEnemy = Vector2.right;
+            _enemyMovement.movementEnemy = Vector2.right;
         }
         else if (cambioDirec == 0)
         {
-            GetComponent<EnemyMovement>().movementEnemy = Vector2.zero;
+            _enemyMovement.movementEnemy = Vector2.zero;
         }
     }
     void Start()
@@ -70,7 +70,7 @@ public class LoboMov : MonoBehaviour
             _cambioDirecIni--;
         }
 
-        if (borde)
+        if (borde)//Si choca contra un borde cambia de dirreccion
         {
 
             if (limit == 1)
@@ -97,8 +97,8 @@ public class LoboMov : MonoBehaviour
          }
         */
 
-
-        if (_sensorEnem.señueloDetected)
+        //El lobo solo sigue a los señuelos
+        if (_sensorEnem.señueloDetected)//Si detecta un señuelo lo sigue
         {
             _sensorEnem.seguirSeñuelo(out cambioDirec);
             seguir(cambioDirec);
@@ -108,7 +108,7 @@ public class LoboMov : MonoBehaviour
         {
             if (limit == 1)
             {
-                GetComponent<EnemyMovement>().movementEnemy = Vector2.right;
+                _enemyMovement.movementEnemy = Vector2.right;
                 
                 if (_enemyR )
                 {
@@ -121,7 +121,7 @@ public class LoboMov : MonoBehaviour
             }
             else if (limit == 2)
             {  
-                GetComponent<EnemyMovement>().movementEnemy = Vector2.left;
+                _enemyMovement.movementEnemy = Vector2.left;
 
                 _enemyR = true;
                 if (_enemyL)

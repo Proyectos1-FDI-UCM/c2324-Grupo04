@@ -18,7 +18,7 @@ public class CachorroMov : MonoBehaviour
     private float _tiempoHuida;
     private bool huida;
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)//Detecta si hay colision con los bordes e indica que borde es
     {
         if (collision.gameObject.GetComponent<BordePlataforma>() != null)
         {
@@ -40,9 +40,9 @@ public class CachorroMov : MonoBehaviour
         transform.localScale = localScale;
     }
 
-    private void seguir(int cambioDirec)
+    private void seguir(int cambioDirec)//Script para seguir al señuelo (y a la oveja)
     {
-        if (borde && cambioDirec != 0)
+        if (borde && cambioDirec != 0)//Si intenta salir del borde se anula el movimiemto
         {
             if (limit == 1 && cambioDirec == -1) { cambioDirec = 0; }
             if (limit == 2 && cambioDirec == 1) { cambioDirec = 0; }
@@ -50,19 +50,19 @@ public class CachorroMov : MonoBehaviour
 
         if (cambioDirec == -1)
         {
-            GetComponent<EnemyMovement>().movementEnemy = Vector2.left;
+            _enemyMovement.movementEnemy = Vector2.left;
         }
         else if (cambioDirec == 1)
         {
-            GetComponent<EnemyMovement>().movementEnemy = Vector2.right;
+            _enemyMovement.movementEnemy = Vector2.right;
         }
         else if (cambioDirec == 0)
         {
-            GetComponent<EnemyMovement>().movementEnemy = Vector2.zero;
+            _enemyMovement.movementEnemy = Vector2.zero;
         }
     }
 
-    private void huir(int cambioDirec)
+    private void huir(int cambioDirec)//igual que el script de seguir, pero con las dirrecciones contrarias para huuir
     {
         if (borde && cambioDirec != 0)
         {
@@ -72,15 +72,15 @@ public class CachorroMov : MonoBehaviour
 
         if (cambioDirec == -1)
         {
-            GetComponent<EnemyMovement>().movementEnemy = Vector2.right;
+            _enemyMovement.movementEnemy = Vector2.right;
         }
         else if (cambioDirec == 1)
         {
-            GetComponent<EnemyMovement>().movementEnemy = Vector2.left;
+            _enemyMovement.movementEnemy = Vector2.left;
         }
         else if (cambioDirec == 0)
         {
-            GetComponent<EnemyMovement>().movementEnemy = Vector2.zero;
+            _enemyMovement.movementEnemy = Vector2.zero;
         }
     }
 
@@ -94,12 +94,12 @@ public class CachorroMov : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (borde)
+        if (borde)//Si choca contra un borde cambia de dirreccion
         {
-            if (!huida)
-            {
-                flip();
-            }
+            //if (!huida)
+            //{
+            //    flip();
+            //}
 
             if (limit == 1)
             {
@@ -112,16 +112,17 @@ public class CachorroMov : MonoBehaviour
             }
         }
 
-        if (!huida)
+        if (!huida)//El cachorro tiene un estado de huida, si no esta huyendo se mueve como el resto de enemigos
         {
-            if (_sensorEnem.playerDetected)
+            //La prioridad del cachorro es huir del jugador, seguir al señuelo, y seguir a la oveja
+            if (_sensorEnem.playerDetected)//Si detecta al jugador entra en estado de huida
             {
                 _sensorEnem.seguirPlayer(out cambioDirec);
                 huir(cambioDirec);
                 huida = true;
                 _tiempoHuida = 0f;
             }
-            else if (_sensorEnem.señueloDetected)
+            else if (_sensorEnem.señueloDetected)//Si detecta el señuelo o a la oveja los sigue
             {
                 _sensorEnem.seguirSeñuelo(out cambioDirec);
                 seguir(cambioDirec);
@@ -131,13 +132,13 @@ public class CachorroMov : MonoBehaviour
                 _sensorEnem.seguirOveja(out cambioDirec);
                 seguir(cambioDirec);
             }
-            else
+            else//Si no detecta nada sigue moviendose dependiendo del ultimo borde con el que interractuo
             {
-                if (limit == 1) { GetComponent<EnemyMovement>().movementEnemy = Vector2.right; }
-                else { GetComponent<EnemyMovement>().movementEnemy = Vector2.left; }
+                if (limit == 1) { _enemyMovement.movementEnemy = Vector2.right; }
+                else { _enemyMovement.movementEnemy = Vector2.left; }
             }
         }
-        else { _sensorEnem.seguirPlayer(out cambioDirec); huir(cambioDirec); }
+        else { _sensorEnem.seguirPlayer(out cambioDirec); huir(cambioDirec); }//Estado de huida, dura una cantidad de tiempo despues de detectar al jugador
         _tiempoHuida += Time.deltaTime;
         if (_tiempoHuida > tiempoHuida) { huida = false; }
 

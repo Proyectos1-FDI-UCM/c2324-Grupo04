@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class ZorroMov : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class ZorroMov : MonoBehaviour
     private int cambioDirec = 0;
     private bool borde;
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)//Detecta si hay colision con los bordes e indica que borde es
     {
         if (collision.gameObject.GetComponent<BordePlataforma>() != null)
         {
@@ -28,9 +29,9 @@ public class ZorroMov : MonoBehaviour
         }
     }
 
-    private void seguir(int cambioDirec)
+    private void seguir(int cambioDirec)//Script para seguir al señuelo (y a la oveja y el graanjero)
     {
-        if (borde && cambioDirec != 0)
+        if (borde && cambioDirec != 0)//Si intenta salir del borde se anula el movimiemto
         {
             if (limit == 1 && cambioDirec == -1) { cambioDirec = 0; }
             if (limit == 2 && cambioDirec == 1) { cambioDirec = 0; }
@@ -38,15 +39,15 @@ public class ZorroMov : MonoBehaviour
 
         if (cambioDirec == -1)
         {
-            GetComponent<EnemyMovement>().movementEnemy = Vector2.left;
+            _enemyMovement.movementEnemy = Vector2.left;
         }
         else if (cambioDirec == 1)
         {
-            GetComponent<EnemyMovement>().movementEnemy = Vector2.right;
+            _enemyMovement.movementEnemy = Vector2.right;
         }
         else if (cambioDirec == 0)
         {
-            GetComponent<EnemyMovement>().movementEnemy = Vector2.zero;
+            _enemyMovement.movementEnemy = Vector2.zero;
         }
     }
     void Start()
@@ -58,7 +59,7 @@ public class ZorroMov : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (borde)
+        if (borde)//Si choca contra un borde cambia de dirreccion
         {
             if (limit == 1)
             {
@@ -69,8 +70,9 @@ public class ZorroMov : MonoBehaviour
                 limit2.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
             }
         }
-        
-        if (_sensorEnem.señueloDetected)
+
+        //La prioridad del zorro es seguir al señuelo, seguir al jugador, y seguir a la oveja
+        if (_sensorEnem.señueloDetected)//Si detecta algo lo sigue
         {
             _sensorEnem.seguirSeñuelo(out cambioDirec);
             seguir(cambioDirec);
@@ -88,8 +90,8 @@ public class ZorroMov : MonoBehaviour
         
         else
         {
-            if (limit == 1) { GetComponent<EnemyMovement>().movementEnemy = Vector2.right; }
-            else { GetComponent<EnemyMovement>().movementEnemy = Vector2.left; }
+            if (limit == 1) { _enemyMovement.movementEnemy = Vector2.right; }
+            else { _enemyMovement.movementEnemy = Vector2.left; }
         }
 
         borde = false;
