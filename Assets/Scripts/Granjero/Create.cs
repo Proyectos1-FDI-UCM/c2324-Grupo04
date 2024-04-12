@@ -23,10 +23,10 @@ public class Create : MonoBehaviour
 
     //private InventoryManager _inventoryManager; // No se usa ya
     #region parameters
-    [SerializeField]
-    private float _tacoste = 1;
-    [SerializeField]
-    private float _secoste = 0;
+    //[SerializeField]
+    //private float _tacoste = 1; // Nunca se usa así que lo comento
+    //[SerializeField]
+    //private float _secoste = 0;  // Nunca se usa así que lo comento
     [SerializeField]
     private float _horizontalOffset = 1;
     #endregion

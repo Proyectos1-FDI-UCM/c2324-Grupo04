@@ -9,14 +9,6 @@ public class Player_Raycast : MonoBehaviour
 
     private GranjeroMovement _movimientoPlayer;
     Transform _myTransform;
-    RaycastHit2D hitRight;
-    RaycastHit2D hitRightUp;
-    RaycastHit2D hitRightDown;
-    RaycastHit2D hitDown;
-    RaycastHit2D hitDownLadder;
-    RaycastHit2D hitLeft;
-    RaycastHit2D hitLeftUp;
-    RaycastHit2D hitLeftDown;
     [SerializeField] LayerMask layerToJump;
     [SerializeField] LayerMask layerToWalls;
     [SerializeField] LayerMask layerToLadder;
@@ -33,16 +25,16 @@ public class Player_Raycast : MonoBehaviour
     {
         Vector2 positionUp = new Vector2(transform.position.x, transform.position.y + 0.5f);
         Vector2 positionDown = new Vector2(transform.position.x, transform.position.y - 0.5f);
-        hitRight = Physics2D.Raycast(_myTransform.position, transform.right, distanceSide, layerToWalls);
-        hitRightUp = Physics2D.Raycast(positionUp, transform.right, distanceSide, layerToWalls);
-        hitRightDown = Physics2D.Raycast(positionDown, transform.right, distanceSide, layerToWalls);
+        RaycastHit2D hitRight = Physics2D.Raycast(_myTransform.position, transform.right, distanceSide, layerToWalls);
+        RaycastHit2D hitRightUp = Physics2D.Raycast(positionUp, transform.right, distanceSide, layerToWalls);
+        RaycastHit2D hitRightDown = Physics2D.Raycast(positionDown, transform.right, distanceSide, layerToWalls);
 
-        hitDown = Physics2D.Raycast(_myTransform.position, transform.up * -1, distanceDown, layerToJump);
-        hitDownLadder = Physics2D.Raycast(_myTransform.position, transform.up * -1, distanceDown, layerToLadder);
+        RaycastHit2D hitDown = Physics2D.Raycast(_myTransform.position, transform.up * -1, distanceDown, layerToJump);
+        RaycastHit2D hitDownLadder = Physics2D.Raycast(_myTransform.position, transform.up * -1, distanceDown, layerToLadder);
 
-        hitLeft = Physics2D.Raycast(_myTransform.position, transform.right * -1, distanceSide, layerToWalls);
-        hitLeftUp = Physics2D.Raycast(positionUp, transform.right * -1, distanceSide, layerToWalls);
-        hitLeftDown = Physics2D.Raycast(positionDown, transform.right * -1, distanceSide, layerToWalls);
+        RaycastHit2D hitLeft = Physics2D.Raycast(_myTransform.position, transform.right * -1, distanceSide, layerToWalls);
+        RaycastHit2D hitLeftUp = Physics2D.Raycast(positionUp, transform.right * -1, distanceSide, layerToWalls);
+        RaycastHit2D hitLeftDown = Physics2D.Raycast(positionDown, transform.right * -1, distanceSide, layerToWalls);
 
         if (hitRight.collider != null || hitRightUp.collider != null || hitRightDown.collider != null)
         {
