@@ -86,11 +86,6 @@ public class Create : MonoBehaviour
         }
     }
 
-    private void CreaSeñuelo() // Método auxiliar para no copiar y pegar código en el if-else if
-    {
-
-    }
-
     private void OnAction3()
     {
         if (_puedeSeñuelo && GameManager.Instance.ObtenerCuerdas() > 0 && _playerMovement.choqueAbajo) 

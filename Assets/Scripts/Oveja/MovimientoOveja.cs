@@ -7,9 +7,9 @@ public class MovimientoOveja : MonoBehaviour // Componente perteneciente a la ov
 {
     #region variables
 
-    [SerializeField]    private float _interactionDistance = 1.8f;
+    //[SerializeField]    private float _interactionDistance = 1.8f;
     //[SerializeField] private float _horizontalOffset = 2f;
-    [SerializeField] private float _verticalOffset = 1f;
+    //[SerializeField] private float _verticalOffset = 1f;
 
     #endregion
 
