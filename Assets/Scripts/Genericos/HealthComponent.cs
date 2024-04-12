@@ -100,7 +100,7 @@ public class HealthComponent : MonoBehaviour
 
         if (_recibeDaño) // Quizá sea mejor que el método ChangeHealth sea ciego a la invulnerabilidad, no sé - R
         {
-            Debug.Log("Cambio de vida: " + increment);
+            //Debug.Log("(HC) Cambio de vida: " + increment);
             _currentHp += increment;
         }
         if (_currentHp > _maxHp)
@@ -109,7 +109,8 @@ public class HealthComponent : MonoBehaviour
         }
         if (_currentHp <= 0)
         {
-            Die();
+            //Debug.Log("(HC) Se me ha acabado la vida");
+            SendMessage("Die");
         }
         return _currentHp <= 0;
     }
@@ -123,20 +124,20 @@ public class HealthComponent : MonoBehaviour
         }
     }
 
-    private void Die()
-    {
-        Debug.Log("This is player: " + _thisIsPlayer);
-        if (_thisIsPlayer || _thisIsSheep)
-        {
-            GameManager.Instance.ReiniciaEscena();
-            Debug.Log("Fin de la partida");
-        }
-        else
-        {
-            if (_thisIsSeñuelo) { GameManager.Instance.SeñueloDestruido(); }
-            Destroy(this.gameObject);
-        }
-    }
+    //private void Die()
+    //{
+    //    Debug.Log("This is player: " + _thisIsPlayer);
+    //    if (_thisIsPlayer || _thisIsSheep)
+    //    {
+    //        GameManager.Instance.ReiniciaEscena();
+    //        Debug.Log("Fin de la partida");
+    //    }
+    //    else
+    //    {
+    //        if (_thisIsSeñuelo) { GameManager.Instance.SeñueloDestruido(); }
+    //        Destroy(this.gameObject);
+    //    }
+    //}
 
     #endregion
 

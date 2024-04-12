@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5900416991898953060}
   - component: {fileID: 8469826256402733165}
   - component: {fileID: 2911231204363005686}
+  - component: {fileID: 6966187786907785102}
   m_Layer: 7
   m_Name: Cachorro
   m_TagString: Untagged
@@ -235,6 +236,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6966187786907785102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580365347053242047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe2b46e774fa5b43b20b48fa8edd8b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2368549587807856747
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,6 +257,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 131694889458969476}
+  - component: {fileID: 5731719020174994392}
   m_Layer: 7
   m_Name: Cachorro
   m_TagString: Untagged
@@ -269,6 +283,18 @@ Transform:
   - {fileID: 8521809860140559566}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5731719020174994392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2368549587807856747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe2b46e774fa5b43b20b48fa8edd8b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7658494634656298659
 GameObject:
   m_ObjectHideFlags: 0
