@@ -70,6 +70,7 @@ public class HealthComponent : MonoBehaviour
                 {
                     SendMessage("AnimacionDaño");
                 }
+                _crono = 0;
             }
         }
         else // Aumenta su vida
