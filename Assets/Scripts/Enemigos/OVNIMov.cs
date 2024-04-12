@@ -16,12 +16,13 @@ public class OVNIMov : MonoBehaviour
     
     
     private bool attakcing;
+    private bool canAttack;
     [SerializeField] private float cooldown;
     [SerializeField] private float windup;
     private float _passedTime;
 
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)//Detecta si hay colision con los bordes e indica que borde es
     {
         if (collision.gameObject.GetComponent<BordePlataforma>() != null)
         {
@@ -37,9 +38,9 @@ public class OVNIMov : MonoBehaviour
         }
     }
 
-    private void seguir(int cambioDirec)
+    private void seguir(int cambioDirec)//Script para seguir al señuelo (y a la oveja y el granjero)
     {
-        if (borde && cambioDirec != 0)
+        if (borde && cambioDirec != 0)//Si intenta salir del borde se anula el movimiemto
         {
             if (limit == 1 && cambioDirec == -1) { cambioDirec = 0; }
             if (limit == 2 && cambioDirec == 1) { cambioDirec = 0; }
@@ -58,6 +59,31 @@ public class OVNIMov : MonoBehaviour
             GetComponent<EnemyMovement>().movementEnemy = Vector2.zero;
         }
     }
+
+    private void prepAttack()//Script para la preparacion del ataque
+    {
+        if (_passedTime > cooldown)//Si ha pasado el cooldown del ataque, puede prepararse para otro ataque
+        {
+            canAttack = true;
+            _passedTime = 0;
+        }
+
+        if (canAttack)
+        {
+            if (cambioDirec == 0)//Si el OVNI esta justo encima del objetivo, empieza a prepararse para atacar
+            {
+                _passedTime += Time.deltaTime;
+                if (_passedTime > windup)//Si el OVNI lleva un tiempo preparandose empieza el estado de ataque
+                {
+                    attakcing = true;
+                    canAttack = false;
+                }
+            }
+            else { _passedTime = 0; }
+        }
+        else { _passedTime += Time.deltaTime; }
+    }
+
     void Start()
     {
         _enemyMovement = GetComponent<EnemyMovement>();
@@ -65,51 +91,65 @@ public class OVNIMov : MonoBehaviour
         _OVNIAttack = GetComponent<OVNIAttack>();
         borde = false;
         attakcing = false;
+        canAttack = true;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (borde)
+        if (attakcing)//El OVNI tiene un estado de ataque, en el cual se desactiva el movimiento
         {
-            if (limit == 1)
-            {
-                limit1.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
-            }
-            else
-            {
-                limit2.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
-            }
+
         }
 
-        if (_sensorEnem.señueloDetected)
-        {
-            _sensorEnem.seguirSeñuelo(out cambioDirec);
-            seguir(cambioDirec);
-        }
-        else if (_sensorEnem.ovejaDetected)
-        {
-            _sensorEnem.seguirOveja(out cambioDirec);
-            seguir(cambioDirec);
-        }
-        else if (_sensorEnem.playerDetected)
-        {
-            _sensorEnem.seguirPlayer(out cambioDirec);
-            seguir(cambioDirec);
-        }
 
         else
         {
-            if (limit == 1)
+            if (borde)//Si choca contra un borde cambia de dirreccion
             {
-                _enemyMovement.movementEnemy = Vector2.right;
+                if (limit == 1)
+                {
+                    limit1.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
+                }
+                else
+                {
+                    limit2.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
+                }
             }
-            else if (limit == 2)
-            {
-                _enemyMovement.movementEnemy = Vector2.left;
-            }
-        }
 
-        borde = false;
+            //La prioridad del OVNI es seguir al señuelo, seguir a la oveja, y seguir al jugador
+            if (_sensorEnem.señueloDetected)//Si detecta algo lo sigue
+            {
+                _sensorEnem.seguirSeñuelo(out cambioDirec);
+                prepAttack();
+                seguir(cambioDirec);
+            }
+            else if (_sensorEnem.ovejaDetected)
+            {
+                _sensorEnem.seguirOveja(out cambioDirec);
+                prepAttack();
+                seguir(cambioDirec);
+            }
+            else if (_sensorEnem.playerDetected)
+            {
+                _sensorEnem.seguirPlayer(out cambioDirec);
+                prepAttack();
+                seguir(cambioDirec);
+            }
+
+            else
+            {
+                if (limit == 1)
+                {
+                    _enemyMovement.movementEnemy = Vector2.right;
+                }
+                else if (limit == 2)
+                {
+                    _enemyMovement.movementEnemy = Vector2.left;
+                }
+            }
+
+            borde = false;
+        } 
     }
 }
