@@ -19,7 +19,6 @@ public class LoboMov : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<BordePlataforma>() != null)
         {
-            // Debug.Log("Collision Borde");
             if (collision.gameObject == limit1)
             {
                 limit = 1;
@@ -70,8 +69,6 @@ public class LoboMov : MonoBehaviour
             flip();
             _cambioDirecIni--;
         }
-
-        if (cambioDirec == 0) { cambioDirec = -1; }
 
         if (borde)
         {
