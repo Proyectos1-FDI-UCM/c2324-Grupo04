@@ -69,8 +69,6 @@ public class ZorroMov : MonoBehaviour
                 limit2.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
             }
         }
-
-        if (cambioDirec == 0) { cambioDirec = -1; }
         
         if (_sensorEnem.señueloDetected)
         {
@@ -81,13 +79,11 @@ public class ZorroMov : MonoBehaviour
         {
             _sensorEnem.seguirPlayer(out cambioDirec);
             seguir(cambioDirec);
-            Debug.Log("Siguiendo player");
         }
         else if (_sensorEnem.ovejaDetected)
         {
             _sensorEnem.seguirOveja(out cambioDirec);
             seguir(cambioDirec);
-            Debug.Log("Siguiendo oveja");
         }
         
         else

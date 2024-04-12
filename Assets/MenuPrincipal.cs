@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.Playables;
 
 public class MenuPrincipal : MonoBehaviour
 {
     [SerializeField] private GameObject _menuJugar;
     [SerializeField] private GameObject _menuNiveles;
     [SerializeField] private GameObject _menuAjustes;
+    [SerializeField] private PlayableDirector playableDirector;
 
-    public GameObject selectplay, selectlevel1;
+    public GameObject selectplay, selectlevel1, exitSettings, enterSettings;
 
 
     // Start is called before the first frame update
@@ -24,6 +26,7 @@ public class MenuPrincipal : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(selectplay);
+        playableDirector.Play();
     }
 
     public void ClickPlay()
@@ -32,9 +35,7 @@ public class MenuPrincipal : MonoBehaviour
         _menuNiveles.SetActive(true);
 
         EventSystem.current.SetSelectedGameObject(null);
-        Debug.Log(EventSystem.current.alreadySelecting);
         EventSystem.current.SetSelectedGameObject(selectlevel1);
-        Debug.Log(EventSystem.current.alreadySelecting);
 
     }
 
@@ -42,6 +43,21 @@ public class MenuPrincipal : MonoBehaviour
     {
         _menuNiveles.SetActive(false);
         _menuAjustes.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(enterSettings);
+    }
+
+    public void ExitSettings() 
+    {
+        _menuAjustes.SetActive(false);
+        _menuNiveles.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(exitSettings);
+    }
+
+    public void ExitGame() 
+    {
+        Application.Quit();
     }
 
 

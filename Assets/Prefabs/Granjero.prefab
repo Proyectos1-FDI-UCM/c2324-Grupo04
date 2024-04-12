@@ -251,6 +251,10 @@ MonoBehaviour:
   _tacoste: 0
   _secoste: 0
   _horizontalOffset: 1
+  _verticalOffset: 1
+  _velocidad: 5
+  _tiempoInercia: 0.6
+  _umbralInercia: 1
 --- !u!114 &3505807150843220732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,7 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d84d9686b7d3441b752b06fb97fc6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tiempoAtaque: 0.75
+  _tiempoAtaque: 0.15
 --- !u!95 &7163601671013035740
 Animator:
   serializedVersion: 5

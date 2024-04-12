@@ -6,11 +6,13 @@ public class OVNIMov : MonoBehaviour
 {
     private SensorEnem _sensorEnem;
     private EnemyMovement _enemyMovement;
+    private OVNIAttack _OVNIAttack;
     public GameObject limit1;
     public GameObject limit2;
     private int limit;
     private int cambioDirec = 0;
     private bool borde;
+    private bool attakcing;
     private Transform _transform;
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -54,13 +56,14 @@ public class OVNIMov : MonoBehaviour
     {
         _enemyMovement = GetComponent<EnemyMovement>();
         _sensorEnem = GetComponent<SensorEnem>();
+        _OVNIAttack = GetComponent<OVNIAttack>();
+        borde = false;
+        attakcing = false;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (cambioDirec == 0) { cambioDirec = -1; }
-
         if (borde)
         {
 
@@ -73,19 +76,6 @@ public class OVNIMov : MonoBehaviour
                 limit2.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
             }
         }
-
-        /* if (_enemyR && limit == 1) 
-         { 
-             flip();
-             _enemyR = false;
-         }
-         else if (_enemyR && limit != 1) 
-         { 
-             flip();
-             _enemyR = false;
-         }
-        */
-
 
         if (_sensorEnem.señueloDetected)
         {
