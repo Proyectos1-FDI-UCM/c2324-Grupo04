@@ -14,7 +14,7 @@ public class Control_ObjetosActivadosPorBotón : MonoBehaviour
     {
         if (esPlataformaMovil)
         {
-            movimientoPlataforma = _myPlatformMovement;
+            //movimientoPlataforma = _myPlatformMovement;
         }
     }
 
