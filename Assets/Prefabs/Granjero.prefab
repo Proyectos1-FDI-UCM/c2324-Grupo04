@@ -191,11 +191,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: -2
-  _hitboxSpeed: 24
   _Layer:
     serializedVersion: 2
     m_Bits: 128
-  _hitboxDuration: 0.4
   _hitboxPrefab: {fileID: 3472019101419376355, guid: b13fcce89b89a3046a48b4568c7a80bf, type: 3}
   _horizontalOffset: 1
   _hitboxRadius: 1
@@ -248,13 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Trampoline: {fileID: 3268378158735985531, guid: 495aa111aa0c72144b8f376ac8472fb1, type: 3}
   "Se\xF1uelo": {fileID: 5091619765839581776, guid: 8a41b4a3e482b2048beeb98722315e69, type: 3}
-  _tacoste: 0
-  _secoste: 0
   _horizontalOffset: 1
-  _verticalOffset: 1
-  _velocidad: 5
-  _tiempoInercia: 0.6
-  _umbralInercia: 1
 --- !u!114 &3505807150843220732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,7 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHp: 3
   _currentHp: 3
-  invulnerabilidad: 2
+  _invulnerabilidad: 1.5
 --- !u!114 &8818317229978637465
 MonoBehaviour:
   m_ObjectHideFlags: 0
