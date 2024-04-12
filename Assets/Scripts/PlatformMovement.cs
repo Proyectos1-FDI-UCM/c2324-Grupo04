@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlatformMovement : MonoBehaviour
 {
-    public float speed = 0.5f;
+    [SerializeField] private float speed = 0.5f;
     private float waitTime;
-    public Transform[] moveSpots;
-    public float startWaitTime = 2;
+    [SerializeField] private Transform[] moveSpots;
+    [SerializeField] private float startWaitTime = 2;
     private int i = 0;
     private Vector2 actualPos;
 
@@ -45,11 +45,11 @@ public class PlatformMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        collision.collider.transform.SetParent(transform);
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        collision.collider.transform.SetParent(null);
+
     }
 }
