@@ -207,6 +207,7 @@ public class GameManager : MonoBehaviour
 
     public void CambiaMainMenu()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene(0);
     }
     #endregion

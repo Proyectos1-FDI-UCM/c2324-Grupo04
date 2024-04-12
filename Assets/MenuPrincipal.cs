@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.Playables;
+using UnityEditor.Animations;
+using UnityEngine.Timeline;
 
 public class MenuPrincipal : MonoBehaviour
 {
@@ -13,7 +15,6 @@ public class MenuPrincipal : MonoBehaviour
     [SerializeField] private PlayableDirector playableDirector;
 
     public GameObject selectplay, selectlevel1, exitSettings, enterSettings;
-
 
     // Start is called before the first frame update
     void Awake()
@@ -26,10 +27,11 @@ public class MenuPrincipal : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(selectplay);
-        playableDirector.Play();
+
+		print("MenuPrincipal.Start" + playableDirector.name);
     }
 
-    public void ClickPlay()
+	public void ClickPlay()
     {
         _menuJugar.SetActive(false);
         _menuNiveles.SetActive(true);
@@ -63,8 +65,8 @@ public class MenuPrincipal : MonoBehaviour
 
     public void CambiaNivel1()
     {
-        SceneManager.LoadScene(1);
-    }
+		  SceneManager.LoadScene(1);
+	  }
 
 
 }
