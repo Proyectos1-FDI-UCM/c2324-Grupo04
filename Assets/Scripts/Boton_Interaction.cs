@@ -12,7 +12,7 @@ public class Boton_Interaction : MonoBehaviour
 
         if (collision.GetComponent<GranjeroMovement>() != null || collision.GetComponent<OvejaBalido>() != null || collision.GetComponent<BloqueMovible>())
         {
-            //Debug.Log("Botón pulsado");
+            Debug.Log("Botón pulsado");
             botonActivo = true;
         }
     }
@@ -22,7 +22,7 @@ public class Boton_Interaction : MonoBehaviour
 
         if (collision.GetComponent<GranjeroMovement>() != null || collision.GetComponent<OvejaBalido>() != null || collision.GetComponent<BloqueMovible>())
         {
-            //Debug.Log("Botón soltado");
+            Debug.Log("Botón soltado");
             botonActivo = false;
         }
     }

@@ -27,7 +27,11 @@ public class Control_ObjetosActivadosPorBotón : MonoBehaviour
         {
             if (isPressed)
             {
-
+                movimientoPlataforma.enabled = true;
+            }
+            else
+            {
+                movimientoPlataforma.enabled = false;
             }
         }
     }

@@ -665,11 +665,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9adf658c3d2aa5f47acde46b70043088, type: 3}
---- !u!1 &297266384 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8927058815523446700, guid: 15c8d63b8b558494cacc16d450dab47e, type: 3}
-  m_PrefabInstance: {fileID: 30383610}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &307760769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -811,6 +806,7 @@ GameObject:
   - component: {fileID: 351118223}
   - component: {fileID: 351118225}
   - component: {fileID: 351118227}
+  - component: {fileID: 351118228}
   m_Layer: 9
   m_Name: Square
   m_TagString: Untagged
@@ -893,7 +889,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 351118222}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 152abbdf15d780f48867f268a3984ab9, type: 3}
   m_Name: 
@@ -948,6 +944,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.9854193, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &351118228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351118222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad7d218f33b66b4e8840ae7288b28ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boton: {fileID: 449507970}
+  esPlataformaMovil: 1
+  esPuerta: 0
 --- !u!1001 &383908865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1217,6 +1228,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c55ddc5f8dd868e46b7c12c0cb63bf3f, type: 3}
+--- !u!1 &449507970 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3893806991811323178, guid: a53afddec87118645a5f51c284167b20, type: 3}
+  m_PrefabInstance: {fileID: 2949732173215106734}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &450758536
 GameObject:
   m_ObjectHideFlags: 0
@@ -1948,11 +1964,6 @@ PrefabInstance:
 --- !u!4 &627847788 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6774416734236174726, guid: 40385d4a08cad884eacf1ebc7f28c540, type: 3}
-  m_PrefabInstance: {fileID: 873762850}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &644307458 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2980344303703420876, guid: 40385d4a08cad884eacf1ebc7f28c540, type: 3}
   m_PrefabInstance: {fileID: 873762850}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &649689593 stripped
@@ -111108,10 +111119,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _menuDePausa: {fileID: 1673487188}
-  _instruccionesTrampolin: {fileID: 297266384}
-  "_instruccionesSe\xF1uelo": {fileID: 644307458}
-  _instruccionesHorca: {fileID: 0}
-  _instruccionesMovimiento: {fileID: 0}
+  _instruccionesTrampolin: {fileID: 8106255569320004014, guid: 7e41cc4daf23a494e9c774496c0c1774, type: 3}
+  "_instruccionesSe\xF1uelo": {fileID: 2205960351055961836, guid: d5784e75292fcb842b35b0887de0d180, type: 3}
+  _instruccionesHorca: {fileID: 9155463306568556418, guid: 2ace84654c763a843986e4570871b082, type: 3}
+  _instruccionesMovimiento: {fileID: 8106255569320004014, guid: 021418eb62bafc04a8b51e86bfc7c080, type: 3}
   _corazonesHUD: {fileID: 0}
   _corazonesHUDOveja: {fileID: 0}
   victory: {fileID: 0}
