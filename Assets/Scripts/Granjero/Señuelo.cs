@@ -15,6 +15,12 @@ public class Señuelo : MonoBehaviour
         Destroy(this.gameObject);
     }
 
+    public void Die() // Método que llama a su acción de muerte (lo he sacado del HealthComponent al pie de la letra)
+    {
+        GameManager.Instance.SeñueloDestruido();
+        Destroy(this.gameObject);
+    }
+
     void Start()
     {
         _myTransform = transform;

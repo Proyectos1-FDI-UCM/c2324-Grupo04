@@ -6,6 +6,7 @@ public class MuerteJugador : MonoBehaviour
 {
     public void Die()
     {
-
+        GameManager.Instance.ReiniciaEscena();
+        //Debug.Log("Fin de la partida");
     }
 }
