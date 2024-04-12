@@ -7,20 +7,28 @@ public class Control_ObjetosActivadosPorBotón : MonoBehaviour
     [SerializeField] private GameObject boton;
     [SerializeField] private bool esPlataformaMovil;
     [SerializeField] private bool esPuerta;
-
+    private PlatformMovement movimientoPlataforma;
+    bool isPressed;
 
     // Start is called before the first frame update
     void Start()
     {
         if (esPlataformaMovil)
         {
-            //movimientoPlataforma = _myPlatformMovement;
+            movimientoPlataforma = GetComponent<PlatformMovement>(); ;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        isPressed = boton.GetComponent<Boton_Interaction>().botonActivo;
+        if (esPlataformaMovil)
+        {
+            if (isPressed)
+            {
+
+            }
+        }
     }
 }
