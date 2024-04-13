@@ -8,6 +8,7 @@ public class Control_ObjetosActivadosPorBotón : MonoBehaviour
     [SerializeField] private bool esPlataformaMovil;
     [SerializeField] private bool esPuerta;
     private PlatformMovement movimientoPlataforma;
+    private BoxCollider2D collider;
     bool isPressed;
 
     // Start is called before the first frame update
@@ -16,6 +17,10 @@ public class Control_ObjetosActivadosPorBotón : MonoBehaviour
         if (esPlataformaMovil)
         {
             movimientoPlataforma = GetComponent<PlatformMovement>(); ;
+        }
+        if (esPuerta)
+        {
+            collider = GetComponent<BoxCollider2D>(); ;
         }
     }
 
@@ -32,6 +37,18 @@ public class Control_ObjetosActivadosPorBotón : MonoBehaviour
             else
             {
                 movimientoPlataforma.enabled = false;
+            }
+        }
+
+        if (esPuerta)
+        {
+            if (isPressed)
+            {
+                collider.enabled = false;
+            }
+            else
+            {
+                collider.enabled = true;
             }
         }
     }
