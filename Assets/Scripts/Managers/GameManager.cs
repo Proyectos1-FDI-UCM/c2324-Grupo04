@@ -49,9 +49,12 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region references 
-    [SerializeField] HorcaAttack _playersHorcaAttack;
-    [SerializeField] HealthComponent _playerHealth;
-    [SerializeField] GranjeroMovement _granjeroMovement;
+    
+    [SerializeField]
+    private GranjeroMovement _granjeroMovement;
+    private HorcaAttack _playersHorcaAttack;
+    private HealthComponent _playerHealth;
+    private GranjeroAnimationController _playerAnimationController;
     private Transform _playerTransform;
     private Create _playerCreate;
     [SerializeField] private Transform _ovejaTransform;
@@ -59,10 +62,30 @@ public class GameManager : MonoBehaviour
     private Transform _señueloTransform;
     public int nseñuelo = 0;
     public bool señueloExist = false;
-    #endregion 
+    #endregion
 
-    #region methods
 
+
+    #region Unity methods
+    private void Awake()
+    {
+        if (_instance == null) _instance = this; // Sólo queremos un GameManager, así que usamos el patrón singleton
+        else Destroy(gameObject);
+        _playerTransform = _granjeroMovement.gameObject.transform;
+    }
+
+    private void Start()
+    {
+        _playersHorcaAttack = _granjeroMovement.gameObject.GetComponent<HorcaAttack>();
+        _playerHealth = _granjeroMovement.gameObject.GetComponent<HealthComponent>();
+        _playerAnimationController = _granjeroMovement.gameObject.GetComponent<GranjeroAnimationController>();
+        _playerCreate = _granjeroMovement.gameObject.GetComponent<Create>();
+        _UIManager = GetComponent<UIManager>();
+        Time.timeScale = 1.0f;
+    }
+    #endregion
+
+    #region reference methods
     public GranjeroMovement ReferenciaGranjero()
     {
         return _granjeroMovement;
@@ -82,21 +105,11 @@ public class GameManager : MonoBehaviour
     {
         return _playerHealth;
     }
+    #endregion
 
-    private void Awake()
-    {
-        if (_instance == null) _instance = this; // Sólo queremos un GameManager, así que usamos el patrón singleton
-        else Destroy(gameObject);
-        _playerTransform = _granjeroMovement.gameObject.transform;
-    }
 
-    private void Start()
-    {
-        _playerCreate = _granjeroMovement.gameObject.GetComponent<Create>();
-        _UIManager = GetComponent<UIManager>();
-        Time.timeScale = 1.0f;
-    }
 
+    #region methods
     private void ActivaHorca()
     {
         Debug.Log("Horca activada");
@@ -161,12 +174,14 @@ public class GameManager : MonoBehaviour
     public void CogeOveja()
     {
         _granjeroMovement.OvejaRecogida();
+        _playerAnimationController.OvejaRecogida();
         cargandoOveja = true;
     }
 
     public void SueltaOveja()
     {
         _granjeroMovement.OvejaSoltada();
+        _playerAnimationController.OvejaSoltada();
         cargandoOveja = false;
     }
 

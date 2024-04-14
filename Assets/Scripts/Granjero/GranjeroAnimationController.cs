@@ -74,14 +74,11 @@ public class GranjeroAnimationController : MonoBehaviour
         }
     }
 
-
-
     public void Quieto()
     {
         print("Quieto (animación)");
         _myAnimator.SetInteger("EstadoAnimacion", 0);
     }
-    
     
     public void Gira(float dir)
     {        
@@ -122,6 +119,16 @@ public class GranjeroAnimationController : MonoBehaviour
     public void SueltaObjeto()
     {
         print("Suelta objeto (animación)");
+    }
+
+    public void OvejaSoltada()
+    {
+        _myAnimator.SetBool("LlevandoOveja", false);
+    }
+
+    public void OvejaRecogida()
+    {
+        _myAnimator.SetBool("LlevandoOveja", true);
     }
 
     public void Salta()
