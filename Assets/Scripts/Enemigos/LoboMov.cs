@@ -11,9 +11,9 @@ public class LoboMov : MonoBehaviour
     private int limit;
     private int cambioDirec = 0;
     private bool borde;
-    private bool _enemyR, _enemyL;
+    private bool _enemyR;
     private Transform _transform;
-    [SerializeField] private int _cambioDirecIni;
+    private bool _cambioDirecIni;
 
     private void OnTriggerStay2D(Collider2D collision)//Detecta si hay colision con los bordes e indica que borde es
     {
@@ -22,12 +22,12 @@ public class LoboMov : MonoBehaviour
             if (collision.gameObject == limit1)
             {
                 limit = 1;
-                //  flip();
+                
             }
             if (collision.gameObject == limit2)
             {
                 limit = 2;
-                //  flip();
+                
             }
             borde = true;
         }
@@ -58,16 +58,17 @@ public class LoboMov : MonoBehaviour
     {
         _enemyMovement = GetComponent<EnemyMovement>();
         _sensorEnem = GetComponent<SensorEnem>();
-        _cambioDirecIni = 1;
+        _cambioDirecIni = true;
+        _enemyR = true;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (_cambioDirecIni >= 1) //Este if es para corregir la direccion al principio, para que no parezca que camina de espaldas
+        if (_cambioDirecIni) //Este if es para corregir la direccion al principio, para que no parezca que camina de espaldas
         {
             flip();
-            _cambioDirecIni--;
+            _cambioDirecIni = false;
         }
 
         if (borde)//Si choca contra un borde cambia de dirreccion
@@ -76,26 +77,15 @@ public class LoboMov : MonoBehaviour
             if (limit == 1)
             {
                 limit1.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
-                // _enemyR = true;               
+                               
             }
             else
             {
                 limit2.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
-                //_enemyR = true;
+               
             }
         }
 
-        /* if (_enemyR && limit == 1) 
-         { 
-             flip();
-             _enemyR = false;
-         }
-         else if (_enemyR && limit != 1) 
-         { 
-             flip();
-             _enemyR = false;
-         }
-        */
 
         //El lobo solo sigue a los señuelos
         if (_sensorEnem.señueloDetected)//Si detecta un señuelo lo sigue
@@ -113,24 +103,22 @@ public class LoboMov : MonoBehaviour
                 if (_enemyR )
                 {
                     flip();
-                    _enemyR = false;
-                    print("R");
-                    _enemyL = true;
+                    _enemyR = false;                
                 }
                                
             }
+
             else if (limit == 2)
             {  
                 _enemyMovement.movementEnemy = Vector2.left;
 
-                _enemyR = true;
-                if (_enemyL)
+                
+                if (!_enemyR)
                 {
                     flip();
-                    _enemyL = false;
-                    print("R");
+                    _enemyR = true;
                 }
-                print("L");
+ 
             }
         }
 
@@ -142,7 +130,7 @@ public class LoboMov : MonoBehaviour
         Vector2 localScale = transform.localScale;
         localScale.x *= -1;
         transform.localScale = localScale;
-        print("FLIP");
+        //print("FLIP");
     }
 
 

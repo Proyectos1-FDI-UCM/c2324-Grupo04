@@ -17,6 +17,8 @@ public class CachorroMov : MonoBehaviour
     private float tiempoHuida;
     private float _tiempoHuida;
     private bool huida;
+    private bool _enemyR;
+    private bool _cambioDirecIni;
 
     private void OnTriggerStay2D(Collider2D collision)//Detecta si hay colision con los bordes e indica que borde es
     {
@@ -62,7 +64,7 @@ public class CachorroMov : MonoBehaviour
         }
     }
 
-    private void huir(int cambioDirec)//igual que el script de seguir, pero con las dirrecciones contrarias para huuir
+    private void huir(int cambioDirec)//igual que el script de seguir, pero con las dirrecciones contrarias para huir
     {
         if (borde && cambioDirec != 0)
         {
@@ -73,10 +75,12 @@ public class CachorroMov : MonoBehaviour
         if (cambioDirec == -1)
         {
             _enemyMovement.movementEnemy = Vector2.right;
+           
         }
         else if (cambioDirec == 1)
         {
             _enemyMovement.movementEnemy = Vector2.left;
+            
         }
         else if (cambioDirec == 0)
         {
@@ -89,26 +93,43 @@ public class CachorroMov : MonoBehaviour
     {
         _enemyMovement = GetComponent<EnemyMovement>();
         _sensorEnem = GetComponent<SensorEnem>();
+        _cambioDirecIni = true;
+        _enemyR = true;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (borde)//Si choca contra un borde cambia de dirreccion
+        if (_cambioDirecIni) //Este if es para corregir la direccion al principio, para que no parezca que camina de espaldas
         {
-            //if (!huida)
-            //{
-            //    flip();
-            //}
+            flip();
+            _cambioDirecIni = false;
+        }
+
+        if (borde)//Si choca contra un borde cambia de dirreccion
+        {          
 
             if (limit == 1)
             {
                 
                 limit1.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
+                
+                if (_enemyR)
+                {
+                    flip();
+                    _enemyR = false;
+                }
             }
             else
             {
                 limit2.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
+                
+                
+                if (!_enemyR)
+                {
+                    flip();
+                    _enemyR = true;
+                }
             }
         }
 

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6382708568519016459}
   - component: {fileID: 1925321901275367790}
   - component: {fileID: 4928442505949967239}
+  - component: {fileID: 4882522260267602565}
   m_Layer: 7
   m_Name: Zorro
   m_TagString: Untagged
@@ -32,8 +33,8 @@ Transform:
   m_GameObject: {fileID: 2024086857762823396}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.9, y: 2.04, z: 1}
+  m_LocalPosition: {x: 0.5502, y: 0.3116, z: 0}
+  m_LocalScale: {x: 3.6196728, y: 3.872858, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 164225538643393926}
@@ -209,7 +210,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHp: 3
   _currentHp: 3
-  invulnerabilidad: 0
+  _invulnerabilidad: -1
+--- !u!95 &4882522260267602565
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024086857762823396}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2364823100963da4db4b7af1817346c3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6087491145438250310
 GameObject:
   m_ObjectHideFlags: 0
