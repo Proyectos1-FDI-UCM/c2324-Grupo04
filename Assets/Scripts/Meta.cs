@@ -10,7 +10,7 @@ public class Meta_NoLaEmpresa : MonoBehaviour
     [SerializeField] private GameObject resetButton;
     private void OnTriggerEnter2D(Collider2D Collider)
     {
-        if (Collider.gameObject.GetComponent<GranjeroMovement>() && GameManager.Instance.cargandoOveja == true)
+        if (Collider.gameObject.GetComponent<GranjeroMovement>() && GameManager.Instance.cargandoOveja == true || Collider.gameObject.GetComponent<OvejaBalido>())
         {
             FinPartida = true;
             Debug.Log("Gnaste");
