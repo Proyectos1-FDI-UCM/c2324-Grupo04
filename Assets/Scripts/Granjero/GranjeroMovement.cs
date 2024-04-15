@@ -5,27 +5,33 @@ using UnityEngine.InputSystem;
 
 public class GranjeroMovement : MonoBehaviour
 {
+    #region references
+    private GranjeroAnimationController _myAnimationController;
+    private Rigidbody2D _myRB; // Esto estaba público por alguna razón? - R
+    private Player_Raycast _myRC;
+    #endregion
+
     private Vector2 movement;
-    public Rigidbody2D rb;
+    
     private float Horizontal;
     public Vector2 movementTracker;
-    private int speed;
+    private float speed;
     private float impulso;
 
-
-    [SerializeField] private int _velocidadOveja = 3;
+    #region parameters
+    [SerializeField] private float _velocidadOveja = 3;
     [SerializeField] private float _impulsoOveja = 3;
-    [SerializeField] private int _velocidadInicial = 3;
+    [SerializeField] private float _velocidadInicial = 3;
     [SerializeField] private float _impulsoInicial = 3;
-    [SerializeField] private float velCaida = 0;
-    [SerializeField] private float ladderSpeed = 2;
-    private GranjeroAnimationController _myAnimationController;
+    [SerializeField] private float _fallSpeed = 4;
+    #endregion
 
-    
+    #region variables
     public bool choqueAbajo;
     public bool choqueIzq;
     public bool choqueDer;
-    public bool allowLadder;
+    //public bool allowLadder; // No vamos a usar la escalera ya
+    #endregion
 
     public void SetBoolDown(bool value)
     {
@@ -39,22 +45,14 @@ public class GranjeroMovement : MonoBehaviour
     {
         choqueDer = value;
     }
-    public void SetBoolLadder(bool value)
-    {
-        allowLadder = value;
-    }
+    //public void SetBoolLadder(bool value)
+    //{
+    //    allowLadder = value;
+    //}
 
     public Vector2 Movement()
     {
         return movementTracker;
-    }
-
-
-
-
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
     }
 
     private void Start()
@@ -62,15 +60,17 @@ public class GranjeroMovement : MonoBehaviour
         speed = _velocidadInicial;
         impulso = _impulsoInicial;
         _myAnimationController = GetComponent<GranjeroAnimationController>();
+        _myRB = GetComponent<Rigidbody2D>();
+        _myRC = GetComponent<Player_Raycast>();
     }
 
 
     private void  OnUp()
     {
         Debug.Log("Salto");
-        if(rb.velocity.y < 0.1 && choqueAbajo && !allowLadder)
+        if(_myRB.velocity.y < 0.1 && choqueAbajo)
         {
-            rb.AddForce(Vector2.up * impulso, ForceMode2D.Impulse);
+            _myRB.AddForce(Vector2.up * impulso, ForceMode2D.Impulse);
             //Llamada a la animación de salto
             _myAnimationController.Salta();
         }
@@ -95,21 +95,6 @@ public class GranjeroMovement : MonoBehaviour
         //}
     }
 
-    private void OnLadder(InputValue value)
-    {
-        Debug.Log(value.ToString());
-        if (allowLadder)
-        {
-            Vector2 stairMovement = value.Get<Vector2>();
-            if (stairMovement.x < 0 || stairMovement.x > 0)
-            {
-                Vector2 vertical = new Vector2(rb.velocity.x, stairMovement.x);
-                rb.velocity = vertical;
-            }
-
-        }
-    }
-
     public void OvejaSoltada()
     {
         //Debug.Log("OvejaSoltada()");
@@ -124,7 +109,7 @@ public class GranjeroMovement : MonoBehaviour
         impulso = _impulsoOveja;
     }
 
-    private void FixedUpdate ()
+    private void FixedUpdate () // ¿Hay alguna razón por la que hagáis este cálculo en el FixedUpdate()? - R
     {
         //Variante 1
         //rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime); //Sin aceleracion
@@ -133,11 +118,11 @@ public class GranjeroMovement : MonoBehaviour
 
         if ((movement.x < 0 && !choqueIzq) || (movement.x > 0 && !choqueDer))
         {
-            rb.velocity = movement * speed + Vector2.up * rb.velocity.y;
+            _myRB.velocity = movement * speed + Vector2.up * _myRB.velocity.y;
         }
-        if (rb.velocity.y < -velCaida)
+        if (_myRB.velocity.y < -_fallSpeed)
         {
-            rb.velocity = new Vector2(rb.velocity.x, -velCaida);
+            _myRB.velocity = new Vector2(_myRB.velocity.x, -_fallSpeed);
         }
         //variante 3 con aceleracion2
         /*

@@ -166,14 +166,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d3f687e41c467f4b838e24598e6290b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
   movementTracker: {x: 0, y: 0}
   _velocidadOveja: 6
   _impulsoOveja: 18
   _velocidadInicial: 6
   _impulsoInicial: 23
-  velCaida: 20
-  ladderSpeed: 2
+  _fallSpeed: 17
   choqueAbajo: 0
   choqueIzq: 0
   choqueDer: 0
@@ -298,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d84d9686b7d3441b752b06fb97fc6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tiempoAtaque: 0.15
+  _tiempoAtaque: 0.1
 --- !u!95 &7163601671013035740
 Animator:
   serializedVersion: 5
