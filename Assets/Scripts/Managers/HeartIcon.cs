@@ -41,10 +41,10 @@ public class HeartIcon : MonoBehaviour
     void Start()
     {
         _mySpriteRenderer = GetComponent<SpriteRenderer>();
-        Debug.Log("Corazón Start()");
+        //Debug.Log("Corazón Start()");
         if (_mySpriteRenderer != null)
         {
-            Debug.Log("_mySpriteRenderer del corazón se ha pillado bien");
+            //Debug.Log("_mySpriteRenderer del corazón se ha pillado bien");
         }
         //if (_mySpriteRenderer == null)
         //{
