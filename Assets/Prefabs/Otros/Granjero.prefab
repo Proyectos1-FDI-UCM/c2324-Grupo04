@@ -167,15 +167,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementTracker: {x: 0, y: 0}
-  _velocidadOveja: 6
-  _impulsoOveja: 18
-  _velocidadInicial: 6
-  _impulsoInicial: 23
+  _sheepMaxSpeed: 6
+  _sheepAcceleration: 6
+  _sheepJumpForce: 18
+  _maxSpeed: 6
+  _acceleration: 6
+  _jumpForce: 24
   _fallSpeed: 17
+  _maxFallSpeed: 4
+  _maxVerticalSpeed: 30
   choqueAbajo: 0
   choqueIzq: 0
   choqueDer: 0
-  allowLadder: 0
 --- !u!114 &1640964514911560491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,6 +287,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   _allowTrampoline: 0
+  choqueAbajo: 0
+  choqueIzq: 0
+  choqueDer: 0
 --- !u!114 &-824686250816331138
 MonoBehaviour:
   m_ObjectHideFlags: 0
