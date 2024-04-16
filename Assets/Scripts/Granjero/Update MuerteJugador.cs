@@ -9,5 +9,7 @@ public class MuerteJugador : MonoBehaviour
     {
         // Activar el Canvas de muerte
         canvasMuerte.SetActive(true);
+        Time.timeScale = 0f; // detiene el tiempo
+        Debug.Log("El jugador ha muerto.");
     }
 }
