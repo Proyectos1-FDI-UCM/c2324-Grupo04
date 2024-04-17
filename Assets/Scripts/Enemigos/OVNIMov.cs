@@ -104,6 +104,7 @@ public class OVNIMov : MonoBehaviour
         if (attacking)//El OVNI tiene un estado de ataque, en el cual se desactiva el movimiento
         {
             _OVNIAttack.Attacking(ref attacking);
+            _passedTime = 0;
         }
 
 

@@ -1785,17 +1785,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1d352d9ca4d5447b3576276f03fe29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &411942041 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1640964514911560491, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
-  m_PrefabInstance: {fileID: 1346531532}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd74177fd47dafa40b16a7835851af10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &411942042 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5309802202278772231, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
@@ -113085,8 +113074,6 @@ MonoBehaviour:
   _healthIncrement: 2
   _maxHealthIncrement: 2
   cargandoOveja: 0
-  _playersHorcaAttack: {fileID: 411942041}
-  _playerHealth: {fileID: 411942038}
   _granjeroMovement: {fileID: 411942042}
   _ovejaTransform: {fileID: 2015453828}
   "nse\xF1uelo": 0
