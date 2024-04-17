@@ -91,8 +91,12 @@ public class GranjeroMovement : MonoBehaviour
     private void OnHorizontalMovement (InputValue value) 
     {
         _movementDirection = value.Get<Vector2>(); //Este vector siempre tendrá la forma (1, 0) o (-1, 0)
-        _movementTracker = _movementDirection;
-        _myAnimationController.Gira(_movementDirection.x);
+        if( _movementDirection != Vector2.zero )
+        {
+            _movementTracker = _movementDirection;
+            _myAnimationController.Gira(_movementDirection.x);
+        }
+        
         print($"Vector de la entrada: ({_movementDirection.x}, {_movementDirection.y})");
 
         //if ((movement.x < 0 && !choqueIzq) || (movement.x > 0 && !choqueDer)) // Por qué hacíamos aquí esta comprobación aquí?
@@ -131,81 +135,31 @@ public class GranjeroMovement : MonoBehaviour
 
     private void FixedUpdate () // ¿Hay alguna razón por la que hagáis este cálculo en el FixedUpdate()? - R
     {
-        //Variante 1
-        //rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime); //Sin aceleracion
-
-        //variante 2 con aceleracion1   (se puede cambiar el linear drag)
-
-        //if ((movement.x < 0 && !choqueIzq) || (movement.x > 0 && !choqueDer))
-        //{
-        //    _myRB.velocity = movement * speed + Vector2.up * _myRB.velocity.y;
-        //}
-        //if (_myRB.velocity.y < -_fallSpeed)
-        //{
-        //    _myRB.velocity = new Vector2(_myRB.velocity.x, -_fallSpeed);
-        //}
-
-        // Versión con velocidad clampeada y aceleración progresiva - R
-
-        //float horizontalVel = Mathf.Clamp(_myRB.velocity.x, -_maxHorizontalSpeed, _maxHorizontalSpeed);
-        //float verticalVel = Mathf.Clamp(_myRB.velocity.y, -_maxFallSpeed, _maxVerticalSpeed);
-        //if ((_movementDirection.x < 0 && !choqueIzq) || (_movementDirection.x > 0 && !choqueDer))
-        //{
-        //    _myRB.velocity = _movementDirection * _maxHorizontalSpeed + Vector2.up * _myRB.velocity.y;
-        //}
-        //if (_myRB.velocity.y < -_fallSpeed)
-        //{
-        //    _myRB.velocity = new Vector2(_myRB.velocity.x, -_fallSpeed);
-        //}
-        //_myRB.velocity += _acceleration * _movementDirection;
-        //_myRB.velocity += _fallSpeed * _movementDirection;
-
         if (_movementDirection.x < 0 || _movementDirection.x > 0)
         {
             if (_walkCounter >= _walkTime)
             {
                 _myRB.velocity = _movementDirection * _maxHorizontalSpeed + Vector2.up * _myRB.velocity.y;
-                print("Anda");
             }
             else
             {
                 _myRB.velocity = _movementDirection * _walkSpeed + Vector2.up * _myRB.velocity.y;
                 _walkCounter += Time.deltaTime;
-                print("Corre");
             }
+
+            //_myRB.velocity = Mathf.Lerp(_myRB.velocity.x, _maxHorizontalSpeed, Time.deltaTime * 10) * _movementDirection + Vector2.up * _myRB.velocity.y;
             print($"Velocidad horizontal: {_myRB.velocity.x}, {_maxHorizontalSpeed}");
         }
         else
         {
             _walkCounter = 0;
         }
-        //if (_myRB.velocity.y < -_fallSpeed) Esto ya lo hace el Mathf.Clamp()
-        //{
-        //    _myRB.velocity = new Vector2(_myRB.velocity.x, -_fallSpeed);
-        //}
-        // Limitación de las velocidades a los valores deseados
         _myRB.velocity = Mathf.Clamp(_myRB.velocity.x, -_maxHorizontalSpeed, _maxHorizontalSpeed) * Vector2.right 
                        + Mathf.Clamp(_myRB.velocity.y, -_maxFallSpeed, _maxVerticalSpeed) * Vector2.up;
 
-
-        //if (_movementDirection != Vector2.zero || true)
-        //{
-        //    print($"velocity.x: {_myRB.velocity.x}, _currentAcceleration: {_currentAcceleration}, _movementDirection.x: {_movementDirection.x}");
-        //    _myRB.velocity = Mathf.Clamp(_myRB.velocity.x + _currentAcceleration * _movementDirection.x * Time.deltaTime, -_maxHorizontalSpeed, _maxHorizontalSpeed) * Vector2.right
-        //               + Mathf.Clamp(_myRB.velocity.y - _fallSpeed * Time.deltaTime, -_maxFallSpeed, _maxVerticalSpeed) * Vector2.up;
-        //    print($"vector de velocidad: ({_myRB.velocity.x}, {_myRB.velocity.y})");
-        //}
-        //else
-        //{
-        //    _myRB.velocity = Mathf.Clamp(_myRB.velocity.y - _fallSpeed * Time.deltaTime, -_maxFallSpeed, _maxVerticalSpeed) * Vector2.up;
-        //}
-
-
-        //_myRB.velocity = horizontalVel * Vector2.right + verticalVel * Vector2.up;
-        //variante 3 con aceleracion2
-        /*
-         rb.AddForce(movement * speed);
-         * */
+        // Limitación de las velocidades a los valores deseados
+        _myRB.velocity = Mathf.Clamp(_myRB.velocity.x, -_maxHorizontalSpeed, _maxHorizontalSpeed) * Vector2.right 
+                       + Mathf.Clamp(_myRB.velocity.y, -_maxFallSpeed, _maxVerticalSpeed) * Vector2.up;
     }
 
 

@@ -175,7 +175,7 @@ MonoBehaviour:
   _fallSpeed: 17
   _maxFallSpeed: 4
   _maxVerticalSpeed: 30
-  _walkTime: 0.4
+  _walkTime: 0.2
   _walkSpeed: 4
   _movementTracker: {x: 0, y: 0}
   choqueAbajo: 0
