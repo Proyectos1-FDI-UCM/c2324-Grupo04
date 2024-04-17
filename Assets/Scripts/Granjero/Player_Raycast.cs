@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Player_Raycast : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class Player_Raycast : MonoBehaviour
 
     void FixedUpdate() // ¿Hay alguna razón para hacer esto en el FixedUpdate()? - R
     {
+        // Todo esto es sólo para depuración
         Vector2 positionUp = new Vector2(transform.position.x, transform.position.y + 0.5f);
         Vector2 positionDown = new Vector2(transform.position.x, transform.position.y - 0.5f);
         RaycastHit2D hitRight = Physics2D.Raycast(_myTransform.position, transform.right, distanceSide, layerToWalls);
@@ -37,7 +39,7 @@ public class Player_Raycast : MonoBehaviour
         RaycastHit2D hitRightDown = Physics2D.Raycast(positionDown, transform.right, distanceSide, layerToWalls);
 
         RaycastHit2D hitDown = Physics2D.Raycast(_myTransform.position, transform.up * -1, distanceDown, layerToJump);
-        RaycastHit2D hitDownLadder = Physics2D.Raycast(_myTransform.position, transform.up * -1, distanceDown, layerToLadder);
+        //RaycastHit2D hitDownLadder = Physics2D.Raycast(_myTransform.position, transform.up * -1, distanceDown, layerToLadder);
 
         RaycastHit2D hitLeft = Physics2D.Raycast(_myTransform.position, transform.right * -1, distanceSide, layerToWalls);
         RaycastHit2D hitLeftUp = Physics2D.Raycast(positionUp, transform.right * -1, distanceSide, layerToWalls);
@@ -48,26 +50,26 @@ public class Player_Raycast : MonoBehaviour
             Debug.DrawRay(transform.position, transform.right, Color.green);
             Debug.DrawRay(positionUp, transform.right, Color.green);
             Debug.DrawRay(positionDown, transform.right, Color.green);
-            _movimientoPlayer.SetBoolRight(true);
+            //_movimientoPlayer.SetBoolRight(true);
         }
         else
         {
             Debug.DrawRay(transform.position, transform.right, Color.red);
             Debug.DrawRay(positionUp, transform.right, Color.red);
             Debug.DrawRay(positionDown, transform.right, Color.red);
-            _movimientoPlayer.SetBoolRight(false);
+            //_movimientoPlayer.SetBoolRight(false);
         }
 
         if (hitDown.collider != null)
         {
             Debug.DrawRay(transform.position, transform.up * -1, Color.green);
-            _movimientoPlayer.SetBoolDown(true);
+            //_movimientoPlayer.SetBoolDown(true);
             _allowTrampoline = false;
         }
         else
         {
             Debug.DrawRay(transform.position, transform.up * -1, Color.red);
-            _movimientoPlayer.SetBoolDown(false);
+            //_movimientoPlayer.SetBoolDown(false);
             _allowTrampoline = true;
         }
 
@@ -76,14 +78,14 @@ public class Player_Raycast : MonoBehaviour
             Debug.DrawRay(transform.position, transform.right * -1, Color.green);
             Debug.DrawRay(positionUp, transform.right * -1, Color.green);
             Debug.DrawRay(positionDown, transform.right * -1, Color.green);
-            _movimientoPlayer.SetBoolLeft(true);
+            //_movimientoPlayer.SetBoolLeft(true);
         }
         else
         {
             Debug.DrawRay(transform.position, transform.right * -1, Color.red);
             Debug.DrawRay(positionUp, transform.right * -1, Color.red);
             Debug.DrawRay(positionDown, transform.right * -1, Color.red);
-            _movimientoPlayer.SetBoolLeft(false);
+            //_movimientoPlayer.SetBoolLeft(false);
         }
 
         // He quitado la comprobación de la escalera porque no vamos a hacer escalera
@@ -97,6 +99,32 @@ public class Player_Raycast : MonoBehaviour
         {
             _movimientoPlayer.SetBoolLadder(false);
         }*/
+    }
+
+    public bool ChoqueAbajo()
+    {
+        RaycastHit2D hitDown = Physics2D.Raycast(_myTransform.position, transform.up * -1, distanceDown, layerToJump);
+        return hitDown.collider != null;
+    }
+
+    public bool ChoqueIzq()
+    {
+        Vector2 positionUp = new Vector2(transform.position.x, transform.position.y + 0.5f);
+        Vector2 positionDown = new Vector2(transform.position.x, transform.position.y - 0.5f);
+        RaycastHit2D hitLeft = Physics2D.Raycast(_myTransform.position, transform.right * -1, distanceSide, layerToWalls);
+        RaycastHit2D hitLeftUp = Physics2D.Raycast(positionUp, transform.right * -1, distanceSide, layerToWalls);
+        RaycastHit2D hitLeftDown = Physics2D.Raycast(positionDown, transform.right * -1, distanceSide, layerToWalls);
+        return hitLeft.collider != null || hitLeftUp.collider != null || hitLeftDown.collider != null;
+    }
+
+    public bool ChoqueDer()
+    {
+        Vector2 positionUp = new Vector2(transform.position.x, transform.position.y + 0.5f);
+        Vector2 positionDown = new Vector2(transform.position.x, transform.position.y - 0.5f);
+        RaycastHit2D hitRight = Physics2D.Raycast(_myTransform.position, transform.right, distanceSide, layerToWalls);
+        RaycastHit2D hitRightUp = Physics2D.Raycast(positionUp, transform.right, distanceSide, layerToWalls);
+        RaycastHit2D hitRightDown = Physics2D.Raycast(positionDown, transform.right, distanceSide, layerToWalls);
+        return hitRight.collider != null || hitRightUp.collider != null || hitRightDown.collider != null;
     }
 
 

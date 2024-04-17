@@ -15,6 +15,7 @@ public class Create : MonoBehaviour
     private PlayerAnimationController _myAnimationController;
     private GranjeroMovement _playerMovement;
     private LanzaObjeto _lanzaObjeto;
+    private Player_Raycast _myRC;
 
     #endregion
 
@@ -48,20 +49,20 @@ public class Create : MonoBehaviour
 
     private void OnAction2()
     {
-        if (_puedeTrampolin && GameManager.Instance.ObtenerCuerdas() > 0 && _playerMovement.choqueAbajo) 
+        if (_puedeTrampolin && GameManager.Instance.ObtenerCuerdas() > 0 && _myRC.ChoqueAbajo()) 
         {
             //Llamada a la animación
             _myAnimationController.SueltaObjeto();
 
             Vector2 spawnPos;
-            if (_playerMovement.Movement().x < 0 && !_playerMovement.choqueIzq)
+            if (_playerMovement.Movement().x < 0 && !_myRC.ChoqueIzq())
             {
                 spawnPos = new Vector2(_myTransform.position.x - _horizontalOffset, _myTransform.position.y);
                 GameObject trampolin = Instantiate(Trampoline, spawnPos, Quaternion.identity);
                 GameManager.Instance.ChangeCantidadCuerda(-1);
                 HudManager.instance.UpdateCuerda(1);
             }
-            else if (_playerMovement.Movement().x >= 0 && !_playerMovement.choqueDer) // Esta condición es necesaria para asegurarnos de no instanciar algo en una pared
+            else if (_playerMovement.Movement().x >= 0 && !_myRC.ChoqueDer()) // Esta condición es necesaria para asegurarnos de no instanciar algo en una pared
             {
                 spawnPos = new Vector2(_myTransform.position.x + _horizontalOffset, _myTransform.position.y);
                 GameObject trampolin = Instantiate(Trampoline, spawnPos, Quaternion.identity);
@@ -88,13 +89,13 @@ public class Create : MonoBehaviour
 
     private void OnAction3()
     {
-        if (_puedeSeñuelo && GameManager.Instance.ObtenerCuerdas() > 0 && _playerMovement.choqueAbajo) 
+        if (_puedeSeñuelo && GameManager.Instance.ObtenerCuerdas() > 0 && _myRC.ChoqueAbajo()) 
         {
             //Llamada a la animación
             _myAnimationController.SueltaObjeto();
 
             Vector2 spawnPos;
-            if (_playerMovement.Movement().x < 0 && !_playerMovement.choqueIzq)
+            if (_playerMovement.Movement().x < 0 && !_myRC.ChoqueIzq())
             {
                 spawnPos = new Vector2(_myTransform.position.x - _horizontalOffset, _myTransform.position.y);
                 GameManager.Instance.nseñuelo++;
@@ -103,7 +104,7 @@ public class Create : MonoBehaviour
                 GameManager.Instance.ChangeCantidadCuerda(-1);
                 HudManager.instance.UpdateCuerda(1);
             }
-            else if (_playerMovement.Movement().x >= 0 && !_playerMovement.choqueDer)  // Esta condición es necesaria para asegurarnos de no instanciar algo en una pared
+            else if (_playerMovement.Movement().x >= 0 && !_myRC.ChoqueDer())  // Esta condición es necesaria para asegurarnos de no instanciar algo en una pared
             {
                 spawnPos = new Vector2(_myTransform.position.x + _horizontalOffset, _myTransform.position.y);
                 GameManager.Instance.nseñuelo++;
@@ -133,6 +134,7 @@ public class Create : MonoBehaviour
         _playerMovement = GetComponent<GranjeroMovement>();
         _myAnimationController = GetComponent<PlayerAnimationController>();
         _lanzaObjeto = GetComponent<LanzaObjeto>();
+        _myRC = GetComponent<Player_Raycast>();
     }
 
     private void Update()

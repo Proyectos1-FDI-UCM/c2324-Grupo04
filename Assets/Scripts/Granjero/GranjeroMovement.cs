@@ -37,25 +37,25 @@ public class GranjeroMovement : MonoBehaviour
     private float _currentAcceleration = 0;
     private float _walkCounter = 0;
 
-    public bool choqueAbajo;
-    public bool choqueIzq;
-    public bool choqueDer;
+    //public bool choqueAbajo;
+    //public bool choqueIzq;
+    //public bool choqueDer;
     //public bool allowLadder; // No vamos a usar la escalera ya
     private float _currentSpeed = 0f;
     #endregion
 
-    public void SetBoolDown(bool value)
-    {
-        choqueAbajo = value;
-    }
-    public void SetBoolLeft(bool value)
-    {
-        choqueIzq = value;
-    }
-    public void SetBoolRight(bool value)
-    {
-        choqueDer = value;
-    }
+    //public void SetBoolDown(bool value)
+    //{
+    //    choqueAbajo = value;
+    //}
+    //public void SetBoolLeft(bool value)
+    //{
+    //    choqueIzq = value;
+    //}
+    //public void SetBoolRight(bool value)
+    //{
+    //    choqueDer = value;
+    //}
     //public void SetBoolLadder(bool value)
     //{
     //    allowLadder = value;
@@ -80,7 +80,7 @@ public class GranjeroMovement : MonoBehaviour
     private void  OnUp()
     {
         //Debug.Log("Salto");
-        if(_myRB.velocity.y < 0.1 && choqueAbajo)
+        if(_myRB.velocity.y < 0.1 && _myRC.ChoqueAbajo())
         {
             _myRB.AddForce(Vector2.up * _maxFallSpeed, ForceMode2D.Impulse);
             //Llamada a la animación de salto

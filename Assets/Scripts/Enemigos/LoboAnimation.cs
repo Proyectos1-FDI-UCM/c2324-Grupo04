@@ -13,6 +13,7 @@ public class LoboAnimation : MonoBehaviour
     [SerializeField] Transform _transform;
     private LoboMov controller;
 
+    #region methods
     // Start is called before the first frame update
     void Start()
     {
@@ -49,4 +50,10 @@ public class LoboAnimation : MonoBehaviour
     {
 
     }
+
+    public void DamageAnimation()
+    {
+
+    }
+    #endregion
 }

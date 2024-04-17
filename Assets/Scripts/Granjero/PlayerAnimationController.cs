@@ -141,7 +141,7 @@ public class PlayerAnimationController : MonoBehaviour
         //}
     }
 
-    public void Parpadea()
+    public void DamageAnimation()
     {
         print("Parapadea (animación)");
     }
