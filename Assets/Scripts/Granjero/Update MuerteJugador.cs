@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,3 +13,4 @@ public class MuerteJugador : MonoBehaviour
         Debug.Log("El jugador ha muerto.");
     }
 }
+*/

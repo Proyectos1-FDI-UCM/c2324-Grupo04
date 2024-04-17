@@ -12,7 +12,7 @@ public class Create : MonoBehaviour
     [SerializeField]
     private GameObject Señuelo;
     private Transform _myTransform;
-    private GranjeroAnimationController _myAnimationController;
+    private PlayerAnimationController _myAnimationController;
     private GranjeroMovement _playerMovement;
     private LanzaObjeto _lanzaObjeto;
 
@@ -131,7 +131,7 @@ public class Create : MonoBehaviour
     {
         _myTransform = transform;
         _playerMovement = GetComponent<GranjeroMovement>();
-        _myAnimationController = GetComponent<GranjeroAnimationController>();
+        _myAnimationController = GetComponent<PlayerAnimationController>();
         _lanzaObjeto = GetComponent<LanzaObjeto>();
     }
 
