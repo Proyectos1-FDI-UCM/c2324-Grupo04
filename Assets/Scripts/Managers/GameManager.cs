@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
     private GranjeroMovement _granjeroMovement;
     private HorcaAttack _playersHorcaAttack;
     private HealthComponent _playerHealth;
-    private GranjeroAnimationController _playerAnimationController;
+    private PlayerAnimationController _playerAnimationController;
     private Transform _playerTransform;
     private Create _playerCreate;
     [SerializeField] private Transform _ovejaTransform;
@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
     {
         _playersHorcaAttack = _granjeroMovement.gameObject.GetComponent<HorcaAttack>();
         _playerHealth = _granjeroMovement.gameObject.GetComponent<HealthComponent>();
-        _playerAnimationController = _granjeroMovement.gameObject.GetComponent<GranjeroAnimationController>();
+        _playerAnimationController = _granjeroMovement.gameObject.GetComponent<PlayerAnimationController>();
         _playerCreate = _granjeroMovement.gameObject.GetComponent<Create>();
         _UIManager = GetComponent<UIManager>();
         Time.timeScale = 1.0f;
