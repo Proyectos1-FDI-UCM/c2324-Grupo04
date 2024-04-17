@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GranjeroAnimationController : MonoBehaviour
+public class PlayerAnimationController : MonoBehaviour
 {
     #region references
     private Transform _myTransform;
