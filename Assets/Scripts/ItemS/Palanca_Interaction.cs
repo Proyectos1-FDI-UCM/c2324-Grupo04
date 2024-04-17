@@ -9,7 +9,7 @@ public class Palanca_Interaction : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.GetComponent<GranjeroMovement>() != null || collision.GetComponent<OvejaBalido>() != null || collision.GetComponent<BloqueMovible>())
+        if (collision.GetComponent<GranjeroMovement>() != null)
         {
             if (palancaActiva)
             {
