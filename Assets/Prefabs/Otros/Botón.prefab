@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 202653337605331204}
   - component: {fileID: 2913109958905431182}
   - component: {fileID: 6320034168677869301}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: "Bot\xF3n"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,3 +189,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9210ee64b7517dd41accb0fe6d9a8cdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  botonActivo: 0
