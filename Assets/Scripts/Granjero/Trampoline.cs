@@ -5,7 +5,7 @@ using UnityEngine;
 public class Trampoline : MonoBehaviour
 {
 
-    [SerializeField] private float bounce = 20f;
+    [SerializeField] private float bounce = 40f;
 
     // Update is called once per frame
     private void OnCollisionEnter2D(Collision2D collision)

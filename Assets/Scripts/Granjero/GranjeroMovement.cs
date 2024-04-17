@@ -25,7 +25,7 @@ public class GranjeroMovement : MonoBehaviour
     [SerializeField] private float _jumpForce = 24;
     [SerializeField] private float _fallSpeed = 4;
     [SerializeField] private float _maxFallSpeed = 4;
-    [SerializeField] private float _maxVerticalSpeed = 30;
+    [SerializeField] private float _maxVerticalSpeed = 40;
     [SerializeField] private float _walkTime = 0.8f;
     [SerializeField] private float _walkSpeed = 3;
     #endregion
@@ -35,6 +35,7 @@ public class GranjeroMovement : MonoBehaviour
     public Vector2 _movementTracker;
     private float _maxHorizontalSpeed;
     private float _currentAcceleration = 0;
+    private float _currentJump = 0;
     private float _walkCounter = 0;
 
     //public bool choqueAbajo;
@@ -82,7 +83,7 @@ public class GranjeroMovement : MonoBehaviour
         //Debug.Log("Salto");
         if(_myRB.velocity.y < 0.1 && _myRC.ChoqueAbajo())
         {
-            _myRB.AddForce(Vector2.up * _maxFallSpeed, ForceMode2D.Impulse);
+            _myRB.AddForce(Vector2.up * _currentJump, ForceMode2D.Impulse);
             //Llamada a la animación de salto
             _myAnimationController.Salta();
         }
@@ -121,7 +122,7 @@ public class GranjeroMovement : MonoBehaviour
     {
         //Debug.Log("OvejaSoltada()");
         _maxHorizontalSpeed = _maxSpeed;
-        _maxVerticalSpeed = _jumpForce;
+        _currentJump = _jumpForce;
         _currentAcceleration = _acceleration;
     }
 
@@ -129,7 +130,7 @@ public class GranjeroMovement : MonoBehaviour
     {
         //Debug.Log("OvejaRecogida()");
         _maxHorizontalSpeed = _sheepMaxSpeed;
-        _maxVerticalSpeed= _sheepJumpForce;
+        _currentJump = _sheepJumpForce;
         _currentAcceleration = _sheepAcceleration;
     }
 
