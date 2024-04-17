@@ -15,11 +15,12 @@ public class OVNIMov : MonoBehaviour
     private bool borde;
     
     
-    private bool attakcing;
+    private bool attacking;
     private bool canAttack;
     [SerializeField] private float cooldown;
     [SerializeField] private float windup;
     private float _passedTime;
+    private bool timePassing;
 
 
     private void OnTriggerStay2D(Collider2D collision)//Detecta si hay colision con los bordes e indica que borde es
@@ -70,18 +71,19 @@ public class OVNIMov : MonoBehaviour
 
         if (canAttack)
         {
+            timePassing = false;
             if (cambioDirec == 0)//Si el OVNI esta justo encima del objetivo, empieza a prepararse para atacar
             {
-                _passedTime += Time.deltaTime;
+                timePassing = true;
                 if (_passedTime > windup)//Si el OVNI lleva un tiempo preparandose empieza el estado de ataque
                 {
-                    attakcing = true;
+                    attacking = true;
                     canAttack = false;
                 }
             }
             else { _passedTime = 0; }
         }
-        else { _passedTime += Time.deltaTime; }
+        else { timePassing = true; }
     }
 
     void Start()
@@ -90,16 +92,18 @@ public class OVNIMov : MonoBehaviour
         _sensorEnem = GetComponent<SensorEnem>();
         _OVNIAttack = GetComponent<OVNIAttack>();
         borde = false;
-        attakcing = false;
+        attacking = false;
         canAttack = true;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (attakcing)//El OVNI tiene un estado de ataque, en el cual se desactiva el movimiento
-        {
+        if (timePassing) { _passedTime += Time.deltaTime; }
 
+        if (attacking)//El OVNI tiene un estado de ataque, en el cual se desactiva el movimiento
+        {
+            _OVNIAttack.Attacking(ref attacking);
         }
 
 
