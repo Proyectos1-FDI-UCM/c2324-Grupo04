@@ -68,7 +68,7 @@ public class HealthComponent : MonoBehaviour
                 }
                 else
                 {
-                    //SendMessage("AnimacionDaño"); // Has no reciever
+                    SendMessage("DamageAnimation"); // Has no reciever
                 }
                 _crono = 0;
             }
