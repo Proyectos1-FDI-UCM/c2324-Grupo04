@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class Palanca_Interaction : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public bool palancaActiva = false;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+
+        if (collision.GetComponent<GranjeroMovement>() != null || collision.GetComponent<OvejaBalido>() != null || collision.GetComponent<BloqueMovible>())
+        {
+            if (palancaActiva)
+            {
+                Debug.Log("Palanca desactivada");
+                palancaActiva = false;
+            }
+            else
+            {
+                Debug.Log("Palanca activada");
+                palancaActiva = true;
+            }
+        }
     }
 }

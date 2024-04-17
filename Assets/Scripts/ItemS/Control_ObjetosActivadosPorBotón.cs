@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Control_ObjetosActivadosPorBotón : MonoBehaviour
 {
-    [SerializeField] private GameObject boton;
+    [SerializeField] private GameObject activador;
+    [SerializeField] private bool usaBoton;
+    [SerializeField] private bool usaPalanca;
     [SerializeField] private bool esPlataformaMovil;
     [SerializeField] private bool esPuerta;
     private PlatformMovement movimientoPlataforma;
     private BoxCollider2D collider;
-    bool isPressed;
+    private bool setActive;
 
     // Start is called before the first frame update
     void Start()
@@ -27,10 +29,20 @@ public class Control_ObjetosActivadosPorBotón : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isPressed = boton.GetComponent<Boton_Interaction>().botonActivo;
+        if (usaBoton)
+        {
+            setActive = activador.GetComponent<Boton_Interaction>().botonActivo;
+
+            
+        }
+        else if (usaPalanca)
+        {
+            setActive = activador.GetComponent<Palanca_Interaction>().palancaActiva;
+        }
+
         if (esPlataformaMovil)
         {
-            if (isPressed)
+            if (setActive)
             {
                 movimientoPlataforma.enabled = true;
             }
@@ -42,7 +54,7 @@ public class Control_ObjetosActivadosPorBotón : MonoBehaviour
 
         if (esPuerta)
         {
-            if (isPressed)
+            if (setActive)
             {
                 collider.enabled = false;
             }
