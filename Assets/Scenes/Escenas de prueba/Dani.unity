@@ -706,7 +706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHp: 3
   _currentHp: 3
-  invulnerabilidad: 0
+  _invulnerabilidad: -1
 --- !u!212 &205256046
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1245,9 +1245,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b11d747d70debf146bda8e7706449e60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Cuerda
-  quantity: 1
-  sprite: {fileID: 21300000, guid: b7c56f269e67d5446b651d4383cb2f26, type: 3}
 --- !u!4 &463536270 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2631542976574063986, guid: 9adf658c3d2aa5f47acde46b70043088, type: 3}
@@ -1634,7 +1631,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -36.646553, y: 2.0100021, z: -9.759361}
+  m_LocalPosition: {x: -36.634975, y: 2.0100203, z: -9.759361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1911,28 +1908,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5324502382298505244, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
   m_PrefabInstance: {fileID: 685486711}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &565602155 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3505807150843220732, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
-  m_PrefabInstance: {fileID: 685486711}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 23019117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c1d352d9ca4d5447b3576276f03fe29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &565602158 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1640964514911560491, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
-  m_PrefabInstance: {fileID: 685486711}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 23019117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd74177fd47dafa40b16a7835851af10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &565602159 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5309802202278772231, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
@@ -2569,6 +2544,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9adf658c3d2aa5f47acde46b70043088, type: 3}
+--- !u!1001 &775554348
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1998723827299765408, guid: fe4a738cd810f104ca8a8318c09c443e, type: 3}
+      propertyPath: m_Name
+      value: Arbusto Largo (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349336267283778972, guid: fe4a738cd810f104ca8a8318c09c443e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.800065
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349336267283778972, guid: fe4a738cd810f104ca8a8318c09c443e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.9774094
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349336267283778972, guid: fe4a738cd810f104ca8a8318c09c443e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349336267283778972, guid: fe4a738cd810f104ca8a8318c09c443e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349336267283778972, guid: fe4a738cd810f104ca8a8318c09c443e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349336267283778972, guid: fe4a738cd810f104ca8a8318c09c443e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349336267283778972, guid: fe4a738cd810f104ca8a8318c09c443e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349336267283778972, guid: fe4a738cd810f104ca8a8318c09c443e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349336267283778972, guid: fe4a738cd810f104ca8a8318c09c443e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3349336267283778972, guid: fe4a738cd810f104ca8a8318c09c443e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe4a738cd810f104ca8a8318c09c443e, type: 3}
 --- !u!1 &787576141
 GameObject:
   m_ObjectHideFlags: 0
@@ -2596,7 +2628,7 @@ Transform:
   m_GameObject: {fileID: 787576141}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -41.110718, y: -0.9046005, z: -9.759361}
+  m_LocalPosition: {x: -41.108402, y: -0.9046005, z: -9.759361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -30137,7 +30169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHp: 3
   _currentHp: 3
-  invulnerabilidad: 0
+  _invulnerabilidad: -1
 --- !u!1 &1396957538 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8106255569320004014, guid: 7e41cc4daf23a494e9c774496c0c1774, type: 3}
@@ -42941,8 +42973,6 @@ MonoBehaviour:
   _healthIncrement: 2
   _maxHealthIncrement: 2
   cargandoOveja: 0
-  _playersHorcaAttack: {fileID: 565602158}
-  _playerHealth: {fileID: 565602155}
   _granjeroMovement: {fileID: 565602159}
   _ovejaTransform: {fileID: 2051569316}
   "nse\xF1uelo": 0
@@ -42979,6 +43009,7 @@ MonoBehaviour:
   _instruccionesMovimiento: {fileID: 1322017360}
   _corazonesHUD: {fileID: 0}
   _corazonesHUDOveja: {fileID: 0}
+  victory: {fileID: 0}
   _duracionInstrucciones: 1
 --- !u!4 &1796217536
 Transform:
@@ -44784,7 +44815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHp: 3
   _currentHp: 3
-  invulnerabilidad: 0
+  _invulnerabilidad: -1
 --- !u!4 &8465344025137571383
 Transform:
   m_ObjectHideFlags: 0
@@ -44841,3 +44872,4 @@ SceneRoots:
   - {fileID: 1745984544}
   - {fileID: 662022664}
   - {fileID: 2077573871}
+  - {fileID: 775554348}
