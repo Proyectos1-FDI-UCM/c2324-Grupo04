@@ -16,6 +16,12 @@ public class HealthComponent : MonoBehaviour
         return _maxHp;
     }
 
+    #region references
+
+    private DamageAnimation _myDamageAnimation;
+
+    #endregion
+
     [SerializeField] private int _maxHp = 3;
     [SerializeField] public int _currentHp = 3;
     bool _thisIsPlayer = false;
@@ -41,6 +47,7 @@ public class HealthComponent : MonoBehaviour
         _thisIsSheep = GetComponent<MovimientoOveja>() != null;
         _thisIsSeñuelo = GetComponent<Señuelo>() != null;
         _thisIsEnemy = GetComponent<EnemyMovement>() != null;
+        _myDamageAnimation = GetComponent<DamageAnimation>();
     }
 
     
@@ -68,7 +75,7 @@ public class HealthComponent : MonoBehaviour
                 }
                 else
                 {
-                    SendMessage("DamageAnimation"); // Has no reciever
+                    _myDamageAnimation.Damage();
                 }
                 _crono = 0;
             }

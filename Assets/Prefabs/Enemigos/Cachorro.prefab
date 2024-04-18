@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 8469826256402733165}
   - component: {fileID: 2911231204363005686}
   - component: {fileID: 6966187786907785102}
+  - component: {fileID: 2225759178312799709}
   m_Layer: 7
   m_Name: Cachorro
   m_TagString: Untagged
@@ -248,6 +249,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe2b46e774fa5b43b20b48fa8edd8b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2225759178312799709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580365347053242047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5658a36d49779464f83e1d5881087be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flashMaterial: {fileID: 2100000, guid: e9acf5cc613f15340962f06045d0a532, type: 2}
+  _flashTime: 0.8
+  _flashInterval: 0.1
 --- !u!1 &2368549587807856747
 GameObject:
   m_ObjectHideFlags: 0

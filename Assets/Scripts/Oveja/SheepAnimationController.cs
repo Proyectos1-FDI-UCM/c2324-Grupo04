@@ -1,25 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//fijarme en el vector de movimiento del enemymov
-//añadir exclmacion
-public class LoboAnimation : MonoBehaviour
+
+public class SheepAnimationController : MonoBehaviour
 {
     #region references
-    public GameObject limit1;
-    public GameObject limit2;
-
     [SerializeField]
     private Material _flashMaterial;
     private Material _originalMaterial;
     private SpriteRenderer _mySR;
-
-
-    [SerializeField]
-    private Animator _animator;
-    [SerializeField]
-    Transform _transform;
-    private LoboMov controller;
+    //private Animation _anim; // Definitivamente no sé qué estoy haciendo - R
     #endregion
 
     #region parameters
@@ -33,47 +23,7 @@ public class LoboAnimation : MonoBehaviour
     private float _timeFlashing = 0f;
     #endregion
 
-
     #region methods
-    // Start is called before the first frame update
-    void Start()
-    {
-        _animator = GetComponent<Animator>();
-        _transform = transform;
-        controller = GetComponent<LoboMov>();//no se muy bien para que se necesita el lobo movement??
-        _animator.SetBool("lobdcha", false);
-        _mySR = GetComponent<SpriteRenderer>();
-        _originalMaterial = _mySR.material;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(transform == limit1)
-        {
-
-        }
-    }
-
-    public void Loboizq(bool lobdcha)
-    {
-        _animator.SetBool("lobdcha", lobdcha = false);
-    }
-
-    public void Loboder(bool lobdcha)
-    {
-        _animator.SetBool("lobdcha", lobdcha = true);
-    }
-
-    public void Loboquietoi()
-    {
-
-    }
-    public void Loboquietod()
-    {
-
-    }
-
     public void DamageAnimation() // Activa la animación de recibir daño (poner el sprite blanco)
     {
         if (_timeFlashing >= _flashTime)
@@ -100,4 +50,16 @@ public class LoboAnimation : MonoBehaviour
         Invoke("DamageAnimation", _flashInterval);
     }
     #endregion
+    // Start is called before the first frame update
+    void Start()
+    {
+        _mySR = GetComponent<SpriteRenderer>();
+        _originalMaterial = _mySR.material;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 }

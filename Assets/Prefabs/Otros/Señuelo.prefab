@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2735028118702644052}
   - component: {fileID: -558316822186244850}
   - component: {fileID: -3562012342541958723}
+  - component: {fileID: -2807669319814527338}
   m_Layer: 0
   m_Name: "Se\xF1uelo"
   m_TagString: Untagged
@@ -178,3 +179,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "duracionSe\xF1uelo": 15
+--- !u!114 &-2807669319814527338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5091619765839581776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5658a36d49779464f83e1d5881087be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flashMaterial: {fileID: 2100000, guid: e9acf5cc613f15340962f06045d0a532, type: 2}
+  _flashTime: 0.6
+  _flashInterval: 0.1

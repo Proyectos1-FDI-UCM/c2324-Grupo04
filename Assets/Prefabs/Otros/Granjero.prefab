@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: -6139734476813441776}
   - component: {fileID: 3482534228890473742}
   - component: {fileID: 8808130360093090046}
+  - component: {fileID: 8075757650451229032}
   m_Layer: 8
   m_Name: Granjero
   m_TagString: Untagged
@@ -298,7 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c123c64b79872a4a904fb73add867da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tiempoAtaque: 0.1
+  _attackTime: 0.1
 --- !u!95 &7163601671013035740
 Animator:
   serializedVersion: 5
@@ -361,3 +362,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4afd51cdf6d93745ae691dfcbdb6c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8075757650451229032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2465212164272183052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5658a36d49779464f83e1d5881087be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flashMaterial: {fileID: 2100000, guid: e9acf5cc613f15340962f06045d0a532, type: 2}
+  _flashTime: 1.4
+  _flashInterval: 0.1

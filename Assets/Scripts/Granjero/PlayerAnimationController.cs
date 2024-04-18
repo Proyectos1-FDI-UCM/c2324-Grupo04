@@ -14,7 +14,8 @@ public class PlayerAnimationController : MonoBehaviour
 
 
     #region parameters
-    [SerializeField] private float _tiempoAtaque = 1f;
+    [SerializeField]
+    private float _attackTime = 0.1f; // Tiempo que dura la animación de ataque
     #endregion
 
 
@@ -33,7 +34,7 @@ public class PlayerAnimationController : MonoBehaviour
 
 
     #region methods
-    
+
     void Start()
     {
         _myTransform = transform;
@@ -53,7 +54,7 @@ public class PlayerAnimationController : MonoBehaviour
         {
             print("Atacando (anim)");
             _tiempo += Time.deltaTime;
-            if (_tiempo >= _tiempoAtaque)
+            if (_tiempo >= _attackTime)
             {
                 _tiempo = 0f;
                 estado = 0; //Innecesario, no?
@@ -139,11 +140,6 @@ public class PlayerAnimationController : MonoBehaviour
         //    estado = 2;
         //    _myAnimator.SetInteger("EstadoAnimacion", estado);
         //}
-    }
-
-    public void DamageAnimation()
-    {
-        print("Parapadea (animación)");
     }
     #endregion
 
