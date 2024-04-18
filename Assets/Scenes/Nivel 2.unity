@@ -196,7 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ad7d218f33b66b4e8840ae7288b28ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activador: {fileID: 724146570}
+  activador1: {fileID: 724146570}
+  activador2: {fileID: 724146570}
   usaBoton: 0
   usaPalanca: 1
   esPlataformaMovil: 0
@@ -1053,6 +1054,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2012255139}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &230064687 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3893806991811323178, guid: a53afddec87118645a5f51c284167b20, type: 3}
+  m_PrefabInstance: {fileID: 968039441}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &230064692 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7211207517095979959, guid: a53afddec87118645a5f51c284167b20, type: 3}
@@ -1226,7 +1232,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ad7d218f33b66b4e8840ae7288b28ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activador: {fileID: 1318794895}
+  activador1: {fileID: 1318794895}
+  activador2: {fileID: 1318794895}
   usaBoton: 1
   usaPalanca: 0
   esPlataformaMovil: 0
@@ -1607,7 +1614,7 @@ GameObject:
   - component: {fileID: 345488486}
   - component: {fileID: 345488485}
   - component: {fileID: 345488484}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: platform 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1641,7 +1648,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ad7d218f33b66b4e8840ae7288b28ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activador: {fileID: 1318794895}
+  activador1: {fileID: 1318794895}
+  activador2: {fileID: 496796768}
   usaBoton: 1
   usaPalanca: 0
   esPlataformaMovil: 1
@@ -1658,7 +1666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152abbdf15d780f48867f268a3984ab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 1.5
   moveSpots:
   - {fileID: 221045594}
   - {fileID: 884123675}
@@ -2122,7 +2130,7 @@ Transform:
   m_GameObject: {fileID: 431245207}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.444046, y: -4.1, z: -0.53327537}
+  m_LocalPosition: {x: 1.77, y: -5.35, z: -0.53327537}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2344,6 +2352,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40385d4a08cad884eacf1ebc7f28c540, type: 3}
+--- !u!1 &496796768 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3893806991811323178, guid: a53afddec87118645a5f51c284167b20, type: 3}
+  m_PrefabInstance: {fileID: 916859446}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &496796773 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7211207517095979959, guid: a53afddec87118645a5f51c284167b20, type: 3}
+  m_PrefabInstance: {fileID: 916859446}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &513538113
 GameObject:
   m_ObjectHideFlags: 0
@@ -2356,7 +2374,8 @@ GameObject:
   - component: {fileID: 513538116}
   - component: {fileID: 513538115}
   - component: {fileID: 513538117}
-  m_Layer: 0
+  - component: {fileID: 513538118}
+  m_Layer: 9
   m_Name: platform8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2390,7 +2409,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ad7d218f33b66b4e8840ae7288b28ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activador: {fileID: 462522527}
+  activador1: {fileID: 462522527}
+  activador2: {fileID: 462522527}
   usaBoton: 0
   usaPalanca: 1
   esPlataformaMovil: 1
@@ -2464,6 +2484,51 @@ MonoBehaviour:
   - {fileID: 1903974999}
   - {fileID: 2018326664}
   startWaitTime: 1
+--- !u!61 &513538118
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513538113}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 9.66, y: 0.6}
+    newSize: {x: 9.66, y: 0.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 9.66, y: 0.6}
+  m_EdgeRadius: 0
 --- !u!1 &516068244
 GameObject:
   m_ObjectHideFlags: 0
@@ -3339,7 +3404,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ad7d218f33b66b4e8840ae7288b28ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activador: {fileID: 199389198}
+  activador1: {fileID: 199389198}
+  activador2: {fileID: 199389198}
   usaBoton: 1
   usaPalanca: 0
   esPlataformaMovil: 1
@@ -4420,7 +4486,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ad7d218f33b66b4e8840ae7288b28ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activador: {fileID: 755224863}
+  activador1: {fileID: 755224863}
+  activador2: {fileID: 755224863}
   usaBoton: 0
   usaPalanca: 1
   esPlataformaMovil: 0
@@ -4810,6 +4877,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7211207517095979959, guid: a53afddec87118645a5f51c284167b20, type: 3}
   m_PrefabInstance: {fileID: 192004378}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &916859446
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2122530516}
+    m_Modifications:
+    - target: {fileID: 3893806991811323178, guid: a53afddec87118645a5f51c284167b20, type: 3}
+      propertyPath: m_Name
+      value: "Bot\xF3n 2 cueva 2"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211207517095979959, guid: a53afddec87118645a5f51c284167b20, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 193.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211207517095979959, guid: a53afddec87118645a5f51c284167b20, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 26.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211207517095979959, guid: a53afddec87118645a5f51c284167b20, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211207517095979959, guid: a53afddec87118645a5f51c284167b20, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211207517095979959, guid: a53afddec87118645a5f51c284167b20, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211207517095979959, guid: a53afddec87118645a5f51c284167b20, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211207517095979959, guid: a53afddec87118645a5f51c284167b20, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211207517095979959, guid: a53afddec87118645a5f51c284167b20, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211207517095979959, guid: a53afddec87118645a5f51c284167b20, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211207517095979959, guid: a53afddec87118645a5f51c284167b20, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a53afddec87118645a5f51c284167b20, type: 3}
 --- !u!4 &940216412 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3612719142133887755, guid: c55ddc5f8dd868e46b7c12c0cb63bf3f, type: 3}
@@ -215035,7 +215159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ad7d218f33b66b4e8840ae7288b28ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activador: {fileID: 906355953}
+  activador1: {fileID: 906355953}
+  activador2: {fileID: 230064687}
   usaBoton: 1
   usaPalanca: 0
   esPlataformaMovil: 1
@@ -296409,6 +296534,7 @@ Transform:
   - {fileID: 199389203}
   - {fileID: 724146572}
   - {fileID: 1318794900}
+  - {fileID: 496796773}
   - {fileID: 906355958}
   - {fileID: 230064692}
   - {fileID: 462522532}

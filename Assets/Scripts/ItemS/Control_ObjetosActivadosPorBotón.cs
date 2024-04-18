@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Control_ObjetosActivadosPorBotón : MonoBehaviour
 {
-    [SerializeField] private GameObject activador;
+    [SerializeField] private GameObject activador1;
+    [SerializeField] private GameObject activador2;
     [SerializeField] private bool usaBoton;
     [SerializeField] private bool usaPalanca;
     [SerializeField] private bool esPlataformaMovil;
     [SerializeField] private bool esPuerta;
     private PlatformMovement movimientoPlataforma;
     private Door_Behavior comportamientoPuerta;
-    private bool setActive;
+    private bool setActive1;
+    private bool setActive2;
 
     // Start is called before the first frame update
     void Start()
@@ -31,16 +33,17 @@ public class Control_ObjetosActivadosPorBotón : MonoBehaviour
     {
         if (usaBoton)
         {
-            setActive = activador.GetComponent<Boton_Interaction>().botonActivo;
+            setActive1 = activador1.GetComponent<Boton_Interaction>().botonActivo;
+            setActive2 = activador2.GetComponent<Boton_Interaction>().botonActivo;
         }
         else if (usaPalanca)
         {
-            setActive = activador.GetComponent<Palanca_Interaction>().palancaActiva;
+            setActive1 = activador1.GetComponent<Palanca_Interaction>().palancaActiva;
         }
 
         if (esPlataformaMovil)
         {
-            if (setActive)
+            if (setActive1 || setActive2)
             {
                 movimientoPlataforma.enabled = true;
             }
@@ -52,7 +55,7 @@ public class Control_ObjetosActivadosPorBotón : MonoBehaviour
 
         if (esPuerta)
         {
-            if (setActive)
+            if (setActive1)
             {
                 comportamientoPuerta.Open();
             }
