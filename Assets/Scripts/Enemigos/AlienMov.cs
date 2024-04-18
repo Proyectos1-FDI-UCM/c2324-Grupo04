@@ -63,7 +63,7 @@ public class AlienMov : MonoBehaviour
                 }
                 else { Instantiate(bulletPrefab, transform.position, Quaternion.identity); }
             }
-            canAttack = true;
+            canAttack = false;
             attacking = false;
             timePassing = false;
             _passedTime = 0;
@@ -83,6 +83,7 @@ public class AlienMov : MonoBehaviour
         if ((_sensorEnem.señueloDetected == true || _sensorEnem.playerDetected == true || _sensorEnem.ovejaDetected == true) && canAttack)//Ataca solo si hay algo en rango y haya pasado el cooldown
         {
             attacking = true;
+            _passedTime = 0;  
         }
     }
 
@@ -150,6 +151,7 @@ public class AlienMov : MonoBehaviour
         else
         {
             atacar(cambioDirec);
+            _enemyMovement.movementEnemy = Vector2.zero;
         }
     }
 }
