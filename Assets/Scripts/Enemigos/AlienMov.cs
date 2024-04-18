@@ -2,23 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OVNIMov : MonoBehaviour
+public class AlienMov : MonoBehaviour
 {
     private SensorEnem _sensorEnem;
     private EnemyMovement _enemyMovement;
-    private OVNIAttack _OVNIAttack;
     public GameObject limit1;
     public GameObject limit2;
+    public GameObject bulletPrefab;
     private Transform _transform;
     private int limit;
     private int cambioDirec = 0;
     private bool borde;
-    
-    
+
+
     private bool attacking;
     private bool canAttack;
     [SerializeField] private float cooldown;
-    [SerializeField] private float windup;
+    [SerializeField] private float attackTime;
     private float _passedTime;
     private bool timePassing;
 
@@ -39,26 +39,36 @@ public class OVNIMov : MonoBehaviour
         }
     }
 
-    private void seguir(int cambioDirec)//Script para seguir al señuelo (y a la oveja y el granjero)
+    private void atacar(int cambioDirec)//Script para atacar al señuelo (y a la oveja y el granjero)
     {
-        if (borde && cambioDirec != 0)//Si intenta salir del borde se anula el movimiemto
+        if (_passedTime > attackTime)//Si ha pasado el cooldown del ataque, puede prepararse para otro ataque
         {
-            if (limit == 1 && cambioDirec == -1) { cambioDirec = 0; }
-            if (limit == 2 && cambioDirec == 1) { cambioDirec = 0; }
+            if (cambioDirec == -1)
+            {
+                if (_enemyMovement.movementEnemy == Vector2.right)
+                {
+                    _enemyMovement.movementEnemy = Vector2.left;
+                    Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+                    _enemyMovement.movementEnemy = Vector2.right;
+                }
+                else { Instantiate(bulletPrefab, transform.position, Quaternion.identity); }
+            }
+            else if (cambioDirec == 1 || cambioDirec == 0)
+            {
+                if (_enemyMovement.movementEnemy == Vector2.left)
+                {
+                    _enemyMovement.movementEnemy = Vector2.right;
+                    Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+                    _enemyMovement.movementEnemy = Vector2.left;
+                }
+                else { Instantiate(bulletPrefab, transform.position, Quaternion.identity); }
+            }
+            canAttack = true;
+            attacking = false;
+            timePassing = false;
+            _passedTime = 0;
         }
-
-        if (cambioDirec == -1)
-        {
-            _enemyMovement.movementEnemy = Vector2.left;
-        }
-        else if (cambioDirec == 1)
-        {
-            _enemyMovement.movementEnemy = Vector2.right;
-        }
-        else if (cambioDirec == 0)
-        {
-            _enemyMovement.movementEnemy = Vector2.zero;
-        }
+        else { timePassing = true; }
     }
 
     private void prepAttack()//Script para la preparacion del ataque
@@ -68,29 +78,18 @@ public class OVNIMov : MonoBehaviour
             canAttack = true;
             _passedTime = 0;
         }
-
-        if (canAttack)
-        {
-            timePassing = false;
-            if (cambioDirec == 0)//Si el OVNI esta justo encima del objetivo, empieza a prepararse para atacar
-            {
-                timePassing = true;
-                if (_passedTime > windup)//Si el OVNI lleva un tiempo preparandose empieza el estado de ataque
-                {
-                    attacking = true;
-                    canAttack = false;
-                }
-            }
-            else { _passedTime = 0; }
-        }
         else { timePassing = true; }
+
+        if ((_sensorEnem.señueloDetected == true || _sensorEnem.playerDetected == true || _sensorEnem.ovejaDetected == true) && canAttack)//Ataca solo si hay algo en rango y haya pasado el cooldown
+        {
+            attacking = true;
+        }
     }
 
     void Start()
     {
         _enemyMovement = GetComponent<EnemyMovement>();
         _sensorEnem = GetComponent<SensorEnem>();
-        _OVNIAttack = GetComponent<OVNIAttack>();
         borde = false;
         attacking = false;
         canAttack = true;
@@ -101,14 +100,7 @@ public class OVNIMov : MonoBehaviour
     {
         if (timePassing) { _passedTime += Time.deltaTime; }
 
-        if (attacking)//El OVNI tiene un estado de ataque, en el cual se desactiva el movimiento
-        {
-            _OVNIAttack.Attacking(ref attacking);
-            _passedTime = 0;
-        }
-
-
-        else
+        if (!attacking)
         {
             if (borde)//Si choca contra un borde cambia de dirreccion
             {
@@ -122,25 +114,23 @@ public class OVNIMov : MonoBehaviour
                 }
             }
 
-            //La prioridad del OVNI es seguir al señuelo, seguir a la oveja, y seguir al jugador
-            if (_sensorEnem.señueloDetected)//Si detecta algo lo sigue
+            //La prioridad del alien es atacar al señuelo, atacar al jugador, y atacar a la oveja, el alien no sigue, solo dispara
+            if (_sensorEnem.señueloDetected)//Si detecta algo le dispara
             {
                 _sensorEnem.seguirSeñuelo(out cambioDirec);
                 prepAttack();
-                seguir(cambioDirec);
-            }
-            else if (_sensorEnem.ovejaDetected)
-            {
-                _sensorEnem.seguirOveja(out cambioDirec);
-                prepAttack();
-                seguir(cambioDirec);
             }
             else if (_sensorEnem.playerDetected)
             {
                 _sensorEnem.seguirPlayer(out cambioDirec);
                 prepAttack();
-                seguir(cambioDirec);
             }
+            else if (_sensorEnem.ovejaDetected)
+            {
+                _sensorEnem.seguirOveja(out cambioDirec);
+                prepAttack();
+            }
+            
 
             else
             {
@@ -155,6 +145,11 @@ public class OVNIMov : MonoBehaviour
             }
 
             borde = false;
-        } 
+        }
+
+        else
+        {
+            atacar(cambioDirec);
+        }
     }
 }
