@@ -57,7 +57,9 @@ public class GameManager : MonoBehaviour
     private PlayerAnimationController _playerAnimationController;
     private Transform _playerTransform;
     private Create _playerCreate;
-    [SerializeField] private Transform _ovejaTransform;
+    [SerializeField]
+    private Transform _ovejaTransform;
+    private MovimientoOveja _movimientoOveja;
     private UIManager _UIManager;
     private Transform _señueloTransform;
     public int nseñuelo = 0;
@@ -81,6 +83,7 @@ public class GameManager : MonoBehaviour
         _playerAnimationController = _granjeroMovement.gameObject.GetComponent<PlayerAnimationController>();
         _playerCreate = _granjeroMovement.gameObject.GetComponent<Create>();
         _UIManager = GetComponent<UIManager>();
+        _movimientoOveja = _ovejaTransform.gameObject.GetComponent<MovimientoOveja>();
         Time.timeScale = 1.0f;
     }
     #endregion
@@ -99,6 +102,11 @@ public class GameManager : MonoBehaviour
     public Transform ReferenciaTransformOveja()
     {
         return _ovejaTransform;
+    }
+
+    public MovimientoOveja ReferenciaMovimientoOveja()
+    {
+        return _movimientoOveja;
     }
 
     public HealthComponent ReferenciaVidaGranjero()
