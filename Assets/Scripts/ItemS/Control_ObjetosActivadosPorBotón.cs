@@ -10,7 +10,7 @@ public class Control_ObjetosActivadosPorBotón : MonoBehaviour
     [SerializeField] private bool esPlataformaMovil;
     [SerializeField] private bool esPuerta;
     private PlatformMovement movimientoPlataforma;
-    private BoxCollider2D collider;
+    private Door_Behavior comportamientoPuerta;
     private bool setActive;
 
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class Control_ObjetosActivadosPorBotón : MonoBehaviour
         }
         if (esPuerta)
         {
-            collider = GetComponent<BoxCollider2D>(); ;
+            comportamientoPuerta = GetComponent<Door_Behavior>();
         }
     }
 
@@ -32,8 +32,6 @@ public class Control_ObjetosActivadosPorBotón : MonoBehaviour
         if (usaBoton)
         {
             setActive = activador.GetComponent<Boton_Interaction>().botonActivo;
-
-            
         }
         else if (usaPalanca)
         {
@@ -56,11 +54,11 @@ public class Control_ObjetosActivadosPorBotón : MonoBehaviour
         {
             if (setActive)
             {
-                collider.enabled = false;
+                comportamientoPuerta.Open();
             }
             else
             {
-                collider.enabled = true;
+                comportamientoPuerta.Close();
             }
         }
     }
