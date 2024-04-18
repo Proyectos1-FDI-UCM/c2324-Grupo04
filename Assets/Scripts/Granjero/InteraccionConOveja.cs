@@ -11,6 +11,7 @@ public class InteraccionConOveja : MonoBehaviour // Componente perteneciente al 
     private SpriteRenderer _ovejaSR;
     private Rigidbody2D _ovejaRB;
     private LanzaObjeto _lanzaObjeto;
+    private MovimientoOveja _movimientoOveja;
     #endregion
 
 
@@ -43,6 +44,7 @@ public class InteraccionConOveja : MonoBehaviour // Componente perteneciente al 
         _ovejaSR = _ovejaTransform.GetComponent<SpriteRenderer>();
         _ovejaRB = _ovejaTransform.GetComponent<Rigidbody2D>();
         _lanzaObjeto = GetComponent<LanzaObjeto>();
+        _movimientoOveja = GameManager.Instance.ReferenciaMovimientoOveja();
     }
 
 
@@ -63,7 +65,6 @@ public class InteraccionConOveja : MonoBehaviour // Componente perteneciente al 
         }
         else if ((_ovejaTransform.position - _myTransform.position).magnitude <= _distanciaInteraccion)
         {
-            
             CogeOveja();
             GameManager.Instance.CogeOveja();
         }
@@ -81,6 +82,7 @@ public class InteraccionConOveja : MonoBehaviour // Componente perteneciente al 
         _ovejaSR.enabled = false;
         // Desactivación del rigidbody de la oveja
         _ovejaRB.simulated = false;
+        _movimientoOveja.CogeOveja();
     }
 
     private void SueltaOveja()
@@ -103,6 +105,7 @@ public class InteraccionConOveja : MonoBehaviour // Componente perteneciente al 
 
         _lanzaObjeto.enabled = true;
         _lanzaObjeto.Lanza(_ovejaTransform, _velocidadOveja, direccion, _deceleracionOveja, _tiempoDeInercia);
+        _movimientoOveja.SueltaOveja();
     }
 
     #endregion
