@@ -17,26 +17,22 @@ public class GranjeroMovement : MonoBehaviour
     
 
     #region parameters
-    [SerializeField] private float _sheepMaxSpeed = 6;
-    [SerializeField] private float _sheepAcceleration = 6;
+    //[SerializeField] private float _sheepMaxSpeed = 6;
+    //[SerializeField] private float _sheepAcceleration = 6;
     [SerializeField] private float _sheepJumpForce = 18;
-    [SerializeField] private float _maxSpeed = 6;
-    [SerializeField] private float _acceleration = 6;
     [SerializeField] private float _jumpForce = 24;
+    [SerializeField] private float _maxSpeed = 6;
+    [SerializeField] private float _baseSpeed = 2.5f;
+    [SerializeField] private float _acceleration = 6;
     [SerializeField] private float _fallSpeed = 4;
     [SerializeField] private float _maxFallSpeed = 4;
     [SerializeField] private float _maxVerticalSpeed = 40;
-    [SerializeField] private float _walkTime = 0.8f;
-    [SerializeField] private float _walkSpeed = 3;
     #endregion
 
     #region variables
     private Vector2 _movementDirection;
     public Vector2 _movementTracker;
-    private float _maxHorizontalSpeed;
-    private float _currentAcceleration = 0;
     private float _currentJump = 0;
-    private float _walkCounter = 0;
 
     //public bool choqueAbajo;
     //public bool choqueIzq;
@@ -69,7 +65,6 @@ public class GranjeroMovement : MonoBehaviour
 
     private void Start()
     {
-        _maxHorizontalSpeed = _maxSpeed;
         _maxFallSpeed = _jumpForce;
         _myAnimationController = GetComponent<PlayerAnimationController>();
         _myRB = GetComponent<Rigidbody2D>();
@@ -121,45 +116,41 @@ public class GranjeroMovement : MonoBehaviour
     public void OvejaSoltada()
     {
         //Debug.Log("OvejaSoltada()");
-        _maxHorizontalSpeed = _maxSpeed;
         _currentJump = _jumpForce;
-        _currentAcceleration = _acceleration;
     }
 
     public void OvejaRecogida()
     {
         //Debug.Log("OvejaRecogida()");
-        _maxHorizontalSpeed = _sheepMaxSpeed;
         _currentJump = _sheepJumpForce;
-        _currentAcceleration = _sheepAcceleration;
     }
 
     private void FixedUpdate () // ¿Hay alguna razón por la que hagáis este cálculo en el FixedUpdate()? - R
     {
+        //_currentSpeed = _maxSpeed;
+
+
+
+
         if (_movementDirection.x < 0 || _movementDirection.x > 0)
         {
-            if (_walkCounter >= _walkTime)
-            {
-                _myRB.velocity = _movementDirection * _maxHorizontalSpeed + Vector2.up * _myRB.velocity.y;
-            }
-            else
-            {
-                _myRB.velocity = _movementDirection * _walkSpeed + Vector2.up * _myRB.velocity.y;
-                _walkCounter += Time.deltaTime;
-            }
+            _myRB.velocity = _movementDirection * _currentSpeed + Vector2.up * _myRB.velocity.y;
 
-            //_myRB.velocity = Mathf.Lerp(_myRB.velocity.x, _maxHorizontalSpeed, Time.deltaTime * 10) * _movementDirection + Vector2.up * _myRB.velocity.y;
-            print($"Velocidad horizontal: {_myRB.velocity.x}, {_maxHorizontalSpeed}");
+            //_myRB.velocity = Mathf.Lerp(Mathf.Abs(_myRB.velocity.x)/* * _movementDirection.x*/, _maxHorizontalSpeed/* * _movementDirection.x*/, 0.2f) * _movementDirection + Vector2.up * _myRB.velocity.y;
+            _currentSpeed += _acceleration * Time.deltaTime;
+
+            print($"Velocidad horizontal: {_myRB.velocity.x}");
         }
         else
         {
-            _walkCounter = 0;
+            _currentSpeed = _baseSpeed;
         }
-        _myRB.velocity = Mathf.Clamp(_myRB.velocity.x, -_maxHorizontalSpeed, _maxHorizontalSpeed) * Vector2.right 
+
+        _myRB.velocity = Mathf.Clamp(_myRB.velocity.x, -_maxSpeed, _maxSpeed) * Vector2.right 
                        + Mathf.Clamp(_myRB.velocity.y, -_maxFallSpeed, _maxVerticalSpeed) * Vector2.up;
 
         // Limitación de las velocidades a los valores deseados
-        _myRB.velocity = Mathf.Clamp(_myRB.velocity.x, -_maxHorizontalSpeed, _maxHorizontalSpeed) * Vector2.right 
+        _myRB.velocity = Mathf.Clamp(_myRB.velocity.x, -_maxSpeed, _maxSpeed) * Vector2.right 
                        + Mathf.Clamp(_myRB.velocity.y, -_maxFallSpeed, _maxVerticalSpeed) * Vector2.up;
     }
 
