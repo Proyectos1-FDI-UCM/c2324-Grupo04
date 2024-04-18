@@ -24,6 +24,7 @@ public class Door_Behavior : MonoBehaviour
     void Start()
     {
         myTransform = transform;
+        targetTransform = closedTransform.transform;
     }
 
     // Update is called once per frame
