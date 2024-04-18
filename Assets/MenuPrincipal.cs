@@ -65,8 +65,18 @@ public class MenuPrincipal : MonoBehaviour
 
     public void CambiaNivel1()
     {
-		  SceneManager.LoadScene(1);
-	  }
+		SceneManager.LoadScene(1);
+	}
+
+    public void CambiaNivel2()
+    {
+		SceneManager.LoadScene(2);
+	}
+
+    public void CambiaTutorial()
+    {
+		SceneManager.LoadScene(3);
+	}
 
 
 }
