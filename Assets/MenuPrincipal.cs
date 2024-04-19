@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.Playables;
-using UnityEditor.Animations;
+//using UnityEditor.Animations;
 using UnityEngine.Timeline;
 
 public class MenuPrincipal : MonoBehaviour
