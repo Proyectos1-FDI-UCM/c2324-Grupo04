@@ -897,8 +897,8 @@ Transform:
   m_GameObject: {fileID: 143546677}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 71.494965, y: -20.711548, z: -1.2822756}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 71.494965, y: -20.21155, z: -1.2822756}
+  m_LocalScale: {x: 0.5, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 719971767}
@@ -2884,8 +2884,8 @@ Transform:
   m_GameObject: {fileID: 380000361}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 47.49597, y: -20.700548, z: -1.2822756}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 47.49597, y: -19.70055, z: -1.2822756}
+  m_LocalScale: {x: 0.5, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 719971767}
@@ -3151,8 +3151,8 @@ Transform:
   m_GameObject: {fileID: 394944076}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 129.492, y: -16.7, z: -1.2822756}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 129.492, y: -15.7, z: -1.2822756}
+  m_LocalScale: {x: 0.5, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 719971767}
@@ -218861,8 +218861,8 @@ Transform:
   m_GameObject: {fileID: 1151688576}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 157.487, y: -16.7, z: -1.2822756}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 157.487, y: -16.2, z: -1.2822756}
+  m_LocalScale: {x: 0.5, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 719971767}
@@ -219335,8 +219335,8 @@ Transform:
   m_GameObject: {fileID: 1189817878}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 268.46, y: -18.72, z: -1.2822756}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 268.46, y: -18.22, z: -1.2822756}
+  m_LocalScale: {x: 0.5, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 719971767}
@@ -282774,8 +282774,8 @@ Transform:
   m_GameObject: {fileID: 1846010869}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 224.5, y: -18.72, z: -1.2822756}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 224.5, y: -17.72, z: -1.2822756}
+  m_LocalScale: {x: 0.5, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 719971767}
@@ -283718,7 +283718,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1974759416
 Transform:
   m_ObjectHideFlags: 0
@@ -283770,7 +283770,153 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 1974759419}
+    m_ColliderPaths:
+    - - X: 2870000128
+        Y: 210000000
+      - X: 2830000128
+        Y: 210000000
+      - X: 2830000128
+        Y: 330000000
+      - X: 2800000000
+        Y: 330000000
+      - X: 2800000000
+        Y: 350000000
+      - X: 2649999872
+        Y: 350000000
+      - X: 2649999872
+        Y: 330000000
+      - X: 2620000000
+        Y: 330000000
+      - X: 2620000000
+        Y: 210000000
+      - X: 2600000000
+        Y: 210000000
+      - X: 2600000000
+        Y: 50000000
+      - X: 2870000128
+        Y: 50000000
+    - - X: 3980000000
+        Y: 150000000
+      - X: 3969999872
+        Y: 150000000
+      - X: 3969999872
+        Y: 190000000
+      - X: 3929999872
+        Y: 190000000
+      - X: 3929999872
+        Y: 270000000
+      - X: 3889999872
+        Y: 270000000
+      - X: 3889999872
+        Y: 290000000
+      - X: 3860000000
+        Y: 290000000
+      - X: 3860000000
+        Y: 280000000
+      - X: 3840000000
+        Y: 280000000
+      - X: 3840000000
+        Y: 270000000
+      - X: 3820000000
+        Y: 270000000
+      - X: 3820000000
+        Y: 250000000
+      - X: 3809999872
+        Y: 250000000
+      - X: 3809999872
+        Y: 240000000
+      - X: 3800000000
+        Y: 240000000
+      - X: 3800000000
+        Y: 220000000
+      - X: 3720000000
+        Y: 220000000
+      - X: 3720000000
+        Y: 260000000
+      - X: 3700000000
+        Y: 260000000
+      - X: 3700000000
+        Y: 270000000
+      - X: 3590000128
+        Y: 270000000
+      - X: 3590000128
+        Y: 260000000
+      - X: 3569999872
+        Y: 260000000
+      - X: 3569999872
+        Y: 190000000
+      - X: 3550000128
+        Y: 190000000
+      - X: 3550000128
+        Y: 30000000
+      - X: 3980000000
+        Y: 30000000
+    - - X: 2010000000
+        Y: 40000000
+      - X: 2000000000
+        Y: 40000000
+      - X: 2000000000
+        Y: 70000000
+      - X: 2020000000
+        Y: 70000000
+      - X: 2020000000
+        Y: 80000000
+      - X: 2000000000
+        Y: 80000000
+      - X: 2000000000
+        Y: 100000000
+      - X: 2010000000
+        Y: 100000000
+      - X: 2010000000
+        Y: 110000000
+      - X: 2000000000
+        Y: 110000000
+      - X: 2000000000
+        Y: 160000000
+      - X: 1930000000
+        Y: 160000000
+      - X: 1930000000
+        Y: 170000000
+      - X: 1870000000
+        Y: 170000000
+      - X: 1870000000
+        Y: 160000000
+      - X: 1780000000
+        Y: 160000000
+      - X: 1780000000
+        Y: 110000000
+      - X: 1770000000
+        Y: 110000000
+      - X: 1770000000
+        Y: 100000000
+      - X: 1780000000
+        Y: 100000000
+      - X: 1780000000
+        Y: 80000000
+      - X: 1770000000
+        Y: 80000000
+      - X: 1770000000
+        Y: 90000000
+      - X: 1760000000
+        Y: 90000000
+      - X: 1760000000
+        Y: 80000000
+      - X: 1770000000
+        Y: 80000000
+      - X: 1770000000
+        Y: 70000000
+      - X: 1780000000
+        Y: 70000000
+      - X: 1780000000
+        Y: 50000000
+      - X: 1770000000
+        Y: 50000000
+      - X: 1770000000
+        Y: 10000000
+      - X: 2010000000
+        Y: 10000000
   m_CompositePaths:
     m_Paths:
     - - {x: 287, y: 5}
