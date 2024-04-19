@@ -401,6 +401,7 @@ GameObject:
   - component: {fileID: 6755683820496257371}
   - component: {fileID: 4339230163786922878}
   - component: {fileID: -7088657099681431792}
+  - component: {fileID: 928831555212443360}
   m_Layer: 0
   m_Name: Oveja
   m_TagString: Untagged
@@ -633,3 +634,24 @@ MonoBehaviour:
   _flashMaterial: {fileID: 2100000, guid: e9acf5cc613f15340962f06045d0a532, type: 2}
   _flashTime: 1.2
   _flashInterval: 0.1
+--- !u!95 &928831555212443360
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5091619765839581776}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f65036e583843884eadbbc366f704dc2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
