@@ -17,10 +17,12 @@ public class AlienMov : MonoBehaviour
 
     private bool attacking;
     private bool canAttack;
+    private bool attacked;
     [SerializeField] private float cooldown;
     [SerializeField] private float attackTime;
     private float _passedTime;
     private bool timePassing;
+    private Vector2 AuxVect;
 
 
     private void OnTriggerStay2D(Collider2D collision)//Detecta si hay colision con los bordes e indica que borde es
@@ -41,11 +43,11 @@ public class AlienMov : MonoBehaviour
 
     private void atacar(int cambioDirec)//Script para atacar al señuelo (y a la oveja y el granjero)
     {
-        if (_passedTime > attackTime)//Si ha pasado el cooldown del ataque, puede prepararse para otro ataque
+        if (!attacked)
         {
             if (cambioDirec == -1)
             {
-                if (_enemyMovement.movementEnemy == Vector2.right)
+                if (AuxVect.x == 1)//Por si el objetivo esta en la dirrecion opuesta se gira y dispara
                 {
                     _enemyMovement.movementEnemy = Vector2.left;
                     Instantiate(bulletPrefab, transform.position, Quaternion.identity);
@@ -53,9 +55,9 @@ public class AlienMov : MonoBehaviour
                 }
                 else { Instantiate(bulletPrefab, transform.position, Quaternion.identity); }
             }
-            else if (cambioDirec == 1 || cambioDirec == 0)
+            else
             {
-                if (_enemyMovement.movementEnemy == Vector2.left)
+                if (AuxVect.x == -1)
                 {
                     _enemyMovement.movementEnemy = Vector2.right;
                     Instantiate(bulletPrefab, transform.position, Quaternion.identity);
@@ -64,9 +66,13 @@ public class AlienMov : MonoBehaviour
                 else { Instantiate(bulletPrefab, transform.position, Quaternion.identity); }
             }
             canAttack = false;
-            attacking = false;
+            attacked = true;
             timePassing = false;
             _passedTime = 0;
+        }
+        if (_passedTime > attackTime)//Se para un tiempo despues de disparar
+        {
+            attacking = false;
         }
         else { timePassing = true; }
     }
@@ -76,6 +82,7 @@ public class AlienMov : MonoBehaviour
         if (_passedTime > cooldown)//Si ha pasado el cooldown del ataque, puede prepararse para otro ataque
         {
             canAttack = true;
+            attacked = false;
             _passedTime = 0;
         }
         else { timePassing = true; }
@@ -91,17 +98,30 @@ public class AlienMov : MonoBehaviour
     {
         _enemyMovement = GetComponent<EnemyMovement>();
         _sensorEnem = GetComponent<SensorEnem>();
+        _transform = GetComponent<Transform>();
         borde = false;
         attacking = false;
         canAttack = true;
+        attacked = false;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        Debug.Log("Alien ca " + canAttack);
+        Debug.Log("Alien at " + attacking);
+        Debug.Log("Alien pt " + _passedTime);
+        Debug.Log("Alien tp " + timePassing);
+
         if (timePassing) { _passedTime += Time.deltaTime; }
 
-        if (!attacking)
+        if (attacking)//Al atacar se detiene para disparar
+        {
+            atacar(cambioDirec);
+            _enemyMovement.movementEnemy = Vector2.zero;
+        }
+
+        else
         {
             if (borde)//Si choca contra un borde cambia de dirreccion
             {
@@ -132,26 +152,17 @@ public class AlienMov : MonoBehaviour
                 prepAttack();
             }
             
-
+            if (limit == 1)
+            {
+                _enemyMovement.movementEnemy = Vector2.right;
+            }
             else
             {
-                if (limit == 1)
-                {
-                    _enemyMovement.movementEnemy = Vector2.right;
-                }
-                else if (limit == 2)
-                {
-                    _enemyMovement.movementEnemy = Vector2.left;
-                }
+                _enemyMovement.movementEnemy = Vector2.left;
             }
 
             borde = false;
-        }
-
-        else
-        {
-            atacar(cambioDirec);
-            _enemyMovement.movementEnemy = Vector2.zero;
+            AuxVect = new Vector2(_transform.rotation.x, 0);
         }
     }
 }

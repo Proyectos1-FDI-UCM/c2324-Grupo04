@@ -12,7 +12,6 @@ public class LoboMov : MonoBehaviour
     private int cambioDirec = 0;
     private bool borde;
     private bool _enemyR;
-    private Transform _transform;
     private bool _cambioDirecIni;
 
     private void OnTriggerStay2D(Collider2D collision)//Detecta si hay colision con los bordes e indica que borde es

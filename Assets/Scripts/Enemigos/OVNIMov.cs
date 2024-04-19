@@ -9,7 +9,6 @@ public class OVNIMov : MonoBehaviour
     private OVNIAttack _OVNIAttack;
     public GameObject limit1;
     public GameObject limit2;
-    private Transform _transform;
     private int limit;
     private int cambioDirec = 0;
     private bool borde;

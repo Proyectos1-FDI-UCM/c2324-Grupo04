@@ -8,22 +8,26 @@ public class BulletMov : MonoBehaviour
     private Transform _myTransform;
     [SerializeField] private int speed = 5;
     private bool _collision;
+    private float destroyDelay;
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         _collision = true;
     }
+
 
     void Start()
     {
         _myTransform = transform;
         movementBullet = Vector2.left;
         _collision = false;
+        destroyDelay = 0;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         transform.Translate(movementBullet * speed * Time.deltaTime);
-        if (_collision ) { Destroy(gameObject); }
+        if (_collision ) { destroyDelay += Time.deltaTime; }
+        if (destroyDelay > 0.1 ) { Destroy(gameObject); }
     }
 }
