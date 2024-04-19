@@ -105,7 +105,7 @@ public class InteraccionConOveja : MonoBehaviour // Componente perteneciente al 
 
         _lanzaObjeto.enabled = true;
         _lanzaObjeto.Lanza(_ovejaTransform, _velocidadOveja, direccion, _deceleracionOveja, _tiempoDeInercia);
-        _movimientoOveja.SueltaOveja();
+        _movimientoOveja.SueltaOveja(direccion.x);
     }
 
     #endregion

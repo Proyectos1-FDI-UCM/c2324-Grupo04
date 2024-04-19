@@ -9,6 +9,9 @@ public class SheepAnimationController : MonoBehaviour
     private Material _flashMaterial;
     private Material _originalMaterial;
     private SpriteRenderer _mySR;
+    private Animator _myAnimator;
+    private MovimientoOveja _myMov;
+    private Rigidbody2D _myRB;
     //private Animation _anim; // Definitivamente no sé qué estoy haciendo - R
     #endregion
 
@@ -55,11 +58,21 @@ public class SheepAnimationController : MonoBehaviour
     {
         _mySR = GetComponent<SpriteRenderer>();
         _originalMaterial = _mySR.material;
+        _myAnimator = GetComponent<Animator>();
+        _myMov = GetComponent<MovimientoOveja>();
+        _myRB = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(Mathf.Abs(_myRB.velocity.x) > 0)
+        {
+            _myAnimator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            _myAnimator.SetBool("IsWalking", false);
+        }
     }
 }
