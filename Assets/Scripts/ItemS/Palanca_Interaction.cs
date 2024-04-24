@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Palanca_Interaction : MonoBehaviour
 {
+    private SpriteRenderer _spriteRenderer;
     public bool palancaActiva = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -13,14 +14,19 @@ public class Palanca_Interaction : MonoBehaviour
         {
             if (palancaActiva)
             {
-                Debug.Log("Palanca desactivada");
+                _spriteRenderer.flipX = false;
                 palancaActiva = false;
             }
             else
             {
-                Debug.Log("Palanca activada");
+                _spriteRenderer.flipX = true;
                 palancaActiva = true;
             }
         }
+    }
+
+    private void Start()
+    {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 }
