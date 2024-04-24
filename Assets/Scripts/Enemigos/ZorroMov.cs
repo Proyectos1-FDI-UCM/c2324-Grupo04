@@ -11,7 +11,7 @@ public class ZorroMov : MonoBehaviour
     public GameObject limit2;
     private SpriteRenderer _spriteRenderer;
     private int limit;
-    private int cambioDirec = 0;
+    private int cambioDirec;
     private bool borde;
 
     private void OnTriggerStay2D(Collider2D collision)//Detecta si hay colision con los bordes e indica que borde es
@@ -102,13 +102,13 @@ public class ZorroMov : MonoBehaviour
 
     private void flip() //Este método hace que la animación se de la vuelta
     {
-        if (_enemyMovement.movementEnemy.x == -1)
+        if (_enemyMovement.movementEnemy.x == 1)
         {
             _spriteRenderer.flipX = true;
         }
-        else if (_enemyMovement.movementEnemy.x == 1)
+        else if (_enemyMovement.movementEnemy.x == -1)
         {
             _spriteRenderer.flipX = false;
-        };
+        }
     }
 }

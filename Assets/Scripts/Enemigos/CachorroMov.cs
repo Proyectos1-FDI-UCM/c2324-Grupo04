@@ -43,7 +43,7 @@ public class CachorroMov : MonoBehaviour
         else if (_enemyMovement.movementEnemy.x == 1)
         {
             _spriteRenderer.flipX = false;
-        };
+        }
     }
 
     private void seguir(int cambioDirec)//Script para seguir al señuelo (y a la oveja)
@@ -97,6 +97,7 @@ public class CachorroMov : MonoBehaviour
     {
         _enemyMovement = GetComponent<EnemyMovement>();
         _sensorEnem = GetComponent<SensorEnem>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame

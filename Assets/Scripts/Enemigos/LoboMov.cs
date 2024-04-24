@@ -111,7 +111,7 @@ public class LoboMov : MonoBehaviour
         else if (_enemyMovement.movementEnemy.x == 1)
         {
             _spriteRenderer.flipX = false;
-        };
+        }
     }
 
 
