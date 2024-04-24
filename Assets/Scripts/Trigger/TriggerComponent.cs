@@ -25,4 +25,13 @@ public class TriggerComponent : MonoBehaviour
             _deactivatedObject.SetActive(false);
         }
     }
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        GranjeroMovement granjeroMovement = collision.GetComponent<GranjeroMovement>();
+        if (granjeroMovement != null)
+        {
+            print("Has salido en un trigger");
+            _deactivatedObject.SetActive(true);
+        }
+    }
 }

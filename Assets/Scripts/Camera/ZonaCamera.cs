@@ -18,36 +18,50 @@ public class ZonaCamera : MonoBehaviour
 
 	private void Start()
 	{
-		
+
 	}
 
 	void OnTriggerEnter2D(Collider2D collision) // Se activa cuando �lgo colisiona con �l
 	{
 		//vcam = GetComponent<CinemachineVirtualCamera>();
 		//if (vcam != null) Debug.Log("Vcam buena");
- 		GranjeroMovement granjeroMovement = collision.GetComponent<GranjeroMovement>(); // Busca un componente del tipo GranjeroMovement
+		GranjeroMovement granjeroMovement = collision.GetComponent<GranjeroMovement>(); // Busca un componente del tipo GranjeroMovement
 		Debug.Log("Colision");
 
 		if (granjeroMovement != null) // Comprueba que granjeroMovement existe (y por tanto que lo que ha chocado es el granjero)
 		{
 			Debug.Log("TrueColision");
-			if (!dentro)
-			{
-				vcam.Follow = CentroDentro;
-				dentro = true;
-				Debug.Log("Dentro");
-			}
-			else if (dentro)
-			{
-				vcam.Follow = Granjero;
-				dentro = false;
-				Debug.Log("Fuera");
-			}
-		}else
+
+			vcam.Follow = CentroDentro;
+			dentro = true;
+			Debug.Log("Dentro");
+
+		}
+		else
 		{
 			Debug.Log("Null");
 		}
 	}
+	void OnTriggerExit2D(Collider2D collision) // Se activa cuando �lgo colisiona con �l
+	{
+		//vcam = GetComponent<CinemachineVirtualCamera>();
+		//if (vcam != null) Debug.Log("Vcam buena");
+		GranjeroMovement granjeroMovement = collision.GetComponent<GranjeroMovement>(); // Busca un componente del tipo GranjeroMovement
+		Debug.Log("Colision");
+
+		if (granjeroMovement != null) // Comprueba que granjeroMovement existe (y por tanto que lo que ha chocado es el granjero)
+		{
+            Debug.Log("TrueColision");
+
+            vcam.Follow = Granjero;
+			dentro = false;
+			Debug.Log("Fuera");
+
+		}
+        else
+        {
+            Debug.Log("Null");
+        }
+
+    }
 }
-
-
