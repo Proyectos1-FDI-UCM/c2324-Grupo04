@@ -551,7 +551,7 @@ MonoBehaviour:
   limit1: {fileID: 311225579259902102}
   limit2: {fileID: 7597456617014043034}
   cooldown: 3
-  windup: 1
+  windup: 0.2
 --- !u!114 &3968308640430504454
 MonoBehaviour:
   m_ObjectHideFlags: 0
