@@ -14,12 +14,12 @@ public class CaveCover : MonoBehaviour
             //Debug.Log("GranjeroMovement no es null");
             if (cubreCuevas.active)
             {
-                Debug.Log("cubreCuevas esta activo, debería desactivarse");
+               // Debug.Log("cubreCuevas esta activo, debería desactivarse");
                 cubreCuevas.SetActive(false);
             }
             else
             {
-                Debug.Log("cubreCuevas esta inactivo, debería activarse");
+               // Debug.Log("cubreCuevas esta inactivo, debería activarse");
                 cubreCuevas.SetActive(true);
             }
         }
