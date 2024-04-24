@@ -62,8 +62,6 @@ public class LoboMov : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        flip();
-
         if (borde)//Si choca contra un borde cambia de dirreccion
         {
 

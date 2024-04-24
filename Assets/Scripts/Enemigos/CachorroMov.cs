@@ -8,6 +8,7 @@ public class CachorroMov : MonoBehaviour
     private EnemyMovement _enemyMovement;
     public GameObject limit1;
     public GameObject limit2;
+    private SpriteRenderer _spriteRenderer;
     [SerializeField]
     private int limit;
     [SerializeField]
@@ -17,8 +18,6 @@ public class CachorroMov : MonoBehaviour
     private float tiempoHuida;
     private float _tiempoHuida;
     private bool huida;
-    private bool _enemyR;
-    private bool _cambioDirecIni;
 
     private void OnTriggerStay2D(Collider2D collision)//Detecta si hay colision con los bordes e indica que borde es
     {
@@ -37,9 +36,14 @@ public class CachorroMov : MonoBehaviour
     }
     private void flip() //Este método hace que la animación se de la vuelta
     {
-        Vector2 localScale = transform.localScale;
-        localScale.x *= -1;
-        transform.localScale = localScale;
+        if (_enemyMovement.movementEnemy.x == -1)
+        {
+            _spriteRenderer.flipX = true;
+        }
+        else if (_enemyMovement.movementEnemy.x == 1)
+        {
+            _spriteRenderer.flipX = false;
+        };
     }
 
     private void seguir(int cambioDirec)//Script para seguir al señuelo (y a la oveja)
@@ -93,43 +97,21 @@ public class CachorroMov : MonoBehaviour
     {
         _enemyMovement = GetComponent<EnemyMovement>();
         _sensorEnem = GetComponent<SensorEnem>();
-        _cambioDirecIni = true;
-        _enemyR = true;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (_cambioDirecIni) //Este if es para corregir la direccion al principio, para que no parezca que camina de espaldas
-        {
-            flip();
-            _cambioDirecIni = false;
-        }
-
         if (borde)//Si choca contra un borde cambia de dirreccion
         {          
 
             if (limit == 1)
-            {
-                
+            {                
                 limit1.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
-                
-                if (_enemyR)
-                {
-                    flip();
-                    _enemyR = false;
-                }
             }
             else
             {
                 limit2.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
-                
-                
-                if (!_enemyR)
-                {
-                    flip();
-                    _enemyR = true;
-                }
             }
         }
 
@@ -163,6 +145,7 @@ public class CachorroMov : MonoBehaviour
         _tiempoHuida += Time.deltaTime;
         if (_tiempoHuida > tiempoHuida) { huida = false; }
 
+        flip();
         borde = false;
     }
 }
