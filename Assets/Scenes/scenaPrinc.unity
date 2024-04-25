@@ -153,7 +153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &64770739
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3693,8 +3693,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13.5045, y: -125.180664}
-  m_SizeDelta: {x: 528.1159, y: 146.1579}
+  m_AnchoredPosition: {x: 13.969, y: -126}
+  m_SizeDelta: {x: 531.07, y: 148.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &716129335
 MonoBehaviour:
@@ -3727,7 +3727,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 21300000, guid: 4156e32425b68714a9047f593f8cadca, type: 3}
+    m_SelectedSprite: {fileID: 1498420248, guid: 494436ce56100b645a0ce4b72813e319, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -3772,7 +3772,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c01da25542d9f564096b9344b034ca50, type: 3}
+  m_Sprite: {fileID: 765679308, guid: 7aea8db2b308f7b4ab645eb8bd38ce7d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -118786,7 +118786,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1487193009
 RectTransform:
   m_ObjectHideFlags: 0
