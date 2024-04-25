@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     GameObject _instruccionesTrampolin;
     [SerializeField]
-    GameObject _instruccionesSeñuelo;
+    GameObject _instruccionesSeÃ±uelo;
     [SerializeField]
     GameObject _instruccionesHorca;
     [SerializeField]
@@ -21,6 +22,7 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     Healthbar _corazonesHUDOveja;
     [SerializeField] GameObject victory;
+    [SerializeField] GameObject pauseReset;
 
     #endregion
 
@@ -36,7 +38,7 @@ public class UIManager : MonoBehaviour
     static private UIManager _instance;
 
 
-    static public UIManager Instance // Todos podéis usar este método (escrito: UIManager.Instance) para acceder al UIManager y a cualquiera de sus métodos
+    static public UIManager Instance // Todos podeis usar este metodo (escrito: UIManager.Instance) para acceder al UIManager y a cualquiera de sus metodos
     {
         get { return _instance; }
     }
@@ -66,7 +68,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         _menuDePausa.SetActive(false);
-        _instruccionesSeñuelo.SetActive(false);
+        _instruccionesSeÃ±uelo.SetActive(false);
         _instruccionesTrampolin.SetActive(false);
         _instruccionesHorca.SetActive(false);
         _instruccionesMovimiento.SetActive(true);
@@ -82,10 +84,10 @@ public class UIManager : MonoBehaviour
 
     #endregion
     #region instrucciones
-    public void RecogidaRecetaSeñuelo()
+    public void RecogidaRecetaSeÃ±uelo()
     {
-        _instruccionesSeñuelo.SetActive(true); Debug.Log("RecogidaRecetaSeñuelo");
-        //Destroy(_instruccionesSeñuelo, _duracionInstrucciones);
+        _instruccionesSeÃ±uelo.SetActive(true); Debug.Log("RecogidaRecetaSeÃ±uelo");
+        //Destroy(_instruccionesSeÃ±uelo, _duracionInstrucciones);
     }
 
     public void RecogidaRecetaTrampolin()
@@ -100,7 +102,7 @@ public class UIManager : MonoBehaviour
         //Destroy(_instruccionesHorca, _duracionInstrucciones);
     }
     #endregion
-    #region menús
+    #region menos
     public void OnPause()
     {
         if (!victory.active)
@@ -116,6 +118,8 @@ public class UIManager : MonoBehaviour
             {
                 Debug.Log("PAUSA");
                 _menuDePausa.SetActive(true);
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(pauseReset);
                 Time.timeScale = 0.0f;
                 _paused = true;
             }

@@ -120258,7 +120258,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &1796217533
 MonoBehaviour:
@@ -120313,6 +120313,7 @@ MonoBehaviour:
   _corazonesHUD: {fileID: 1875972415}
   _corazonesHUDOveja: {fileID: 1577140814}
   victory: {fileID: 1487193008}
+  pauseReset: {fileID: 1478592164}
   _duracionInstrucciones: 3
 --- !u!4 &1796217536
 Transform:
