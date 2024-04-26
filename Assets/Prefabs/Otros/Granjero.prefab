@@ -362,6 +362,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4afd51cdf6d93745ae691dfcbdb6c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuMuerte: {fileID: 0}
+  reset: {fileID: 0}
 --- !u!114 &8075757650451229032
 MonoBehaviour:
   m_ObjectHideFlags: 0
