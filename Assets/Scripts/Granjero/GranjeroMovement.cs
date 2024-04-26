@@ -132,7 +132,7 @@ public class GranjeroMovement : MonoBehaviour
 
 
 
-        if (_movementDirection.x < 0 || _movementDirection.x > 0)
+        if (_movementDirection.x < 0 && !_myRC.ChoqueIzq() || _movementDirection.x > 0 && !_myRC.ChoqueDer())
         {
             _myRB.velocity = _movementDirection * _currentSpeed + Vector2.up * _myRB.velocity.y;
 
