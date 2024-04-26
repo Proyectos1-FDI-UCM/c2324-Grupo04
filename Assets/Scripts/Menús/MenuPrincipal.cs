@@ -43,6 +43,11 @@ public class MenuPrincipal : MonoBehaviour
 
     public void ClickSettings()
     {
+        Invoke("AuxClickSettings", 0.1f);
+    }
+
+    private void AuxClickSettings()
+    {
         _menuNiveles.SetActive(false);
         _menuAjustes.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
