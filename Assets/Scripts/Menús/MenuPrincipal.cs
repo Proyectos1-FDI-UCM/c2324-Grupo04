@@ -83,5 +83,10 @@ public class MenuPrincipal : MonoBehaviour
 		SceneManager.LoadScene(3);
 	}
 
+    public void CambiaPrueba()
+    {
+        SceneManager.LoadScene(4);
+    }
+
 
 }
