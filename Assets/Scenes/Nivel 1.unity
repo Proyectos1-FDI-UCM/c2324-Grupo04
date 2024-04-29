@@ -133,6 +133,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2631542976574063986, guid: 9adf658c3d2aa5f47acde46b70043088, type: 3}
   m_PrefabInstance: {fileID: 2095787686}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &22097081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 22097082}
+  m_Layer: 0
+  m_Name: Aux
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &22097082
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22097081}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1782.3887, y: -548.9243, z: -18.026762}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &56790619 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2631542976574063986, guid: 9adf658c3d2aa5f47acde46b70043088, type: 3}
@@ -120314,6 +120345,11 @@ MonoBehaviour:
   _corazonesHUDOveja: {fileID: 1577140814}
   victory: {fileID: 1487193008}
   pauseReset: {fileID: 805086489}
+  _menuAjustes: {fileID: 22097081}
+  _menuExitSettings: {fileID: 0}
+  enterSettings: {fileID: 0}
+  exitSettings: {fileID: 0}
+  _animator: {fileID: 0}
   _duracionInstrucciones: 3
 --- !u!4 &1796217536
 Transform:
@@ -126027,3 +126063,4 @@ SceneRoots:
   - {fileID: 2018463973}
   - {fileID: 1807654826}
   - {fileID: 587566932}
+  - {fileID: 22097082}

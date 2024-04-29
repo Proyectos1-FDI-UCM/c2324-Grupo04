@@ -11,17 +11,15 @@ public class MenuPrincipal : MonoBehaviour
 {
     [SerializeField] private GameObject _menuJugar;
     [SerializeField] private GameObject _menuNiveles;
-    [SerializeField] private GameObject _menuAjustes;
     [SerializeField] private PlayableDirector playableDirector;
 
-    public GameObject selectplay, selectlevel1, exitSettings, enterSettings;
+    public GameObject selectplay, selectlevel1, exitSettings;
 
     // Start is called before the first frame update
     void Awake()
     {
         _menuJugar.SetActive(true);
         _menuNiveles.SetActive(false);
-        _menuAjustes.SetActive(false);
     }
     void Start()
     {
@@ -44,27 +42,6 @@ public class MenuPrincipal : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(selectlevel1);
 
-    }
-
-    public void ClickSettings()
-    {
-        Invoke("AuxClickSettings", 0.15f);
-    }
-
-    private void AuxClickSettings()
-    {
-        _menuNiveles.SetActive(false);
-        _menuAjustes.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(enterSettings);
-    }
-
-    public void ExitSettings() 
-    {
-        _menuAjustes.SetActive(false);
-        _menuNiveles.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(exitSettings);
     }
 
     public void ExitGame() 

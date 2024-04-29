@@ -841,6 +841,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &114591553
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 114591554}
+  m_Layer: 0
+  m_Name: Aux
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &114591554
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114591553}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1782.3887, y: -548.9243, z: -18.026762}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &121442250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -282976,6 +283007,11 @@ MonoBehaviour:
   _corazonesHUDOveja: {fileID: 1577140814}
   victory: {fileID: 1487193008}
   pauseReset: {fileID: 925607574}
+  _menuAjustes: {fileID: 114591553}
+  _menuExitSettings: {fileID: 0}
+  enterSettings: {fileID: 0}
+  exitSettings: {fileID: 0}
+  _animator: {fileID: 0}
   _duracionInstrucciones: 3
 --- !u!4 &1796217536
 Transform:
@@ -306686,3 +306722,4 @@ SceneRoots:
   - {fileID: 341730861}
   - {fileID: 563270118}
   - {fileID: 964336515}
+  - {fileID: 114591554}

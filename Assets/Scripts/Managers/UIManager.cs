@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.TextCore.Text;
 
 public class UIManager : MonoBehaviour
 {
@@ -23,6 +25,11 @@ public class UIManager : MonoBehaviour
     Healthbar _corazonesHUDOveja;
     [SerializeField] GameObject victory;
     [SerializeField] GameObject pauseReset;
+    [SerializeField] private GameObject _menuAjustes;
+    [SerializeField] private GameObject _menuExitSettings;
+    public GameObject enterSettings, exitSettings;
+
+    [SerializeField] private Animator _animator;
 
     #endregion
 
@@ -65,8 +72,9 @@ public class UIManager : MonoBehaviour
 
     private bool _paused = false;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        _menuAjustes.SetActive(false);
         _menuDePausa.SetActive(false);
         _instruccionesSeñuelo.SetActive(false);
         _instruccionesTrampolin.SetActive(false);
@@ -103,6 +111,28 @@ public class UIManager : MonoBehaviour
     }
     #endregion
     #region menos
+
+    public void ClickSettings()
+    {
+        Invoke("AuxClickSettings", 0.15f);
+    }
+
+    private void AuxClickSettings()
+    {
+        _menuAjustes.SetActive(true);
+        _animator.SetBool("isOpen", true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(enterSettings);
+    }
+
+    public void ExitSettings()
+    {
+        _menuAjustes.SetActive(false);
+        _menuExitSettings.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(exitSettings);
+    }
+
     public void OnPause()
     {
         if (!victory.active)
