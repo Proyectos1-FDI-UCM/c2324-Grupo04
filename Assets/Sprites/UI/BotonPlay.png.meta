@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b149b1064b5422f41b2bde3ed5b28990
+guid: 975f19fb02183ae449ef979b5802cbd5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -175,11 +175,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BotonLevel1_0
+      name: BotonPlay_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 137
+        x: 10
+        y: 87
         width: 28
         height: 27
       alignment: 0
@@ -189,18 +189,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26daf181aa8b3394b8bb960a4124f7a8
-      internalID: 180040011
+      spriteID: 37b230afbee06b14290e9fcf7ce521d4
+      internalID: 1781776961
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BotonLevel1_1
+      name: BotonPlay_1
       rect:
         serializedVersion: 2
-        x: 62
-        y: 137
+        x: 60
+        y: 87
         width: 28
         height: 27
       alignment: 0
@@ -210,18 +210,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d1adbe649d4e234fa1d46ee06ea91aa
-      internalID: -213099159
+      spriteID: 8e8aeb742f02b964888487b4ded5bd14
+      internalID: -1710252833
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BotonLevel1_2
+      name: BotonPlay_2
       rect:
         serializedVersion: 2
-        x: 113
-        y: 137
+        x: 110
+        y: 87
         width: 28
         height: 27
       alignment: 0
@@ -231,18 +231,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36e7759c2e9f61d48bf4b6134d0f5e76
-      internalID: -1738017007
+      spriteID: b5caeb71149e182488918e2a4b3029c0
+      internalID: 538379074
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BotonLevel1_3
+      name: BotonPlay_3
       rect:
         serializedVersion: 2
-        x: 11
-        y: 37
+        x: 10
+        y: 21
         width: 28
         height: 27
       alignment: 0
@@ -252,18 +252,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1de58a6a7a5d3324fbc90a3c99c80d29
-      internalID: 844622960
+      spriteID: 09bbd4b1c66729647bc3638464faef58
+      internalID: 1832520121
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BotonLevel1_4
+      name: BotonPlay_4
       rect:
         serializedVersion: 2
-        x: 62
-        y: 37
+        x: 60
+        y: 21
         width: 28
         height: 27
       alignment: 0
@@ -273,18 +273,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28c42e5c4123d424bbc931fa092c2a83
-      internalID: -1405158599
+      spriteID: b8cac66a8034a764f9e4ccbf469c9a00
+      internalID: 1995692944
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BotonLevel1_5
+      name: BotonPlay_5
       rect:
         serializedVersion: 2
-        x: 113
-        y: 37
+        x: 110
+        y: 21
         width: 28
         height: 27
       alignment: 0
@@ -294,8 +294,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99f76556b0a17c24ca1d266728f7d1c2
-      internalID: -1532316400
+      spriteID: 7a69bc1b70272284c93ed880c4186370
+      internalID: -369282468
       vertices: []
       indices: 
       edges: []
@@ -311,12 +311,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BotonLevel1_0: 180040011
-      BotonLevel1_1: -213099159
-      BotonLevel1_2: -1738017007
-      BotonLevel1_3: 844622960
-      BotonLevel1_4: -1405158599
-      BotonLevel1_5: -1532316400
+      BotonPlay_0: 1781776961
+      BotonPlay_1: -1710252833
+      BotonPlay_2: 538379074
+      BotonPlay_3: 1832520121
+      BotonPlay_4: 1995692944
+      BotonPlay_5: -369282468
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

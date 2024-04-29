@@ -31,7 +31,12 @@ public class MenuPrincipal : MonoBehaviour
 		print("MenuPrincipal.Start" + playableDirector.name);
     }
 
-	public void ClickPlay()
+    public void ClickPlay()
+    {
+        Invoke("AuxClickPlay", 0.15f);
+    }
+
+    public void AuxClickPlay()
     {
         _menuJugar.SetActive(false);
         _menuNiveles.SetActive(true);
@@ -43,7 +48,7 @@ public class MenuPrincipal : MonoBehaviour
 
     public void ClickSettings()
     {
-        Invoke("AuxClickSettings", 0.1f);
+        Invoke("AuxClickSettings", 0.15f);
     }
 
     private void AuxClickSettings()

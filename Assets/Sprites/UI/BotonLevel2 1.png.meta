@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d7c3cf784772dd94ba5afec7981d3e45
+guid: fc468565ec3818948a81bdb0ab600361
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -175,7 +175,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BotonLevel2_0
+      name: BotonLevel2 1_0
       rect:
         serializedVersion: 2
         x: 11
@@ -189,14 +189,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05ad52221d7841d4aaa618a77a9f1cd0
-      internalID: 1338167708
+      spriteID: d06c3373d0c09b34f89bbad67ff675e8
+      internalID: 190144232
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BotonLevel2_1
+      name: BotonLevel2 1_1
       rect:
         serializedVersion: 2
         x: 62
@@ -210,14 +210,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04d5b605cb1af2f43a4f33c4137c4a12
-      internalID: -739189742
+      spriteID: 3fe17320ccb5eae4da20f754a2f3752f
+      internalID: -883218464
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BotonLevel2_2
+      name: BotonLevel2 1_2
       rect:
         serializedVersion: 2
         x: 113
@@ -231,14 +231,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5791a92cf9568f44786d609eb44b284b
-      internalID: 895139478
+      spriteID: 5f5d74c33a0487644932687c3123e180
+      internalID: -1665315659
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BotonLevel2_3
+      name: BotonLevel2 1_3
       rect:
         serializedVersion: 2
         x: 11
@@ -252,14 +252,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53a33c94cb3bb7e4e8b747b8bcd9ecac
-      internalID: -151461968
+      spriteID: 3ebabf140c803c5458505d148f4cddee
+      internalID: 1572795518
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BotonLevel2_4
+      name: BotonLevel2 1_4
       rect:
         serializedVersion: 2
         x: 62
@@ -273,14 +273,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 344aa5a337fd938468872dc336138308
-      internalID: -1325784711
+      spriteID: a4d6e6aac36ba4243880c11336714a44
+      internalID: 2011027906
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BotonLevel2_5
+      name: BotonLevel2 1_5
       rect:
         serializedVersion: 2
         x: 113
@@ -294,8 +294,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92162d2dcb7814546a2ef508635653f4
-      internalID: 643272225
+      spriteID: 79e66c3d5b7d9a2499ccb363a30d3621
+      internalID: 1084416681
       vertices: []
       indices: 
       edges: []
@@ -311,12 +311,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BotonLevel2_0: 1338167708
-      BotonLevel2_1: -739189742
-      BotonLevel2_2: 895139478
-      BotonLevel2_3: -151461968
-      BotonLevel2_4: -1325784711
-      BotonLevel2_5: 643272225
+      BotonLevel2 1_0: 190144232
+      BotonLevel2 1_1: -883218464
+      BotonLevel2 1_2: -1665315659
+      BotonLevel2 1_3: 1572795518
+      BotonLevel2 1_4: 2011027906
+      BotonLevel2 1_5: 1084416681
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
