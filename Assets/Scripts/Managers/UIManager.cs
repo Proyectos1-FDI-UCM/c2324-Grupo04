@@ -27,7 +27,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject pauseReset;
     [SerializeField] private GameObject _menuAjustes;
     [SerializeField] private GameObject _menuExitSettings;
-    public GameObject enterSettings, exitSettings;
+    [SerializeField] private GameObject _menuOpciones;
+    [SerializeField] private GameObject _menuControles;
+    public GameObject enterSettings, exitSettings, enterControles, exitControles;
 
     [SerializeField] private Animator _animator;
 
@@ -75,6 +77,8 @@ public class UIManager : MonoBehaviour
     void Awake()
     {
         _menuAjustes.SetActive(false);
+        _menuOpciones.SetActive(false);
+        _menuControles.SetActive(false);
         _menuDePausa.SetActive(false);
         _instruccionesSeñuelo.SetActive(false);
         _instruccionesTrampolin.SetActive(false);
@@ -119,9 +123,15 @@ public class UIManager : MonoBehaviour
 
     private void AuxClickSettings()
     {
-        _menuAjustes.SetActive(true);
-        _animator.SetBool("isOpen", true);
         EventSystem.current.SetSelectedGameObject(null);
+        _menuAjustes.SetActive(true);
+        _menuOpciones.SetActive(true);
+        _animator.SetBool("isOpen", true);
+        Invoke("SelectExitSettings", 0.85F);
+    }
+
+    private void SelectExitSettings()
+    {
         EventSystem.current.SetSelectedGameObject(enterSettings);
     }
 
@@ -131,6 +141,14 @@ public class UIManager : MonoBehaviour
         _menuExitSettings.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(exitSettings);
+    }
+
+    public void ClickControles()
+    {
+        _menuOpciones.SetActive(false);
+        _menuControles.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(enterControles);
     }
 
     public void OnPause()
