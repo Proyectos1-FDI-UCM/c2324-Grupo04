@@ -30,6 +30,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _menuOpciones;
     [SerializeField] private GameObject _menuControles;
     public GameObject enterSettings, exitSettings, enterControles, exitControles;
+    [SerializeField] private LoboMov loboMov;
+    [SerializeField] private MovimientoOveja movimientoOveja;
+    [SerializeField] private GranjeroMovement granjeroMovement;
+    [SerializeField] private CachorroMov cachorroMov;
+    [SerializeField] private ZorroMov zorroMov;
 
     [SerializeField] private Animator _animator;
 
@@ -118,6 +123,7 @@ public class UIManager : MonoBehaviour
 
     public void ClickSettings()
     {
+        Time.timeScale = 1f;
         Invoke("AuxClickSettings", 0.15f);
     }
 
@@ -133,6 +139,7 @@ public class UIManager : MonoBehaviour
     private void SelectExitSettings()
     {
         EventSystem.current.SetSelectedGameObject(enterSettings);
+        Time.timeScale = 0f;
     }
 
     public void ExitSettings()
