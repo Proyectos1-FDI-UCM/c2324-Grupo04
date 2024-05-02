@@ -127,6 +127,7 @@ public class UIManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         _menuAjustes.SetActive(true);
         _menuOpciones.SetActive(true);
+        _menuControles.SetActive(false);
         _animator.SetBool("isOpen", true);
         Invoke("SelectExitSettings", 0.85F);
     }
