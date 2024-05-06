@@ -161,6 +161,7 @@ public class UIManager : MonoBehaviour
             if (_paused)
             {
                 Debug.Log("Salida de pausa");
+                _menuAjustes.SetActive(false);
                 _menuDePausa.SetActive(false);
                 Time.timeScale = 1.0f;
                 _paused = false;
