@@ -70,5 +70,10 @@ public class MenuPrincipal : MonoBehaviour
         SceneManager.LoadScene(4);
     }
 
+    public void Tiempo1()
+    {
+        Time.timeScale = 1f;
+    }
+
 
 }
