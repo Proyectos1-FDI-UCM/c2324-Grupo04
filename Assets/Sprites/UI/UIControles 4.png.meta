@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 89a0d4ffd3398e14cb37d95ecdca2c6f
+guid: f4c993a2a8e21e549a50d0119bd90cc8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -175,7 +175,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UIControles 1_0
+      name: UIControles 4_0
       rect:
         serializedVersion: 2
         x: 18
@@ -183,35 +183,14 @@ TextureImporter:
         width: 88
         height: 90
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 240b8136c2aabe64c8c01320d9cb95a5
-      internalID: 274029143
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UIControles 1_1
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 130
-        width: 30
-        height: 15
-      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59778da784b263448a0247adb6929a01
-      internalID: -649837022
+      spriteID: 6386bca2f8d718a479df2dba96766bff
+      internalID: 309051147
       vertices: []
       indices: 
       edges: []
@@ -227,8 +206,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      UIControles 1_0: 274029143
-      UIControles 1_1: -649837022
+      UIControles 4_0: 309051147
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

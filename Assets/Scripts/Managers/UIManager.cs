@@ -28,8 +28,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _menuAjustes;
     [SerializeField] private GameObject _menuExitSettings;
     [SerializeField] private GameObject _menuOpciones;
-    [SerializeField] private GameObject _menuControles;
-    public GameObject enterSettings, exitSettings, enterControles, exitControles;
+    [SerializeField] private GameObject _menuSonido;
+    public GameObject enterSettings, exitSettings, enterSonido, exitSonido;
 
     [SerializeField] private Animator _animator;
 
@@ -78,7 +78,7 @@ public class UIManager : MonoBehaviour
     {
         _menuAjustes.SetActive(false);
         _menuOpciones.SetActive(false);
-        _menuControles.SetActive(false);
+        _menuSonido.SetActive(false);
         _menuDePausa.SetActive(false);
         _instruccionesSeñuelo.SetActive(false);
         _instruccionesTrampolin.SetActive(false);
@@ -127,7 +127,7 @@ public class UIManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         _menuAjustes.SetActive(true);
         _menuOpciones.SetActive(true);
-        _menuControles.SetActive(false);
+        _menuSonido.SetActive(false);
         _animator.SetBool("isOpen", true);
         Invoke("SelectExitSettings", 0.85F);
     }
@@ -149,9 +149,17 @@ public class UIManager : MonoBehaviour
     public void ClickControles()
     {
         _menuOpciones.SetActive(false);
-        _menuControles.SetActive(true);
+        _menuSonido.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(enterControles);
+        EventSystem.current.SetSelectedGameObject(enterSonido);
+    }
+
+    public void SalirControles()
+    {
+        _menuOpciones.SetActive(true);
+        _menuSonido.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(exitSonido);
     }
 
     public void OnPause()

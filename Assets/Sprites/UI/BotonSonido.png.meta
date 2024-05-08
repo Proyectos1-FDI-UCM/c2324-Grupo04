@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 680e206799bc09b46b1627b4ce023dfd
+guid: 6fd4a8860eeed5946b897644de749fda
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -175,22 +175,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UIControles_3
+      name: BotonSonido_0
       rect:
         serializedVersion: 2
-        x: 22
-        y: 153
-        width: 27
-        height: 20
+        x: 75
+        y: 95
+        width: 44
+        height: 9
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91e63cb9f8d8f9340a0de74400ecbc0e
-      internalID: 1950287098
+      spriteID: 1fdf30c3e203aad419babd7b36e200d7
+      internalID: 1223931469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BotonSonido_1
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 85
+        width: 44
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3c90b88f36149c4aa05af8c9e97ea41
+      internalID: -741796112
       vertices: []
       indices: 
       edges: []
@@ -206,10 +227,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      UIControles_0: -237858815
-      UIControles_1: 387904294
-      UIControles_2: 414727515
-      UIControles_3: 1950287098
+      BotonSonido_0: 1223931469
+      BotonSonido_1: -741796112
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

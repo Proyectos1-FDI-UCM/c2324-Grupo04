@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 680e206799bc09b46b1627b4ce023dfd
+guid: 38c00503168942347b84272161610433
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -175,13 +175,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UIControles_3
+      name: High_0
       rect:
         serializedVersion: 2
-        x: 22
-        y: 153
-        width: 27
-        height: 20
+        x: 79
+        y: 61
+        width: 42
+        height: 70
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,8 +189,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91e63cb9f8d8f9340a0de74400ecbc0e
-      internalID: 1950287098
+      spriteID: 6147610eb1ca6d8458cb97a1a6bcadf9
+      internalID: -2103430882
       vertices: []
       indices: 
       edges: []
@@ -206,10 +206,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      UIControles_0: -237858815
-      UIControles_1: 387904294
-      UIControles_2: 414727515
-      UIControles_3: 1950287098
+      High_0: -2103430882
+      High_1: -1432436047
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
