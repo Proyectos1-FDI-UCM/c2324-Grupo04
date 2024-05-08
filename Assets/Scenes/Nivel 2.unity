@@ -4813,7 +4813,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -37.689613, y: 3.681387, z: -9.759361}
+  m_LocalPosition: {x: -34.94074, y: 3.681387, z: -9.759361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6721,7 +6721,7 @@ Transform:
   m_GameObject: {fileID: 787576141}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -44.223957, y: 0.21139872, z: -9.759361}
+  m_LocalPosition: {x: -43.124405, y: 0.21139872, z: -9.759361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -221338,6 +221338,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2631542976574063986, guid: 9adf658c3d2aa5f47acde46b70043088, type: 3}
   m_PrefabInstance: {fileID: 2048001484}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1439463156 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4339230163786922878, guid: a4a39fd6c06667148bafff6eca868a35, type: 3}
+  m_PrefabInstance: {fileID: 1028196535}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9394ecc7211e7944bc5231e31d4aad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1440273555
 GameObject:
   m_ObjectHideFlags: 0
@@ -282970,7 +282981,7 @@ MonoBehaviour:
   cargandoOveja: 0
   _granjeroMovement: {fileID: 411942042}
   _ovejaTransform: {fileID: 581659345}
-  _movimientoOveja: {fileID: 0}
+  _movimientoOveja: {fileID: 1439463156}
   "nse\xF1uelo": 0
   "se\xF1ueloExist": 0
 --- !u!114 &1796217534
@@ -283009,8 +283020,12 @@ MonoBehaviour:
   pauseReset: {fileID: 925607574}
   _menuAjustes: {fileID: 114591553}
   _menuExitSettings: {fileID: 0}
+  _menuOpciones: {fileID: 0}
+  _menuControles: {fileID: 0}
   enterSettings: {fileID: 0}
   exitSettings: {fileID: 0}
+  enterControles: {fileID: 0}
+  exitControles: {fileID: 0}
   _animator: {fileID: 0}
   _duracionInstrucciones: 3
 --- !u!4 &1796217536
