@@ -173,7 +173,679 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Alfabeto pixel art_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 13
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc960e63482383f40aa2666d09d4d50b
+      internalID: 1658124008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 13
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b329ec6ffe9177e4b8d50ab87663de8b
+      internalID: 304515064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_2
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 13
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f569d08e999a43148b5a109b50c999df
+      internalID: -1480893513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_3
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 13
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2371c426bd1479a43a7ec2b03127028c
+      internalID: 356373301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_4
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 13
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52dda3c729d75094fa0b05093e5757b4
+      internalID: -412795653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_5
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 13
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b435af9f92c52f84fbdca7c7a54dd8a9
+      internalID: -131882873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_6
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 13
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 053ecb722a4132f4a848ab727b4902f4
+      internalID: 1313231159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_7
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 13
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04b726da648e4a248822938789f0fd58
+      internalID: 1064044438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_8
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 13
+        width: 4
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea834ef05527fdb4397cb21eb1728e02
+      internalID: -1312410817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_9
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 13
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 930184632d8aa8f42abe91454b4d3f69
+      internalID: 165473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_10
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 13
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eddb52228b9237748bb71a11853f9b6b
+      internalID: -839307106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_11
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 13
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d68acbaa6cf46d4aabaaa09c58b4543
+      internalID: -1285693657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_12
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 13
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0391fa83f9033ef4289fcc84bf674357
+      internalID: 2005739990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_13
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 13
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c84c5579927003641bb285633e3fd695
+      internalID: 1574111843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_14
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 13
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b86df61663505a4a815b22893f5d09c
+      internalID: 300853342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_15
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 13
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67f15f3bef843d744acad96906aaab6f
+      internalID: -167313100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_16
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 13
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6944189db021aa843bc2e0bc7f80caf2
+      internalID: -1171345203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_17
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 13
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a767bd86086645d438df78b94f401e36
+      internalID: -1943519103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_18
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 13
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5a9d7a02c4bde94398ee1a74039e755
+      internalID: 1386780966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_19
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 13
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c03a7f76f2a06384197ac2bad3b25736
+      internalID: -2076945549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_20
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 13
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b982cdfd16e6bd445962fd210179ec3b
+      internalID: 688691847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_21
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 13
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29ec71a4555f5114eb4384d3e0ca69b4
+      internalID: 854701607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_22
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 13
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 570018380ad4c3c4f848887bcd9a8448
+      internalID: -1051724874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_23
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 13
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 729bef8a2553ee74caae62408638c281
+      internalID: 832761357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_24
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 13
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f74e4f49cafc2142a446d68a90b844e
+      internalID: 536685761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_25
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 13
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c768bc5f5d491b54781d9ecad1dddcce
+      internalID: 920494023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef54f0e37e53e17468b463f44f5c5179
+      internalID: -240532997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_27
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 0
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5b8e7fe7f9761b42b39f13dd9e8f6bf
+      internalID: -930309271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_28
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 4
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf2b95f85e3b3484d996ec4077cbb0af
+      internalID: -1030449996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_29
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 0
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69fd1cd18717c8d459a9ecc921374b78
+      internalID: 1617695853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_30
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 0
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c0e0e8b9c52a7a45821f9bd7807f6ac
+      internalID: -1380155903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alfabeto pixel art_31
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 0
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 471797847daff2041b774a76e08011ee
+      internalID: 2020960096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -184,7 +856,39 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Alfabeto pixel art_0: 1658124008
+      Alfabeto pixel art_1: 304515064
+      Alfabeto pixel art_10: -839307106
+      Alfabeto pixel art_11: -1285693657
+      Alfabeto pixel art_12: 2005739990
+      Alfabeto pixel art_13: 1574111843
+      Alfabeto pixel art_14: 300853342
+      Alfabeto pixel art_15: -167313100
+      Alfabeto pixel art_16: -1171345203
+      Alfabeto pixel art_17: -1943519103
+      Alfabeto pixel art_18: 1386780966
+      Alfabeto pixel art_19: -2076945549
+      Alfabeto pixel art_2: -1480893513
+      Alfabeto pixel art_20: 688691847
+      Alfabeto pixel art_21: 854701607
+      Alfabeto pixel art_22: -1051724874
+      Alfabeto pixel art_23: 832761357
+      Alfabeto pixel art_24: 536685761
+      Alfabeto pixel art_25: 920494023
+      Alfabeto pixel art_26: -240532997
+      Alfabeto pixel art_27: -930309271
+      Alfabeto pixel art_28: -1030449996
+      Alfabeto pixel art_29: 1617695853
+      Alfabeto pixel art_3: 356373301
+      Alfabeto pixel art_30: -1380155903
+      Alfabeto pixel art_31: 2020960096
+      Alfabeto pixel art_4: -412795653
+      Alfabeto pixel art_5: -131882873
+      Alfabeto pixel art_6: 1313231159
+      Alfabeto pixel art_7: 1064044438
+      Alfabeto pixel art_8: -1312410817
+      Alfabeto pixel art_9: 165473
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
