@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1ab15fb5d78f0ab49a3eb8920a570212
+guid: befeb01f5414e11469279ab554aea0ce
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -175,13 +175,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BotonSalirSettings 1_0
+      name: BotonReinciar_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 26
-        width: 34
-        height: 9
+        x: 0
+        y: 176
+        width: 75
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,20 +189,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3beacda1b0c6cb48a031fb5bc6af0ae
-      internalID: -1506689599
+      spriteID: 4b77542d3ca264141b4d36e7055cf706
+      internalID: -2144768686
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BotonSalirSettings 1_1
+      name: BotonReinciar_1
       rect:
         serializedVersion: 2
-        x: 43
-        y: 26
-        width: 34
-        height: 9
+        x: 76
+        y: 176
+        width: 75
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,8 +210,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6c56e89019e5ab4e844da8bc219aff1
-      internalID: -176929687
+      spriteID: efb6e4420be66834dae7ca8a77737e22
+      internalID: -1757018464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BotonReinciar_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 102
+        width: 75
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9a6c7a7b67ebf849af7452fab6c9798
+      internalID: 2025831571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BotonReinciar_3
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 102
+        width: 75
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a979335fc2fa404198be0125609290e
+      internalID: 554179973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BotonReinciar_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 28
+        width: 75
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75b72dc36bfe92f4aa99e4496357f068
+      internalID: 962029505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BotonReinciar_5
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 28
+        width: 75
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5257741abb379564fb69e635f66f7ecc
+      internalID: -250990810
       vertices: []
       indices: 
       edges: []
@@ -227,8 +311,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BotonSalirSettings 1_0: -1506689599
-      BotonSalirSettings 1_1: -176929687
+      BotonReinciar_0: -2144768686
+      BotonReinciar_1: -1757018464
+      BotonReinciar_2: 2025831571
+      BotonReinciar_3: 554179973
+      BotonReinciar_4: 962029505
+      BotonReinciar_5: -250990810
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
