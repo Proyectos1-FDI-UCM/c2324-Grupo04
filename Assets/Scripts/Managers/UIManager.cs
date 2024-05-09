@@ -28,8 +28,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _menuAjustes;
     [SerializeField] private GameObject _menuExitSettings;
     [SerializeField] private GameObject _menuOpciones;
-    [SerializeField] private GameObject _menuSonido;
-    public GameObject enterSettings, exitSettings, enterSonido, exitSonido;
+    [SerializeField] private GameObject _menuSonido, _menuControles;
+    public GameObject enterSettings, exitSettings, enterSonido, exitSonido, enterControles, exitControles;
 
     [SerializeField] private Animator _animator;
 
@@ -76,6 +76,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        _menuControles.SetActive(false);
         _menuAjustes.SetActive(false);
         _menuOpciones.SetActive(false);
         _menuSonido.SetActive(false);
@@ -128,6 +129,7 @@ public class UIManager : MonoBehaviour
         _menuAjustes.SetActive(true);
         _menuOpciones.SetActive(true);
         _menuSonido.SetActive(false);
+        _menuControles.SetActive(false);
         _animator.SetBool("isOpen", true);
         Invoke("SelectExitSettings", 0.85F);
     }
@@ -146,7 +148,7 @@ public class UIManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(exitSettings);
     }
 
-    public void ClickControles()
+    public void ClickSonido()
     {
         _menuOpciones.SetActive(false);
         _menuSonido.SetActive(true);
@@ -154,12 +156,28 @@ public class UIManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(enterSonido);
     }
 
-    public void SalirControles()
+    public void SalirSonido()
     {
         _menuOpciones.SetActive(true);
         _menuSonido.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(exitSonido);
+    }
+
+    public void ClickControles()
+    {
+        _menuOpciones.SetActive(false);
+        _menuControles.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(enterControles);
+    }
+
+    public void SalirControles()
+    {
+        _menuOpciones.SetActive(true);
+        _menuControles.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(exitControles);
     }
 
     public void OnPause()
