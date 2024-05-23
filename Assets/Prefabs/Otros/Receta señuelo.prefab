@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6774416734236174726}
   - component: {fileID: 5587157510351928035}
   - component: {fileID: 1294176097751665573}
-  - component: {fileID: 6532709342456918029}
+  - component: {fileID: 3031912569010874458}
   m_Layer: 0
   m_Name: "Receta se\xF1uelo"
   m_TagString: Untagged
@@ -121,7 +121,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &6532709342456918029
+--- !u!114 &3031912569010874458
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,7 +130,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5800210328860623988}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1ea8403d2f73fc468d765457524c8fa, type: 3}
+  m_Script: {fileID: 11500000, guid: acaceef9a705713469e2d8dae000f91e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objeto: 2

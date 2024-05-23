@@ -76,6 +76,9 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        if (_instance == null) _instance = this; // Sólo queremos un UIManager, así que usamos el patrón singleton
+        else Destroy(gameObject);
+
         _menuControles.SetActive(false);
         _menuAjustes.SetActive(false);
         _menuOpciones.SetActive(false);
@@ -97,19 +100,19 @@ public class UIManager : MonoBehaviour
 
     #endregion
     #region instrucciones
-    public void RecogidaRecetaSeñuelo()
+    public void DecoyRecipePickedUp()
     {
         _instruccionesSeñuelo.SetActive(true); Debug.Log("RecogidaRecetaSeñuelo");
         //Destroy(_instruccionesSeñuelo, _duracionInstrucciones);
     }
 
-    public void RecogidaRecetaTrampolin()
+    public void TrampolineRecipePickedUp()
     {
         _instruccionesTrampolin.SetActive(true);
         //Destroy(_instruccionesTrampolin, _duracionInstrucciones);
     }
 
-    public void RecogidaHorca()
+    public void PitchforkPickedUp()
     {
         _instruccionesHorca.SetActive(true);
         //Destroy(_instruccionesHorca, _duracionInstrucciones);

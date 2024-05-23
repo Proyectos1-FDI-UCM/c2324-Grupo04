@@ -45,8 +45,8 @@ public class Create : MonoBehaviour
     #endregion
 
 
-    
 
+    #region input methods
     private void OnAction2()
     {
         if (_puedeTrampolin && GameManager.Instance.ObtenerCuerdas() > 0 && _myRC.ChoqueAbajo()) 
@@ -117,17 +117,19 @@ public class Create : MonoBehaviour
             
         }
     }
-
-    public void ActivaTrampolin()
+    #endregion
+    #region methods
+    public void ActivateTrampoline()
     {
         _puedeTrampolin = true;
     }
 
-    public void ActivaSeñuelo()
+    public void ActivateDecoy()
     {
         _puedeSeñuelo = true;
     }
-
+    #endregion
+    #region Unity methods
     private void Start()
     {
         _myTransform = transform;
@@ -141,4 +143,5 @@ public class Create : MonoBehaviour
     {
         
     }
+    #endregion
 }

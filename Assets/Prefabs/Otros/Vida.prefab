@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6668833509312409023}
   - component: {fileID: 8699766253938068748}
   - component: {fileID: 6830518023002178392}
-  - component: {fileID: 141438225318696271}
+  - component: {fileID: -5521585963315271050}
   m_Layer: 0
   m_Name: Vida
   m_TagString: Untagged
@@ -121,7 +121,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &141438225318696271
+--- !u!114 &-5521585963315271050
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,7 +130,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4747566661535978706}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1ea8403d2f73fc468d765457524c8fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 0965156e125f8c143b7d3f3ef3e321df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objeto: 5
+  _healthIncrement: 2
+  _maxHealthIncrement: 0

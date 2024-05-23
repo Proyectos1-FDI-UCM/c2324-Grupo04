@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6966273397031816426}
   - component: {fileID: 2077912938585763071}
   - component: {fileID: 7712492854165039839}
-  - component: {fileID: 2515273935904450785}
+  - component: {fileID: -5757130295751964312}
   m_Layer: 0
   m_Name: "Receta trampol\xEDn"
   m_TagString: Untagged
@@ -121,7 +121,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &2515273935904450785
+--- !u!114 &-5757130295751964312
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,7 +130,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5260357411516899759}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1ea8403d2f73fc468d765457524c8fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e0d770b74160e24e895e332d2b66e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objeto: 3

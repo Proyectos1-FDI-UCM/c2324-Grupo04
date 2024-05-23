@@ -61,6 +61,11 @@ public class GameManager : MonoBehaviour
     {
         return _playerHealth;
     }
+
+    public HealthComponent SheepsHealthComponent()
+    {
+        return _playerHealth;
+    }
     #endregion
 
     private int _rope = 0;
@@ -84,6 +89,7 @@ public class GameManager : MonoBehaviour
     private Create _playerCreate;
     [SerializeField]
     private Transform _ovejaTransform;
+    private HealthComponent _sheepHealth;
     [SerializeField]
     private MovimientoOveja _movimientoOveja;
     private UIManager _UIManager;
@@ -108,6 +114,7 @@ public class GameManager : MonoBehaviour
         _playerHealth = _granjeroMovement.gameObject.GetComponent<HealthComponent>();
         _playerAnimationController = _granjeroMovement.gameObject.GetComponent<PlayerAnimationController>();
         _playerCreate = _granjeroMovement.gameObject.GetComponent<Create>();
+        _sheepHealth = _ovejaTransform.gameObject.GetComponent<HealthComponent>();
         _UIManager = GetComponent<UIManager>();
         //_movimientoOveja = _ovejaTransform.gameObject.GetComponent<MovimientoOveja>();
         Time.timeScale = 1.0f;
@@ -140,43 +147,43 @@ public class GameManager : MonoBehaviour
         _granjeroMovement.enabled = false;
     }
 
-    public void RecogidaObjeto(TipoObjeto objeto)
-    {
-        if (objeto == TipoObjeto.Moneda)
-        { // Obsoleto
-            _coins++;
-            HudManager.instance.IncreaseCoins();
-        }
-        else if (objeto == TipoObjeto.Cuerda)
-        { // Obsoleto
-            _rope++;
-            HudManager.instance.UpdateCuerda(1);
-        }
-        else if (objeto == TipoObjeto.RecetaSeñuelo)
-        {
-            _UIManager.RecogidaRecetaSeñuelo();
-            _playerCreate.ActivaSeñuelo();
-        }
-        else if (objeto == TipoObjeto.RecetaTrampolin)
-        {
-            _UIManager.RecogidaRecetaTrampolin();
-            _playerCreate.ActivaTrampolin();
-        }
-        else if (objeto == TipoObjeto.Horca)
-        {
-            _UIManager.RecogidaHorca();
-            _playersHorcaAttack.ActivaHorca();
-        }
-        else if (objeto == TipoObjeto.Vida)
-        {
-            _playerHealth.ChangeHealth(_healthIncrement);
-        }
-        else if (objeto == TipoObjeto.VidaOveja)
-        {
-            _playerHealth.ChangeMaxHealth(_maxHealthIncrement);
-            _playerHealth.ChangeHealth(_maxHealthIncrement);
-        }
-    }
+    //public void RecogidaObjeto(TipoObjeto objeto) // Este método está obsoleto - R
+    //{
+    //    if (objeto == TipoObjeto.Moneda)
+    //    { // Obsoleto
+    //        _coins++;
+    //        HudManager.instance.IncreaseCoins();
+    //    }
+    //    else if (objeto == TipoObjeto.Cuerda)
+    //    { // Obsoleto
+    //        _rope++;
+    //        HudManager.instance.UpdateCuerda(1);
+    //    }
+    //    else if (objeto == TipoObjeto.RecetaSeñuelo)
+    //    { // Obsoleto
+    //        //_UIManager.RecogidaRecetaSeñuelo();
+    //        _playerCreate.ActivateDecoy();
+    //    }
+    //    else if (objeto == TipoObjeto.RecetaTrampolin)
+    //    { // Obsoleto
+    //        //_UIManager.RecogidaRecetaTrampolin();
+    //        _playerCreate.ActivateTrampoline();
+    //    }
+    //    else if (objeto == TipoObjeto.Horca)
+    //    { // Obsoleto
+    //        //_UIManager.RecogidaHorca();
+    //        //_playersHorcaAttack.ActivaHorca();
+    //    }
+    //    else if (objeto == TipoObjeto.Vida)
+    //    { // Obsoleto
+    //        _playerHealth.ChangeHealth(_healthIncrement);
+    //    }
+    //    else if (objeto == TipoObjeto.VidaOveja)
+    //    { // Obsoleto
+    //        _playerHealth.ChangeMaxHealth(_maxHealthIncrement);
+    //        _playerHealth.ChangeHealth(_maxHealthIncrement);
+    //    }
+    //}
 
     public void PickUpCoin(int increment)
     {

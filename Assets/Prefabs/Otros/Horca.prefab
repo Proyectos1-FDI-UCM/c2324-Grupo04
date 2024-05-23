@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4198195396514210018}
   - component: {fileID: 89207735091766116}
   - component: {fileID: 8881088025302967999}
-  - component: {fileID: 6372539473961194809}
+  - component: {fileID: 3113663254152892485}
   m_Layer: 0
   m_Name: Horca
   m_TagString: Untagged
@@ -121,7 +121,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.85
---- !u!114 &6372539473961194809
+--- !u!114 &3113663254152892485
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,7 +130,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8073450942153570044}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1ea8403d2f73fc468d765457524c8fa, type: 3}
+  m_Script: {fileID: 11500000, guid: dc1a02ed139882b46a7057a31496ea2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objeto: 4

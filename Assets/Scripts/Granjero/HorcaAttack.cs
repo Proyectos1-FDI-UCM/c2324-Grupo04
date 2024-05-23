@@ -56,7 +56,7 @@ public class HorcaAttack : MonoBehaviour
         }
     }
 
-    public void ActivaHorca()
+    public void ActivatePitchfork()
     {
         _puedeAtacar = true;
         Debug.Log("activa horca, puede atacar");
