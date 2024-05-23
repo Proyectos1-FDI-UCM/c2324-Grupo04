@@ -15,8 +15,8 @@ public class GameManager : MonoBehaviour
 
 
     static private GameManager _instance;
-    
 
+    #region reference methods
     static public GameManager Instance // Todos podéis usar este método (escrito: GameManager.Instance) para acceder al GameManager y a cualquiera de sus métodos
     {
         get { return _instance; }
@@ -37,11 +37,36 @@ public class GameManager : MonoBehaviour
         return _señueloTransform.position;
     }
 
+    public GranjeroMovement ReferenciaGranjero()
+    {
+        return _granjeroMovement;
+    }
 
-    private int _cuerda = 0;
-    private int _monedas = 0;
+    public Transform ReferenciaTransformGranjero()
+    {
+        return _playerTransform;
+    }
 
-    public int ObjetosTotales { get { return _cuerda; } } // ¿Qué hace este método?
+    public Transform ReferenciaTransformOveja()
+    {
+        return _ovejaTransform;
+    }
+
+    public MovimientoOveja ReferenciaMovimientoOveja()
+    {
+        return _movimientoOveja;
+    }
+
+    public HealthComponent ReferenciaVidaGranjero()
+    {
+        return _playerHealth;
+    }
+    #endregion
+
+    private int _rope = 0;
+    private int _coins = 0;
+
+    public int ObjetosTotales { get { return _rope; } } // ¿Qué hace este método?
 
     public bool cargandoOveja = false;
 
@@ -89,34 +114,7 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    #region reference methods
-    public GranjeroMovement ReferenciaGranjero()
-    {
-        return _granjeroMovement;
-    }
-
-    public Transform ReferenciaTransformGranjero()
-    {
-        return _playerTransform;
-    }
-
-    public Transform ReferenciaTransformOveja()
-    {
-        return _ovejaTransform;
-    }
-
-    public MovimientoOveja ReferenciaMovimientoOveja()
-    {
-        return _movimientoOveja;
-    }
-
-    public HealthComponent ReferenciaVidaGranjero()
-    {
-        return _playerHealth;
-    }
-    #endregion
-
-
+    
 
     #region methods
     private void ActivaHorca()
@@ -145,13 +143,13 @@ public class GameManager : MonoBehaviour
     public void RecogidaObjeto(TipoObjeto objeto)
     {
         if (objeto == TipoObjeto.Moneda)
-        {
-            _monedas++;
+        { // Obsoleto
+            _coins++;
             HudManager.instance.IncreaseCoins();
         }
         else if (objeto == TipoObjeto.Cuerda)
-        {
-            _cuerda++;
+        { // Obsoleto
+            _rope++;
             HudManager.instance.UpdateCuerda(1);
         }
         else if (objeto == TipoObjeto.RecetaSeñuelo)
@@ -180,6 +178,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void PickUpCoin(int increment)
+    {
+        _coins += increment;
+        HudManager.instance.IncreaseCoins();
+    }
+
+    public void PickUpRope()
+    {
+        _rope++;
+        HudManager.instance.UpdateCuerda(1);
+    }
+
     public void CogeOveja()
     {
         _granjeroMovement.OvejaRecogida();
@@ -196,19 +206,19 @@ public class GameManager : MonoBehaviour
 
     public void ChangeCantidadCuerda(int value)
     {
-        _cuerda += value;
-        Debug.Log("Ahora tienes: " + _cuerda + " unidad(es) de cuerda");
+        _rope += value;
+        Debug.Log("Ahora tienes: " + _rope + " unidad(es) de cuerda");
     }
 
 
     public int ObtenerCuerdas()
     {
-        return _cuerda;
+        return _rope;
     }
 
     public int ObtenerMonedas()
     {
-        return _monedas;
+        return _coins;
     }
 
     public void SeñueloCreado(Transform señueloTransform)

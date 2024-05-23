@@ -22,7 +22,7 @@ public class PickUpComponent : MonoBehaviour
     ///</leyenda>
     
     [SerializeField]
-    public GameManager.TipoObjeto _objeto;
+    public GameManager.TipoObjeto _objeto; // Con un poco de suerte esto quedará obsoleto
 
     void OnTriggerEnter2D(Collider2D collision) // Se activa cuando �lgo colisiona con �l
     {

@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4794730286081699115}
   - component: {fileID: 5304883230491407647}
-  - component: {fileID: 7194170184974943310}
   - component: {fileID: 4130756477129347693}
+  - component: {fileID: 3504779864385631317}
   m_Layer: 6
   m_Name: Cuerda
   m_TagString: Untagged
@@ -86,19 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7194170184974943310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6221123010804650802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1ea8403d2f73fc468d765457524c8fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objeto: 1
 --- !u!58 &4130756477129347693
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -134,3 +121,15 @@ CircleCollider2D:
   m_Offset: {x: 0.07, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &3504779864385631317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6221123010804650802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e27ece5dff8427349aaf71a8afeded0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
