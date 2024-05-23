@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: a98dfc86d9a1e2c4682dbad5841c2430, type: 3}
+    - target: {fileID: 2416354920260836466, guid: cf01c0baf9f940b4197e971a8d93836e, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416354920260836466, guid: cf01c0baf9f940b4197e971a8d93836e, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -10557681
+      objectReference: {fileID: 0}
     - target: {fileID: 4843584181647959405, guid: cf01c0baf9f940b4197e971a8d93836e, type: 3}
       propertyPath: m_Name
       value: "Coraz\xF3nOvejaHUD Variant"

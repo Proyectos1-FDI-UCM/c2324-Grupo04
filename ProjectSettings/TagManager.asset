@@ -56,3 +56,6 @@ TagManager:
   - name: Foreground
     uniqueID: 3870705159
     locked: 0
+  - name: HP
+    uniqueID: 4284409615
+    locked: 0
