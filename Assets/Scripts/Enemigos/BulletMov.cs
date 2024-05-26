@@ -12,11 +12,7 @@ public class BulletMov : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<GranjeroMovement>() != null)
-        { 
-            _collision = true;
-        }
-        
+        _collision = true;
     }
 
 

@@ -22,7 +22,8 @@ public class AlienMov : MonoBehaviour
     [SerializeField] private float attackTime;
     private float _passedTime;
     private bool timePassing;
-    private Vector2 AuxVect;
+    public GameObject bulletSpawn1;
+    public GameObject bulletSpawn2;
 
 
     private void OnTriggerStay2D(Collider2D collision)//Detecta si hay colision con los bordes e indica que borde es
@@ -47,23 +48,11 @@ public class AlienMov : MonoBehaviour
         {
             if (cambioDirec == -1)
             {
-                if (AuxVect.x == 1)//Por si el objetivo esta en la dirrecion opuesta se gira y dispara
-                {
-                    _enemyMovement.movementEnemy = Vector2.left;
-                    Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-                    _enemyMovement.movementEnemy = Vector2.right;
-                }
-                else { Instantiate(bulletPrefab, transform.position, Quaternion.identity); }
+                Instantiate(bulletPrefab, bulletSpawn1.transform.position, bulletSpawn1.transform.rotation);
             }
             else
             {
-                if (AuxVect.x == -1)
-                {
-                    _enemyMovement.movementEnemy = Vector2.right;
-                    Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-                    _enemyMovement.movementEnemy = Vector2.left;
-                }
-                else { Instantiate(bulletPrefab, transform.position, Quaternion.identity); }
+                Instantiate(bulletPrefab, bulletSpawn2.transform.position, bulletSpawn2.transform.rotation);
             }
             canAttack = false;
             attacked = true;
@@ -108,11 +97,6 @@ public class AlienMov : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log("Alien ca " + canAttack);
-        Debug.Log("Alien at " + attacking);
-        Debug.Log("Alien pt " + _passedTime);
-        Debug.Log("Alien tp " + timePassing);
-
         if (timePassing) { _passedTime += Time.deltaTime; }
 
         if (attacking)//Al atacar se detiene para disparar
@@ -162,7 +146,6 @@ public class AlienMov : MonoBehaviour
             }
 
             borde = false;
-            AuxVect = new Vector2(_transform.rotation.x, 0);
         }
     }
 }
