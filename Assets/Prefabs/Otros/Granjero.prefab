@@ -113,7 +113,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 5
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -172,8 +172,9 @@ MonoBehaviour:
   _maxSpeed: 8
   _baseSpeed: 2.5
   _acceleration: 5
-  _fallSpeed: 17
-  _maxFallSpeed: 4
+  _jumpFallSpeed: 38
+  _fallSpeed: 85
+  _maxFallSpeed: 7
   _maxVerticalSpeed: 30
   _movementTracker: {x: 0, y: 0}
 --- !u!114 &1640964514911560491

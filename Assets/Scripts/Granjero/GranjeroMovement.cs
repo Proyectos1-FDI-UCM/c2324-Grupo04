@@ -11,11 +11,6 @@ public class GranjeroMovement : MonoBehaviour
     private Player_Raycast _myRC;
     #endregion
 
-    
-
-    
-    
-
     #region parameters
     //[SerializeField] private float _sheepMaxSpeed = 6;
     //[SerializeField] private float _sheepAcceleration = 6;
@@ -24,6 +19,7 @@ public class GranjeroMovement : MonoBehaviour
     [SerializeField] private float _maxSpeed = 6;
     [SerializeField] private float _baseSpeed = 2.5f;
     [SerializeField] private float _acceleration = 6;
+    [SerializeField] private float _jumpFallSpeed = 4;
     [SerializeField] private float _fallSpeed = 4;
     [SerializeField] private float _maxFallSpeed = 4;
     [SerializeField] private float _maxVerticalSpeed = 40;
@@ -33,32 +29,11 @@ public class GranjeroMovement : MonoBehaviour
     private Vector2 _movementDirection;
     public Vector2 _movementTracker;
     private float _currentJump = 0;
-
-    //public bool choqueAbajo;
-    //public bool choqueIzq;
-    //public bool choqueDer;
-    //public bool allowLadder; // No vamos a usar la escalera ya
+    private float _currentFallSpeed;
     private float _currentSpeed = 0f;
     #endregion
 
-    //public void SetBoolDown(bool value)
-    //{
-    //    choqueAbajo = value;
-    //}
-    //public void SetBoolLeft(bool value)
-    //{
-    //    choqueIzq = value;
-    //}
-    //public void SetBoolRight(bool value)
-    //{
-    //    choqueDer = value;
-    //}
-    //public void SetBoolLadder(bool value)
-    //{
-    //    allowLadder = value;
-    //}
-
-    public Vector2 Movement()
+    public Vector2 Movement() // Método que permite saber la dirección en la que está mirando el jugador
     {
         return _movementTracker;
     }
@@ -66,6 +41,7 @@ public class GranjeroMovement : MonoBehaviour
     private void Start()
     {
         _maxFallSpeed = _jumpForce;
+        _currentFallSpeed = _fallSpeed;
         _myAnimationController = GetComponent<PlayerAnimationController>();
         _myRB = GetComponent<Rigidbody2D>();
         _myRC = GetComponent<Player_Raycast>();
@@ -73,15 +49,23 @@ public class GranjeroMovement : MonoBehaviour
     }
 
 
-    private void  OnUp()
+    private void OnUp() // Método activado cada vez que el jugador introduce el input de saltar
     {
-        //Debug.Log("Salto");
         if(_myRB.velocity.y < 0.1 && _myRC.ChoqueAbajo())
         {
+            _currentFallSpeed = _jumpFallSpeed;
             _myRB.AddForce(Vector2.up * _currentJump, ForceMode2D.Impulse);
             //Llamada a la animación de salto
             _myAnimationController.Salta();
         }
+    }
+
+    // Método que detecta cuándo el jugador ha soltado el botón de saltar
+    // Nos permite hacer el salto más fácil de controlar
+    private void OnStopJumping() 
+    {
+        _currentFallSpeed = _fallSpeed;
+        print("Jump stopped");
     }
 
     private void OnHorizontalMovement (InputValue value) 
@@ -93,7 +77,7 @@ public class GranjeroMovement : MonoBehaviour
             _myAnimationController.Gira(_movementDirection.x);
         }
         
-        print($"Vector de la entrada: ({_movementDirection.x}, {_movementDirection.y})");
+        //print($"Vector de la entrada: ({_movementDirection.x}, {_movementDirection.y})");
 
         //if ((movement.x < 0 && !choqueIzq) || (movement.x > 0 && !choqueDer)) // Por qué hacíamos aquí esta comprobación aquí?
         //{
@@ -146,8 +130,8 @@ public class GranjeroMovement : MonoBehaviour
             _currentSpeed = _baseSpeed;
         }
 
-        _myRB.velocity = Mathf.Clamp(_myRB.velocity.x, -_maxSpeed, _maxSpeed) * Vector2.right 
-                       + Mathf.Clamp(_myRB.velocity.y, -_maxFallSpeed, _maxVerticalSpeed) * Vector2.up;
+        // Aplicamos la gravedad (tiene que ser manualmente para un mejor control del salto)
+        _myRB.velocity += _currentFallSpeed * Vector2.down * Time.deltaTime;
 
         // Limitación de las velocidades a los valores deseados
         _myRB.velocity = Mathf.Clamp(_myRB.velocity.x, -_maxSpeed, _maxSpeed) * Vector2.right 

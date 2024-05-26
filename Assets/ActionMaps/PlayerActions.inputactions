@@ -11,7 +11,7 @@
                     "id": "88745831-9cf5-42be-8573-44caf6116210",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 },
                 {
@@ -66,6 +66,15 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "StopJumping",
+                    "type": "Button",
+                    "id": "a006bf05-479e-4b0f-b6ce-eb55e349713c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)",
                     "initialStateCheck": false
                 }
             ],
@@ -188,6 +197,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Interaction1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "87846ad4-b12c-4a71-8ffd-18ea4937da83",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StopJumping",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "87147482-f9d1-4b1e-a98a-31c1483e731e",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StopJumping",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
