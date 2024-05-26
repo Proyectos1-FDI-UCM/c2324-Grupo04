@@ -4,26 +4,24 @@ using UnityEngine;
 
 public class ContactAttack : MonoBehaviour
 {
-    private Transform _myTransform;
-    private HealthComponent _healthComponent;
-
     [SerializeField] private int damage = -1;
-    private void OnTriggerStay2D(Collider2D collision)
+
+    // De esta manera se le puede aplicar a todos los objetos, sea su collider trigger o no
+    void OnTriggerStay2D(Collider2D collision)
     {
-        if ((collision.gameObject.GetComponent<GranjeroMovement>() != null )||( collision.gameObject.GetComponent<MovimientoOveja>() != null)|| (collision.gameObject.GetComponent<Señuelo>() != null))
+        ApplyDamage(collision.gameObject);
+    }
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        ApplyDamage(collision.gameObject);
+    }
+
+    // Método auxiliar que comprueba si es el jugador o la oveja y en caso de que sí le aplica el daño
+    private void ApplyDamage(GameObject collision)
+    {
+        if ((collision.GetComponent<GranjeroMovement>() != null) || (collision.GetComponent<MovimientoOveja>() != null) || (collision.GetComponent<Señuelo>() != null))
         {
-            collision.gameObject.GetComponent<HealthComponent>().ChangeHealth(damage);
+            collision.GetComponent<HealthComponent>().ChangeHealth(damage);
         }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
