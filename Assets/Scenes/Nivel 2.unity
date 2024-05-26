@@ -1641,11 +1641,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6966273397031816426, guid: 15c8d63b8b558494cacc16d450dab47e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.5728607
+      value: -23.47
       objectReference: {fileID: 0}
     - target: {fileID: 6966273397031816426, guid: 15c8d63b8b558494cacc16d450dab47e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.43707848
+      value: -6.04
       objectReference: {fileID: 0}
     - target: {fileID: 6966273397031816426, guid: 15c8d63b8b558494cacc16d450dab47e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10116,7 +10116,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -37.689613, y: 3.681387, z: -9.759361}
+  m_LocalPosition: {x: -39.11184, y: 3.681387, z: -9.759361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12248,7 +12248,7 @@ Transform:
   m_GameObject: {fileID: 787576141}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -44.223957, y: 0.21139872, z: -9.759361}
+  m_LocalPosition: {x: -44.792847, y: 0.21139872, z: -9.759361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12970,11 +12970,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6774416734236174726, guid: 40385d4a08cad884eacf1ebc7f28c540, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 29.978695
+      value: -25.36
       objectReference: {fileID: 0}
     - target: {fileID: 6774416734236174726, guid: 40385d4a08cad884eacf1ebc7f28c540, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.2346115
+      value: -7.16
       objectReference: {fileID: 0}
     - target: {fileID: 6774416734236174726, guid: 40385d4a08cad884eacf1ebc7f28c540, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15855,11 +15855,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4198195396514210018, guid: d6313425f14d8c246bf12c81da0a32f2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -88.057045
+      value: -110.82
       objectReference: {fileID: 0}
     - target: {fileID: 4198195396514210018, guid: d6313425f14d8c246bf12c81da0a32f2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.398224
+      value: 1.06
       objectReference: {fileID: 0}
     - target: {fileID: 4198195396514210018, guid: d6313425f14d8c246bf12c81da0a32f2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -286477,6 +286477,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5d6bb05ee9fdd47ac1b2d0f1810880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PitchforkUnlocked: 1
+  TrampolineUnlocked: 1
+  DecoyUnlocked: 1
   _healthIncrement: 2
   _maxHealthIncrement: 2
   cargandoOveja: 0

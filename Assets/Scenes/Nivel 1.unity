@@ -124001,6 +124001,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5d6bb05ee9fdd47ac1b2d0f1810880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PitchforkUnlocked: 0
+  TrampolineUnlocked: 0
+  DecoyUnlocked: 0
   _healthIncrement: 2
   _maxHealthIncrement: 2
   cargandoOveja: 0

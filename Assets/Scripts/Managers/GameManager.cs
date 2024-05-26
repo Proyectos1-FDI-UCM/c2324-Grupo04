@@ -5,6 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    #region level options
+    [SerializeField]
+    private bool PitchforkUnlocked = true;
+    [SerializeField]
+    private bool TrampolineUnlocked = true;
+    [SerializeField]
+    private bool DecoyUnlocked = true;
+    //[SerializeField]
+    //[SerializeField]
+    #endregion
+
     #region variables
 
     [SerializeField] private int _healthIncrement = 2;
@@ -116,6 +127,18 @@ public class GameManager : MonoBehaviour
         _playerCreate = _granjeroMovement.gameObject.GetComponent<Create>();
         _sheepHealth = _ovejaTransform.gameObject.GetComponent<HealthComponent>();
         _UIManager = GetComponent<UIManager>();
+        if (PitchforkUnlocked)
+        {
+            ActivatePitchfork();
+        }
+        if (TrampolineUnlocked)
+        {
+            ActivateTrampline();
+        }
+        if (DecoyUnlocked)
+        {
+            ActivateDecoy();
+        }
         //_movimientoOveja = _ovejaTransform.gameObject.GetComponent<MovimientoOveja>();
         Time.timeScale = 1.0f;
     }
@@ -124,10 +147,19 @@ public class GameManager : MonoBehaviour
     
 
     #region methods
-    private void ActivaHorca()
+    private void ActivatePitchfork()
     {
-        Debug.Log("Horca activada");
-        _playersHorcaAttack.enabled = true;
+        _playersHorcaAttack.ActivatePitchfork();
+    }
+
+    private void ActivateTrampline()
+    {
+        _playerCreate.ActivateTrampoline();
+    }
+
+    private void ActivateDecoy()
+    {
+        _playerCreate.ActivateDecoy();
     }
 
     private void ActivaPala()
