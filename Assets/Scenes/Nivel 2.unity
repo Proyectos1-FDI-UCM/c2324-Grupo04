@@ -876,12 +876,11 @@ MonoBehaviour:
   activador2: {fileID: 724146570}
   usaBoton: 0
   usaPalanca: 1
-  usaPeso: 0
-  esPlataformaMovil: 0
-  esPlataformaPeso: 0
+  esPlataformaMovilPorBoton: 0
   esPuerta: 1
   setActive1: 0
   setActive2: 0
+  usaPeso: 0
 --- !u!61 &70261369
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2102,12 +2101,11 @@ MonoBehaviour:
   activador2: {fileID: 1877270414}
   usaBoton: 0
   usaPalanca: 0
-  usaPeso: 1
-  esPlataformaMovil: 0
-  esPlataformaPeso: 1
+  esPlataformaMovilPorBoton: 0
   esPuerta: 0
   setActive1: 0
   setActive2: 0
+  usaPeso: 1
 --- !u!61 &201747898
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2160,7 +2158,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 201747895}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 152abbdf15d780f48867f268a3984ab9, type: 3}
   m_Name: 
@@ -3586,12 +3584,11 @@ MonoBehaviour:
   activador2: {fileID: 1318794895}
   usaBoton: 1
   usaPalanca: 0
-  usaPeso: 0
-  esPlataformaMovil: 0
-  esPlataformaPeso: 0
+  esPlataformaMovilPorBoton: 0
   esPuerta: 1
   setActive1: 0
   setActive2: 0
+  usaPeso: 0
 --- !u!61 &277724576
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4252,12 +4249,11 @@ MonoBehaviour:
   activador2: {fileID: 496796768}
   usaBoton: 1
   usaPalanca: 0
-  usaPeso: 0
-  esPlataformaMovil: 1
-  esPlataformaPeso: 0
+  esPlataformaMovilPorBoton: 0
   esPuerta: 0
   setActive1: 0
   setActive2: 0
+  usaPeso: 0
 --- !u!114 &345488485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9777,12 +9773,11 @@ MonoBehaviour:
   activador2: {fileID: 462522527}
   usaBoton: 0
   usaPalanca: 1
-  usaPeso: 0
-  esPlataformaMovil: 1
-  esPlataformaPeso: 0
+  esPlataformaMovilPorBoton: 0
   esPuerta: 0
   setActive1: 0
   setActive2: 0
+  usaPeso: 0
 --- !u!212 &513538116
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10370,7 +10365,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.713955, y: 18.781399, z: -9.759361}
+  m_LocalPosition: {x: -3.0239563, y: 19.781399, z: -9.759361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11074,12 +11069,11 @@ MonoBehaviour:
   activador2: {fileID: 1537606372}
   usaBoton: 1
   usaPalanca: 0
-  usaPeso: 0
-  esPlataformaMovil: 0
-  esPlataformaPeso: 0
+  esPlataformaMovilPorBoton: 0
   esPuerta: 1
   setActive1: 0
   setActive2: 0
+  usaPeso: 0
 --- !u!61 &572219370
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11625,12 +11619,11 @@ MonoBehaviour:
   activador2: {fileID: 199389198}
   usaBoton: 1
   usaPalanca: 0
-  usaPeso: 0
-  esPlataformaMovil: 1
-  esPlataformaPeso: 0
+  esPlataformaMovilPorBoton: 0
   esPuerta: 0
   setActive1: 0
   setActive2: 0
+  usaPeso: 0
 --- !u!1 &621677687
 GameObject:
   m_ObjectHideFlags: 0
@@ -12573,7 +12566,7 @@ Transform:
   m_GameObject: {fileID: 787576141}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.713955, y: 18.781399, z: -9.759361}
+  m_LocalPosition: {x: -3.0239563, y: 19.781399, z: -9.759361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12857,12 +12850,11 @@ MonoBehaviour:
   activador2: {fileID: 755224863}
   usaBoton: 0
   usaPalanca: 1
-  usaPeso: 0
-  esPlataformaMovil: 0
-  esPlataformaPeso: 0
+  esPlataformaMovilPorBoton: 0
   esPuerta: 1
   setActive1: 0
   setActive2: 0
+  usaPeso: 0
 --- !u!61 &818463614
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -226103,12 +226095,11 @@ MonoBehaviour:
   activador2: {fileID: 1994108577}
   usaBoton: 1
   usaPalanca: 0
-  usaPeso: 0
-  esPlataformaMovil: 1
-  esPlataformaPeso: 0
+  esPlataformaMovilPorBoton: 0
   esPuerta: 0
   setActive1: 0
   setActive2: 0
+  usaPeso: 0
 --- !u!212 &1188552106
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -226289,12 +226280,11 @@ MonoBehaviour:
   activador2: {fileID: 1659690963}
   usaBoton: 0
   usaPalanca: 1
-  usaPeso: 0
-  esPlataformaMovil: 0
-  esPlataformaPeso: 0
+  esPlataformaMovilPorBoton: 0
   esPuerta: 1
   setActive1: 0
   setActive2: 0
+  usaPeso: 0
 --- !u!61 &1197995899
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -227356,12 +227346,11 @@ MonoBehaviour:
   activador2: {fileID: 230064687}
   usaBoton: 1
   usaPalanca: 0
-  usaPeso: 0
-  esPlataformaMovil: 1
-  esPlataformaPeso: 0
+  esPlataformaMovilPorBoton: 0
   esPuerta: 0
   setActive1: 0
   setActive2: 0
+  usaPeso: 0
 --- !u!61 &1341019134
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -227507,11 +227496,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5324502382298505244, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.51
+      value: 28.2
       objectReference: {fileID: 0}
     - target: {fileID: 5324502382298505244, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.17
+      value: 17.17
       objectReference: {fileID: 0}
     - target: {fileID: 5324502382298505244, guid: 257757fc3c0be0545aff441298f0c287, type: 3}
       propertyPath: m_LocalPosition.z
@@ -227922,12 +227911,11 @@ MonoBehaviour:
   activador2: {fileID: 1159469555}
   usaBoton: 1
   usaPalanca: 0
-  usaPeso: 0
-  esPlataformaMovil: 1
-  esPlataformaPeso: 0
+  esPlataformaMovilPorBoton: 0
   esPuerta: 0
   setActive1: 0
   setActive2: 0
+  usaPeso: 0
 --- !u!114 &1410741025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285580,12 +285568,11 @@ MonoBehaviour:
   activador2: {fileID: 1109253540}
   usaBoton: 0
   usaPalanca: 1
-  usaPeso: 0
-  esPlataformaMovil: 0
-  esPlataformaPeso: 0
+  esPlataformaMovilPorBoton: 0
   esPuerta: 1
   setActive1: 0
   setActive2: 0
+  usaPeso: 0
 --- !u!61 &1647461385
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -288882,12 +288869,11 @@ MonoBehaviour:
   activador2: {fileID: 1659690963}
   usaBoton: 0
   usaPalanca: 1
-  usaPeso: 0
-  esPlataformaMovil: 0
-  esPlataformaPeso: 0
+  esPlataformaMovilPorBoton: 0
   esPuerta: 1
   setActive1: 0
   setActive2: 0
+  usaPeso: 0
 --- !u!114 &1949831627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311243,12 +311229,11 @@ MonoBehaviour:
   activador2: {fileID: 1877270414}
   usaBoton: 0
   usaPalanca: 0
-  usaPeso: 0
-  esPlataformaMovil: 0
-  esPlataformaPeso: 0
+  esPlataformaMovilPorBoton: 0
   esPuerta: 0
   setActive1: 0
   setActive2: 0
+  usaPeso: 0
 --- !u!1001 &808645463401413603
 PrefabInstance:
   m_ObjectHideFlags: 0
