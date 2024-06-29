@@ -8,17 +8,19 @@ public class Control_ObjetosActivadosPorBotón : MonoBehaviour
     [SerializeField] private GameObject activador2;
     [SerializeField] private bool usaBoton;
     [SerializeField] private bool usaPalanca;
-    [SerializeField] private bool esPlataformaMovil;
+    [SerializeField] private bool esPlataformaMovilPorBoton;
     [SerializeField] private bool esPuerta;
     private PlatformMovement movimientoPlataforma;
     private Door_Behavior comportamientoPuerta;
-    private bool setActive1;
-    private bool setActive2;
+    public bool setActive1;
+    public bool setActive2;
+    // NUEVAS VARIABLES
+    [SerializeField] private bool usaPeso;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (esPlataformaMovil)
+        if (esPlataformaMovilPorBoton)
         {
             movimientoPlataforma = GetComponent<PlatformMovement>(); ;
         }
@@ -31,7 +33,7 @@ public class Control_ObjetosActivadosPorBotón : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (usaBoton)
+        if (usaBoton || usaPeso)
         {
             setActive1 = activador1.GetComponent<Boton_Interaction>().botonActivo;
             setActive2 = activador2.GetComponent<Boton_Interaction>().botonActivo;
@@ -41,7 +43,7 @@ public class Control_ObjetosActivadosPorBotón : MonoBehaviour
             setActive1 = activador1.GetComponent<Palanca_Interaction>().palancaActiva;
         }
 
-        if (esPlataformaMovil)
+        if (esPlataformaMovilPorBoton)
         {
             if (setActive1 || setActive2)
             {
