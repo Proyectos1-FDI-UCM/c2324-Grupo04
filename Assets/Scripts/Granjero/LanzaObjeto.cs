@@ -62,12 +62,12 @@ public class LanzaObjeto : MonoBehaviour
         //print("objeto lanzado");
     }
 
-    public void ReferenciaObjeto(Transform referencia) // En principio no se necesita
+    private void ReferenciaObjeto(Transform referencia) // En principio no se necesita
     {
         _objeto = referencia;
     }
 
-    public void Fin()
+    private void Fin()
     {
         this.enabled = false;
     }
