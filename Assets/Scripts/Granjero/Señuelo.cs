@@ -1,39 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Señuelo : MonoBehaviour
 {
-    private Transform _myTransform;
-    [SerializeField]
-    private float duracionSeñuelo;
-    private float tiempoSeñuelo;
+    private float _duracionSeñuelo;
+    private float _tiempoSeñuelo;
 
-    public void Destruido()
+    private void Start()
     {
-        GameManager.Instance.SeñueloDestruido();
-        Destroy(this.gameObject);
+        _duracionSeñuelo = 5f; 
+        _tiempoSeñuelo = 0f;
+        GameManager.Instance.SeñueloCreado(transform);
     }
 
-    public void Die() // Método que llama a su acción de muerte (lo he sacado del HealthComponent al pie de la letra)
+    private void Update()
     {
-        GameManager.Instance.SeñueloDestruido();
-        Destroy(this.gameObject);
-    }
-
-    void Start()
-    {
-        _myTransform = transform;
-        tiempoSeñuelo = 0f;
-        GameManager.Instance.SeñueloCreado(_myTransform);
-    }
-
-    void Update()
-    {
-        tiempoSeñuelo += Time.deltaTime;
-        if (tiempoSeñuelo > duracionSeñuelo)
+        _tiempoSeñuelo += Time.deltaTime;
+        if (_tiempoSeñuelo > _duracionSeñuelo || GameManager.Instance.nseñuelo > 1)
         {
             Destruido();
+        }
+    }
+
+    private void Destruido()
+    {
+        GameManager.Instance.SeñueloDestruido();
+        Destroy(gameObject);
+    }
+}
+
         }
         if (GameManager.Instance.nseñuelo > 1)
         {
