@@ -5,7 +5,7 @@ using UnityEngine;
 public class InteraccionConOveja : MonoBehaviour // Componente perteneciente al jugador
 {
     #region references
-    private Transform _myTransform;
+    private Transform _Transform;
     private GranjeroMovement _granjeroMovement;
     private Transform _ovejaTransform;
     private SpriteRenderer _ovejaSR;
@@ -38,7 +38,7 @@ public class InteraccionConOveja : MonoBehaviour // Componente perteneciente al 
     #region methods
     void Start()
     {
-        _myTransform = transform;
+        _Transform = transform;
         _granjeroMovement = GetComponent<GranjeroMovement>();
         _ovejaTransform = GameManager.Instance.ReferenciaTransformOveja();
         _ovejaSR = _ovejaTransform.GetComponent<SpriteRenderer>();
@@ -53,7 +53,7 @@ public class InteraccionConOveja : MonoBehaviour // Componente perteneciente al 
         
     }
 
-    private void OnInteraction1() // M閠odo que se activa al recoger la oveja con la e
+    private void OnInteraction1() // M茅todo que se activa al recoger la oveja con la e
     {
         //Debug.Log("OnInteraction1()");
 
@@ -63,31 +63,31 @@ public class InteraccionConOveja : MonoBehaviour // Componente perteneciente al 
             SueltaOveja();
             GameManager.Instance.SueltaOveja();
         }
-        else if ((_ovejaTransform.position - _myTransform.position).magnitude <= _distanciaInteraccion)
+        else if ((_ovejaTransform.position - _Transform.position).magnitude <= _distanciaInteraccion)
         {
             CogeOveja();
             GameManager.Instance.CogeOveja();
         }
         else
         {
-            Debug.Log("Est醩 demasiado lejos");
+            Debug.Log("Est谩s demasiado lejos");
         }
     }
 
     private void CogeOveja()
     {
-        // Llamar a la animaci髇 de recogida de la oveja del granjero
+        // Llamar a la animaci贸n de recogida de la oveja del granjero
 
-        // Desactivaci髇 del sprite de la oveja
+        // Desactivaci贸n del sprite de la oveja
         _ovejaSR.enabled = false;
-        // Desactivaci髇 del rigidbody de la oveja
+        // Desactivaci贸n del rigidbody de la oveja
         _ovejaRB.simulated = false;
         _movimientoOveja.CogeOveja();
     }
 
     private void SueltaOveja()
     {
-        // Llamar a la animaci髇 de soltar la oveja del granjero
+        // Llamar a la animaci贸n de soltar la oveja del granjero
 
         _ovejaTransform.position = GameManager.Instance.PlayerPosition() + _verticalOffset * Vector3.up;
         _ovejaSR.enabled = true;
