@@ -12,8 +12,7 @@ public class OVNIMov : MonoBehaviour
     private int limit;
     private int cambioDirec = 0;
     private bool borde;
-    
-    
+
     private bool attacking;
     private bool canAttack;
     [SerializeField] private float cooldown;
@@ -21,8 +20,7 @@ public class OVNIMov : MonoBehaviour
     private float _passedTime;
     private bool timePassing;
 
-
-    private void OnTriggerStay2D(Collider2D collision)//Detecta si hay colision con los bordes e indica que borde es
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<BordePlataforma>() != null)
         {
@@ -38,9 +36,9 @@ public class OVNIMov : MonoBehaviour
         }
     }
 
-    private void seguir(int cambioDirec)//Script para seguir al señuelo (y a la oveja y el granjero)
+    private void seguir(int cambioDirec)
     {
-        if (borde && cambioDirec != 0)//Si intenta salir del borde se anula el movimiemto
+        if (borde && cambioDirec != 0)
         {
             if (limit == 1 && cambioDirec == -1) { cambioDirec = 0; }
             if (limit == 2 && cambioDirec == 1) { cambioDirec = 0; }
@@ -60,29 +58,34 @@ public class OVNIMov : MonoBehaviour
         }
     }
 
-    private void prepAttack()//Script para la preparacion del ataque
+    private void prepAttack()
     {
-        if (_passedTime > cooldown)//Si ha pasado el cooldown del ataque, puede prepararse para otro ataque
+        if (canAttack && cambioDirec == 0)
         {
-            canAttack = true;
-            _passedTime = 0;
-        }
-
-        if (canAttack)
-        {
-            timePassing = false;
-            if (cambioDirec == 0)//Si el OVNI esta justo encima del objetivo, empieza a prepararse para atacar
+            if (_passedTime > windup)
+            {
+                attacking = true;
+                canAttack = false;
+                timePassing = false;
+                _passedTime = 0;
+            }
+            else
             {
                 timePassing = true;
-                if (_passedTime > windup)//Si el OVNI lleva un tiempo preparandose empieza el estado de ataque
-                {
-                    attacking = true;
-                    canAttack = false;
-                }
             }
-            else { _passedTime = 0; }
         }
-        else { timePassing = true; }
+        else
+        {
+            if (_passedTime > cooldown)
+            {
+                canAttack = true;
+                _passedTime = 0;
+            }
+            else
+            {
+                timePassing = true;
+            }
+        }
     }
 
     void Start()
@@ -95,21 +98,20 @@ public class OVNIMov : MonoBehaviour
         canAttack = true;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
-        if (timePassing) { _passedTime += Time.deltaTime; }
-
-        if (attacking)//El OVNI tiene un estado de ataque, en el cual se desactiva el movimiento
+        if (timePassing)
         {
-            _OVNIAttack.Attacking(ref attacking);
-            _passedTime = 0;
+            _passedTime += Time.deltaTime;
         }
 
-
+        if (attacking)
+        {
+            _OVNIAttack.Attacking(ref attacking);
+        }
         else
         {
-            if (borde)//Si choca contra un borde cambia de dirreccion
+            if (borde)
             {
                 if (limit == 1)
                 {
@@ -121,10 +123,9 @@ public class OVNIMov : MonoBehaviour
                 }
             }
 
-            //La prioridad del OVNI es seguir al señuelo, seguir a la oveja, y seguir al jugador
-            if (_sensorEnem.señueloDetected)//Si detecta algo lo sigue
+            if (_sensorEnem.seÃ±ueloDetected)
             {
-                _sensorEnem.seguirSeñuelo(out cambioDirec);
+                _sensorEnem.seguirSeÃ±uelo(out cambioDirec);
                 prepAttack();
                 seguir(cambioDirec);
             }
@@ -140,7 +141,6 @@ public class OVNIMov : MonoBehaviour
                 prepAttack();
                 seguir(cambioDirec);
             }
-
             else
             {
                 if (limit == 1)
@@ -154,6 +154,6 @@ public class OVNIMov : MonoBehaviour
             }
 
             borde = false;
-        } 
+        }
     }
 }
