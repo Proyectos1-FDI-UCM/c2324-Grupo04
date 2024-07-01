@@ -8,7 +8,7 @@ public class MuerteJugador : MonoBehaviour
     [SerializeField] private GameObject menuMuerte;
     [SerializeField] private GameObject reset;
     //public GameObject canvasMuerte;
-    public void Start()
+  private void Start()
     {
         menuMuerte.SetActive(false);
     }
@@ -20,10 +20,5 @@ public class MuerteJugador : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(reset);
         Time.timeScale = 0f;
-        //GameManager.Instance.ReiniciaEscena();
-        /* canvasMuerte.SetActive(true);
-        Time.timeScale = 0f;
-        Debug.Log("El jugador ha muerto.");
-        */
     }
 }
