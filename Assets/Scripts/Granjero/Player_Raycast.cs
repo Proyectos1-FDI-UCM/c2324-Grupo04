@@ -26,7 +26,7 @@ public class Player_Raycast : MonoBehaviour
         _movimientoPlayer = GetComponent<GranjeroMovement>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         Vector2 positionUp = new Vector2(transform.position.x, transform.position.y + 0.5f);
         Vector2 positionDown = new Vector2(transform.position.x, transform.position.y - 0.5f);
