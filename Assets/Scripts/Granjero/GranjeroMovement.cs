@@ -6,8 +6,8 @@ using UnityEngine.InputSystem;
 public class GranjeroMovement : MonoBehaviour
 {
     #region references
-    private PlayerAnimationController _myAnimationController;
-    private Rigidbody2D _myRB; // Esto estaba público por alguna razón? - R
+    private PlayerAnimationController _AnimationController;
+    private Rigidbody2D _rigidbody; // Esto estaba público por alguna razón? - R
     private Player_Raycast _myRC;
     #endregion
 
@@ -27,7 +27,7 @@ public class GranjeroMovement : MonoBehaviour
 
     #region variables
     private Vector2 _movementDirection;
-    public Vector2 _movementTracker;
+    private Vector2 _movementTracker;
     private float _currentJump = 0;
     private float _currentFallSpeed;
     private float _currentSpeed = 0f;
@@ -42,8 +42,8 @@ public class GranjeroMovement : MonoBehaviour
     {
         _maxFallSpeed = _jumpForce;
         _currentFallSpeed = _fallSpeed;
-        _myAnimationController = GetComponent<PlayerAnimationController>();
-        _myRB = GetComponent<Rigidbody2D>();
+        _AnimationController = GetComponent<PlayerAnimationController>();
+        _rigidbody = GetComponent<Rigidbody2D>();
         _myRC = GetComponent<Player_Raycast>();
         OvejaSoltada();
     }
@@ -51,12 +51,12 @@ public class GranjeroMovement : MonoBehaviour
 
     private void OnUp() // Método activado cada vez que el jugador introduce el input de saltar
     {
-        if(_myRB.velocity.y < 0.1 && _myRC.ChoqueAbajo())
+        if(_rigidbody.velocity.y < 0.1 && _myRC.ChoqueAbajo())
         {
             _currentFallSpeed = _jumpFallSpeed;
-            _myRB.AddForce(Vector2.up * _currentJump, ForceMode2D.Impulse);
+            _rigidbody.AddForce(Vector2.up * _currentJump, ForceMode2D.Impulse);
             //Llamada a la animación de salto
-            _myAnimationController.Salta();
+            _AnimationController.Salta();
         }
     }
 
@@ -74,7 +74,7 @@ public class GranjeroMovement : MonoBehaviour
         if( _movementDirection != Vector2.zero )
         {
             _movementTracker = _movementDirection;
-            _myAnimationController.Gira(_movementDirection.x);
+            _AnimationController.Gira(_movementDirection.x);
         }
         
         //print($"Vector de la entrada: ({_movementDirection.x}, {_movementDirection.y})");
@@ -118,7 +118,7 @@ public class GranjeroMovement : MonoBehaviour
 
         if (_movementDirection.x < 0 && !_myRC.ChoqueIzq() || _movementDirection.x > 0 && !_myRC.ChoqueDer())
         {
-            _myRB.velocity = _movementDirection * _currentSpeed + Vector2.up * _myRB.velocity.y;
+            _rigidbody.velocity = _movementDirection * _currentSpeed + Vector2.up * _rigidbody.velocity.y;
 
             //_myRB.velocity = Mathf.Lerp(Mathf.Abs(_myRB.velocity.x)/* * _movementDirection.x*/, _maxHorizontalSpeed/* * _movementDirection.x*/, 0.2f) * _movementDirection + Vector2.up * _myRB.velocity.y;
             _currentSpeed += _acceleration * Time.deltaTime;
@@ -131,11 +131,11 @@ public class GranjeroMovement : MonoBehaviour
         }
 
         // Aplicamos la gravedad (tiene que ser manualmente para un mejor control del salto)
-        _myRB.velocity += _currentFallSpeed * Vector2.down * Time.deltaTime;
+        _rigidbody.velocity += _currentFallSpeed * Vector2.down * Time.deltaTime;
 
         // Limitación de las velocidades a los valores deseados
-        _myRB.velocity = Mathf.Clamp(_myRB.velocity.x, -_maxSpeed, _maxSpeed) * Vector2.right 
-                       + Mathf.Clamp(_myRB.velocity.y, -_maxFallSpeed, _maxVerticalSpeed) * Vector2.up;
+        _rigidbody.velocity = Mathf.Clamp(_rigidbody.velocity.x, -_maxSpeed, _maxSpeed) * Vector2.right 
+                       + Mathf.Clamp(_rigidbody.velocity.y, -_maxFallSpeed, _maxVerticalSpeed) * Vector2.up;
     }
 
 
