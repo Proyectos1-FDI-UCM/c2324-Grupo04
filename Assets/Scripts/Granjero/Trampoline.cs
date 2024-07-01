@@ -4,23 +4,20 @@ using UnityEngine;
 
 public class Trampoline : MonoBehaviour
 {
-
-    [SerializeField] private float bounce = 40f;
-
+    [SerializeField] private float _bounceForce = 40f;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if ((collision.gameObject.GetComponent<GranjeroMovement>() != null) && (collision.gameObject.GetComponent<Player_Raycast>()._allowTrampoline != null))
+        GranjeroMovement granjeroMovement = collision.gameObject.GetComponent<GranjeroMovement>();
+        Player_Raycast playerRaycast = collision.gameObject.GetComponent<Player_Raycast>();
+
+        if (granjeroMovement != null && playerRaycast.allowTrampoline)
         {
-            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * bounce, ForceMode2D.Impulse);
+            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.AddForce(Vector2.up * _bounceForce, ForceMode2D.Impulse);
+            }
         }
     }
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.GetComponent<GranjeroMovement>() && collision.gameObject.GetComponent<Player_Raycast>()._allowTrampoline)
-    //    {
-    //        collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * bounce, ForceMode2D.Impulse);
-    //    }
-        
-    //}
 }
