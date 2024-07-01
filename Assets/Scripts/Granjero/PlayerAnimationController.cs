@@ -5,17 +5,17 @@ using UnityEngine;
 public class PlayerAnimationController : MonoBehaviour
 {
     #region references
-    private Transform _myTransform;
-    private Animator _myAnimator;
-    private GranjeroMovement _myMovement;
-    private Rigidbody2D _myRB;
-    //private Animation _anim; // Definitivamente no sé qué estoy haciendo - R
+    private Transform _Transform;
+    private Animator _Animator;
+    private GranjeroMovement _Movement;
+    private Rigidbody2D _RB;
+    //private Animation _anim; // Definitivamente no sÃ© quÃ© estoy haciendo - R
     #endregion
 
 
     #region parameters
     [SerializeField]
-    private float _attackTime = 0.1f; // Tiempo que dura la animación de ataque
+    private float _attackTime = 0.1f; // Tiempo que dura la animaciÃ³n de ataque
     #endregion
 
 
@@ -37,10 +37,10 @@ public class PlayerAnimationController : MonoBehaviour
 
     void Start()
     {
-        _myTransform = transform;
-        _myAnimator = GetComponent<Animator>();
-        _myMovement = GetComponent<GranjeroMovement>();
-        _myRB = GetComponent<Rigidbody2D>();
+        _Transform = transform;
+        _Animator = GetComponent<Animator>();
+        _Movement = GetComponent<GranjeroMovement>();
+        _RB = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -64,21 +64,21 @@ public class PlayerAnimationController : MonoBehaviour
         {
             if (Mathf.Abs(_myRB.velocity.x) >= epsil)
             {
-                _myAnimator.SetInteger("EstadoAnimacion", 1);
-                //print("Está andando");
+                _Animator.SetInteger("EstadoAnimacion", 1);
+                //print("EstÃ¡ andando");
             }
             else
             {
-                _myAnimator.SetInteger("EstadoAnimacion", 0);
-                //print("No está andando");
+                _Animator.SetInteger("EstadoAnimacion", 0);
+                //print("No estÃ¡ andando");
             }
         }
     }
 
     public void Quieto()
     {
-        print("Quieto (animación)");
-        _myAnimator.SetInteger("EstadoAnimacion", 0);
+        print("Quieto (animaciÃ³n)");
+        _Animator.SetInteger("EstadoAnimacion", 0);
     }
     
     public void Gira(float dir)
@@ -86,13 +86,13 @@ public class PlayerAnimationController : MonoBehaviour
         if (miraDer && dir > 0)
         {
             //print("Giro izq");
-            _myTransform.localScale = Vector3.one;
+            _Transform.localScale = Vector3.one;
             miraDer = false;
         }
         else if (!miraDer && dir < 0)
         {
             //print("Giro der");
-            _myTransform.localScale = new Vector3(-1, 1, 1);
+            _Transform.localScale = new Vector3(-1, 1, 1);
             miraDer = true;
         }
         Anda();
@@ -100,41 +100,41 @@ public class PlayerAnimationController : MonoBehaviour
 
     private void Anda()
     {
-        if (estado < 1) // Tal como está ahora la prioridad en animación es ataque > salto > caminar
+        if (estado < 1) // Tal como estÃ¡ ahora la prioridad en animaciÃ³n es ataque > salto > caminar
         {
             estado = 1;
-            _myAnimator.SetInteger("EstadoAnimacion", estado);
+            _Animator.SetInteger("EstadoAnimacion", estado);
         }
     }
 
     public void Ataca()
     {
-        //print("Ataca (animación)");
+        //print("Ataca (animaciÃ³n)");
         if (estado < 3)
         {
             estado = 3;
-            _myAnimator.SetInteger("EstadoAnimacion", 3);
+            _Animator.SetInteger("EstadoAnimacion", 3);
         }
     }
 
     public void SueltaObjeto()
     {
-        print("Suelta objeto (animación)");
+        print("Suelta objeto (animaciÃ³n)");
     }
 
     public void OvejaSoltada()
     {
-        _myAnimator.SetBool("LlevandoOveja", false);
+        _Animator.SetBool("LlevandoOveja", false);
     }
 
     public void OvejaRecogida()
     {
-        _myAnimator.SetBool("LlevandoOveja", true);
+        _Animator.SetBool("LlevandoOveja", true);
     }
 
     public void Salta()
     {
-        //print("Salta (animación)");
+        //print("Salta (animaciÃ³n)");
         //if (estado < 2)
         //{
         //    estado = 2;
@@ -145,7 +145,7 @@ public class PlayerAnimationController : MonoBehaviour
 
 
     //#region enums
-    //public enum Estado // Quizá lo use más tarde por claridad y por solidez, pero de momento tiramos con un código numérico (ni siquiera sé si se puede usar un tipo propio en el animator) - R
+    //public enum Estado // QuizÃ¡ lo use mÃ¡s tarde por claridad y por solidez, pero de momento tiramos con un cÃ³digo numÃ©rico (ni siquiera sÃ© si se puede usar un tipo propio en el animator) - R
     //{
     //    Quieto,
     //    Andando,
