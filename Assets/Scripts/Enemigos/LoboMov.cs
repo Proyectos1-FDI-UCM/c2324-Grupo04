@@ -31,7 +31,7 @@ public class LoboMov : MonoBehaviour
         }
     }
 
-    private void seguir(int cambioDirec)//Script para seguir al señuelo
+    private void seguir(int cambioDirec)//Script para seguir al seÃ±uelo
     {
         if (borde && cambioDirec != 0)//Si intenta salir del borde se anula el movimiemto
         {
@@ -60,7 +60,7 @@ public class LoboMov : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (borde)//Si choca contra un borde cambia de dirreccion
         {
@@ -78,10 +78,10 @@ public class LoboMov : MonoBehaviour
         }
 
 
-        //El lobo solo sigue a los señuelos
-        if (_sensorEnem.señueloDetected)//Si detecta un señuelo lo sigue
+        //El lobo solo sigue a los seÃ±uelos
+        if (_sensorEnem.seÃ±ueloDetected)//Si detecta un seÃ±uelo lo sigue
         {
-            _sensorEnem.seguirSeñuelo(out cambioDirec);
+            _sensorEnem.seguirSeÃ±uelo(out cambioDirec);
             seguir(cambioDirec);
         }
 
@@ -102,7 +102,7 @@ public class LoboMov : MonoBehaviour
         borde = false;
     }
 
-    private void flip() //Este método hace que la animación se de la vuelta
+    private void flip() //Este mÃ©todo hace que la animaciÃ³n se de la vuelta
     {
         if (_enemyMovement.movementEnemy.x == -1)
         {
