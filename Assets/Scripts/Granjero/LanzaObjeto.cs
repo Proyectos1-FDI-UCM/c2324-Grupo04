@@ -5,7 +5,7 @@ using UnityEngine;
 public class LanzaObjeto : MonoBehaviour
 {
     #region references
-    private Transform _myTransform;
+    private Transform _Transform;
     private Transform _objeto;
     #endregion
 
@@ -33,11 +33,11 @@ public class LanzaObjeto : MonoBehaviour
 
     void Start()
     {
-        _myTransform = transform;
+        _Transform = transform;
         this.enabled = false;
     }
 
-    void Update()
+    private void Update()
     {
         if (_cont >= _tiempo)
         {
@@ -62,10 +62,6 @@ public class LanzaObjeto : MonoBehaviour
         //print("objeto lanzado");
     }
 
-    public void ReferenciaObjeto(Transform referencia) // En principio no se necesita
-    {
-        _objeto = referencia;
-    }
 
     public void Fin()
     {
