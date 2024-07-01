@@ -2,25 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// La idea es que este script utilice el HealthComponent como vasallo, pero que maneje los eventos de muerte del granjero
-/// Las llamadas de daño y de vida del granjero quedan relegadas a él
-/// </summary>
 public class VidaGranjero : MonoBehaviour
 {
-    #region references
-    private HealthComponent _myHC;
-    #endregion
+    private HealthComponent _healthComponent;
+    private float _tiempInvulnerabilidad = 0.8f;
 
-    #region parameters
-    private float _tiempInv = 0.8f;
-    #endregion
+    private void Start()
+    {
+        _healthComponent = GetComponent<HealthComponent>();
+        _healthComponent.SetInvTime(_tiempInvulnerabilidad);
+    }
 
-
-    #region mehtods
     public void CambiaVidaGranjero(int incremento)
     {
-        if (_myHC.ChangeHealth(incremento))
+        if (_healthComponent.ChangeHealth(incremento))
         {
             Die();
         }
@@ -30,19 +25,5 @@ public class VidaGranjero : MonoBehaviour
     {
         Debug.Log("Fin de la partida (jugador)");
         GameManager.Instance.ReiniciaEscena();
-    }
-    #endregion
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        _myHC = GetComponent<HealthComponent>();
-        _myHC.SetInvTime(_tiempInv);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
