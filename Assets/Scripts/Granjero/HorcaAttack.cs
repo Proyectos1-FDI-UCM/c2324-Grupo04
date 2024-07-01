@@ -4,29 +4,24 @@ using UnityEngine;
 
 public class HorcaAttack : MonoBehaviour
 {
-    [SerializeField] private int _damage = - 2;
-    //[SerializeField] private float _hitboxSpeed = 2; // Esta variable se usaba en la versión antigua, pero no en esta
-
-    [SerializeField] private LayerMask _Layer;
+    [SerializeField] private int _damage = -2;
+    [SerializeField] private LayerMask _layer;
 
     private Vector2 _dir;
-    //[SerializeField] private float _hitboxDuration = 0.4f; // Esta variable se usaba en la versión antigua, pero no en esta
-    [SerializeField] private GameObject _hitboxPrefab;
     [SerializeField] private float _horizontalOffset = 0.4f;
     [SerializeField] private float _hitboxRadius = 2f;
-    private Transform _myTransform;
-    private GranjeroMovement _myGranjeroMovement;
-    private PlayerAnimationController _myAnimationController;
-    private bool _puedeAtacar = false;
+    private Transform _transform;
+    private GranjeroMovement _granjeroMovement;
+    private PlayerAnimationController _animationController;
+    private bool _canAttack = false;
 
-    void OnAction1()
+    private void OnAction1()
     {
-        if (_puedeAtacar)
+        if (_canAttack)
         {
-            // Llamada a la animación de ataque
-            _myAnimationController.Ataca();
+            _animationController.Ataca();
 
-            if (_myGranjeroMovement.Movement().x >= 0)
+            if (_granjeroMovement.Movement().x >= 0)
             {
                 _dir = Vector2.right;
             }
@@ -36,36 +31,31 @@ public class HorcaAttack : MonoBehaviour
             }
 
             Collider2D[] results;
-            Vector2 position = _myTransform.position.y * Vector2.up + _myTransform.position.x * Vector2.right + _dir * _horizontalOffset;
-            Collider2D result = Physics2D.OverlapCircle(position, _hitboxRadius, _Layer);
+            Vector2 position = _transform.position.y * Vector2.up + _transform.position.x * Vector2.right + _dir * _horizontalOffset;
+            Collider2D result = Physics2D.OverlapCircle(position, _hitboxRadius, _layer);
 
             if (result != null && result.gameObject.GetComponent<EnemyMovement>() != null)
             {
                 result.gameObject.GetComponent<HealthComponent>().ChangeHealth(_damage);
-                Debug.Log("Colisiona");
             }
-            if (result ==  null)
-            {
-                Debug.Log("NO Colisiona");
-            }
-            else if (result.gameObject.GetComponent<EnemyMovement>() == null)
-            {
-                Debug.Log("El collider no tiene EnemyMovement");    
-            }
-
         }
     }
 
-    public void ActivatePitchfork()
+    private void Start()
     {
-        _puedeAtacar = true;
-        Debug.Log("activa horca, puede atacar");
+        _transform = transform;
+        _granjeroMovement = GetComponent<GranjeroMovement>();
+        _animationController = GetComponent<PlayerAnimationController>();
+        Agarro();
     }
 
-    void Start()
+    public void Agarro()
     {
-        _myTransform = transform;
-        _myGranjeroMovement = GetComponent<GranjeroMovement>();
-        _myAnimationController = GetComponent<PlayerAnimationController>();
+        _canAttack = true;
+    }
+
+    public void Suelta()
+    {
+        _canAttack = false;
     }
 }
