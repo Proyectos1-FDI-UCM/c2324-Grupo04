@@ -57,7 +57,6 @@ public class PlayerAnimationController : MonoBehaviour
             if (_tiempo >= _attackTime)
             {
                 _tiempo = 0f;
-                estado = 0; //Innecesario, no?
             }
         }
         else
