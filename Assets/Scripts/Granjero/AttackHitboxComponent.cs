@@ -1,46 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AttackHitboxComponent : MonoBehaviour
 {
-    #region references 
-
-    private Transform _myTransform;
+    private Transform _transform;
     private Vector3 _parentTransform;
 
-    #endregion
-
-    #region parameters
-    //[SerializeField] float _duration; // En principio es el HorcaAttack el que destruye este objeto
-    int _damage; // HA DE SER UN NÚMERO NEGATIVO
-    float _speed;
-    Vector2 _direction;
-    float _maxOffset;
-    #endregion
-
-    #region variables
-    //float _timePassed = 0f;
-    #endregion
-
+    private int _damage;
+    private float _speed;
+    private Vector2 _direction;
+    private float _maxOffset;
 
     private void Awake()
     {
-        //Debug.Log("Existo");
-        _myTransform = transform;
+        _transform = transform;
     }
 
-    public void SetUp(int damage, float speed, Vector2 dir, Vector3 parentPosition, float maxOffset)
-    {
-        _damage = damage;
-        _speed = speed;
-        _direction = dir;
-        _parentTransform = parentPosition;
-        _maxOffset = maxOffset;
-    }
-
-
-    public void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Entra en el trigger");
         EnemyMovement enemyMovement = other.GetComponent<EnemyMovement>();
@@ -51,11 +26,20 @@ public class AttackHitboxComponent : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
-        if ((_myTransform.position - _parentTransform).magnitude < _maxOffset)
+        if ((_transform.position - _parentTransform).magnitude < _maxOffset)
         {
-            _myTransform.position += _direction.x * Vector3.right * _speed * Time.deltaTime;
+            _transform.position += _direction.x * Vector3.right * _speed * Time.deltaTime;
         }
+    }
+
+    public void SetUp(int damage, float speed, Vector2 dir, Vector3 parentPosition, float maxOffset)
+    {
+        _damage = damage;
+        _speed = speed;
+        _direction = dir;
+        _parentTransform = parentPosition;
+        _maxOffset = maxOffset;
     }
 }
