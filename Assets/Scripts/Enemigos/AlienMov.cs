@@ -42,7 +42,7 @@ public class AlienMov : MonoBehaviour
         }
     }
 
-    private void atacar(int cambioDirec)//Script para atacar al señuelo (y a la oveja y el granjero)
+    private void atacar(int cambioDirec)//Script para atacar al seÃ±uelo (y a la oveja y el granjero)
     {
         if (!attacked)
         {
@@ -76,7 +76,7 @@ public class AlienMov : MonoBehaviour
         }
         else { timePassing = true; }
 
-        if ((_sensorEnem.señueloDetected == true || _sensorEnem.playerDetected == true || _sensorEnem.ovejaDetected == true) && canAttack)//Ataca solo si hay algo en rango y haya pasado el cooldown
+        if ((_sensorEnem.seÃ±ueloDetected == true || _sensorEnem.playerDetected == true || _sensorEnem.ovejaDetected == true) && canAttack)//Ataca solo si hay algo en rango y haya pasado el cooldown
         {
             attacking = true;
             _passedTime = 0;  
@@ -95,7 +95,7 @@ public class AlienMov : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (timePassing) { _passedTime += Time.deltaTime; }
 
@@ -119,10 +119,10 @@ public class AlienMov : MonoBehaviour
                 }
             }
 
-            //La prioridad del alien es atacar al señuelo, atacar al jugador, y atacar a la oveja, el alien no sigue, solo dispara
-            if (_sensorEnem.señueloDetected)//Si detecta algo le dispara
+            //La prioridad del alien es atacar al seÃ±uelo, atacar al jugador, y atacar a la oveja, el alien no sigue, solo dispara
+            if (_sensorEnem.seÃ±ueloDetected)//Si detecta algo le dispara
             {
-                _sensorEnem.seguirSeñuelo(out cambioDirec);
+                _sensorEnem.seguirSeÃ±uelo(out cambioDirec);
                 prepAttack();
             }
             else if (_sensorEnem.playerDetected)
