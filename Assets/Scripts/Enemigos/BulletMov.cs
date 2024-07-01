@@ -28,7 +28,7 @@ public class BulletMov : MonoBehaviour
         destroyDelay = 0;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         transform.Translate(movementBullet * speed * Time.deltaTime);
         if (_collision ) { destroyDelay += Time.deltaTime; }
