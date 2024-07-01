@@ -21,7 +21,7 @@ public class ZonaCamera : MonoBehaviour
 
 	}
 
-	void OnTriggerEnter2D(Collider2D collision) // Se activa cuando �lgo colisiona con �l
+	void OnTriggerEnter2D(Collider2D collision) 
 	{
 		//vcam = GetComponent<CinemachineVirtualCamera>();
 		//if (vcam != null) Debug.Log("Vcam buena");
@@ -42,7 +42,7 @@ public class ZonaCamera : MonoBehaviour
 			Debug.Log("Null");
 		}
 	}
-	void OnTriggerExit2D(Collider2D collision) // Se activa cuando �lgo colisiona con �l
+	void OnTriggerExit2D(Collider2D collision) 
 	{
 		//vcam = GetComponent<CinemachineVirtualCamera>();
 		//if (vcam != null) Debug.Log("Vcam buena");
