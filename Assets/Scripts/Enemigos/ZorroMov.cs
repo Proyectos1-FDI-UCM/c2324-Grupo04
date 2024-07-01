@@ -30,7 +30,7 @@ public class ZorroMov : MonoBehaviour
         }
     }
 
-    private void seguir(int cambioDirec)//Script para seguir al señuelo (y a la oveja y el graanjero)
+    private void seguir(int cambioDirec)//Script para seguir al seÃ±uelo (y a la oveja y el graanjero)
     {
         if (borde && cambioDirec != 0)//Si intenta salir del borde se anula el movimiemto
         {
@@ -59,7 +59,7 @@ public class ZorroMov : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (borde)//Si choca contra un borde cambia de dirreccion
         {
@@ -73,10 +73,10 @@ public class ZorroMov : MonoBehaviour
             }
         }
 
-        //La prioridad del zorro es seguir al señuelo, seguir al jugador, y seguir a la oveja
-        if (_sensorEnem.señueloDetected)//Si detecta algo lo sigue
+        //La prioridad del zorro es seguir al seÃ±uelo, seguir al jugador, y seguir a la oveja
+        if (_sensorEnem.seÃ±ueloDetected)//Si detecta algo lo sigue
         {
-            _sensorEnem.seguirSeñuelo(out cambioDirec);
+            _sensorEnem.seguirSeÃ±uelo(out cambioDirec);
             seguir(cambioDirec);
         }
         else if (_sensorEnem.playerDetected)
@@ -100,7 +100,7 @@ public class ZorroMov : MonoBehaviour
         borde = false;
     }
 
-    private void flip() //Este método hace que la animación se de la vuelta
+    private void flip() //Este mÃ©todo hace que la animaciÃ³n se de la vuelta
     {
         if (_enemyMovement.movementEnemy.x == 1)
         {
