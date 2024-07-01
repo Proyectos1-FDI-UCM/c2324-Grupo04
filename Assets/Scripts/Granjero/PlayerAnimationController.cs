@@ -47,7 +47,7 @@ public class PlayerAnimationController : MonoBehaviour
     {
         //if (saltando)
         //{
-        //    saltando = Mathf.Abs(_myMovement.Movement().y) > epsil;
+        //    saltando = Mathf.Abs(_Movement.Movement().y) > epsil;
         //}
         // El modelo actual no utili
         if (estado == 3)
@@ -62,7 +62,7 @@ public class PlayerAnimationController : MonoBehaviour
         }
         else
         {
-            if (Mathf.Abs(_myRB.velocity.x) >= epsil)
+            if (Mathf.Abs(_RB.velocity.x) >= epsil)
             {
                 _Animator.SetInteger("EstadoAnimacion", 1);
                 //print("Está andando");
