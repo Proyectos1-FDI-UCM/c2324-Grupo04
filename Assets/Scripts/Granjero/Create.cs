@@ -1,147 +1,86 @@
-using System.Collections;
-using System.Collections.Generic;
 //using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Create : MonoBehaviour
 {
-    #region references
-    [SerializeField]
-    private GameObject Trampoline;
-
-    [SerializeField]
-    private GameObject Señuelo;
-    private Transform _myTransform;
-    private PlayerAnimationController _myAnimationController;
+    [SerializeField] private GameObject trampoline;
+    [SerializeField] private GameObject decoy;
+    private Transform _transform;
+    private PlayerAnimationController _animationController;
     private GranjeroMovement _playerMovement;
     private LanzaObjeto _lanzaObjeto;
     private Player_Raycast _myRC;
 
-    #endregion
+    private bool _canUseTrampoline = false;
+    private bool _canUseDecoy = false;
 
+    private void Start()
+    {
+        _transform = transform;
+        _playerMovement = GetComponent<GranjeroMovement>();
+        _animationController = GetComponent<PlayerAnimationController>();
+        _lanzaObjeto = GetComponent<LanzaObjeto>();
+        _myRC = GetComponent<Player_Raycast>();
+    }
 
-    #region parameters
-    //[SerializeField]
-    //private float _tacoste = 1; // Nunca se usa así que lo comento
-    //[SerializeField]
-    //private float _secoste = 0;  // Nunca se usa así que lo comento
-    [SerializeField]
-    private float _horizontalOffset = 1;
-    /*// He intentado usar el LanzaObjeto para solucionar los problemas de instanciación, pero no he podido
-    private float _verticalOffset = 1;
-    [SerializeField]
-    private float _velocidad = 4;
-    [SerializeField]
-    private float _tiempoInercia = 0.6f; // Tiempo que se mueve el objeto después de lanzarlo
-    [SerializeField]
-    private float _umbralInercia = 1f; // Umbral de multiplicador de velocidad mínima a partir del cual se tiene en cuenta la velocidad para el lanzamiento*/
-
-    #endregion
-
-
-    #region variables
-    private bool _puedeTrampolin = false;
-    private bool _puedeSeñuelo = false;
-    #endregion
-
-
-
-    #region input methods
     private void OnAction2()
     {
-        if (_puedeTrampolin && GameManager.Instance.ObtenerCuerdas() > 0 && _myRC.ChoqueAbajo()) 
+        if (_canUseTrampoline && GameManager.Instance.ObtenerCuerdas() > 0 && _myRC.ChoqueAbajo())
         {
-            //Llamada a la animación
-            _myAnimationController.SueltaObjeto();
+            _animationController.SueltaObjeto();
 
             Vector2 spawnPos;
             if (_playerMovement.Movement().x < 0 && !_myRC.ChoqueIzq())
             {
-                spawnPos = new Vector2(_myTransform.position.x - _horizontalOffset, _myTransform.position.y);
-                GameObject trampolin = Instantiate(Trampoline, spawnPos, Quaternion.identity);
+                spawnPos = new Vector2(_transform.position.x - _horizontalOffset, _transform.position.y);
+                GameObject trampolin = Instantiate(trampoline, spawnPos, Quaternion.identity);
                 GameManager.Instance.ChangeCantidadCuerda(-1);
                 HudManager.instance.UpdateCuerda(1);
             }
-            else if (_playerMovement.Movement().x >= 0 && !_myRC.ChoqueDer()) // Esta condición es necesaria para asegurarnos de no instanciar algo en una pared
+            else if (_playerMovement.Movement().x >= 0 && !_myRC.ChoqueDer())
             {
-                spawnPos = new Vector2(_myTransform.position.x + _horizontalOffset, _myTransform.position.y);
-                GameObject trampolin = Instantiate(Trampoline, spawnPos, Quaternion.identity);
+                spawnPos = new Vector2(_transform.position.x + _horizontalOffset, _transform.position.y);
+                GameObject trampolin = Instantiate(trampoline, spawnPos, Quaternion.identity);
                 GameManager.Instance.ChangeCantidadCuerda(-1);
                 HudManager.instance.UpdateCuerda(1);
             }
-            /*// He intentado usar el LanzaObjeto para solucionar los problemas de instanciación, pero no he podido
-            Transform trampolin = Instantiate(Trampoline, _myTransform.position + _verticalOffset * Vector3.up, Quaternion.identity).transform;
-            float compHoriz = _playerMovement.Movement().x;
-            if (Mathf.Abs(compHoriz) < _umbralInercia)
-            {
-                _lanzaObjeto.Lanza(trampolin, _velocidad, new Vector3(compHoriz / Mathf.Abs(compHoriz), 0, 0), 0f, _tiempoInercia);
-            }
-            else
-            {
-                _lanzaObjeto.Lanza(trampolin, _velocidad, new Vector3(compHoriz, 0, 0), 0f, _tiempoInercia);
-            }
-            //print("Dirección: " + _playerMovement.Movement().x)
-            GameManager.Instance.ChangeCantidadCuerda(-1);
-            HudManager.instance.UpdateCuerda(1);
-            */
         }
     }
 
     private void OnAction3()
     {
-        if (_puedeSeñuelo && GameManager.Instance.ObtenerCuerdas() > 0 && _myRC.ChoqueAbajo()) 
+        if (_canUseDecoy && GameManager.Instance.ObtenerCuerdas() > 0 && _myRC.ChoqueAbajo())
         {
-            //Llamada a la animación
-            _myAnimationController.SueltaObjeto();
+            _animationController.SueltaObjeto();
 
             Vector2 spawnPos;
             if (_playerMovement.Movement().x < 0 && !_myRC.ChoqueIzq())
             {
-                spawnPos = new Vector2(_myTransform.position.x - _horizontalOffset, _myTransform.position.y);
-                GameManager.Instance.nseñuelo++;
-                GameObject señuelo = Instantiate(Señuelo, spawnPos, Quaternion.identity);
-                //Debug.Log("Señuelo");
+                spawnPos = new Vector2(_transform.position.x - _horizontalOffset, _transform.position.y);
+                GameManager.Instance.nseÃ±uelo++;
+                GameObject seÃ±uelo = Instantiate(decoy, spawnPos, Quaternion.identity);
                 GameManager.Instance.ChangeCantidadCuerda(-1);
                 HudManager.instance.UpdateCuerda(1);
             }
-            else if (_playerMovement.Movement().x >= 0 && !_myRC.ChoqueDer())  // Esta condición es necesaria para asegurarnos de no instanciar algo en una pared
+            else if (_playerMovement.Movement().x >= 0 && !_myRC.ChoqueDer())
             {
-                spawnPos = new Vector2(_myTransform.position.x + _horizontalOffset, _myTransform.position.y);
-                GameManager.Instance.nseñuelo++;
-                GameObject señuelo = Instantiate(Señuelo, spawnPos, Quaternion.identity);
-                //Debug.Log("Señuelo");
+                spawnPos = new Vector2(_transform.position.x + _horizontalOffset, _transform.position.y);
+                GameManager.Instance.nseÃ±uelo++;
+                GameObject seÃ±uelo = Instantiate(decoy, spawnPos, Quaternion.identity);
                 GameManager.Instance.ChangeCantidadCuerda(-1);
                 HudManager.instance.UpdateCuerda(1);
             }
-
-            
         }
     }
-    #endregion
-    #region methods
+
     public void ActivateTrampoline()
     {
-        _puedeTrampolin = true;
+        _canUseTrampoline = true;
     }
 
     public void ActivateDecoy()
     {
-        _puedeSeñuelo = true;
+        _canUseDecoy = true;
     }
-    #endregion
-    #region Unity methods
-    private void Start()
-    {
-        _myTransform = transform;
-        _playerMovement = GetComponent<GranjeroMovement>();
-        _myAnimationController = GetComponent<PlayerAnimationController>();
-        _lanzaObjeto = GetComponent<LanzaObjeto>();
-        _myRC = GetComponent<Player_Raycast>();
-    }
-
-    private void Update()
-    {
-        
-    }
-    #endregion
 }
