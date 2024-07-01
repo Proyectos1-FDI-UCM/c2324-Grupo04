@@ -34,7 +34,7 @@ public class CachorroMov : MonoBehaviour
             borde = true;
         }
     }
-    private void flip() //Este método hace que la animación se de la vuelta
+    private void flip() //Este mÃ©todo hace que la animaciÃ³n se de la vuelta
     {
         if (_enemyMovement.movementEnemy.x == -1)
         {
@@ -46,7 +46,7 @@ public class CachorroMov : MonoBehaviour
         }
     }
 
-    private void seguir(int cambioDirec)//Script para seguir al señuelo (y a la oveja)
+    private void seguir(int cambioDirec)//Script para seguir al seÃ±uelo (y a la oveja)
     {
         if (borde && cambioDirec != 0)//Si intenta salir del borde se anula el movimiemto
         {
@@ -101,7 +101,7 @@ public class CachorroMov : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (borde)//Si choca contra un borde cambia de dirreccion
         {          
@@ -118,7 +118,7 @@ public class CachorroMov : MonoBehaviour
 
         if (!huida)//El cachorro tiene un estado de huida, si no esta huyendo se mueve como el resto de enemigos
         {
-            //La prioridad del cachorro es huir del jugador, seguir al señuelo, y seguir a la oveja
+            //La prioridad del cachorro es huir del jugador, seguir al seÃ±uelo, y seguir a la oveja
             if (_sensorEnem.playerDetected)//Si detecta al jugador entra en estado de huida
             {
                 _sensorEnem.seguirPlayer(out cambioDirec);
@@ -126,9 +126,9 @@ public class CachorroMov : MonoBehaviour
                 huida = true;
                 _tiempoHuida = 0f;
             }
-            else if (_sensorEnem.señueloDetected)//Si detecta el señuelo o a la oveja los sigue
+            else if (_sensorEnem.seÃ±ueloDetected)//Si detecta el seÃ±uelo o a la oveja los sigue
             {
-                _sensorEnem.seguirSeñuelo(out cambioDirec);
+                _sensorEnem.seguirSeÃ±uelo(out cambioDirec);
                 seguir(cambioDirec);
             }
             else if (_sensorEnem.ovejaDetected)
