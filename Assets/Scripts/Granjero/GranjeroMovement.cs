@@ -7,13 +7,13 @@ public class GranjeroMovement : MonoBehaviour
 {
     #region references
     private PlayerAnimationController _AnimationController;
-    private Rigidbody2D _rigidbody; // Esto estaba público por alguna razón? - R
+    private Rigidbody2D _rigidbody;
     private Player_Raycast _myRC;
+    private bool _isClimbing = false;
+    private float _climbSpeed = 5f; // Velocidad al subir o bajar escaleras
     #endregion
 
     #region parameters
-    //[SerializeField] private float _sheepMaxSpeed = 6;
-    //[SerializeField] private float _sheepAcceleration = 6;
     [SerializeField] private float _sheepJumpForce = 18;
     [SerializeField] private float _jumpForce = 24;
     [SerializeField] private float _maxSpeed = 6;
@@ -48,10 +48,9 @@ public class GranjeroMovement : MonoBehaviour
         OvejaSoltada();
     }
 
-
     private void OnUp() // Método activado cada vez que el jugador introduce el input de saltar
     {
-        if(_rigidbody.velocity.y < 0.1 && _myRC.ChoqueAbajo())
+        if (_rigidbody.velocity.y < 0.1 && _myRC.ChoqueAbajo())
         {
             _currentFallSpeed = _jumpFallSpeed;
             _rigidbody.AddForce(Vector2.up * _currentJump, ForceMode2D.Impulse);
@@ -62,81 +61,85 @@ public class GranjeroMovement : MonoBehaviour
 
     // Método que detecta cuándo el jugador ha soltado el botón de saltar
     // Nos permite hacer el salto más fácil de controlar
-    private void OnStopJumping() 
+    private void OnStopJumping()
     {
         _currentFallSpeed = _fallSpeed;
         print("Jump stopped");
     }
 
-    private void OnHorizontalMovement (InputValue value) 
+    private void OnHorizontalMovement(InputValue value)
     {
-        _movementDirection = value.Get<Vector2>(); //Este vector siempre tendrá la forma (1, 0) o (-1, 0)
-        if( _movementDirection != Vector2.zero )
+        _movementDirection = value.Get<Vector2>(); // Este vector siempre tendrá la forma (1, 0) o (-1, 0)
+        if (_movementDirection != Vector2.zero)
         {
             _movementTracker = _movementDirection;
             _AnimationController.Gira(_movementDirection.x);
         }
-        
-        //print($"Vector de la entrada: ({_movementDirection.x}, {_movementDirection.y})");
-
-        //if ((movement.x < 0 && !choqueIzq) || (movement.x > 0 && !choqueDer)) // Por qué hacíamos aquí esta comprobación aquí?
-        //{
-        //    movementTracker = movement;
-        //    _myAnimationController.Gira(movement.x);
-        //    print("Bucle movimiento");
-        //}
-
-
-        //if (movement.x < 0 && !choqueIzq)
-        //{
-        //    movementTracker = movement;
-        //}
-        //else if (movement.x > 0 && !choqueDer)
-        //{
-        //    movementTracker = movement;
-        //}
     }
 
     public void OvejaSoltada()
     {
-        //Debug.Log("OvejaSoltada()");
         _currentJump = _jumpForce;
     }
 
     public void OvejaRecogida()
     {
-        //Debug.Log("OvejaRecogida()");
         _currentJump = _sheepJumpForce;
     }
 
-    private void Update () // ¿Hay alguna razón por la que hagáis este cálculo en el FixedUpdate()? - R
+    private void Update()
     {
-        //_currentSpeed = _maxSpeed;
-
-
-
-
-        if (_movementDirection.x < 0 && !_myRC.ChoqueIzq() || _movementDirection.x > 0 && !_myRC.ChoqueDer())
+        if (_isClimbing)
         {
-            _rigidbody.velocity = _movementDirection * _currentSpeed + Vector2.up * _rigidbody.velocity.y;
-
-            //_myRB.velocity = Mathf.Lerp(Mathf.Abs(_myRB.velocity.x)/* * _movementDirection.x*/, _maxHorizontalSpeed/* * _movementDirection.x*/, 0.2f) * _movementDirection + Vector2.up * _myRB.velocity.y;
-            _currentSpeed += _acceleration * Time.deltaTime;
-
-            print($"Velocidad horizontal: {_myRB.velocity.x}");
+            // Implementación del movimiento vertical (subir/bajar escaleras)
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _movementDirection.y * _climbSpeed);
         }
         else
         {
-            _currentSpeed = _baseSpeed;
+            // Implementación del movimiento horizontal normal
+            if (_movementDirection.x < 0 && !_myRC.ChoqueIzq() || _movementDirection.x > 0 && !_myRC.ChoqueDer())
+            {
+                _rigidbody.velocity = _movementDirection * _currentSpeed + Vector2.up * _rigidbody.velocity.y;
+                _currentSpeed += _acceleration * Time.deltaTime;
+            }
+            else
+            {
+                _currentSpeed = _baseSpeed;
+            }
+
+            // Aplicamos la gravedad
+            _rigidbody.velocity += _currentFallSpeed * Vector2.down * Time.deltaTime;
+
+            // Limitamos las velocidades
+            _rigidbody.velocity = new Vector2(
+                Mathf.Clamp(_rigidbody.velocity.x, -_maxSpeed, _maxSpeed),
+                Mathf.Clamp(_rigidbody.velocity.y, -_maxFallSpeed, _maxVerticalSpeed)
+            );
         }
-
-        // Aplicamos la gravedad (tiene que ser manualmente para un mejor control del salto)
-        _rigidbody.velocity += _currentFallSpeed * Vector2.down * Time.deltaTime;
-
-        // Limitación de las velocidades a los valores deseados
-        _rigidbody.velocity = Mathf.Clamp(_rigidbody.velocity.x, -_maxSpeed, _maxSpeed) * Vector2.right 
-                       + Mathf.Clamp(_rigidbody.velocity.y, -_maxFallSpeed, _maxVerticalSpeed) * Vector2.up;
     }
 
+    public void OnUpStair()
+    {
+        _isClimbing = true;
+        _movementDirection = Vector2.up; // Dirección de subida
+        // Puedes agregar aquí cualquier lógica adicional según sea necesario
+        Debug.Log("Subiendo escaleras");
+    }
 
+    public void OnDownStair()
+    {
+        _isClimbing = true;
+        _movementDirection = Vector2.down; // Dirección de bajada
+        // Puedes agregar aquí cualquier lógica adicional según sea necesario
+        Debug.Log("Bajando escaleras");
+    }
+
+    public void OnStopStair()
+    {
+        _isClimbing = false;
+        _movementDirection = Vector2.zero; // Detenemos el movimiento vertical
+        // Puedes agregar aquí cualquier lógica adicional según sea necesario
+        Debug.Log("Deteniendo escaleras");
+    }
 }
+
