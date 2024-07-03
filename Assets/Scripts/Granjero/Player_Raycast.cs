@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -42,8 +43,8 @@ public class Player_Raycast : MonoBehaviour
         RaycastHit2D hitLeftDown = Physics2D.Raycast(positionDown, transform.right * -1, distanceSide, layerToWalls);
 
         ChoqueAbajo = hitDown.collider != null;
-        ChoqueIzq = hitLeft.collider != null || hitLeftUp.collider != null || hitLeftDown.collider != null;
-        ChoqueDer = hitRight.collider != null || hitRightUp.collider != null || hitRightDown.collider != null;
+        ChoqueIzq = !(hitLeft.collider == null && hitLeftUp.collider == null && hitLeftDown.collider == null);
+        ChoqueDer = !(hitRight.collider == null && hitRightUp.collider == null && hitRightDown.collider == null);
 
         allowTrampoline = !ChoqueAbajo;
     }
