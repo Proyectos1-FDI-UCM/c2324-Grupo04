@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,9 +16,27 @@ public class Player_Raycast : MonoBehaviour
 
     public bool allowTrampoline = false;
 
-    public bool ChoqueAbajo { get; private set; }
-    public bool ChoqueIzq { get; private set; }
-    public bool ChoqueDer { get; private set; }
+    private bool _choqueAbajo;
+    private bool _choqueIzq;
+    private bool _choqueDer;
+
+    public bool ChoqueAbajo
+    {
+        get { return _choqueAbajo; }
+        private set { _choqueAbajo = value; }
+    }
+
+    public bool ChoqueIzq
+    {
+        get { return _choqueIzq; }
+        private set { _choqueIzq = value; }
+    }
+
+    public bool ChoqueDer
+    {
+        get { return _choqueDer; }
+        private set { _choqueDer = value; }
+    }
 
     private void Start()
     {
@@ -47,5 +64,20 @@ public class Player_Raycast : MonoBehaviour
         ChoqueDer = !(hitRight.collider == null && hitRightUp.collider == null && hitRightDown.collider == null);
 
         allowTrampoline = !ChoqueAbajo;
+    }
+
+    public bool CheckChoqueAbajo()
+    {
+        return ChoqueAbajo;
+    }
+
+    public bool CheckChoqueIzq()
+    {
+        return ChoqueIzq;
+    }
+
+    public bool CheckChoqueDer()
+    {
+        return ChoqueDer;
     }
 }
