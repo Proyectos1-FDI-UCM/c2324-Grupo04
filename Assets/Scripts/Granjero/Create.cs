@@ -14,6 +14,7 @@ public class Create : MonoBehaviour
 
     private bool _canUseTrampoline = false;
     private bool _canUseDecoy = false;
+    private float _horizontalOffset;
 
     private void Start()
     {
@@ -26,19 +27,19 @@ public class Create : MonoBehaviour
 
     private void OnAction2()
     {
-        if (_canUseTrampoline && GameManager.Instance.ObtenerCuerdas() > 0 && _myRC.ChoqueAbajo())
+        if (_canUseTrampoline && GameManager.Instance.ObtenerCuerdas() > 0 && _myRC.ChoqueAbajo)
         {
             _animationController.SueltaObjeto();
 
             Vector2 spawnPos;
-            if (_playerMovement.Movement().x < 0 && !_myRC.ChoqueIzq())
+            if (_playerMovement.Movement().x < 0 && !_myRC.ChoqueIzq)
             {
                 spawnPos = new Vector2(_transform.position.x - _horizontalOffset, _transform.position.y);
                 GameObject trampolin = Instantiate(trampoline, spawnPos, Quaternion.identity);
                 GameManager.Instance.ChangeCantidadCuerda(-1);
                 HudManager.instance.UpdateCuerda(1);
             }
-            else if (_playerMovement.Movement().x >= 0 && !_myRC.ChoqueDer())
+            else if (_playerMovement.Movement().x >= 0 && !_myRC.ChoqueDer)
             {
                 spawnPos = new Vector2(_transform.position.x + _horizontalOffset, _transform.position.y);
                 GameObject trampolin = Instantiate(trampoline, spawnPos, Quaternion.identity);
@@ -50,12 +51,12 @@ public class Create : MonoBehaviour
 
     private void OnAction3()
     {
-        if (_canUseDecoy && GameManager.Instance.ObtenerCuerdas() > 0 && _myRC.ChoqueAbajo())
+        if (_canUseDecoy && GameManager.Instance.ObtenerCuerdas() > 0 && _myRC.ChoqueAbajo)
         {
             _animationController.SueltaObjeto();
 
             Vector2 spawnPos;
-            if (_playerMovement.Movement().x < 0 && !_myRC.ChoqueIzq())
+            if (_playerMovement.Movement().x < 0 && !_myRC.ChoqueIzq)
             {
                 spawnPos = new Vector2(_transform.position.x - _horizontalOffset, _transform.position.y);
                 GameManager.Instance.nseñuelo++;
@@ -63,7 +64,7 @@ public class Create : MonoBehaviour
                 GameManager.Instance.ChangeCantidadCuerda(-1);
                 HudManager.instance.UpdateCuerda(1);
             }
-            else if (_playerMovement.Movement().x >= 0 && !_myRC.ChoqueDer())
+            else if (_playerMovement.Movement().x >= 0 && !_myRC.ChoqueDer)
             {
                 spawnPos = new Vector2(_transform.position.x + _horizontalOffset, _transform.position.y);
                 GameManager.Instance.nseñuelo++;
