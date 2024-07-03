@@ -58,7 +58,7 @@ public class GranjeroMovement : MonoBehaviour
         {
             StartClimbing();
         }
-        else if (_myRB.velocity.y < 0.1 && _myRC.ChoqueAbajo())
+        else if (_myRB.velocity.y < 0.1 && _myRC.ChoqueAbajo)
         {
             _currentFallSpeed = _jumpFallSpeed;
             _myRB.AddForce(Vector2.up * _currentJump, ForceMode2D.Impulse);
@@ -122,7 +122,7 @@ public class GranjeroMovement : MonoBehaviour
         }
         else
         {
-            if (_movementDirection.x < 0 && !_myRC.ChoqueIzq() || _movementDirection.x > 0 && !_myRC.ChoqueDer())
+            if ((_movementDirection.x < 0 && !_myRC.ChoqueIzq) || _movementDirection.x > 0 && !_myRC.ChoqueDer)
             {
                 _myRB.velocity = _movementDirection * _currentSpeed + Vector2.up * _myRB.velocity.y;
                 _currentSpeed += _acceleration * Time.deltaTime;
