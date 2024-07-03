@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PitchforkObjectComponent : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D collision) // Se activa cuando algo colisiona con él
+    void OnTriggerEnter2D(Collider2D collision) // Se activa cuando algo colisiona con Ã©l
     {
         HorcaAttack _horcaAttack = collision.GetComponent<HorcaAttack>(); // Busca un componente del tipo Create
 
