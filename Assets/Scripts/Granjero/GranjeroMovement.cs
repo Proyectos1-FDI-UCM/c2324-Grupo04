@@ -111,7 +111,7 @@ public class GranjeroMovement : MonoBehaviour
         _currentJump = _sheepJumpForce;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (_isClimbing)
         {
