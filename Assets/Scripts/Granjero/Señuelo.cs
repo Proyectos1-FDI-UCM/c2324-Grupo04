@@ -27,11 +27,3 @@ public class Señuelo : MonoBehaviour
         Destroy(gameObject);
     }
 }
-
-        }
-        if (GameManager.Instance.nseñuelo > 1)
-        {
-            Destruido();
-        }
-    }
-}
