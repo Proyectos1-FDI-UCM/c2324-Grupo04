@@ -6,11 +6,10 @@ using UnityEngine.InputSystem;
 public class GranjeroMovement : MonoBehaviour
 {
     #region references
-    private PlayerAnimationController _AnimationController;
-    private Rigidbody2D _rigidbody;
+    private PlayerAnimationController _myAnimationController;
+    private Rigidbody2D _myRB;
     private Player_Raycast _myRC;
-    private bool _isClimbing = false;
-    private float _climbSpeed = 5f; // Velocidad al subir o bajar escaleras
+    private Collider2D _ladderCollider;
     #endregion
 
     #region parameters
@@ -23,14 +22,19 @@ public class GranjeroMovement : MonoBehaviour
     [SerializeField] private float _fallSpeed = 4;
     [SerializeField] private float _maxFallSpeed = 4;
     [SerializeField] private float _maxVerticalSpeed = 40;
+    [SerializeField] private float _climbSpeed = 4;
+    [SerializeField] private float _climbLimit = 6.3f;
     #endregion
 
     #region variables
     private Vector2 _movementDirection;
-    private Vector2 _movementTracker;
+    public Vector2 _movementTracker;
     private float _currentJump = 0;
     private float _currentFallSpeed;
     private float _currentSpeed = 0f;
+    private float _climbStartY = 0f;
+    private bool _onLadder = false;
+    private bool _isClimbing = false;
     #endregion
 
     public Vector2 Movement() // Método que permite saber la dirección en la que está mirando el jugador
@@ -42,38 +46,58 @@ public class GranjeroMovement : MonoBehaviour
     {
         _maxFallSpeed = _jumpForce;
         _currentFallSpeed = _fallSpeed;
-        _AnimationController = GetComponent<PlayerAnimationController>();
-        _rigidbody = GetComponent<Rigidbody2D>();
+        _myAnimationController = GetComponent<PlayerAnimationController>();
+        _myRB = GetComponent<Rigidbody2D>();
         _myRC = GetComponent<Player_Raycast>();
         OvejaSoltada();
     }
 
-    private void OnUp() // Método activado cada vez que el jugador introduce el input de saltar
+    private void OnUp()
     {
-        if (_rigidbody.velocity.y < 0.1 && _myRC.ChoqueAbajo())
+        if (_onLadder && !_isClimbing)
+        {
+            StartClimbing();
+        }
+        else if (_myRB.velocity.y < 0.1 && _myRC.ChoqueAbajo())
         {
             _currentFallSpeed = _jumpFallSpeed;
-            _rigidbody.AddForce(Vector2.up * _currentJump, ForceMode2D.Impulse);
-            //Llamada a la animación de salto
-            _AnimationController.Salta();
+            _myRB.AddForce(Vector2.up * _currentJump, ForceMode2D.Impulse);
+            _myAnimationController.Salta();
         }
     }
 
-    // Método que detecta cuándo el jugador ha soltado el botón de saltar
-    // Nos permite hacer el salto más fácil de controlar
+    private void StartClimbing()
+    {
+        _isClimbing = true;
+        _climbStartY = _myRB.position.y;
+        _myRB.gravityScale = 0; // Desactivar la gravedad mientras se sube la escalera
+        _myRB.velocity = new Vector2(_myRB.velocity.x, _climbSpeed);
+    }
+
+    private void StopClimbing()
+    {
+        _isClimbing = false;
+        _myRB.gravityScale = 1; // Restaurar la gravedad
+        _myRB.velocity = new Vector2(_myRB.velocity.x, 0);
+    }
+
     private void OnStopJumping()
     {
         _currentFallSpeed = _fallSpeed;
+        if (_isClimbing)
+        {
+            StopClimbing();
+        }
         print("Jump stopped");
     }
 
     private void OnHorizontalMovement(InputValue value)
     {
-        _movementDirection = value.Get<Vector2>(); // Este vector siempre tendrá la forma (1, 0) o (-1, 0)
+        _movementDirection = value.Get<Vector2>();
         if (_movementDirection != Vector2.zero)
         {
             _movementTracker = _movementDirection;
-            _AnimationController.Gira(_movementDirection.x);
+            _myAnimationController.Gira(_movementDirection.x);
         }
     }
 
@@ -87,59 +111,51 @@ public class GranjeroMovement : MonoBehaviour
         _currentJump = _sheepJumpForce;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (_isClimbing)
         {
-            // Implementación del movimiento vertical (subir/bajar escaleras)
-            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _movementDirection.y * _climbSpeed);
+            if (Mathf.Abs(_myRB.position.y - _climbStartY) >= _climbLimit)
+            {
+                StopClimbing();
+            }
         }
         else
         {
-            // Implementación del movimiento horizontal normal
             if (_movementDirection.x < 0 && !_myRC.ChoqueIzq() || _movementDirection.x > 0 && !_myRC.ChoqueDer())
             {
-                _rigidbody.velocity = _movementDirection * _currentSpeed + Vector2.up * _rigidbody.velocity.y;
+                _myRB.velocity = _movementDirection * _currentSpeed + Vector2.up * _myRB.velocity.y;
                 _currentSpeed += _acceleration * Time.deltaTime;
+                print($"Velocidad horizontal: {_myRB.velocity.x}");
             }
             else
             {
                 _currentSpeed = _baseSpeed;
             }
 
-            // Aplicamos la gravedad
-            _rigidbody.velocity += _currentFallSpeed * Vector2.down * Time.deltaTime;
+            // Aplicamos la gravedad (tiene que ser manualmente para un mejor control del salto)
+            _myRB.velocity += _currentFallSpeed * Vector2.down * Time.deltaTime;
 
-            // Limitamos las velocidades
-            _rigidbody.velocity = new Vector2(
-                Mathf.Clamp(_rigidbody.velocity.x, -_maxSpeed, _maxSpeed),
-                Mathf.Clamp(_rigidbody.velocity.y, -_maxFallSpeed, _maxVerticalSpeed)
-            );
+            _myRB.velocity = Mathf.Clamp(_myRB.velocity.x, -_maxSpeed, _maxSpeed) * Vector2.right
+                           + Mathf.Clamp(_myRB.velocity.y, -_maxFallSpeed, _maxVerticalSpeed) * Vector2.up;
         }
     }
 
-    public void OnUpStair()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        _isClimbing = true;
-        _movementDirection = Vector2.up; // Dirección de subida
-        // Puedes agregar aquí cualquier lógica adicional según sea necesario
-        Debug.Log("Subiendo escaleras");
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ladder"))
+        {
+            _onLadder = true;
+            _ladderCollider = collision;
+        }
     }
 
-    public void OnDownStair()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        _isClimbing = true;
-        _movementDirection = Vector2.down; // Dirección de bajada
-        // Puedes agregar aquí cualquier lógica adicional según sea necesario
-        Debug.Log("Bajando escaleras");
-    }
-
-    public void OnStopStair()
-    {
-        _isClimbing = false;
-        _movementDirection = Vector2.zero; // Detenemos el movimiento vertical
-        // Puedes agregar aquí cualquier lógica adicional según sea necesario
-        Debug.Log("Deteniendo escaleras");
+        if (collision == _ladderCollider)
+        {
+            _onLadder = false;
+            _ladderCollider = null;
+        }
     }
 }
-
