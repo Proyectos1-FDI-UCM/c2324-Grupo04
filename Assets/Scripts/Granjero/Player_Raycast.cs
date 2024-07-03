@@ -48,6 +48,3 @@ public class Player_Raycast : MonoBehaviour
         allowTrampoline = !ChoqueAbajo;
     }
 }
-
-    #endregion
-}
