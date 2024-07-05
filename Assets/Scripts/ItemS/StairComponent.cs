@@ -35,16 +35,8 @@ public class StairComponent : MonoBehaviour
         if (!_goingDown && Mathf.Abs((_myTransform.position - _playerTransform.position).magnitude) <= _maxDistance)
         {
             _playerTransform.position = _myTransform.position;
-            _goingDown = true; Debug.Log("_goingDown: " + _goingDown);
+            _goingDown = true;
             _myCollider.enabled = false;
-        }
-        if ( _goingDown )
-        {
-            Debug.Log("Ya estás bajando");
-        }
-        if (Mathf.Abs((_myTransform.position - _playerTransform.position).magnitude) > _maxDistance)
-        {
-            Debug.Log("Estás muy lejos");
         }
     }
 
@@ -67,7 +59,6 @@ public class StairComponent : MonoBehaviour
             if (Mathf.Abs((_myTransform.position - (_myTransform.position + _endTransform.position)).magnitude) <= _maxDistance)
             {
                 _goingDown = false;
-                Debug.Log("Has llegado al fin de las escaleras");
             }
             else
             {

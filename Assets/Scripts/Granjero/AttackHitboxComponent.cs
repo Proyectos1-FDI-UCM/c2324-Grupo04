@@ -26,7 +26,6 @@ public class AttackHitboxComponent : MonoBehaviour
 
     private void Awake()
     {
-        //Debug.Log("Existo");
         _myTransform = transform;
     }
 
@@ -42,11 +41,9 @@ public class AttackHitboxComponent : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Entra en el trigger");
         EnemyMovement enemyMovement = other.GetComponent<EnemyMovement>();
         if (enemyMovement != null)
         {
-            Debug.Log("Colisionado con un enemigo");
             other.GetComponent<HealthComponent>().ChangeHealth(_damage);
         }
     }

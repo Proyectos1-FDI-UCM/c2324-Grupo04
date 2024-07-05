@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -13,7 +11,6 @@ public class Meta_NoLaEmpresa : MonoBehaviour
         if (Collider.gameObject.GetComponent<GranjeroMovement>() && GameManager.Instance.cargandoOveja == true || Collider.gameObject.GetComponent<OvejaBalido>())
         {
             FinPartida = true;
-            Debug.Log("Gnaste");
             victory.SetActive(true);
             Time.timeScale = 0.0f;
             EventSystem.current.SetSelectedGameObject(null);
@@ -27,7 +24,4 @@ public class Meta_NoLaEmpresa : MonoBehaviour
     {
         victory.SetActive(false);
     }
-
-    // Update is called once per frame
-
 }

@@ -7,7 +7,6 @@ public class BordePlataforma : MonoBehaviour
     public GameObject enemy;
     public void ChangeDirection(Vector2 movement, int limit)
     {
-        Debug.Log("Cambia Dirreccion");
         if (limit == 1)
         {
             enemy.GetComponent<EnemyMovement>().movementEnemy = Vector2.right;

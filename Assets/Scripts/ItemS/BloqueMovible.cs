@@ -23,7 +23,6 @@ public class BloqueMovible : MonoBehaviour
         GranjeroMovement granjero = collision.gameObject.GetComponent<GranjeroMovement>();
         if (granjero != null)
         {
-            Debug.Log("granjero.Movement().x: " + granjero.Movement().x);
             _myTransform.position += granjero.Movement().x * Vector3.right * _speed * Time.deltaTime;
         }
     }

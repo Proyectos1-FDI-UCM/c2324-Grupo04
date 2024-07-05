@@ -20,7 +20,6 @@ public class ItemSlot : MonoBehaviour
 
     public void AddItem(string itemName, int quantity, Sprite itemSprite)
     {
-        Debug.Log(itemName+quantity+itemSprite);
         this.itemName = itemName;
         this.quantity = quantity;
         this.itemSprite = itemSprite;

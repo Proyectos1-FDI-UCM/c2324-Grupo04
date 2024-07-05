@@ -63,16 +63,7 @@ public class HeartIcon : MonoBehaviour
 
     public void Inicializacion()
     {
-        Debug.Log("Corazón inicializado");
         _mySpriteRenderer = GetComponent<SpriteRenderer>();
-        if ( _mySpriteRenderer != null )
-        {
-            Debug.Log("_mySpriteRenderer del corazón no es null");
-        }
-        if (_mySpriteRenderer == null)
-        {
-            Debug.Log("_mySpriteRenderer del corazón no se ha pillado");
-        }
     }
 
     public void Actualiza()
@@ -103,28 +94,24 @@ public class HeartIcon : MonoBehaviour
 
     public void Entero()
     {
-        //Debug.Log("Corazón Entero()");
         _mySpriteRenderer.sprite = entero;
         estado = Estado.Entero;
     }
 
     public void Medio()
     {
-        //Debug.Log("Corazón Medio()");
         _mySpriteRenderer.sprite = medio;
         estado = Estado.Medio;
     }
 
     public void Vacio()
     {
-        //Debug.Log("Corazón Vacio()");
         _mySpriteRenderer.sprite = vacio;
         estado = Estado.Vacio;
     }
 
     public void Desactivado()
     {
-        //Debug.Log("Corazón " + transform.position.x + " Desactivado()");
         _mySpriteRenderer.sprite = desactivado;
         estado = Estado.Desactivado;
     }

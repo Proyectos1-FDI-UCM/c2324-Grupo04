@@ -59,13 +59,11 @@ public class UIManager : MonoBehaviour
 
     public void ActualizaVidaGranjero()
     {
-        Debug.Log("ActualizaVidaGranjero()");
         _corazonesHUD.ActualizaEstados();
     }
 
     public void ActualizaVidaOveja()
     {
-        Debug.Log("ActualizaVidaOveja()");
         _corazonesHUDOveja.ActualizaEstados();
     }
 
@@ -102,7 +100,7 @@ public class UIManager : MonoBehaviour
     #region instrucciones
     public void DecoyRecipePickedUp()
     {
-        _instruccionesSeñuelo.SetActive(true); Debug.Log("RecogidaRecetaSeñuelo");
+        _instruccionesSeñuelo.SetActive(true);
         //Destroy(_instruccionesSeñuelo, _duracionInstrucciones);
     }
 
@@ -189,7 +187,6 @@ public class UIManager : MonoBehaviour
         {
             if (_paused)
             {
-                Debug.Log("Salida de pausa");
                 _menuAjustes.SetActive(false);
                 _menuDePausa.SetActive(false);
                 Time.timeScale = 1.0f;
@@ -197,7 +194,6 @@ public class UIManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("PAUSA");
                 _menuDePausa.SetActive(true);
                 EventSystem.current.SetSelectedGameObject(null);
                 EventSystem.current.SetSelectedGameObject(pauseReset);

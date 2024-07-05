@@ -42,24 +42,13 @@ public class HorcaAttack : MonoBehaviour
             if (result != null && result.gameObject.GetComponent<EnemyMovement>() != null)
             {
                 result.gameObject.GetComponent<HealthComponent>().ChangeHealth(_damage);
-                Debug.Log("Colisiona");
             }
-            if (result ==  null)
-            {
-                Debug.Log("NO Colisiona");
-            }
-            else if (result.gameObject.GetComponent<EnemyMovement>() == null)
-            {
-                Debug.Log("El collider no tiene EnemyMovement");    
-            }
-
         }
     }
 
     public void ActivatePitchfork()
     {
         _puedeAtacar = true;
-        Debug.Log("activa horca, puede atacar");
     }
 
     void Start()

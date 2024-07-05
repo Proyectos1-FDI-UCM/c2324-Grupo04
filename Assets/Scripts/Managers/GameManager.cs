@@ -246,7 +246,6 @@ public class GameManager : MonoBehaviour
     public void ChangeCantidadCuerda(int value)
     {
         _rope += value;
-        Debug.Log("Ahora tienes: " + _rope + " unidad(es) de cuerda");
     }
 
 

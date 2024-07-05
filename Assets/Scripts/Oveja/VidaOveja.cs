@@ -24,7 +24,6 @@ public class VidaOveja : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("Fin de la partida (oveja)");
         GameManager.Instance.ReiniciaEscena();
     }
     #endregion

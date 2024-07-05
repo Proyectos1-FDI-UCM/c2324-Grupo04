@@ -28,7 +28,6 @@ public class VidaGranjero : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("Fin de la partida (jugador)");
         GameManager.Instance.ReiniciaEscena();
     }
     #endregion

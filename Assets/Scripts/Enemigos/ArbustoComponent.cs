@@ -8,10 +8,8 @@ public class ArbustoComponent : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Has chocado con un arbusto");
         if (other.GetComponent<GranjeroMovement>() != null)
         {
-            Debug.Log("Eres un granjero");
             other.GetComponent<HealthComponent>().ChangeHealth(_damage);
         }
     }
