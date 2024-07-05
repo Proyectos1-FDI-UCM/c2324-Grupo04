@@ -95,17 +95,11 @@ public class AlienMov : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (timePassing) { _passedTime += Time.deltaTime; }
 
-        if (attacking)//Al atacar se detiene para disparar
-        {
-            atacar(cambioDirec);
-            _enemyMovement.movementEnemy = Vector2.zero;
-        }
-
-        else
+        if (!attacking)
         {
             if (borde)//Si choca contra un borde cambia de dirreccion
             {
@@ -146,6 +140,15 @@ public class AlienMov : MonoBehaviour
             }
 
             borde = false;
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (attacking) //Cuando Ataca, se para para disparar
+        {
+            atacar(cambioDirec);
+            _enemyMovement.movementEnemy = Vector2.zero;
         }
     }
 }

@@ -96,7 +96,7 @@ public class OVNIMov : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (timePassing) { _passedTime += Time.deltaTime; }
 
@@ -106,21 +106,8 @@ public class OVNIMov : MonoBehaviour
             _passedTime = 0;
         }
 
-
         else
         {
-            if (borde)//Si choca contra un borde cambia de dirreccion
-            {
-                if (limit == 1)
-                {
-                    limit1.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
-                }
-                else
-                {
-                    limit2.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
-                }
-            }
-
             //La prioridad del OVNI es seguir al señuelo, seguir a la oveja, y seguir al jugador
             if (_sensorEnem.señueloDetected)//Si detecta algo lo sigue
             {
@@ -152,8 +139,23 @@ public class OVNIMov : MonoBehaviour
                     _enemyMovement.movementEnemy = Vector2.left;
                 }
             }
-
-            borde = false;
         } 
+    }
+
+    void FixedUpdate()
+    {
+        if (borde)//Si choca contra un borde cambia de dirreccion
+        {
+            if (limit == 1)
+            {
+                limit1.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
+            }
+            else
+            {
+                limit2.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
+            }
+        }
+
+        borde = false;
     }
 }

@@ -28,10 +28,14 @@ public class BulletMov : MonoBehaviour
         destroyDelay = 0;
     }
 
+    void Update()
+    {
+        if (_collision) { destroyDelay += Time.deltaTime; }
+        if (destroyDelay > 0.1) { Destroy(gameObject); }
+    }
+
     void FixedUpdate()
     {
         transform.Translate(movementBullet * speed * Time.deltaTime);
-        if (_collision ) { destroyDelay += Time.deltaTime; }
-        if (destroyDelay > 0.1 ) { Destroy(gameObject); }
     }
 }

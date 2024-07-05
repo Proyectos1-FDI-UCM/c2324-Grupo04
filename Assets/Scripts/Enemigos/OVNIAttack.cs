@@ -39,10 +39,4 @@ public class OVNIAttack : MonoBehaviour
         scaleChange = new Vector3(0.05f, 0f, 0f);
         maxScale = new Vector3(5f, 0f, 0f);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

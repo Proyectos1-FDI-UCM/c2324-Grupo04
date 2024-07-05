@@ -31,12 +31,6 @@ public class DamageAnimation : MonoBehaviour
         _originalMaterial = _mySR.material;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Damage() // Activa la animación de recibir daño (poner el sprite blanco)
     {
         if (_timeFlashing >= _flashTime)

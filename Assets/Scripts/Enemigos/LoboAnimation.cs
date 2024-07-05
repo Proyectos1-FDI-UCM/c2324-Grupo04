@@ -46,15 +46,6 @@ public class LoboAnimation : MonoBehaviour
         _originalMaterial = _mySR.material;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(transform == limit1)
-        {
-
-        }
-    }
-
     public void Loboizq(bool lobdcha)
     {
         _animator.SetBool("lobdcha", lobdcha = false);
@@ -63,15 +54,6 @@ public class LoboAnimation : MonoBehaviour
     public void Loboder(bool lobdcha)
     {
         _animator.SetBool("lobdcha", lobdcha = true);
-    }
-
-    public void Loboquietoi()
-    {
-
-    }
-    public void Loboquietod()
-    {
-
     }
 
     public void DamageAnimation() // Activa la animación de recibir daño (poner el sprite blanco)

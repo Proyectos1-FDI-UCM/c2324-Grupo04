@@ -101,21 +101,8 @@ public class CachorroMov : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    private void Update()
     {
-        if (borde)//Si choca contra un borde cambia de dirreccion
-        {          
-
-            if (limit == 1)
-            {                
-                limit1.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
-            }
-            else
-            {
-                limit2.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
-            }
-        }
-
         if (!huida)//El cachorro tiene un estado de huida, si no esta huyendo se mueve como el resto de enemigos
         {
             //La prioridad del cachorro es huir del jugador, seguir al señuelo, y seguir a la oveja
@@ -147,6 +134,23 @@ public class CachorroMov : MonoBehaviour
         if (_tiempoHuida > tiempoHuida) { huida = false; }
 
         flip();
+    }
+
+    void FixedUpdate()
+    {
+        if (borde)//Si choca contra un borde cambia de dirreccion
+        {          
+
+            if (limit == 1)
+            {                
+                limit1.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
+            }
+            else
+            {
+                limit2.GetComponent<BordePlataforma>().ChangeDirection(_enemyMovement.movementEnemy, limit);
+            }
+        }
+
         borde = false;
     }
 }

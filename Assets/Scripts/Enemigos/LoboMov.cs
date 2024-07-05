@@ -60,6 +60,31 @@ public class LoboMov : MonoBehaviour
     }
 
     // Update is called once per frame
+    void Update()
+    {
+        //El lobo solo sigue a los señuelos
+        if (_sensorEnem.señueloDetected)//Si detecta un señuelo lo sigue
+        {
+            _sensorEnem.seguirSeñuelo(out cambioDirec);
+            seguir(cambioDirec);
+        }
+
+        else
+        {
+            if (limit == 1)
+            {
+                _enemyMovement.movementEnemy = Vector2.right;
+            }
+
+            else if (limit == 2)
+            {
+                _enemyMovement.movementEnemy = Vector2.left;
+            }
+        }
+
+        flip();
+    }
+
     void FixedUpdate()
     {
         if (borde)//Si choca contra un borde cambia de dirreccion
@@ -77,28 +102,6 @@ public class LoboMov : MonoBehaviour
             }
         }
 
-
-        //El lobo solo sigue a los señuelos
-        if (_sensorEnem.señueloDetected)//Si detecta un señuelo lo sigue
-        {
-            _sensorEnem.seguirSeñuelo(out cambioDirec);
-            seguir(cambioDirec);
-        }
-
-        else
-        {
-            if (limit == 1)
-            {
-                _enemyMovement.movementEnemy = Vector2.right;
-            }
-
-            else if (limit == 2)
-            {  
-                _enemyMovement.movementEnemy = Vector2.left;
-            }
-        }
-
-        flip();
         borde = false;
     }
 
