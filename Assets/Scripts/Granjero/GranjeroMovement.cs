@@ -65,7 +65,6 @@ public class GranjeroMovement : MonoBehaviour
     private void OnStopJumping() 
     {
         _currentFallSpeed = _fallSpeed;
-        print("Jump stopped");
     }
 
     private void OnHorizontalMovement (InputValue value) 
@@ -123,7 +122,6 @@ public class GranjeroMovement : MonoBehaviour
             //_myRB.velocity = Mathf.Lerp(Mathf.Abs(_myRB.velocity.x)/* * _movementDirection.x*/, _maxHorizontalSpeed/* * _movementDirection.x*/, 0.2f) * _movementDirection + Vector2.up * _myRB.velocity.y;
             _currentSpeed += _acceleration * Time.deltaTime;
 
-            print($"Velocidad horizontal: {_myRB.velocity.x}");
         }
         else
         {

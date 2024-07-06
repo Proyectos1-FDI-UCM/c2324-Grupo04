@@ -25,8 +25,6 @@ public class MenuPrincipal : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(selectplay);
-
-		print("MenuPrincipal.Start" + playableDirector.name);
     }
 
     public void ClickPlay()

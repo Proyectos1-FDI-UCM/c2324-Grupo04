@@ -21,7 +21,6 @@ public class TriggerComponent : MonoBehaviour
         GranjeroMovement granjeroMovement = collision.GetComponent<GranjeroMovement>();
         if (granjeroMovement != null)
         {
-            print("Has entrado en un trigger");
             _deactivatedObject.SetActive(false);
         }
     }
@@ -30,7 +29,6 @@ public class TriggerComponent : MonoBehaviour
         GranjeroMovement granjeroMovement = collision.GetComponent<GranjeroMovement>();
         if (granjeroMovement != null)
         {
-            print("Has salido en un trigger");
             _deactivatedObject.SetActive(true);
         }
     }

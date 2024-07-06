@@ -52,7 +52,6 @@ public class PlayerAnimationController : MonoBehaviour
         // El modelo actual no utili
         if (estado == 3)
         {
-            print("Atacando (anim)");
             _tiempo += Time.deltaTime;
             if (_tiempo >= _attackTime)
             {
@@ -65,19 +64,16 @@ public class PlayerAnimationController : MonoBehaviour
             if (Mathf.Abs(_myRB.velocity.x) >= epsil)
             {
                 _myAnimator.SetInteger("EstadoAnimacion", 1);
-                //print("Está andando");
             }
             else
             {
                 _myAnimator.SetInteger("EstadoAnimacion", 0);
-                //print("No está andando");
             }
         }
     }
 
     public void Quieto()
     {
-        print("Quieto (animación)");
         _myAnimator.SetInteger("EstadoAnimacion", 0);
     }
     
@@ -85,13 +81,11 @@ public class PlayerAnimationController : MonoBehaviour
     {        
         if (miraDer && dir > 0)
         {
-            //print("Giro izq");
             _myTransform.localScale = Vector3.one;
             miraDer = false;
         }
         else if (!miraDer && dir < 0)
         {
-            //print("Giro der");
             _myTransform.localScale = new Vector3(-1, 1, 1);
             miraDer = true;
         }
@@ -134,7 +128,6 @@ public class PlayerAnimationController : MonoBehaviour
 
     public void Salta()
     {
-        //print("Salta (animación)");
         //if (estado < 2)
         //{
         //    estado = 2;
