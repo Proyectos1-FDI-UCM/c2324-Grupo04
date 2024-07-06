@@ -15,12 +15,4 @@ public class Trampoline : MonoBehaviour
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * bounce, ForceMode2D.Impulse);
         }
     }
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.GetComponent<GranjeroMovement>() && collision.gameObject.GetComponent<Player_Raycast>()._allowTrampoline)
-    //    {
-    //        collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * bounce, ForceMode2D.Impulse);
-    //    }
-        
-    //}
 }

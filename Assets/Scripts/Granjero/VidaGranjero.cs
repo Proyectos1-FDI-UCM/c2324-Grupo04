@@ -38,10 +38,4 @@ public class VidaGranjero : MonoBehaviour
         _myHC = GetComponent<HealthComponent>();
         _myHC.SetInvTime(_tiempInv);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

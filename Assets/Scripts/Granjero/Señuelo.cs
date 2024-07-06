@@ -9,13 +9,7 @@ public class Señuelo : MonoBehaviour
     private float duracionSeñuelo;
     private float tiempoSeñuelo;
 
-    public void Destruido()
-    {
-        GameManager.Instance.SeñueloDestruido();
-        Destroy(this.gameObject);
-    }
-
-    public void Die() // Método que llama a su acción de muerte (lo he sacado del HealthComponent al pie de la letra)
+    private void Die()
     {
         GameManager.Instance.SeñueloDestruido();
         Destroy(this.gameObject);
@@ -31,13 +25,9 @@ public class Señuelo : MonoBehaviour
     void Update()
     {
         tiempoSeñuelo += Time.deltaTime;
-        if (tiempoSeñuelo > duracionSeñuelo)
+            if (tiempoSeñuelo > duracionSeñuelo || GameManager.Instance.nseñuelo > 1)
         {
-            Destruido();
-        }
-        if (GameManager.Instance.nseñuelo > 1)
-        {
-            Destruido();
+            Die();
         }
     }
 }

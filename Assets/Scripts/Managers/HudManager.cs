@@ -33,7 +33,6 @@ public class HudManager : MonoBehaviour
 	public void UpdateCuerda(int v)
 	{
         currentCuerda = v * GameManager.Instance.ObtenerCuerdas();
-        Debug.Log(currentCuerda);
 	  	cuerdaText.text = "X " + currentCuerda.ToString();
   	}
 
