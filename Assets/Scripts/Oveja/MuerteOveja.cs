@@ -25,7 +25,7 @@ public class MueveOveja : MonoBehaviour
         this.enabled = false;
     }
 
-    public void Die()
+    private void Die()
     {
 
         menuMuerte.SetActive(true);

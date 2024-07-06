@@ -12,7 +12,6 @@ public class Player_Raycast : MonoBehaviour
     Transform _myTransform;
     [SerializeField] LayerMask layerToJump;
     [SerializeField] LayerMask layerToWalls;
-    [SerializeField] LayerMask layerToLadder;
     public bool _allowTrampoline = false;
 
     #region properties
@@ -29,7 +28,7 @@ public class Player_Raycast : MonoBehaviour
     }
 
 
-    void FixedUpdate() // ¿Hay alguna razón para hacer esto en el FixedUpdate()? - R
+    void Update()
     {
         // Todo esto es sólo para depuración
         Vector2 positionUp = new Vector2(transform.position.x, transform.position.y + 0.5f);
@@ -87,18 +86,6 @@ public class Player_Raycast : MonoBehaviour
             Debug.DrawRay(positionDown, transform.right * -1, Color.red);
             //_movimientoPlayer.SetBoolLeft(false);
         }
-
-        // He quitado la comprobación de la escalera porque no vamos a hacer escalera
-        /*
-        if (hitDownLadder.collider != null)
-        {
-            Debug.DrawRay(transform.position, transform.up * -1, Color.yellow);
-            _movimientoPlayer.SetBoolLadder(true);
-        }
-        else
-        {
-            _movimientoPlayer.SetBoolLadder(false);
-        }*/
     }
 
     public bool ChoqueAbajo()

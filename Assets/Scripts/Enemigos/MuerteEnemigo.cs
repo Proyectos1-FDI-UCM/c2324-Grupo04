@@ -7,7 +7,7 @@ public class MuerteEnemigo : MonoBehaviour
     [SerializeField]
     private GameObject _explosionPrefab;
 
-    public void Die()
+    private void Die()
     {
         //Llamada a la animación de muerte
         GameObject animation = Instantiate(_explosionPrefab, transform.position, Quaternion.identity);

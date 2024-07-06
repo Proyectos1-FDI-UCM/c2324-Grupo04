@@ -24,11 +24,6 @@ public class LanzaObjeto : MonoBehaviour
 
 
 
-
-
-
-
-
     #region methods
 
     void Start()
@@ -59,15 +54,9 @@ public class LanzaObjeto : MonoBehaviour
         _direccion = direccion.normalized;
         _deceleracion = deceleracion;
         _tiempo = tiempo;
-        //print("objeto lanzado");
     }
 
-    public void ReferenciaObjeto(Transform referencia) // En principio no se necesita
-    {
-        _objeto = referencia;
-    }
-
-    public void Fin()
+    private void Fin()
     {
         this.enabled = false;
     }

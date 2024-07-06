@@ -26,6 +26,7 @@ public class Señuelo : MonoBehaviour
     {
         tiempoSeñuelo += Time.deltaTime;
             if (tiempoSeñuelo > duracionSeñuelo || GameManager.Instance.nseñuelo > 1)
+        if (tiempoSeñuelo > duracionSeñuelo || GameManager.Instance.nseñuelo > 1)
         {
             Die();
         }
