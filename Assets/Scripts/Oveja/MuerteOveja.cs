@@ -12,28 +12,12 @@ public class MueveOveja : MonoBehaviour
     [SerializeField] private GameObject reset;
     #endregion
 
-
-    #region parameters
-
-    #endregion
-
-
-    #region variables
-
-    #endregion
-
     #region methods
-
     void Start()
     {
         _myTransform = transform;
 
         menuMuerte.SetActive(false);
-    }
-
-    void Update()
-    {
-        
     }
 
     private void Fin()
@@ -51,6 +35,5 @@ public class MueveOveja : MonoBehaviour
         Time.timeScale = 0f;
         
     }
-
     #endregion
 }

@@ -89,14 +89,6 @@ public class UIManager : MonoBehaviour
         //Destroy(_instruccionesMovimiento, _duracionInstrucciones);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    #region interfaz de usuario
-
-    #endregion
     #region instrucciones
     public void DecoyRecipePickedUp()
     {
@@ -201,7 +193,6 @@ public class UIManager : MonoBehaviour
                 _paused = true;
             }
         }
-        
     }
     #endregion
 }

@@ -25,7 +25,6 @@ public class HudManager : MonoBehaviour
 		cuerdaText.text = "X " + currentCuerda.ToString();
 	}
 
-    // Update is called once per frame
     public void IncreaseCoins()
     {
         currentCoins++;

@@ -4,16 +4,9 @@ using UnityEngine;
 
 public class TriggerComponent : MonoBehaviour
 {
-    #region variables
-
-    #endregion
-
-
     #region references
     [SerializeField]
     private GameObject _deactivatedObject;
-
-
     #endregion
 
     void OnTriggerEnter2D(Collider2D collision)

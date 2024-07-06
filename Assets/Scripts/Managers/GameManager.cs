@@ -12,8 +12,6 @@ public class GameManager : MonoBehaviour
     private bool TrampolineUnlocked = true;
     [SerializeField]
     private bool DecoyUnlocked = true;
-    //[SerializeField]
-    //[SerializeField]
     #endregion
 
     #region variables
@@ -160,11 +158,6 @@ public class GameManager : MonoBehaviour
     private void ActivateDecoy()
     {
         _playerCreate.ActivateDecoy();
-    }
-
-    private void ActivaPala()
-    {
-        // A implementar todavía
     }
 
     public void ActivaMov()
