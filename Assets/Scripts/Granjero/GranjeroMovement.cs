@@ -7,7 +7,7 @@ public class GranjeroMovement : MonoBehaviour
 {
     #region references
     private PlayerAnimationController _myAnimationController;
-    private Rigidbody2D _myRB; // Esto estaba público por alguna razón? - R
+    private Rigidbody2D _myRB; // Esto estaba pï¿½blico por alguna razï¿½n? - R
     private Player_Raycast _myRC;
     #endregion
 
@@ -27,13 +27,13 @@ public class GranjeroMovement : MonoBehaviour
 
     #region variables
     private Vector2 _movementDirection;
-    public Vector2 _movementTracker;
+    private Vector2 _movementTracker;
     private float _currentJump = 0;
     private float _currentFallSpeed;
     private float _currentSpeed = 0f;
     #endregion
 
-    public Vector2 Movement() // Método que permite saber la dirección en la que está mirando el jugador
+    public Vector2 Movement() // Mï¿½todo que permite saber la direcciï¿½n en la que estï¿½ mirando el jugador
     {
         return _movementTracker;
     }
@@ -49,19 +49,19 @@ public class GranjeroMovement : MonoBehaviour
     }
 
 
-    private void OnUp() // Método activado cada vez que el jugador introduce el input de saltar
+    private void OnUp() // Mï¿½todo activado cada vez que el jugador introduce el input de saltar
     {
         if(_myRB.velocity.y < 0.1 && _myRC.ChoqueAbajo())
         {
             _currentFallSpeed = _jumpFallSpeed;
             _myRB.AddForce(Vector2.up * _currentJump, ForceMode2D.Impulse);
-            //Llamada a la animación de salto
+            //Llamada a la animaciï¿½n de salto
             _myAnimationController.Salta();
         }
     }
 
-    // Método que detecta cuándo el jugador ha soltado el botón de saltar
-    // Nos permite hacer el salto más fácil de controlar
+    // Mï¿½todo que detecta cuï¿½ndo el jugador ha soltado el botï¿½n de saltar
+    // Nos permite hacer el salto mï¿½s fï¿½cil de controlar
     private void OnStopJumping() 
     {
         _currentFallSpeed = _fallSpeed;
@@ -70,7 +70,7 @@ public class GranjeroMovement : MonoBehaviour
 
     private void OnHorizontalMovement (InputValue value) 
     {
-        _movementDirection = value.Get<Vector2>(); //Este vector siempre tendrá la forma (1, 0) o (-1, 0)
+        _movementDirection = value.Get<Vector2>(); //Este vector siempre tendrï¿½ la forma (1, 0) o (-1, 0)
         if( _movementDirection != Vector2.zero )
         {
             _movementTracker = _movementDirection;
@@ -79,7 +79,7 @@ public class GranjeroMovement : MonoBehaviour
         
         //print($"Vector de la entrada: ({_movementDirection.x}, {_movementDirection.y})");
 
-        //if ((movement.x < 0 && !choqueIzq) || (movement.x > 0 && !choqueDer)) // Por qué hacíamos aquí esta comprobación aquí?
+        //if ((movement.x < 0 && !choqueIzq) || (movement.x > 0 && !choqueDer)) // Por quï¿½ hacï¿½amos aquï¿½ esta comprobaciï¿½n aquï¿½?
         //{
         //    movementTracker = movement;
         //    _myAnimationController.Gira(movement.x);
@@ -109,7 +109,7 @@ public class GranjeroMovement : MonoBehaviour
         _currentJump = _sheepJumpForce;
     }
 
-    private void FixedUpdate () // ¿Hay alguna razón por la que hagáis este cálculo en el FixedUpdate()? - R
+    private void Update () // ï¿½Hay alguna razï¿½n por la que hagï¿½is este cï¿½lculo en el FixedUpdate()? - R
     {
         //_currentSpeed = _maxSpeed;
 
@@ -133,7 +133,7 @@ public class GranjeroMovement : MonoBehaviour
         // Aplicamos la gravedad (tiene que ser manualmente para un mejor control del salto)
         _myRB.velocity += _currentFallSpeed * Vector2.down * Time.deltaTime;
 
-        // Limitación de las velocidades a los valores deseados
+        // Limitaciï¿½n de las velocidades a los valores deseados
         _myRB.velocity = Mathf.Clamp(_myRB.velocity.x, -_maxSpeed, _maxSpeed) * Vector2.right 
                        + Mathf.Clamp(_myRB.velocity.y, -_maxFallSpeed, _maxVerticalSpeed) * Vector2.up;
     }
