@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 7163601671013035740}
   - component: {fileID: -6139734476813441776}
   - component: {fileID: 3482534228890473742}
+  - component: {fileID: 6407242858358619465}
   - component: {fileID: 8808130360093090046}
   - component: {fileID: 8075757650451229032}
   m_Layer: 8
@@ -174,9 +175,7 @@ MonoBehaviour:
   _acceleration: 5
   _jumpFallSpeed: 38
   _fallSpeed: 85
-  _maxFallSpeed: 7
   _maxVerticalSpeed: 30
-  _movementTracker: {x: 0, y: 0}
 --- !u!114 &1640964514911560491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,9 +280,6 @@ MonoBehaviour:
   layerToWalls:
     serializedVersion: 2
     m_Bits: 512
-  layerToLadder:
-    serializedVersion: 2
-    m_Bits: 0
   _allowTrampoline: 0
   choqueAbajo: 0
   choqueIzq: 0
@@ -351,6 +347,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ed7f6a05a42d5a47ba07c32f3a4aa59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6407242858358619465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2465212164272183052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d057783a982cd4a80e7dea36751166, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _distanciaInteraccion: 2
+  _verticalOffset: 1
+  _velocidadRoca: 8
+  _deceleracionRoca: 0
+  _tiempoDeInercia: 0.8
 --- !u!114 &8808130360093090046
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -107,6 +107,16 @@ public class PlayerAnimationController : MonoBehaviour
         _myAnimator.SetBool("LlevandoOveja", true);
     }
 
+    public void RocaSoltada()
+    {
+        _myAnimator.SetBool("LlevandoRoca", false);
+    }
+
+    public void RocaRecogida()
+    {
+        _myAnimator.SetBool("LlevandoRoca", true);
+    }
+
     public void Salta()
     {
 

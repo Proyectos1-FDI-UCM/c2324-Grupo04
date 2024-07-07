@@ -44,16 +44,20 @@ public class InteraccionConOveja : MonoBehaviour // Componente perteneciente al 
 
     private void OnInteraction1() // Método que se activa al recoger la oveja con la e
     {
-        if (GameManager.Instance.cargandoOveja)
+        if (!GameManager.Instance.cargandoRoca)
         {
-            SueltaOveja();
-            GameManager.Instance.SueltaOveja();
+            if (GameManager.Instance.cargandoOveja)
+            {
+                SueltaOveja();
+                GameManager.Instance.SueltaOveja();
+            }
+            else if ((_ovejaTransform.position - _myTransform.position).magnitude <= _distanciaInteraccion)
+            {
+                CogeOveja();
+                GameManager.Instance.CogeOveja();
+            }
         }
-        else if ((_ovejaTransform.position - _myTransform.position).magnitude <= _distanciaInteraccion)
-        {
-            CogeOveja();
-            GameManager.Instance.CogeOveja();
-        }
+
     }
 
     private void CogeOveja()

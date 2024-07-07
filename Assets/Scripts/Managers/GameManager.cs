@@ -40,6 +40,10 @@ public class GameManager : MonoBehaviour
     {
         return _ovejaTransform.position;
     }
+    public Vector3 RocaPosition()
+    {
+        return _rocaTransform.position;
+    }
 
     public Vector3 SeñueloPosition()
     {
@@ -65,6 +69,10 @@ public class GameManager : MonoBehaviour
     {
         return _movimientoOveja;
     }
+    public Transform ReferenciaTransformRoca()
+    {
+        return _rocaTransform;
+    }
 
     public HealthComponent ReferenciaVidaGranjero()
     {
@@ -83,6 +91,7 @@ public class GameManager : MonoBehaviour
     public int ObjetosTotales { get { return _rope; } } // ¿Qué hace este método?
 
     public bool cargandoOveja = false;
+    public bool cargandoRoca = false;
 
 
     #endregion
@@ -98,6 +107,8 @@ public class GameManager : MonoBehaviour
     private Create _playerCreate;
     [SerializeField]
     private Transform _ovejaTransform;
+    [SerializeField]
+    private Transform _rocaTransform;
     private HealthComponent _sheepHealth;
     [SerializeField]
     private MovimientoOveja _movimientoOveja;
@@ -222,11 +233,28 @@ public class GameManager : MonoBehaviour
         HudManager.instance.UpdateCuerda(1);
     }
 
+    public void CogeRoca()
+    {
+        if (!cargandoOveja)
+        {
+            _granjeroMovement.OvejaRecogida();
+            cargandoRoca = true;
+        }
+    }
+    public void SueltaRoca()
+    {
+        _granjeroMovement.OvejaSoltada();
+        cargandoRoca = false;
+    }
+
     public void CogeOveja()
     {
-        _granjeroMovement.OvejaRecogida();
-        _playerAnimationController.OvejaRecogida();
-        cargandoOveja = true;
+        if (!cargandoRoca)
+        {
+            _granjeroMovement.OvejaRecogida();
+            _playerAnimationController.OvejaRecogida();
+            cargandoOveja = true;
+        }
     }
 
     public void SueltaOveja()
