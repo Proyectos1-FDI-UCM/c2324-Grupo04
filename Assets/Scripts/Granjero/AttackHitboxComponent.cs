@@ -12,24 +12,18 @@ public class AttackHitboxComponent : MonoBehaviour
     #endregion
 
     #region parameters
-    //[SerializeField] float _duration; // En principio es el HorcaAttack el que destruye este objeto
-    int _damage; // HA DE SER UN NÚMERO NEGATIVO
-    float _speed;
-    Vector2 _direction;
-    float _maxOffset;
+    private int _damage; // HA DE SER UN NÚMERO NEGATIVO
+    private float _speed;
+    private Vector2 _direction;
+    private float _maxOffset;
     #endregion
-
-    #region variables
-    //float _timePassed = 0f;
-    #endregion
-
 
     private void Awake()
     {
         _myTransform = transform;
     }
 
-    public void SetUp(int damage, float speed, Vector2 dir, Vector3 parentPosition, float maxOffset)
+    private void SetUp(int damage, float speed, Vector2 dir, Vector3 parentPosition, float maxOffset)
     {
         _damage = damage;
         _speed = speed;
@@ -38,8 +32,7 @@ public class AttackHitboxComponent : MonoBehaviour
         _maxOffset = maxOffset;
     }
 
-
-    public void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         EnemyMovement enemyMovement = other.GetComponent<EnemyMovement>();
         if (enemyMovement != null)
