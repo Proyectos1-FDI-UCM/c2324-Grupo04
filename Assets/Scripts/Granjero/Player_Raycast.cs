@@ -29,9 +29,9 @@ public class Player_Raycast : MonoBehaviour
     }
 
 
-    void FixedUpdate() // ¿Hay alguna razón para hacer esto en el FixedUpdate()? - R
+    void Update() // ï¿½Hay alguna razï¿½n para hacer esto en el FixedUpdate()? - R
     {
-        // Todo esto es sólo para depuración
+        // Todo esto es sï¿½lo para depuraciï¿½n
         Vector2 positionUp = new Vector2(transform.position.x, transform.position.y + 0.5f);
         Vector2 positionDown = new Vector2(transform.position.x, transform.position.y - 0.5f);
         RaycastHit2D hitRight = Physics2D.Raycast(_myTransform.position, transform.right, distanceSide, layerToWalls);
@@ -88,7 +88,7 @@ public class Player_Raycast : MonoBehaviour
             //_movimientoPlayer.SetBoolLeft(false);
         }
 
-        // He quitado la comprobación de la escalera porque no vamos a hacer escalera
+        // He quitado la comprobaciï¿½n de la escalera porque no vamos a hacer escalera
         /*
         if (hitDownLadder.collider != null)
         {
