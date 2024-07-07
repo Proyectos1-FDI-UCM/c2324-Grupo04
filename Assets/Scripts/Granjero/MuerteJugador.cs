@@ -8,7 +8,7 @@ public class MuerteJugador : MonoBehaviour
     [SerializeField] private GameObject menuMuerte;
     [SerializeField] private GameObject reset;
     //public GameObject canvasMuerte;
-    public void Start()
+    void Start()
     {
         menuMuerte.SetActive(false);
     }
