@@ -13,7 +13,7 @@ public class AttackHitboxComponent : MonoBehaviour
 
     #region parameters
     //[SerializeField] float _duration; // En principio es el HorcaAttack el que destruye este objeto
-    int _damage; // HA DE SER UN NÚMERO NEGATIVO
+    int _damage; // HA DE SER UN Nï¿½MERO NEGATIVO
     float _speed;
     Vector2 _direction;
     float _maxOffset;
@@ -40,7 +40,7 @@ public class AttackHitboxComponent : MonoBehaviour
     }
 
 
-    public void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Entra en el trigger");
         EnemyMovement enemyMovement = other.GetComponent<EnemyMovement>();
