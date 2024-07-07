@@ -5,12 +5,9 @@ using UnityEngine;
 public class HorcaAttack : MonoBehaviour
 {
     [SerializeField] private int _damage = - 2;
-    //[SerializeField] private float _hitboxSpeed = 2; // Esta variable se usaba en la versión antigua, pero no en esta
 
     [SerializeField] private LayerMask _Layer;
 
-    private Vector2 _dir;
-    //[SerializeField] private float _hitboxDuration = 0.4f; // Esta variable se usaba en la versión antigua, pero no en esta
     [SerializeField] private GameObject _hitboxPrefab;
     [SerializeField] private float _horizontalOffset = 0.4f;
     [SerializeField] private float _hitboxRadius = 2f;
@@ -19,12 +16,13 @@ public class HorcaAttack : MonoBehaviour
     private PlayerAnimationController _myAnimationController;
     private bool _puedeAtacar = false;
 
-    void OnAction1()
+    private void OnAction1()
     {
         if (_puedeAtacar)
         {
             // Llamada a la animación de ataque
             _myAnimationController.Ataca();
+            Vector2 _dir;
 
             if (_myGranjeroMovement.Movement().x >= 0)
             {

@@ -7,7 +7,7 @@ public class GranjeroMovement : MonoBehaviour
 {
     #region references
     private PlayerAnimationController _myAnimationController;
-    private Rigidbody2D _myRB; // Esto estaba público por alguna razón? - R
+    private Rigidbody2D _myRB;
     private Player_Raycast _myRC;
     #endregion
 
@@ -21,16 +21,16 @@ public class GranjeroMovement : MonoBehaviour
     [SerializeField] private float _acceleration = 6;
     [SerializeField] private float _jumpFallSpeed = 4;
     [SerializeField] private float _fallSpeed = 4;
-    [SerializeField] private float _maxFallSpeed = 4;
     [SerializeField] private float _maxVerticalSpeed = 40;
     #endregion
 
     #region variables
     private Vector2 _movementDirection;
-    public Vector2 _movementTracker;
+    private Vector2 _movementTracker;
     private float _currentJump = 0;
     private float _currentFallSpeed;
     private float _currentSpeed = 0f;
+    private float _maxFallSpeed = 4;
     #endregion
 
     public Vector2 Movement() // Método que permite saber la dirección en la que está mirando el jugador
@@ -75,45 +75,20 @@ public class GranjeroMovement : MonoBehaviour
             _movementTracker = _movementDirection;
             _myAnimationController.Gira(_movementDirection.x);
         }
-        
-        //print($"Vector de la entrada: ({_movementDirection.x}, {_movementDirection.y})");
-
-        //if ((movement.x < 0 && !choqueIzq) || (movement.x > 0 && !choqueDer)) // Por qué hacíamos aquí esta comprobación aquí?
-        //{
-        //    movementTracker = movement;
-        //    _myAnimationController.Gira(movement.x);
-        //    print("Bucle movimiento");
-        //}
-
-
-        //if (movement.x < 0 && !choqueIzq)
-        //{
-        //    movementTracker = movement;
-        //}
-        //else if (movement.x > 0 && !choqueDer)
-        //{
-        //    movementTracker = movement;
-        //}
     }
 
     public void OvejaSoltada()
     {
-        //Debug.Log("OvejaSoltada()");
         _currentJump = _jumpForce;
     }
 
     public void OvejaRecogida()
     {
-        //Debug.Log("OvejaRecogida()");
         _currentJump = _sheepJumpForce;
     }
 
-    private void FixedUpdate () // ¿Hay alguna razón por la que hagáis este cálculo en el FixedUpdate()? - R
+    private void FixedUpdate ()
     {
-        //_currentSpeed = _maxSpeed;
-
-
-
 
         if (_movementDirection.x < 0 && !_myRC.ChoqueIzq() || _movementDirection.x > 0 && !_myRC.ChoqueDer())
         {

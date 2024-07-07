@@ -29,12 +29,6 @@ public class InteraccionConOveja : MonoBehaviour // Componente perteneciente al 
     #endregion
 
 
-    #region variables
-
-    #endregion
-
-
-
     #region methods
     void Start()
     {
@@ -47,11 +41,6 @@ public class InteraccionConOveja : MonoBehaviour // Componente perteneciente al 
         _movimientoOveja = GameManager.Instance.ReferenciaMovimientoOveja();
     }
 
-
-    void Update()
-    {
-        
-    }
 
     private void OnInteraction1() // Método que se activa al recoger la oveja con la e
     {
