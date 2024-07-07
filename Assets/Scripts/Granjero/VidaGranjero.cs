@@ -4,7 +4,7 @@ using UnityEngine;
 
 /// <summary>
 /// La idea es que este script utilice el HealthComponent como vasallo, pero que maneje los eventos de muerte del granjero
-/// Las llamadas de daño y de vida del granjero quedan relegadas a él
+/// Las llamadas de daï¿½o y de vida del granjero quedan relegadas a ï¿½l
 /// </summary>
 public class VidaGranjero : MonoBehaviour
 {
@@ -18,7 +18,7 @@ public class VidaGranjero : MonoBehaviour
 
 
     #region mehtods
-    public void CambiaVidaGranjero(int incremento)
+    private void CambiaVidaGranjero(int incremento)
     {
         if (_myHC.ChangeHealth(incremento))
         {
@@ -38,11 +38,5 @@ public class VidaGranjero : MonoBehaviour
     {
         _myHC = GetComponent<HealthComponent>();
         _myHC.SetInvTime(_tiempInv);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
